@@ -1,55 +1,55 @@
 fileFormatVersion: 2
-guid: c932eb540f20db244add44d9221f42c1
+guid: d8b8471ddb98ea345ab11735cf53ced1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4518225611054890064
-    second: Player-Sheet_0
+      213: -7922026883130198051
+    second: Idling-Sheet_0
   - first:
-      213: 1871674578834246284
-    second: Player-Sheet_1
+      213: -1504198994365459738
+    second: Idling-Sheet_1
   - first:
-      213: -8148742256322455360
-    second: Player-Sheet_2
+      213: -612197155914634762
+    second: Idling-Sheet_2
   - first:
-      213: 3489784368332026933
-    second: Player-Sheet_3
+      213: -8128951655234609858
+    second: Idling-Sheet_3
   - first:
-      213: -3944583295012536477
-    second: Player-Sheet_4
+      213: -618904451490393791
+    second: Idling-Sheet_4
   - first:
-      213: 3090173003755996115
-    second: Player-Sheet_5
+      213: -5478246113768673775
+    second: Idling-Sheet_5
   - first:
-      213: 8403341588387058359
-    second: Player-Sheet_6
+      213: -3744542530567482463
+    second: Idling-Sheet_6
   - first:
-      213: 8222716190985997936
-    second: Player-Sheet_7
+      213: -7028792656909602267
+    second: Idling-Sheet_7
   - first:
-      213: -3764308334532073066
-    second: Player-Sheet_8
+      213: -5551469986105772550
+    second: Idling-Sheet_8
   - first:
-      213: -3961127741491812631
-    second: Player-Sheet_9
+      213: -209816986194011138
+    second: Idling-Sheet_9
   - first:
-      213: 2707164253404849536
-    second: Player-Sheet_10
+      213: 2635989343924420132
+    second: Idling-Sheet_10
   - first:
-      213: 760240769326365700
-    second: Player-Sheet_11
+      213: 8590464354101757149
+    second: Idling-Sheet_11
   - first:
-      213: 1723550264998150791
-    second: Player-Sheet_12
+      213: -2840507561672486873
+    second: Idling-Sheet_12
   - first:
-      213: 3286906832049929247
-    second: Player-Sheet_13
+      213: -5206428955794576308
+    second: Idling-Sheet_13
   - first:
-      213: 7634215581329522130
-    second: Player-Sheet_14
+      213: 299429388537400420
+    second: Idling-Sheet_14
   - first:
-      213: 5539777403619449140
-    second: Player-Sheet_15
+      213: 7218025032343426421
+    second: Idling-Sheet_15
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -145,7 +145,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Player-Sheet_0
+      name: Idling-Sheet_0
       rect:
         serializedVersion: 2
         x: 17
@@ -160,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 05cbff13146f3be30800000000000000
-      internalID: 4518225611054890064
+      spriteID: dd7fde1c58e4f0290800000000000000
+      internalID: -7922026883130198051
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_1
+      name: Idling-Sheet_1
       rect:
         serializedVersion: 2
         x: 81
@@ -182,14 +182,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c8a4b86ec1689f910800000000000000
-      internalID: 1871674578834246284
+      spriteID: 6e2d855fbf2002be0800000000000000
+      internalID: -1504198994365459738
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_2
+      name: Idling-Sheet_2
       rect:
         serializedVersion: 2
         x: 145
@@ -204,14 +204,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0c85fad771ad9ee80800000000000000
-      internalID: -8148742256322455360
+      spriteID: 6f924352ee90187f0800000000000000
+      internalID: -612197155914634762
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_3
+      name: Idling-Sheet_3
       rect:
         serializedVersion: 2
         x: 209
@@ -226,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5343421b4643e6030800000000000000
-      internalID: 3489784368332026933
+      spriteID: e3dda61e989203f80800000000000000
+      internalID: -8128951655234609858
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_4
+      name: Idling-Sheet_4
       rect:
         serializedVersion: 2
         x: 273
@@ -248,14 +248,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 36f76d974660249c0800000000000000
-      internalID: -3944583295012536477
+      spriteID: 141d1033ea53967f0800000000000000
+      internalID: -618904451490393791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_5
+      name: Idling-Sheet_5
       rect:
         serializedVersion: 2
         x: 337
@@ -270,14 +270,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3d3c06779ff72ea20800000000000000
-      internalID: 3090173003755996115
+      spriteID: 11e67ac3f2c59f3b0800000000000000
+      internalID: -5478246113768673775
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_6
+      name: Idling-Sheet_6
       rect:
         serializedVersion: 2
         x: 401
@@ -292,14 +292,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b2d31ed6aaae9470800000000000000
-      internalID: 8403341588387058359
+      spriteID: 1a3de2b6866b80cc0800000000000000
+      internalID: -3744542530567482463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_7
+      name: Idling-Sheet_7
       rect:
         serializedVersion: 2
         x: 465
@@ -314,14 +314,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 07ec2945fc4fc1270800000000000000
-      internalID: 8222716190985997936
+      spriteID: 52277059156b47e90800000000000000
+      internalID: -7028792656909602267
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_8
+      name: Idling-Sheet_8
       rect:
         serializedVersion: 2
         x: 529
@@ -336,14 +336,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6996c2f838d72cbc0800000000000000
-      internalID: -3764308334532073066
+      spriteID: af53ce8e57735f2b0800000000000000
+      internalID: -5551469986105772550
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_9
+      name: Idling-Sheet_9
       rect:
         serializedVersion: 2
         x: 593
@@ -358,14 +358,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9e66f6a5e4f3709c0800000000000000
-      internalID: -3961127741491812631
+      spriteID: efb101e0094961df0800000000000000
+      internalID: -209816986194011138
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_10
+      name: Idling-Sheet_10
       rect:
         serializedVersion: 2
         x: 657
@@ -380,14 +380,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 085e4d89b87c19520800000000000000
-      internalID: 2707164253404849536
+      spriteID: 42e745c975ae49420800000000000000
+      internalID: 2635989343924420132
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_11
+      name: Idling-Sheet_11
       rect:
         serializedVersion: 2
         x: 721
@@ -402,14 +402,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 40cb777a3faec8a00800000000000000
-      internalID: 760240769326365700
+      spriteID: dd404e9d0d5773770800000000000000
+      internalID: 8590464354101757149
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_12
+      name: Idling-Sheet_12
       rect:
         serializedVersion: 2
         x: 785
@@ -424,14 +424,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 782ceb195d74be710800000000000000
-      internalID: 1723550264998150791
+      spriteID: 72053bc1c6d7498d0800000000000000
+      internalID: -2840507561672486873
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_13
+      name: Idling-Sheet_13
       rect:
         serializedVersion: 2
         x: 849
@@ -446,14 +446,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f1cf32659507d9d20800000000000000
-      internalID: 3286906832049929247
+      spriteID: c4c6e85137c0fb7b0800000000000000
+      internalID: -5206428955794576308
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_14
+      name: Idling-Sheet_14
       rect:
         serializedVersion: 2
         x: 913
@@ -468,14 +468,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2ddf5e79f9e22f960800000000000000
-      internalID: 7634215581329522130
+      spriteID: 46c85134179c72400800000000000000
+      internalID: 299429388537400420
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player-Sheet_15
+      name: Idling-Sheet_15
       rect:
         serializedVersion: 2
         x: 977
@@ -490,8 +490,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4391975923e31ec40800000000000000
-      internalID: 5539777403619449140
+      spriteID: 57515b036839b2460800000000000000
+      internalID: 7218025032343426421
       vertices: []
       indices: 
       edges: []
@@ -510,22 +510,22 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Player-Sheet_0: 4518225611054890064
-      Player-Sheet_1: 1871674578834246284
-      Player-Sheet_10: 2707164253404849536
-      Player-Sheet_11: 760240769326365700
-      Player-Sheet_12: 1723550264998150791
-      Player-Sheet_13: 3286906832049929247
-      Player-Sheet_14: 7634215581329522130
-      Player-Sheet_15: 5539777403619449140
-      Player-Sheet_2: -8148742256322455360
-      Player-Sheet_3: 3489784368332026933
-      Player-Sheet_4: -3944583295012536477
-      Player-Sheet_5: 3090173003755996115
-      Player-Sheet_6: 8403341588387058359
-      Player-Sheet_7: 8222716190985997936
-      Player-Sheet_8: -3764308334532073066
-      Player-Sheet_9: -3961127741491812631
+      Idling-Sheet_0: -7922026883130198051
+      Idling-Sheet_1: -1504198994365459738
+      Idling-Sheet_10: 2635989343924420132
+      Idling-Sheet_11: 8590464354101757149
+      Idling-Sheet_12: -2840507561672486873
+      Idling-Sheet_13: -5206428955794576308
+      Idling-Sheet_14: 299429388537400420
+      Idling-Sheet_15: 7218025032343426421
+      Idling-Sheet_2: -612197155914634762
+      Idling-Sheet_3: -8128951655234609858
+      Idling-Sheet_4: -618904451490393791
+      Idling-Sheet_5: -5478246113768673775
+      Idling-Sheet_6: -3744542530567482463
+      Idling-Sheet_7: -7028792656909602267
+      Idling-Sheet_8: -5551469986105772550
+      Idling-Sheet_9: -209816986194011138
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

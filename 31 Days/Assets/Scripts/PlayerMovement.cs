@@ -4,10 +4,11 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float movement;
     private Animator anim;
     [SerializeField] private float moveSpeed;
     [SerializeField] private InputActionReference move;
+    private float movement;
+    private bool facingRight = true;
 
     private void Awake()
     {
@@ -19,20 +20,25 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         movement = move.action.ReadValue<float>();
+        anim.SetBool("isMoving", movement != 0);
 
-        if (movement != 0)
+        if ((movement > 0 && !facingRight) || (movement < 0 && facingRight))
         {
-            Debug.Log("Moved!");
-            anim.SetBool("isMoving", true);
+            Flip();
         }
-        else
-        {
-            anim.SetBool("isMoving", false);
-        }
+        
     }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(movement * moveSpeed, rb.linearVelocityY);
+    }
+
+    private void Flip()
+    {
+        facingRight = !facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }

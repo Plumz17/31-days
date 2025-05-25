@@ -3,26 +3,27 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Movement Settings")]
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private InputActionReference moveInput;
+
     private Rigidbody2D rb;
     private Animator anim;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private InputActionReference move;
     private float movement;
-    private bool facingRight = true;
-
+    private bool isFacingRight = true;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        move.action.Enable();
+        moveInput.action.Enable();
     }
 
     private void Update()
     {
-        movement = move.action.ReadValue<float>();
+        movement = moveInput.action.ReadValue<float>();
         anim.SetBool("isMoving", movement != 0);
 
-        if ((movement > 0 && !facingRight) || (movement < 0 && facingRight))
+        if ((movement > 0 && !isFacingRight) || (movement < 0 && isFacingRight))
         {
             Flip();
         }
@@ -36,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Flip()
     {
-        facingRight = !facingRight;
+        isFacingRight = !isFacingRight;
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;

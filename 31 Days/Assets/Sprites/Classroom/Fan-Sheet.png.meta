@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 2aa4985b4b343304d8e650ab61be08c3
+guid: 2a67866bcbc27724cb70142f76198267
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3962405686943246956
-    second: True Background-Sheet_0
+      213: -8702846061505332610
+    second: Fan-Sheet_0
+  - first:
+      213: 3983817912475562129
+    second: Fan-Sheet_1
+  - first:
+      213: 1733243213786644623
+    second: Fan-Sheet_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: True Background-Sheet_0
+      name: Fan-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 480
-        height: 180
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,52 +121,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49592cd7505b209c0800000000000000
-      internalID: -3962405686943246956
+      spriteID: e7a3111ed97493780800000000000000
+      internalID: -8702846061505332610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: True Background-Sheet_1
+      name: Fan-Sheet_1
       rect:
         serializedVersion: 2
-        x: 480
+        x: 32
         y: 0
-        width: 480
-        height: 180
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 90545a4370c297e4fbb1b66bec0dd352
-      internalID: -1981592257
+      spriteID: 190b1f2c84d594730800000000000000
+      internalID: 3983817912475562129
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: True Background-Sheet_2
+      name: Fan-Sheet_2
       rect:
         serializedVersion: 2
-        x: 960
+        x: 64
         y: 0
-        width: 480
-        height: 180
+        width: 32
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 36105dab44850e74a9e63089e49f22a5
-      internalID: 685753111
+      spriteID: f800c131587bd0810800000000000000
+      internalID: 1733243213786644623
       vertices: []
       indices: 
       edges: []
@@ -169,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c280f1803112c284bb99ad184cdc45dc
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -177,13 +183,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":480.0,"y":180.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      True Background-Sheet_0: -3962405686943246956
-      True Background-Sheet_1: -1981592257
-      True Background-Sheet_2: 685753111
+      Fan-Sheet_0: -8702846061505332610
+      Fan-Sheet_1: 3983817912475562129
+      Fan-Sheet_2: 1733243213786644623
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

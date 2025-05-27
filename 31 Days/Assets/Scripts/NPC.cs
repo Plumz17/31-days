@@ -19,6 +19,7 @@ public class NPC : MonoBehaviour
     public float wordSpeed = 0.05f;
     private int currentLineIndex = 0;
     private bool isTyping = false;
+    private Coroutine typingCoroutine;
 
     [Header("Bobbing Animation")]
     float originalY;
@@ -84,7 +85,7 @@ public class NPC : MonoBehaviour
                 if (isTyping)
                 {
                     // If currently typing, skip to the end of the line
-                    StopAllCoroutines();
+                    StopCoroutine(typingCoroutine);
                     dialogueText.text = dialogueLines[currentLineIndex];
                     isTyping = false;
                 }
@@ -108,11 +109,11 @@ public class NPC : MonoBehaviour
         {
             // Start the dialogue
             dialoguePanel.SetActive(true);
-            StartCoroutine(Typing()); // Start typing effect
+            typingCoroutine = StartCoroutine(Typing());
         }
     }
 
-    public void NextLine()
+    public void NextLine() // Method to go to the next line of dialogue
     {
         if (currentLineIndex < dialogueLines.Length - 1)
         {
@@ -126,7 +127,7 @@ public class NPC : MonoBehaviour
         }
     }
 
-    IEnumerator Typing()
+    IEnumerator Typing() // Coroutine to handle typing effect
     {
         isTyping = true;
         dialogueText.text = "";
@@ -138,8 +139,14 @@ public class NPC : MonoBehaviour
         isTyping = false; // Typing is done
     }
 
-    private void ZeroText()
-    {
+    private void ZeroText() // Clear the text and reset the dialogue state
+    {   
+        if (typingCoroutine != null)
+        {
+            StopCoroutine(typingCoroutine); // Stop Typing if it's running
+            typingCoroutine = null;
+        }
+
         dialogueText.text = string.Empty; // Clear the text
         currentLineIndex = 0;
         dialoguePanel.SetActive(false);

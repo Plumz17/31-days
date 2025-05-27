@@ -3,36 +3,43 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private float movement;
-    private Animator anim;
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private InputActionReference move;
+    [Header("Movement Settings")]
+    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private InputActionReference moveInput;
 
+    private Rigidbody2D rb;
+    private Animator anim;
+    private float movement;
+    private bool isFacingRight = true;
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        move.action.Enable();
+        moveInput.action.Enable();
     }
 
     private void Update()
     {
-        movement = move.action.ReadValue<float>();
+        movement = moveInput.action.ReadValue<float>();
+        anim.SetBool("isMoving", movement != 0);
 
-        if (movement != 0)
+        if ((movement > 0 && !isFacingRight) || (movement < 0 && isFacingRight))
         {
-            Debug.Log("Moved!");
-            anim.SetBool("isMoving", true);
+            Flip();
         }
-        else
-        {
-            anim.SetBool("isMoving", false);
-        }
+        
     }
 
     private void FixedUpdate()
     {
         rb.linearVelocity = new Vector2(movement * moveSpeed, rb.linearVelocityY);
+    }
+
+    private void Flip()
+    {
+        isFacingRight = !isFacingRight;
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 }

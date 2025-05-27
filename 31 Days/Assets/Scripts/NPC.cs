@@ -16,8 +16,9 @@ public class NPC : MonoBehaviour
     public GameObject dialoguePanel;
     public TMP_Text dialogueText;
     public String[] dialogueLines;
-    private int currentLineIndex = 0;
     public float wordSpeed = 0.05f;
+    private int currentLineIndex = 0;
+    private bool isTyping = false;
 
     [Header("Bobbing Animation")]
     float originalY;
@@ -72,8 +73,26 @@ public class NPC : MonoBehaviour
     {
         if (playerIsClose && interactInput.action.triggered)
         {
-            exclamationMark.GetComponent<SpriteRenderer>().enabled = false; // Hide the exclamation mark when interacting
-            HandleDialogue();
+            if (!dialoguePanel.activeInHierarchy)
+            {
+                exclamationMark.GetComponent<SpriteRenderer>().enabled = false;
+                HandleDialogue();
+            }
+
+            else
+            {
+                if (isTyping)
+                {
+                    // If currently typing, skip to the end of the line
+                    StopAllCoroutines();
+                    dialogueText.text = dialogueLines[currentLineIndex];
+                    isTyping = false;
+                }
+                else
+                {
+                    NextLine(); // Go to the next line of dialogue
+                }
+            }
         }
     }
 
@@ -109,11 +128,14 @@ public class NPC : MonoBehaviour
 
     IEnumerator Typing()
     {
+        isTyping = true;
+        dialogueText.text = "";
         foreach (char letter in dialogueLines[currentLineIndex].ToCharArray())
         {
             dialogueText.text += letter; // Add each letter to the text
             yield return new WaitForSeconds(wordSpeed); // Wait for the specified word speed
         }
+        isTyping = false; // Typing is done
     }
 
     private void ZeroText()
@@ -122,5 +144,10 @@ public class NPC : MonoBehaviour
         currentLineIndex = 0;
         dialoguePanel.SetActive(false);
         exclamationMark.GetComponent<SpriteRenderer>().enabled = true;
+    }
+
+    private void OnDisable()
+    {
+        interactInput.action.Disable(); // Disable the interaction action when this script is disabled  
     }
 }

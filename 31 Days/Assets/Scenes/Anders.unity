@@ -348,11 +348,7 @@ MonoBehaviour:
   playerTransform: {fileID: 1949224448}
   exclamationMark: {fileID: 1512411757}
   dialogueManager: {fileID: 328621757}
-  playerMovement: {fileID: 1949224443}
-  dialogueLines:
-  - The world is about to change! Your existence won't belong there! I thought I
-    could just leave you be, but you're like a plague...
-  - I'll have to get rid of all of you!
+  startingNode: {fileID: 11400000, guid: 40b4fe536bc1be7438b8b35b830ce529, type: 2}
 --- !u!114 &328621757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -367,6 +363,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 1245713635}
   dialogueText: {fileID: 1541763414}
+  characterPortrait: {fileID: 0}
+  characterName: {fileID: 1541763414}
   playerMovement: {fileID: 1949224443}
   wordSpeed: 0.05
 --- !u!1 &519420028

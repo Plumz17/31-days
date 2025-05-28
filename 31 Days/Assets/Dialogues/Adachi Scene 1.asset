@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: Adachi Scene 1
+  m_EditorClassIdentifier: 
+  characterName: Adachi
+  characterPortrait: {fileID: -6050918096079816202, guid: a097c45ddab0b504aa2d01cd873051b6, type: 3}
+  dialogueLines:
+  - Don't make me laugh. Just because someone joins the police doesn't make them
+    some kinda "agent of justice."
+  - Y'know why I applied?
+  - "So I could legally carry a gun\u2026 That's all."
+  - You'd be surprised how many are like that.
+  - "I thought it would be fun, too, but to tell the truth, that was a wash. Everyone
+    around me was such an idiot\u2026"
+  - "I made one tiny mistake, and they all got on my case and sent me out here to
+    Nowheresville as punishment\u2026\r"
+  - "I was bored shitless and wondering what to do next\u2026 when I discovered this
+    power.\r\n"
+  nextNode: {fileID: 11400000, guid: 1cadb9702b8a3ef419205754d63e8004, type: 2}

@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] Transform playerTransform;
     [SerializeField] ExclamationMark exclamationMark;
     [SerializeField] DialogueManager dialogueManager;
+    [SerializeField] PlayerMovement playerMovement;
 
     [Header("Dialogue Lines")]
     [SerializeField] string[] dialogueLines;
@@ -26,6 +27,7 @@ public class DialogueTrigger : MonoBehaviour
             FaceNPCToPlayer(); // Make the player face the NPC when interacting
             exclamationMark.SetVisible(false);
             dialogueManager.StartDialogue(dialogueLines);
+            playerMovement.SetCanMove(false); // Disable player movement while dialogue is active
         }
         else if (dialogueManager.IsTyping)
         {
@@ -34,6 +36,10 @@ public class DialogueTrigger : MonoBehaviour
         else
         {
             dialogueManager.NextLine(); // Go to the next line of dialogue
+            if (!dialogueManager.IsActive) // Show exclamation mark again when dialogue ends
+            {
+                exclamationMark.SetVisible(true); 
+            }
         }
     }
 

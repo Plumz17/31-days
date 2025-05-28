@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private float movement;
     private bool isFacingRight = true;
+    private bool canMove = true;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,6 +22,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (!canMove)
+        {
+            movement = 0;
+            anim.SetBool("isMoving", false);
+            return;
+        }
+
         movement = moveInput.action.ReadValue<float>();
         anim.SetBool("isMoving", movement != 0);
 
@@ -41,5 +50,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    public void SetCanMove(bool value)
+    {
+        canMove = value;
     }
 }

@@ -4,9 +4,10 @@ using System.Collections;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("UI References")]
+    [Header("References")]
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TMP_Text dialogueText;
+    [SerializeField] PlayerMovement playerMovement;
 
     [Header("Dialogue Settings")]
     [SerializeField] float wordSpeed = 0.05f;
@@ -85,5 +86,6 @@ public class DialogueManager : MonoBehaviour
 
         dialogueText.text = "";
         dialoguePanel.SetActive(false);
+        playerMovement.SetCanMove(true); 
     }
 }

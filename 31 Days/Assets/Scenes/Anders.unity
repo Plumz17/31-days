@@ -238,9 +238,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 328621752}
-  - component: {fileID: 328621755}
   - component: {fileID: 328621754}
   - component: {fileID: 328621753}
+  - component: {fileID: 328621757}
+  - component: {fileID: 328621756}
   m_Layer: 0
   m_Name: DialogueHandler
   m_TagString: Untagged
@@ -331,7 +332,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 6, y: 10}
   m_EdgeRadius: 0
---- !u!114 &328621755
+--- !u!114 &328621756
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -340,20 +341,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 328621751}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af13b410ae762884e856dcdb25a72f7e, type: 3}
+  m_Script: {fileID: 11500000, guid: f5136dc4035440f4cb60c0406c1265c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactInput: {fileID: -7614341905029878587, guid: 4467a350dcf8a0b45a0988ddd5182ca7, type: 3}
   playerTransform: {fileID: 1949224448}
-  dialoguePanel: {fileID: 1245713635}
-  dialogueText: {fileID: 1541763414}
-  exclamationMark: {fileID: 1512411753}
+  exclamationMark: {fileID: 1512411757}
+  dialogueManager: {fileID: 328621757}
   dialogueLines:
   - The world is about to change! Your existence won't belong there! I thought I
     could just leave you be, but you're like a plague...
   - I'll have to get rid of all of you!
+--- !u!114 &328621757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 328621751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 641c0d2121494844f9af16d689903641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialoguePanel: {fileID: 1245713635}
+  dialogueText: {fileID: 1541763414}
   wordSpeed: 0.05
-  floatStrength: 0.15
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1493,6 +1506,7 @@ GameObject:
   - component: {fileID: 1512411756}
   - component: {fileID: 1512411755}
   - component: {fileID: 1512411754}
+  - component: {fileID: 1512411757}
   m_Layer: 0
   m_Name: Exclamation
   m_TagString: Untagged
@@ -1592,6 +1606,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1215855258}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1512411757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512411753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dae28d93d71d2fb46afb8c2097103a7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  floatStrength: 0.2
 --- !u!1 &1541763412
 GameObject:
   m_ObjectHideFlags: 0

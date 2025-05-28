@@ -6,14 +6,16 @@ using System;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("References")]
+    [Header("References")] // Set up references in the inspector
+    [Tooltip("The panel that contains the dialogue UI elements.")]
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] Sprite characterPortrait;
     [SerializeField] TMP_Text characterName;
     [SerializeField] PlayerMovement playerMovement;
 
-    [Header("Dialogue Settings")]
+    [Header("Dialogue Settings")] // Settings for dialogue appearance and behavior
+    [Tooltip("The speed at which each word appears in the dialogue text.")]
     [SerializeField] float wordSpeed = 0.05f;
     private BaseNode currentNode;
     private SingleChoiceNode currentSingleNode;
@@ -25,9 +27,9 @@ public class DialogueManager : MonoBehaviour
     public bool IsActive => dialoguePanel.activeInHierarchy;
 
 
-    private void Awake() // Ensure references are set and dialogue panel is hidden at start
+    private void Awake() 
     {
-        if (dialoguePanel == null || dialogueText == null)
+        if (dialoguePanel == null || dialogueText == null) // Check if references are set in the inspector
         {
             Debug.LogError("DialoguePanel or DialogueText is not assigned in the inspector.");
         }
@@ -51,29 +53,28 @@ public class DialogueManager : MonoBehaviour
 
     public void NextLine() // Advance Dialogue
     {
-        if (isTyping)
+        if (isTyping) // If currently typing, finish the line immediately
         {
             FinishTyping();
             return;
         }
 
-        if (currentNode is SingleChoiceNode)
+        if (currentNode is SingleChoiceNode) 
         {
-            currentLineIndex++;
+            currentLineIndex++; // If the current node is a SingleChoiceNode, advance to the next line
 
-            if (currentLineIndex < currentSingleNode.dialogueLines.Length)
+            if (currentLineIndex < currentSingleNode.dialogueLines.Length) // Check if there are more lines to display
             {
                 StartTypingLine(currentSingleNode.dialogueLines[currentLineIndex]);
             }
             
             else
             {
-                // Move to next node or end dialogue
-                if (currentSingleNode.nextNode != null)
+                if (currentSingleNode.nextNode != null) // Check if there is a next node to transition to
                 {
-                    StartDialogue(currentSingleNode.nextNode);
+                    StartDialogue(currentSingleNode.nextNode); // If so, do the loop all over again with the next node
                 }
-                else
+                else // If no next node, end the dialogue
                 {
                     EndDialogue();
                 }
@@ -81,7 +82,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void StartTypingLine(string line)
+    private void StartTypingLine(string line) // Starts typing out the current line of dialogue
     {
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);

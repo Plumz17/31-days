@@ -8,27 +8,27 @@ public class ExclamationMark : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Animator animator;
 
-    private void Awake()
+    private void Awake() // Set up components
     {
         originalY = transform.position.y;
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
     }
 
-    private void Update()
+    private void Update() //Handle Bobbing effect
     {
         transform.position = new Vector3(transform.position.x,
             originalY + ((float)Math.Sin(Time.time) * floatStrength),
             transform.position.z);
     }
 
-    public void SetVisible(bool visible)
+    public void SetVisible(bool visible) // Show or hide the exclamation mark
     {
         if (spriteRenderer != null)
             spriteRenderer.enabled = visible;
     }
 
-    public void SetIsClose(bool isClose)
+    public void SetIsClose(bool isClose) // Change Exclamation Mark to arrow and vice versa
     {
         if (animator != null)
         {

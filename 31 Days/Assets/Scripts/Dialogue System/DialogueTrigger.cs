@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 public class DialogueTrigger : MonoBehaviour
 {
     [Header("References")] //Set Up references in the inspector
-    [SerializeField] InputActionReference interactInput;
     [SerializeField] Transform playerTransform;
     [SerializeField] ExclamationMark exclamationMark;
     [SerializeField] DialogueManager dialogueManager;
@@ -14,13 +13,20 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("The node to start the dialogue from when the player interacts with the NPC.")]
     [SerializeField] BaseNode startingNode;
 
+    InputActions playerInput;
+
     private bool playerIsClose = false;
-    private void OnEnable() => interactInput.action.Enable();
-    private void OnDisable() => interactInput.action.Disable();
+    private void OnEnable() => playerInput.Player.Enable();
+    private void OnDisable() => playerInput.Player.Disable();
+
+    void Awake()
+    {
+        playerInput = new InputActions();
+    }
 
     private void Update() // Handle player interaction with the NPC
     {
-        if (!playerIsClose || !interactInput.action.triggered) return; // Check if player is close and the interact input is triggered
+        if (!playerIsClose || !playerInput.Player.Interact.triggered) return; // Check if player is close and the interact input is triggered
 
         if (!dialogueManager.IsActive) // When Clicked, If dialogue is not active, start it
         {
@@ -37,7 +43,7 @@ public class DialogueTrigger : MonoBehaviour
             dialogueManager.NextLine();
             if (!dialogueManager.IsActive)
             {
-                exclamationMark.SetVisible(true); 
+                exclamationMark.SetVisible(true);
             }
         }
     }

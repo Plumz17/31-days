@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: Adachi Scene 2
+  m_EditorClassIdentifier: 
+  characterName: Adachi
+  characterPortrait: {fileID: -6050918096079816202, guid: a097c45ddab0b504aa2d01cd873051b6, type: 3}
+  dialogueLines:
+  - Let's be honest. There's nothing great about the real world, is there? It's just
+    dull and annoying as hell.
+  - "No one accepts that's the way things are\u2026 They're just stuck with it because
+    they can't deny it, either."
+  - "Those who actually succeed in life\u2026"
+  - They just happen to be born with the magic ticket called "talent."
+  - "Once you realize that, all you have left over in life is despair. The ultimate
+    game over.\r"
+  - Wouldn't it be better if that kind of reality was wiped away?
+  nextNode: {fileID: 11400000, guid: 5d9b40d59cf8b55438337c9116e1de87, type: 2}

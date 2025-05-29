@@ -5,7 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
-    [SerializeField] private InputActionReference moveInput;
+    InputActions playerInput;
 
     private Rigidbody2D rb;
     private Animator anim;
@@ -17,7 +17,9 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        moveInput.action.Enable();
+
+        playerInput = new InputActions();
+        playerInput.Player.Enable();
     }
 
     private void Update()
@@ -29,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        movement = moveInput.action.ReadValue<float>();
+        movement = playerInput.Player.Move.ReadValue<float>();
         anim.SetBool("isMoving", movement != 0);
 
         if ((movement > 0 && !isFacingRight) || (movement < 0 && isFacingRight))

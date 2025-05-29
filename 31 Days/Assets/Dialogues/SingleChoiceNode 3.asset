@@ -15,5 +15,5 @@ MonoBehaviour:
   characterName: Adachi
   characterPortrait: {fileID: -6050918096079816202, guid: a097c45ddab0b504aa2d01cd873051b6, type: 3}
   dialogueLines:
-  - B
+  - C
   nextNode: {fileID: 0}

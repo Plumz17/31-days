@@ -26,7 +26,6 @@ public class DialogueManager : MonoBehaviour
     private SingleChoiceNode currentSingleNode;
     private MultipleChoiceNode currentMultipleNode;
     private bool selectingOption = false;
-    public bool IsSelectingOption => selectingOption;
     private int currentOptionIndex = 0;
     int currentLineIndex = 0;
 
@@ -50,6 +49,8 @@ public class DialogueManager : MonoBehaviour
         playerInput = new InputActions();
     }
 
+    
+
     public void StartDialogue(BaseNode node) // Starts the dialogue with the provided lines
     {
         currentNode = node;
@@ -69,9 +70,8 @@ public class DialogueManager : MonoBehaviour
         {
             currentMultipleNode = multiple;
             currentSingleNode = null;
-            currentOptionIndex = 0;
-            selectingOption = false; // Wait to enable until the line is typed
-            StartTypingLine(multiple.dialogueLine);
+            selectingOption = true;
+            ShowChoices();
         }
         else
         {
@@ -106,6 +106,7 @@ public class DialogueManager : MonoBehaviour
         {
             BaseNode selectedNode = currentMultipleNode.options[currentOptionIndex].nextNode;
             selectingOption = false;
+            choicesPanel.SetActive(false);
 
             if (selectedNode != null)
             {
@@ -122,7 +123,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
         choicesPanel.SetActive(true);
-        Debug.Log("Test");
         characterName.text = currentMultipleNode.characterName;
         characterPortrait.sprite = currentMultipleNode.characterPortrait;
 
@@ -153,7 +153,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                choiceTexts[i].color = Color.white;
+                choiceTexts[i].color = Color.black;
             }
         }
     }
@@ -187,17 +187,6 @@ public class DialogueManager : MonoBehaviour
                 }
             }
         }
-
-        else if (currentNode is MultipleChoiceNode)
-        {
-            // Line has finished typing and the player pressed Next,
-            // but we haven't shown choices yet
-            if (!selectingOption)
-            {
-                selectingOption = true;
-                ShowChoices();
-            }
-        }
     }
 
     private void StartTypingLine(string line) // Starts typing out the current line of dialogue
@@ -206,7 +195,7 @@ public class DialogueManager : MonoBehaviour
             StopCoroutine(typingCoroutine);
 
         typingCoroutine = StartCoroutine(TypeLine(line));
-    }
+    } 
 
 
     private IEnumerator TypeLine(string line) // Coroutine to type out the current line of dialogue
@@ -219,12 +208,6 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(wordSpeed);
         }
         isTyping = false;
-        
-        if (currentMultipleNode != null && !selectingOption)
-        {
-            selectingOption = true;
-            ShowChoices();
-        }
     }
 
     public void FinishTyping() // Completes the current line of dialogue immediately
@@ -234,19 +217,7 @@ public class DialogueManager : MonoBehaviour
             
         if (currentNode is SingleChoiceNode) 
             dialogueText.text = currentSingleNode.dialogueLines[currentLineIndex];
-
-        else if (currentNode is MultipleChoiceNode)
-        {
-            dialogueText.text = currentMultipleNode.dialogueLine;
-
-            if (!selectingOption)
-            {
-                selectingOption = true;
-                ShowChoices();
-            }
-        }
         isTyping = false;
-        
     }
 
     public void EndDialogue() // Ends the dialogue and resets the state

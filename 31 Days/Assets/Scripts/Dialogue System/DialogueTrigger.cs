@@ -38,7 +38,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             dialogueManager.FinishTyping();
         }
-        else// When Clicked, If dialogue is active and not typing, go to the next line
+        else // When Clicked, If dialogue is active and not typing, go to the next line
         {
             dialogueManager.NextLine();
             if (!dialogueManager.IsActive)

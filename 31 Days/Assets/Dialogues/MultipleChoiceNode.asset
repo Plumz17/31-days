@@ -13,9 +13,12 @@ MonoBehaviour:
   m_Name: MultipleChoiceNode
   m_EditorClassIdentifier: 
   characterName: Adachi
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: -6050918096079816202, guid: a097c45ddab0b504aa2d01cd873051b6, type: 3}
+  dialogueLine: 
   options:
   - optionText: A
     nextNode: {fileID: 11400000, guid: 083babc9f3d510c4a9d4d28ea64864bd, type: 2}
   - optionText: B
+    nextNode: {fileID: 11400000, guid: ec94431472fc2dc43b437d2fa3cc1c91, type: 2}
+  - optionText: C
     nextNode: {fileID: 11400000, guid: ec94431472fc2dc43b437d2fa3cc1c91, type: 2}

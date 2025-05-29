@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Adachi
   characterPortrait: {fileID: -6050918096079816202, guid: a097c45ddab0b504aa2d01cd873051b6, type: 3}
+  dialogueLine: Wouldn't it be better if that kind of reality was wiped away?
   options:
   - optionText: That's complete BS!
     nextNode: {fileID: 11400000, guid: 96c9332b79125b44da28c5ee7a36b158, type: 2}

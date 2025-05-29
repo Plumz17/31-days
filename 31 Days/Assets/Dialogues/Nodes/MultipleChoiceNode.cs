@@ -10,6 +10,5 @@ public class DialogueOption
 [CreateAssetMenu(fileName = "MultipleChoiceNode", menuName = "Dialogue/MultipleChoiceNode")]
 public class MultipleChoiceNode : BaseNode
 {
-    public string dialogueLine;
     public DialogueOption[] options;
 }

@@ -13,7 +13,7 @@ public class DialogueTrigger : MonoBehaviour
     [Tooltip("The node to start the dialogue from when the player interacts with the NPC.")]
     [SerializeField] BaseNode startingNode;
 
-    InputActions playerInput;
+    public InputActions playerInput;
 
     private bool playerIsClose = false;
     private void OnEnable() => playerInput.Player.Enable();

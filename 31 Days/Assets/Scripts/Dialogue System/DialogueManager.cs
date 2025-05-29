@@ -48,9 +48,7 @@ public class DialogueManager : MonoBehaviour
 
         playerInput = new InputActions();
     }
-
     
-
     public void StartDialogue(BaseNode node) // Starts the dialogue with the provided lines
     {
         currentNode = node;
@@ -70,7 +68,6 @@ public class DialogueManager : MonoBehaviour
         {
             currentMultipleNode = multiple;
             currentSingleNode = null;
-            selectingOption = true;
             ShowChoices();
         }
         else
@@ -78,6 +75,21 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError("Unsupported node type: " + node.GetType());
         }
 
+    }
+
+    private void EnterChoiceMode()
+    {
+        playerInput.Player.Disable(); // Prevent Interact input
+        playerInput.UI.Enable();
+        selectingOption = true;
+
+    }
+
+    private void ExitChoiceMode()
+    {
+        playerInput.UI.Disable();
+        playerInput.Player.Enable();
+        selectingOption = false;
     }
 
     void Update()
@@ -93,7 +105,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (playerInput.UI.Down.triggered)
         {
-            Debug.Log("Down");
             currentOptionIndex = (currentOptionIndex + 1) % currentMultipleNode.options.Length;
             HighlightCurrentOption();
         }
@@ -105,8 +116,8 @@ public class DialogueManager : MonoBehaviour
         else if (playerInput.UI.Accept.triggered)
         {
             BaseNode selectedNode = currentMultipleNode.options[currentOptionIndex].nextNode;
-            selectingOption = false;
             choicesPanel.SetActive(false);
+            ExitChoiceMode();
 
             if (selectedNode != null)
             {
@@ -121,6 +132,7 @@ public class DialogueManager : MonoBehaviour
 
     private void ShowChoices()
     {
+        EnterChoiceMode();
         dialoguePanel.SetActive(true);
         choicesPanel.SetActive(true);
         characterName.text = currentMultipleNode.characterName;

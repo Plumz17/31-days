@@ -93,7 +93,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (playerInput.UI.Down.triggered)
         {
-            Debug.Log("Down");
             currentOptionIndex = (currentOptionIndex + 1) % currentMultipleNode.options.Length;
             HighlightCurrentOption();
         }
@@ -122,7 +121,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
         choicesPanel.SetActive(true);
-        Debug.Log("Test");
         characterName.text = currentMultipleNode.characterName;
         characterPortrait.sprite = currentMultipleNode.characterPortrait;
 
@@ -153,7 +151,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
-                choiceTexts[i].color = Color.white;
+                choiceTexts[i].color = Color.black;
             }
         }
     }

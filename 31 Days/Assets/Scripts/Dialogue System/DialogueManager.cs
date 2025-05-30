@@ -17,80 +17,40 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] GameObject choicesPanel;
     [SerializeField] TMP_Text[] choiceTexts;
-    InputActions playerInput;
+    
 
     [Header("Dialogue Settings")] // Settings for dialogue appearance and behavior
     [Tooltip("The speed at which each word appears in the dialogue text.")]
     [SerializeField] float wordSpeed = 0.05f;
+    [SerializeField] Color selectedColor;
+    [SerializeField] Color unselectedColor;
+    private float choiceInputDelay = 0.1f; // Small delay buffer
+    private float choiceInputTimer = 0f;
+
+    private InputActions playerInput;
     private BaseNode currentNode;
     private SingleChoiceNode currentSingleNode;
     private MultipleChoiceNode currentMultipleNode;
     private bool selectingOption = false;
-    private int currentOptionIndex = 0;
-    int currentLineIndex = 0;
-
-    Coroutine typingCoroutine;
     private bool isTyping = false;
+    private int currentLineIndex = 0;
+    private int currentOptionIndex = 0;
+    Coroutine typingCoroutine;
+    
+
     public bool IsTyping => isTyping;
     public bool IsActive => dialoguePanel.activeInHierarchy;
-    private void OnEnable() => playerInput.UI.Enable();
-    private void OnDisable() => playerInput.UI.Disable();
-
 
     private void Awake()
     {
-        if (dialoguePanel == null || dialogueText == null) // Check if references are set in the inspector
-        {
-            Debug.LogError("DialoguePanel or DialogueText is not assigned in the inspector.");
-        }
-        dialoguePanel.SetActive(false); // Ensure the dialogue panel is hidden at start
-        choicesPanel.SetActive(false);
-
         playerInput = new InputActions();
-    }
-    
-    public void StartDialogue(BaseNode node) // Starts the dialogue with the provided lines
-    {
-        currentNode = node;
-        currentLineIndex = 0;
-        dialoguePanel.SetActive(true);
-        playerMovement.SetCanMove(false);
-        characterPortrait.sprite = node.characterPortrait;
-        characterName.text = node.characterName;
-        if (node is SingleChoiceNode single)
-        {
-            currentSingleNode = single;
-            currentMultipleNode = null;
-            currentOptionIndex = 0;
-            StartTypingLine(currentSingleNode.dialogueLines[currentLineIndex]);
-        }
-        else if (node is MultipleChoiceNode multiple)
-        {
-            currentMultipleNode = multiple;
-            currentSingleNode = null;
-            ShowChoices();
-        }
-        else
-        {
-            Debug.LogError("Unsupported node type: " + node.GetType());
-        }
 
+        dialoguePanel.SetActive(false);
+        choicesPanel.SetActive(false);
     }
 
-    private void EnterChoiceMode()
-    {
-        playerInput.Player.Disable(); // Prevent Interact input
-        playerInput.UI.Enable();
-        selectingOption = true;
-
-    }
-
-    private void ExitChoiceMode()
-    {
-        playerInput.UI.Disable();
-        playerInput.Player.Enable();
-        selectingOption = false;
-    }
+    private void OnEnable() => playerInput.UI.Enable();
+    private void OnDisable() => playerInput.UI.Disable();
 
     void Update()
     {
@@ -98,11 +58,66 @@ public class DialogueManager : MonoBehaviour
         {
             HandleChoiceInput();
         }
-        
+    }
+    
+    public void StartDialogue(BaseNode node) // Starts the dialogue with the provided lines
+    {
+        currentNode = node;
+        currentLineIndex = 0;
+        SetUpDialogueUI(node); // Set up the dialogue UI with the node's information
+
+        if (node is SingleChoiceNode single)
+        {
+            currentSingleNode = single;
+            currentMultipleNode = null;
+            currentOptionIndex = 0;
+            StartTypingLine(single.dialogueLines[currentLineIndex]);
+        }
+        else if (node is MultipleChoiceNode multiple)
+        {
+            // Enter choice mode for MultipleChoiceNode
+            currentMultipleNode = multiple;
+            currentSingleNode = null;
+            ShowChoices();
+        }
     }
 
-    private void HandleChoiceInput()
+    private void SetUpDialogueUI(BaseNode node) // Sets up the dialogue panel with the provided node's information
     {
+        if (node is MultipleChoiceNode)
+        {
+            choicesPanel.SetActive(true);
+            EnterChoiceMode();
+        }
+        dialoguePanel.SetActive(true);
+        characterName.text = node.characterName;
+        characterPortrait.sprite = node.characterPortrait;
+        playerMovement.SetCanMove(false);
+    }
+
+    private void EnterChoiceMode() // Enters the choice mode, disabling player input and enabling UI input
+    {
+        playerInput.Player.Disable();
+        playerInput.UI.Enable();
+        selectingOption = true;
+        choiceInputTimer = choiceInputDelay;
+    }
+
+    private void ExitChoiceMode() // Exits the choice mode and re-enables player input
+    {
+        playerInput.UI.Disable();
+        playerInput.Player.Enable();
+        selectingOption = false;
+    }
+
+    private void HandleChoiceInput() // Handles input for navigating and selecting choices in a MultipleChoiceNode
+    {
+        if (choiceInputTimer > 0f)
+        {
+            choiceInputTimer -= Time.unscaledDeltaTime;
+            return; // Wait until delay passes
+        }
+
         if (playerInput.UI.Down.triggered)
         {
             currentOptionIndex = (currentOptionIndex + 1) % currentMultipleNode.options.Length;
@@ -115,29 +130,24 @@ public class DialogueManager : MonoBehaviour
         }
         else if (playerInput.UI.Accept.triggered)
         {
-            BaseNode selectedNode = currentMultipleNode.options[currentOptionIndex].nextNode;
-            choicesPanel.SetActive(false);
-            ExitChoiceMode();
-
-            if (selectedNode != null)
-            {
-                StartDialogue(selectedNode);
-            }
-            else
-            {
-                EndDialogue();
-            }
+            SelectChoice();
         }
     }
 
-    private void ShowChoices()
+    private void SelectChoice()
     {
-        EnterChoiceMode();
-        dialoguePanel.SetActive(true);
-        choicesPanel.SetActive(true);
-        characterName.text = currentMultipleNode.characterName;
-        characterPortrait.sprite = currentMultipleNode.characterPortrait;
+        BaseNode nextNode = currentMultipleNode.options[currentOptionIndex].nextNode;
+        choicesPanel.SetActive(false);
+        ExitChoiceMode();
 
+        if (nextNode != null)
+            StartDialogue(nextNode);
+        else
+            EndDialogue();
+    }
+
+    private void ShowChoices() // Displays the choices available in a MultipleChoiceNode
+    {
         for (int i = 0; i < currentMultipleNode.options.Length; i++)
         {
             if (i < choiceTexts.Length)
@@ -157,16 +167,11 @@ public class DialogueManager : MonoBehaviour
 
     private void HighlightCurrentOption()
     {
-        for (int i = 0; i < currentMultipleNode.options.Length; i++)
+        int optionsLength = currentMultipleNode.options.Length;
+
+        for (int i = 0; i < optionsLength; i++)
         {
-            if (i == currentOptionIndex)
-            {
-                choiceTexts[i].color = Color.yellow;
-            }
-            else
-            {
-                choiceTexts[i].color = Color.black;
-            }
+            choiceTexts[i].color = (i == currentOptionIndex) ? selectedColor : unselectedColor;
         }
     }
 
@@ -229,6 +234,7 @@ public class DialogueManager : MonoBehaviour
             
         if (currentNode is SingleChoiceNode) 
             dialogueText.text = currentSingleNode.dialogueLines[currentLineIndex];
+
         isTyping = false;
     }
 
@@ -239,12 +245,10 @@ public class DialogueManager : MonoBehaviour
 
         dialogueText.text = "";
         if (dialoguePanel != null)
-        dialoguePanel.SetActive(false);
-
+            dialoguePanel.SetActive(false);
         if (choicesPanel != null)
             choicesPanel.SetActive(false);
-
         if (playerMovement != null)
-            playerMovement.SetCanMove(true); 
+        playerMovement.SetCanMove(true);
     }
 }

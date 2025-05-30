@@ -24,8 +24,9 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] float wordSpeed = 0.05f;
     [SerializeField] Color selectedColor;
     [SerializeField] Color unselectedColor;
-    private float choiceInputDelay = 0.1f; // Small delay buffer
-    private float choiceInputTimer = 0f;
+
+    private float choiceInputDelay = 0.1f; // Delay before processing choice input
+    private float choiceInputTimer = 0f; // Timer to manage input delay for choices
 
     private InputActions playerInput;
     private BaseNode currentNode;
@@ -64,7 +65,7 @@ public class DialogueManager : MonoBehaviour
     {
         currentNode = node;
         currentLineIndex = 0;
-        SetUpDialogueUI(node); // Set up the dialogue UI with the node's information
+        SetUpDialogueUI(node);
 
         if (node is SingleChoiceNode single)
         {
@@ -75,7 +76,6 @@ public class DialogueManager : MonoBehaviour
         }
         else if (node is MultipleChoiceNode multiple)
         {
-            // Enter choice mode for MultipleChoiceNode
             currentMultipleNode = multiple;
             currentSingleNode = null;
             ShowChoices();
@@ -134,7 +134,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private void SelectChoice()
+    private void SelectChoice() // Selects the current choice in a MultipleChoiceNode and transitions to the next node
     {
         BaseNode nextNode = currentMultipleNode.options[currentOptionIndex].nextNode;
         choicesPanel.SetActive(false);
@@ -165,7 +165,7 @@ public class DialogueManager : MonoBehaviour
         HighlightCurrentOption();
     }
 
-    private void HighlightCurrentOption()
+    private void HighlightCurrentOption() // Highlights the currently selected option in a MultipleChoiceNode; consntantly running in Update()
     {
         int optionsLength = currentMultipleNode.options.Length;
 
@@ -183,26 +183,25 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (currentNode is SingleChoiceNode)
+        if (currentNode is not SingleChoiceNode single)
+            return;
+
+        currentLineIndex++; // If the current node is a SingleChoiceNode, advance to the next line
+
+        if (currentLineIndex < single.dialogueLines.Length) // Check if there are more lines to display
         {
-            currentLineIndex++; // If the current node is a SingleChoiceNode, advance to the next line
+            StartTypingLine(single.dialogueLines[currentLineIndex]);
+            return; // Exit early to avoid further processing
+        }
 
-            if (currentLineIndex < currentSingleNode.dialogueLines.Length) // Check if there are more lines to display
-            {
-                StartTypingLine(currentSingleNode.dialogueLines[currentLineIndex]);
-            }
+        if (single.nextNode != null) // Check if there is a next node to transition to
+        {
+            StartDialogue(single.nextNode); // If so, do the loop all over again with the next node
+        }
 
-            else
-            {
-                if (currentSingleNode.nextNode != null) // Check if there is a next node to transition to
-                {
-                    StartDialogue(currentSingleNode.nextNode); // If so, do the loop all over again with the next node
-                }
-                else // If no next node, end the dialogue
-                {
-                    EndDialogue();
-                }
-            }
+        else // If no next node, end the dialogue
+        {
+            EndDialogue();
         }
     }
 
@@ -248,7 +247,6 @@ public class DialogueManager : MonoBehaviour
             dialoguePanel.SetActive(false);
         if (choicesPanel != null)
             choicesPanel.SetActive(false);
-        if (playerMovement != null)
         playerMovement.SetCanMove(true);
     }
 }

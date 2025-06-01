@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Adachi Scene 2
   m_EditorClassIdentifier: 
   characterName: Adachi
-  characterPortrait: {fileID: -6050918096079816202, guid: a097c45ddab0b504aa2d01cd873051b6, type: 3}
+  characterPortrait: {fileID: -6674868978544099146, guid: dbc37ba2b0f0b6f47bad55f4903b28bd, type: 3}
   dialogueLines:
   - Let's be honest. There's nothing great about the real world, is there? It's just
     dull and annoying as hell.

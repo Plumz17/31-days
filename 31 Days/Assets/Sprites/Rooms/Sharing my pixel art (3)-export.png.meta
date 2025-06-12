@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 8820970294d977446beaeab0c2ed97ae
+guid: 2beaf11d78fc667468dfbf0ae8a54a9f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 228663082792738388
-    second: Frame 24_0
+      213: -4480232413864906081
+    second: Sharing my pixel art (3)-export_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -46,12 +46,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Frame 24_0
+      name: Sharing my pixel art (3)-export_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 608
-        height: 202
+        width: 480
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 45e5b1fbcdf5c2300800000000000000
-      internalID: 228663082792738388
+      spriteID: f92346c5b5403d1c0800000000000000
+      internalID: -4480232413864906081
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Frame 24_0: 228663082792738388
+      Sharing my pixel art (3)-export_0: -4480232413864906081
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

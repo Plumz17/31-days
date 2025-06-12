@@ -17,7 +17,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField] GameObject choicesPanel;
     [SerializeField] TMP_Text[] choiceTexts;
-    
+    [SerializeField] GameObject[] choiceTextBoxes;
+
 
     [Header("Dialogue Settings")] // Settings for dialogue appearance and behavior
     [Tooltip("The speed at which each word appears in the dialogue text.")]
@@ -37,7 +38,7 @@ public class DialogueManager : MonoBehaviour
     private int currentLineIndex = 0;
     private int currentOptionIndex = 0;
     Coroutine typingCoroutine;
-    
+
 
     public bool IsTyping => isTyping;
     public bool IsActive => dialoguePanel.activeInHierarchy;
@@ -60,7 +61,7 @@ public class DialogueManager : MonoBehaviour
             HandleChoiceInput();
         }
     }
-    
+
     public void StartDialogue(BaseNode node) // Starts the dialogue with the provided lines
     {
         currentNode = node;
@@ -153,11 +154,13 @@ public class DialogueManager : MonoBehaviour
             if (i < choiceTexts.Length)
             {
                 choiceTexts[i].gameObject.SetActive(true);
+                choiceTextBoxes[i].SetActive(true);
                 choiceTexts[i].text = currentMultipleNode.options[i].optionText;
             }
             else
             {
                 choiceTexts[i].gameObject.SetActive(false);
+                choiceTextBoxes[i].SetActive(false);
             }
 
         }
@@ -211,7 +214,7 @@ public class DialogueManager : MonoBehaviour
             StopCoroutine(typingCoroutine);
 
         typingCoroutine = StartCoroutine(TypeLine(line));
-    } 
+    }
 
 
     private IEnumerator TypeLine(string line) // Coroutine to type out the current line of dialogue
@@ -230,8 +233,8 @@ public class DialogueManager : MonoBehaviour
     {
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
-            
-        if (currentNode is SingleChoiceNode) 
+
+        if (currentNode is SingleChoiceNode)
             dialogueText.text = currentSingleNode.dialogueLines[currentLineIndex];
 
         isTyping = false;
@@ -249,4 +252,6 @@ public class DialogueManager : MonoBehaviour
             choicesPanel.SetActive(false);
         playerMovement.SetCanMove(true);
     }
+    
+    
 }

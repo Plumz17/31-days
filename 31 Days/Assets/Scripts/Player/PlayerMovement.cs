@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Flip();
         }
-        
+
     }
 
     private void FixedUpdate()
@@ -57,5 +57,10 @@ public class PlayerMovement : MonoBehaviour
     public void SetCanMove(bool value)
     {
         canMove = value;
+    }
+    
+    void OnDisable()
+    {
+        playerInput.Disable();
     }
 }

@@ -124,10 +124,10 @@ TextureImporter:
       name: Walking-Sheet_0
       rect:
         serializedVersion: 2
-        x: 30
-        y: 0
-        width: 31
-        height: 87
+        x: 28
+        y: 1
+        width: 37
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -146,10 +146,10 @@ TextureImporter:
       name: Walking-Sheet_1
       rect:
         serializedVersion: 2
-        x: 123
-        y: 0
-        width: 28
-        height: 87
+        x: 119
+        y: 1
+        width: 37
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,10 +168,10 @@ TextureImporter:
       name: Walking-Sheet_2
       rect:
         serializedVersion: 2
-        x: 214
-        y: 1
-        width: 27
-        height: 86
+        x: 209
+        y: 2
+        width: 37
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,9 +190,9 @@ TextureImporter:
       name: Walking-Sheet_3
       rect:
         serializedVersion: 2
-        x: 301
-        y: 1
-        width: 30
+        x: 299
+        y: 2
+        width: 37
         height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -212,9 +212,9 @@ TextureImporter:
       name: Walking-Sheet_4
       rect:
         serializedVersion: 2
-        x: 388
-        y: 1
-        width: 39
+        x: 389
+        y: 2
+        width: 37
         height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -234,10 +234,10 @@ TextureImporter:
       name: Walking-Sheet_5
       rect:
         serializedVersion: 2
-        x: 483
-        y: 1
-        width: 28
-        height: 87
+        x: 479
+        y: 2
+        width: 37
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -256,10 +256,10 @@ TextureImporter:
       name: Walking-Sheet_6
       rect:
         serializedVersion: 2
-        x: 572
-        y: 1
-        width: 29
-        height: 86
+        x: 569
+        y: 2
+        width: 37
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -278,9 +278,9 @@ TextureImporter:
       name: Walking-Sheet_7
       rect:
         serializedVersion: 2
-        x: 658
-        y: 1
-        width: 39
+        x: 659
+        y: 2
+        width: 37
         height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -300,7 +300,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 2d9e84f31c45efd41ad754c415dd01f7
     internalID: 0
     vertices: []
     indices: 
@@ -308,7 +308,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":37.0,"y":85.0},"gridSpriteOffset":{"x":25.0,"y":4.0},"gridSpritePadding":{"x":54.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Walking-Sheet_0: -1785670429389829389
       Walking-Sheet_1: 9059818277939529243

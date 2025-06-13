@@ -127,12 +127,12 @@ TextureImporter:
       name: '!-Sheet 1_0'
       rect:
         serializedVersion: 2
-        x: 12
-        y: 1
-        width: 9
-        height: 24
+        x: 13
+        y: 2
+        width: 7
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -149,12 +149,12 @@ TextureImporter:
       name: '!-Sheet 1_2'
       rect:
         serializedVersion: 2
-        x: 44
+        x: 77
         y: 3
-        width: 9
-        height: 19
+        width: 7
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -171,12 +171,12 @@ TextureImporter:
       name: '!-Sheet 1_3'
       rect:
         serializedVersion: 2
-        x: 76
-        y: 2
-        width: 9
-        height: 19
+        x: 109
+        y: 3
+        width: 7
+        height: 15
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -193,12 +193,12 @@ TextureImporter:
       name: '!-Sheet 1_4'
       rect:
         serializedVersion: 2
-        x: 108
-        y: 2
+        x: 140
+        y: 3
         width: 9
-        height: 17
+        height: 13
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -215,12 +215,12 @@ TextureImporter:
       name: '!-Sheet 1_5'
       rect:
         serializedVersion: 2
-        x: 139
-        y: 2
-        width: 11
-        height: 15
+        x: 172
+        y: 3
+        width: 9
+        height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -237,12 +237,12 @@ TextureImporter:
       name: '!-Sheet 1_6'
       rect:
         serializedVersion: 2
-        x: 171
-        y: 2
-        width: 11
-        height: 12
+        x: 204
+        y: 3
+        width: 9
+        height: 9
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,12 +259,12 @@ TextureImporter:
       name: '!-Sheet 1_7'
       rect:
         serializedVersion: 2
-        x: 203
-        y: 2
-        width: 11
-        height: 11
+        x: 236
+        y: 3
+        width: 9
+        height: 7
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -278,23 +278,23 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: '!-Sheet 1_8'
+      name: '!-Sheet 1_1'
       rect:
         serializedVersion: 2
-        x: 235
-        y: 2
-        width: 11
-        height: 9
+        x: 45
+        y: 4
+        width: 7
+        height: 17
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fa3e202b13f09c310800000000000000
-      internalID: 1425687463153820591
+      spriteID: 89070d3b9149d5a42aeae54d744e636d
+      internalID: -7451656051865056218
       vertices: []
       indices: 
       edges: []
@@ -311,7 +311,11 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":8.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":32.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       '!-Sheet 1_0': 7523124357581246716
       '!-Sheet 1_1': -7451656051865056218
@@ -321,7 +325,7 @@ TextureImporter:
       '!-Sheet 1_5': -2651491274768596759
       '!-Sheet 1_6': -5513415162168463558
       '!-Sheet 1_7': -8781090885886434331
-      '!-Sheet 1_8': 1425687463153820591
+      '!-Sheet 1_8': -1931928209
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

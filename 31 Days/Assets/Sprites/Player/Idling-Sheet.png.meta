@@ -148,10 +148,10 @@ TextureImporter:
       name: Idling-Sheet_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 0
-        width: 31
-        height: 87
+        x: 18
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: Idling-Sheet_1
       rect:
         serializedVersion: 2
-        x: 81
-        y: 0
-        width: 31
-        height: 87
+        x: 82
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +192,10 @@ TextureImporter:
       name: Idling-Sheet_2
       rect:
         serializedVersion: 2
-        x: 145
-        y: 0
-        width: 31
-        height: 87
+        x: 146
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Idling-Sheet_3
       rect:
         serializedVersion: 2
-        x: 209
-        y: 0
-        width: 31
-        height: 87
+        x: 210
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: Idling-Sheet_4
       rect:
         serializedVersion: 2
-        x: 273
-        y: 0
-        width: 31
-        height: 87
+        x: 274
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: Idling-Sheet_5
       rect:
         serializedVersion: 2
-        x: 337
-        y: 0
-        width: 31
-        height: 87
+        x: 338
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +280,10 @@ TextureImporter:
       name: Idling-Sheet_6
       rect:
         serializedVersion: 2
-        x: 401
-        y: 0
-        width: 31
-        height: 87
+        x: 402
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -302,10 +302,10 @@ TextureImporter:
       name: Idling-Sheet_7
       rect:
         serializedVersion: 2
-        x: 465
-        y: 0
-        width: 31
-        height: 87
+        x: 466
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -324,10 +324,10 @@ TextureImporter:
       name: Idling-Sheet_8
       rect:
         serializedVersion: 2
-        x: 529
-        y: 0
-        width: 31
-        height: 87
+        x: 530
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -346,10 +346,10 @@ TextureImporter:
       name: Idling-Sheet_9
       rect:
         serializedVersion: 2
-        x: 593
-        y: 0
-        width: 32
-        height: 86
+        x: 594
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,10 +368,10 @@ TextureImporter:
       name: Idling-Sheet_10
       rect:
         serializedVersion: 2
-        x: 657
-        y: 0
-        width: 32
-        height: 86
+        x: 658
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,10 +390,10 @@ TextureImporter:
       name: Idling-Sheet_11
       rect:
         serializedVersion: 2
-        x: 721
-        y: 0
-        width: 31
-        height: 86
+        x: 722
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,10 +412,10 @@ TextureImporter:
       name: Idling-Sheet_12
       rect:
         serializedVersion: 2
-        x: 785
-        y: 0
-        width: 31
-        height: 86
+        x: 786
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -434,10 +434,10 @@ TextureImporter:
       name: Idling-Sheet_13
       rect:
         serializedVersion: 2
-        x: 849
-        y: 0
-        width: 31
-        height: 86
+        x: 850
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -456,10 +456,10 @@ TextureImporter:
       name: Idling-Sheet_14
       rect:
         serializedVersion: 2
-        x: 913
-        y: 0
-        width: 31
-        height: 86
+        x: 914
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -478,10 +478,10 @@ TextureImporter:
       name: Idling-Sheet_15
       rect:
         serializedVersion: 2
-        x: 977
-        y: 0
-        width: 31
-        height: 86
+        x: 978
+        y: 1
+        width: 29
+        height: 85
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -500,7 +500,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7964816087e2b984cb3474764fb9db2a
     internalID: 0
     vertices: []
     indices: 
@@ -508,7 +508,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":29.0,"y":85.0},"gridSpriteOffset":{"x":18.0,"y":4.0},"gridSpritePadding":{"x":35.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Idling-Sheet_0: -7922026883130198051
       Idling-Sheet_1: -1504198994365459738

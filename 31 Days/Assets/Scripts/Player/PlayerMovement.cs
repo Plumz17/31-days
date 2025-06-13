@@ -61,6 +61,6 @@ public class PlayerMovement : MonoBehaviour
     
     void OnDisable()
     {
-        playerInput.Disable();
+        playerInput.Player.Disable();
     }
 }

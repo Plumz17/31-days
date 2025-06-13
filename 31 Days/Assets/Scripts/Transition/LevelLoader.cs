@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -6,7 +7,7 @@ public class LevelLoader : MonoBehaviour
 {
     public static LevelLoader Instance; // Singleton reference
 
-    private Animator anim;
+    [SerializeField] private Animator anim;
     [SerializeField] private float transitionTime = 1;
 
     private void Awake()
@@ -20,8 +21,6 @@ public class LevelLoader : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        anim = GetComponent<Animator>();
     }
 
     public void LoadNextLevel(int sceneIndex)

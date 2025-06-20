@@ -52,11 +52,7 @@ public class DialogueManager : MonoBehaviour
     }
 
     private void OnEnable() => playerInput.UI.Enable();
-    private void OnDisable()
-    {
-        playerInput.UI.Disable();
-        playerInput.Player.Disable();
-    }
+    private void OnDisable() => playerInput.UI.Disable();
 
     void Update()
     {

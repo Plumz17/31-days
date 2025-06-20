@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b3a55fc0becdaa84481b6ad90075f8e8
+guid: bee8e59bdefd1a54cbebae5d9ae0081d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1955448553306655712
-    second: Background_0
+      213: 1690259262165864772
+    second: Sharing my pixel art (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_0
+      name: Sharing my pixel art (1)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 480
+        width: 320
         height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 024fa93b6e9dcd4e0800000000000000
-      internalID: -1955448553306655712
+      spriteID: 441d5b3f7d1057710800000000000000
+      internalID: 1690259262165864772
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Background_0: -1955448553306655712
+      Sharing my pixel art (1)_0: 1690259262165864772
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

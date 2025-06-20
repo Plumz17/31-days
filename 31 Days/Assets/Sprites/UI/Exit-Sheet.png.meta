@@ -1,34 +1,25 @@
 fileFormatVersion: 2
-guid: 350ef181c39e5d94ca13f59c82ee61e8
+guid: b4fd757ec90a7dc4ba08ce330b9be9e6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2777849416005382002
-    second: '!-Sheet_0'
+      213: -1457965372644419469
+    second: Exit-Sheet_0
   - first:
-      213: 7486368411155985298
-    second: '!-Sheet_1'
+      213: -4654478154070265136
+    second: Exit-Sheet_1
   - first:
-      213: -8155200766874395499
-    second: '!-Sheet_2'
+      213: -3412153103914418073
+    second: Exit-Sheet_2
   - first:
-      213: -5312117663990550516
-    second: '!-Sheet_3'
+      213: -4101055271547582728
+    second: Exit-Sheet_3
   - first:
-      213: -7771237041828604273
-    second: '!-Sheet_4'
+      213: 3155818502627430278
+    second: Exit-Sheet_4
   - first:
-      213: -3669102786910723203
-    second: '!-Sheet_5'
-  - first:
-      213: 5533888965355958766
-    second: '!-Sheet_6'
-  - first:
-      213: -1346805301236492222
-    second: '!-Sheet_7'
-  - first:
-      213: 2746707636280768648
-    second: '!-Sheet_8'
+      213: -8444612777327507656
+    second: Exit-Sheet_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -124,177 +115,155 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: '!-Sheet_0'
+      name: Exit-Sheet_0
       rect:
         serializedVersion: 2
-        x: 12
-        y: 1
-        width: 9
-        height: 24
+        x: 0
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 27fe6808357ec8620800000000000000
-      internalID: 2777849416005382002
+      spriteID: 90193e9806e8f4145b40de3861f70085
+      internalID: -1457965372644419469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: '!-Sheet_2'
+      name: Exit-Sheet_1
       rect:
         serializedVersion: 2
-        x: 44
-        y: 3
-        width: 9
-        height: 19
+        x: 32
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 59c55725c18e2de80800000000000000
-      internalID: -8155200766874395499
+      spriteID: 7915dfb0e0cd6e44391327a21efac5b8
+      internalID: -4654478154070265136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: '!-Sheet_3'
+      name: Exit-Sheet_2
       rect:
         serializedVersion: 2
-        x: 76
-        y: 2
-        width: 9
-        height: 19
+        x: 64
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c00f3c021219746b0800000000000000
-      internalID: -5312117663990550516
+      spriteID: f5aa21df098119d4cadca207bad67b3d
+      internalID: -3412153103914418073
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: '!-Sheet_4'
+      name: Exit-Sheet_3
       rect:
         serializedVersion: 2
-        x: 108
-        y: 2
-        width: 9
-        height: 17
+        x: 96
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f86d2709515072490800000000000000
-      internalID: -7771237041828604273
+      spriteID: d2ed59b3bb95d344caef64887998269d
+      internalID: -4101055271547582728
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: '!-Sheet_5'
+      name: Exit-Sheet_4
       rect:
         serializedVersion: 2
-        x: 139
-        y: 2
-        width: 11
-        height: 15
+        x: 128
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d736acd747ab41dc0800000000000000
-      internalID: -3669102786910723203
+      spriteID: 6755ea8db65289c47a3b4515280cdf5a
+      internalID: 3155818502627430278
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: '!-Sheet_6'
+      name: Exit-Sheet_5
       rect:
         serializedVersion: 2
-        x: 171
-        y: 2
-        width: 11
-        height: 12
+        x: 160
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ee1fe76b1b25ccc40800000000000000
-      internalID: 5533888965355958766
+      spriteID: 821838548edb2724c8330e8a5b3d440b
+      internalID: -8444612777327507656
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: '!-Sheet_7'
+      name: Exit-Sheet_6
       rect:
         serializedVersion: 2
-        x: 203
-        y: 2
-        width: 11
-        height: 11
+        x: 192
+        y: 0
+        width: 32
+        height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2489f26d6bf2f4de0800000000000000
-      internalID: -1346805301236492222
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: '!-Sheet_8'
-      rect:
-        serializedVersion: 2
-        x: 235
-        y: 2
-        width: 11
-        height: 9
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8883e52ea044e1620800000000000000
-      internalID: 2746707636280768648
+      spriteID: bc5a4be8081860645b9e94e3eed8d49e
+      internalID: -1681999536
       vertices: []
       indices: 
       edges: []
@@ -303,7 +272,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 456a443b6c742044aa5d7ea62eef95e4
+    spriteID: 2cbdb20f52d4484449c1cbce8e7a8591
     internalID: 0
     vertices: []
     indices: 
@@ -311,17 +280,17 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":32.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      '!-Sheet_0': 2777849416005382002
-      '!-Sheet_1': 7486368411155985298
-      '!-Sheet_2': -8155200766874395499
-      '!-Sheet_3': -5312117663990550516
-      '!-Sheet_4': -7771237041828604273
-      '!-Sheet_5': -3669102786910723203
-      '!-Sheet_6': 5533888965355958766
-      '!-Sheet_7': -1346805301236492222
-      '!-Sheet_8': 2746707636280768648
+      Exit-Sheet_0: -1457965372644419469
+      Exit-Sheet_1: -4654478154070265136
+      Exit-Sheet_2: -3412153103914418073
+      Exit-Sheet_3: -4101055271547582728
+      Exit-Sheet_4: 3155818502627430278
+      Exit-Sheet_5: -8444612777327507656
+      Exit-Sheet_6: -1681999536
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

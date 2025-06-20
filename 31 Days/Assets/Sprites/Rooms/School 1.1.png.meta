@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 17bf61e06fa686540a4a682178dbd7ef
+guid: f6ea40a459c94084080fb7dd25322eae
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5435209892939362672
-    second: Room_0
+      213: -4006516584287574604
+    second: Sharing my pixel art (3)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Room_0
+      name: Sharing my pixel art (3)_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 071f654c99ebd6b40800000000000000
-      internalID: 5435209892939362672
+      spriteID: 4b5e3ded46ef568c0800000000000000
+      internalID: -4006516584287574604
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Room_0: 5435209892939362672
+      Sharing my pixel art (3)_0: -4006516584287574604
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

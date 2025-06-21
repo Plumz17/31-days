@@ -7,6 +7,10 @@ public class ExclamationMark : MonoBehaviour
     private float originalY;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+    private bool forDialogue;
+
+    private void OnTriggerEnter2D() => SetIsClose(true);
+    private void OnTriggerExit2D() => SetIsClose(false);
 
     private void Awake() // Set up components
     {

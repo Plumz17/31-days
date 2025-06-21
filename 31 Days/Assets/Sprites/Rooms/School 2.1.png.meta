@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c80d63371720907468d5813b0c29429f
+guid: 4a2571b08c460a54daa578e3adfc80ab
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1735973146424582837
-    second: True Background_0
+      213: -3825703466816971852
+    second: Sharing my pixel art (2)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,12 +100,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: True Background_0
+      name: Sharing my pixel art (2)_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 480
+        width: 320
         height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b4ddeb3fe9598e7e0800000000000000
-      internalID: -1735973146424582837
+      spriteID: 4bbd46467fe58eac0800000000000000
+      internalID: -3825703466816971852
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      True Background_0: -1735973146424582837
+      Sharing my pixel art (2)_0: -3825703466816971852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -10,6 +10,7 @@ public class DialogueManager : MonoBehaviour
 {
     [Header("References")] // Set up references in the inspector
     [Tooltip("The panel that contains the dialogue UI elements.")]
+    [SerializeField] GameObject dialogueCanvas;
     [SerializeField] GameObject dialoguePanel;
     [SerializeField] TMP_Text dialogueText;
     [SerializeField] Image characterPortrait;
@@ -23,8 +24,8 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue Settings")] // Settings for dialogue appearance and behavior
     [Tooltip("The speed at which each word appears in the dialogue text.")]
     [SerializeField] float wordSpeed = 0.05f;
-    [SerializeField] Color selectedColor;
-    [SerializeField] Color unselectedColor;
+    [SerializeField] Color selectedColor = new Color(0, 74, 173);
+    [SerializeField] Color unselectedColor = Color.white;
 
     private float choiceInputDelay = 0.1f; // Delay before processing choice input
     private float choiceInputTimer = 0f; // Timer to manage input delay for choices
@@ -47,8 +48,67 @@ public class DialogueManager : MonoBehaviour
     {
         playerInput = new InputActions();
 
+        SetUpReferences();
+
         dialoguePanel.SetActive(false);
         choicesPanel.SetActive(false);
+    }
+
+    private void SetUpReferences()
+    {
+        dialogueCanvas = GameObject.FindGameObjectWithTag("DialogueCanvas");
+        dialoguePanel = dialogueCanvas.transform.Find("DialoguePanel")?.gameObject;
+
+        if (dialogueText == null)
+            dialogueText = dialoguePanel.transform.Find("DialogueText")?.GetComponent<TMP_Text>();
+
+        if (characterPortrait == null)
+            characterPortrait = dialoguePanel?.GetComponentInChildren<Image>();
+
+        if (characterName == null)
+        {
+            TMP_Text[] texts = dialoguePanel?.GetComponentsInChildren<TMP_Text>();
+            foreach (var text in texts)
+            {
+                if (text.name.ToLower().Contains("name"))
+                {
+                    characterName = text;
+                    break;
+                }
+            }
+        }
+
+        choicesPanel = dialogueCanvas.transform.Find("ChoicePanel")?.gameObject; 
+
+        var boxList = new System.Collections.Generic.List<GameObject>();
+        foreach (Transform child in choicesPanel.transform)
+        {
+            if (child.name.ToLower().Contains("dialoguechoicebox"))
+            {
+                boxList.Add(child.gameObject);
+            }
+        }
+
+            // Sort to ensure consistent order: DialogueChoiceBox-1, -2, -3
+        boxList.Sort((a, b) => string.Compare(a.name, b.name, StringComparison.Ordinal));
+        choiceTextBoxes = boxList.ToArray();
+
+        var textList = new System.Collections.Generic.List<TMP_Text>();
+        foreach (var box in choiceTextBoxes)
+        {
+            TMP_Text text = box.GetComponentInChildren<TMP_Text>(true);
+            if (text != null)
+                textList.Add(text);
+        }
+        choiceTexts = textList.ToArray();
+
+        // Global PlayerMovement from tagged Player
+        if (playerMovement == null)
+        {
+            GameObject player = GameObject.FindGameObjectWithTag("Player");
+            if (player != null)
+                playerMovement = player.GetComponent<PlayerMovement>();
+        }
     }
 
     private void OnEnable() => playerInput.UI.Enable();

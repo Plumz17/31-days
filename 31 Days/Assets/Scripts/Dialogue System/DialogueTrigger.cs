@@ -4,14 +4,14 @@ using UnityEngine.InputSystem;
 
 public class DialogueTrigger : MonoBehaviour
 {
-    [Header("References")] //Set Up references in the inspector
-    [SerializeField] Transform playerTransform;
-    [SerializeField] ExclamationMark exclamationMark;
-    [SerializeField] DialogueManager dialogueManager;
 
     [Header("Dialogue Nodes")] // Set up the starting node for the dialogue
     [Tooltip("The node to start the dialogue from when the player interacts with the NPC.")]
     [SerializeField] BaseNode startingNode;
+
+    Transform playerTransform;
+    DialogueManager dialogueManager;
+    ExclamationMark exclamationMark;
 
     public InputActions playerInput;
 
@@ -22,6 +22,9 @@ public class DialogueTrigger : MonoBehaviour
     void Awake()
     {
         playerInput = new InputActions();
+        exclamationMark = GetComponentInChildren<ExclamationMark>();
+        playerTransform = GameObject.FindWithTag("Player").transform;
+        dialogueManager = GetComponent<DialogueManager>();
     }
 
     private void Update() // Handle player interaction with the NPC

@@ -32,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 256707928966988176}
   m_Father: {fileID: 6285315892259853682}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &826174203163512517
@@ -125,9 +126,13 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  choiceTextBoxes:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   wordSpeed: 0.01
-  selectedColor: {r: 1, g: 1, b: 0, a: 1}
-  unselectedColor: {r: 0, g: 0, b: 0, a: 1}
+  selectedColor: {r: 0, g: 0.2901961, b: 0.6784314, a: 1}
+  unselectedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1642825563204616822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,8 +146,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
-  exclamationMark: {fileID: 4328990344057696939}
   dialogueManager: {fileID: 5402606552600188085}
+  exclamationMark: {fileID: 4328990344057696939}
   startingNode: {fileID: 11400000, guid: 40b4fe536bc1be7438b8b35b830ce529, type: 2}
 --- !u!1 &7620250939214082605
 GameObject:
@@ -176,7 +181,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6285315892259853682}
+  m_Father: {fileID: 3855254493396616056}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4087443997300845000
 SpriteRenderer:
@@ -300,7 +305,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 256707928966988176}
   - {fileID: 3855254493396616056}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}

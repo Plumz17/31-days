@@ -12,11 +12,13 @@ public class PlayerMovement : MonoBehaviour
     private float movement;
     private bool isFacingRight = true;
     private bool canMove = true;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         playerInput = new InputActions();
         playerInput.Player.Enable();
@@ -47,12 +49,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Flip()
-    {
-        isFacingRight = !isFacingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
-    }
+{
+    isFacingRight = !isFacingRight;
+    spriteRenderer.flipX = !isFacingRight;
+}
 
     public void SetCanMove(bool value)
     {

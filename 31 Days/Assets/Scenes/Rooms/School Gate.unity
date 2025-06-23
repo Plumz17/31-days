@@ -142,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906630458927785226, guid: a8270b637abcb094786b9abf16380f12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 4906630458927785226, guid: a8270b637abcb094786b9abf16380f12, type: 3}
       propertyPath: m_LocalPosition.y
@@ -408,6 +408,14 @@ PrefabInstance:
     - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: isRoomChange
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: spawnPosition.x
+      value: -19.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: spawnPosition.y
+      value: 1.58
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -792,6 +800,14 @@ PrefabInstance:
     - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: sceneIndex
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: spawnPosition.x
+      value: -2.375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: spawnPosition.y
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7680530181905035141, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: m_SortingOrder

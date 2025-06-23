@@ -138,7 +138,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906630458927785226, guid: a8270b637abcb094786b9abf16380f12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 35.375
+      value: 39.625
       objectReference: {fileID: 0}
     - target: {fileID: 4906630458927785226, guid: a8270b637abcb094786b9abf16380f12, type: 3}
       propertyPath: m_LocalPosition.y
@@ -336,6 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneIndex: 1
   isRoomChange: 1
+  spawnPosition: {x: 8.375, y: 1.5, z: 0}
 --- !u!1 &1027066555
 GameObject:
   m_ObjectHideFlags: 0

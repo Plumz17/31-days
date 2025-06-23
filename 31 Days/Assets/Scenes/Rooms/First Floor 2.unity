@@ -142,7 +142,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4906630458927785226, guid: a8270b637abcb094786b9abf16380f12, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: -19.62
       objectReference: {fileID: 0}
     - target: {fileID: 4906630458927785226, guid: a8270b637abcb094786b9abf16380f12, type: 3}
       propertyPath: m_LocalPosition.y
@@ -254,6 +254,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2338945936872778097, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
+      propertyPath: spawnPosition.x
+      value: 10.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338945936872778097, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
+      propertyPath: spawnPosition.y
+      value: 1.58
+      objectReference: {fileID: 0}
     - target: {fileID: 4995878547271109786, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
       propertyPath: m_Name
       value: Screen Trigger
@@ -462,6 +470,14 @@ PrefabInstance:
       propertyPath: sceneIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: spawnPosition.x
+      value: 39.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: spawnPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -481,11 +497,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.056624413
+      value: -4.884815
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.4965198
+      value: 1.51948
       objectReference: {fileID: 0}
     - target: {fileID: 914689965977792638, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: Target.TrackingTarget
@@ -493,7 +509,7 @@ PrefabInstance:
       objectReference: {fileID: 25173514}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 5.625
+      value: 5.453125
       objectReference: {fileID: 0}
     - target: {fileID: 5425169048719876304, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
@@ -625,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7372820851319650323, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.67817
+      value: -13.941831
       objectReference: {fileID: 0}
     - target: {fileID: 7372820851319650323, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.y
@@ -774,6 +790,14 @@ PrefabInstance:
     - target: {fileID: 2338945936872778097, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
       propertyPath: sceneIndex
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338945936872778097, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
+      propertyPath: spawnPosition.x
+      value: -21.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338945936872778097, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
+      propertyPath: spawnPosition.y
+      value: 1.58
       objectReference: {fileID: 0}
     - target: {fileID: 4995878547271109786, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
       propertyPath: m_Name

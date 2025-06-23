@@ -8,17 +8,15 @@ using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
-    [Header("References")] // Set up references in the inspector
-    [Tooltip("The panel that contains the dialogue UI elements.")]
-    [SerializeField] GameObject dialogueCanvas;
-    [SerializeField] GameObject dialoguePanel;
-    [SerializeField] TMP_Text dialogueText;
-    [SerializeField] Image characterPortrait;
-    [SerializeField] TMP_Text characterName;
-    [SerializeField] PlayerMovement playerMovement;
-    [SerializeField] GameObject choicesPanel;
-    [SerializeField] TMP_Text[] choiceTexts;
-    [SerializeField] GameObject[] choiceTextBoxes;
+    GameObject dialogueCanvas;
+    GameObject dialoguePanel;
+    TMP_Text dialogueText;
+    Image characterPortrait;
+    TMP_Text characterName;
+    PlayerMovement playerMovement;
+    GameObject choicesPanel;
+    TMP_Text[] choiceTexts;
+    GameObject[] choiceTextBoxes;
 
 
     [Header("Dialogue Settings")] // Settings for dialogue appearance and behavior
@@ -26,6 +24,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] float wordSpeed = 0.05f;
     [SerializeField] Color selectedColor = new Color(0, 74, 173);
     [SerializeField] Color unselectedColor = Color.white;
+    //[SerializeField] bool isDialogue = true;
 
     private float choiceInputDelay = 0.1f; // Delay before processing choice input
     private float choiceInputTimer = 0f; // Timer to manage input delay for choices
@@ -63,7 +62,7 @@ public class DialogueManager : MonoBehaviour
             dialogueText = dialoguePanel.transform.Find("DialogueText")?.GetComponent<TMP_Text>();
 
         if (characterPortrait == null)
-            characterPortrait = dialoguePanel?.GetComponentInChildren<Image>();
+            characterPortrait = dialoguePanel.transform.Find("DialogueImage")?.GetComponent<Image>();
 
         if (characterName == null)
         {

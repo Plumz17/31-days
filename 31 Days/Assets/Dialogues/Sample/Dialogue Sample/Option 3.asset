@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Option 3
   m_EditorClassIdentifier: 
   characterName: Adachi
-  characterPortrait: {fileID: -6674868978544099146, guid: dbc37ba2b0f0b6f47bad55f4903b28bd, type: 3}
+  characterPortrait: {fileID: -4731953374162375773, guid: 74aee26b46aeed24c8c7150f1c11dabb, type: 3}
   dialogueLines:
   - HAHAHAHHAHAHAHHAH
   nextNode: {fileID: 11400000, guid: 1328e7bd3ca4d2146bf276837ae0104e, type: 2}

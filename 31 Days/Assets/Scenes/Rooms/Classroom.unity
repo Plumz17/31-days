@@ -255,7 +255,7 @@ GameObject:
   - component: {fileID: 199750350}
   - component: {fileID: 199750349}
   m_Layer: 0
-  m_Name: Audio
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,8 +273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34ee131c745d0d246a8d31a47bd925a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultMusic: {fileID: 0}
-  battleMusic: {fileID: 0}
+  defaultMusic: {fileID: 8300000, guid: 365db0e02cb9c044ea4d94e69617254b, type: 3}
+  doorMusic: {fileID: 8300000, guid: 91d8f44f7fc1517409124ba6578b09dc, type: 3}
 --- !u!82 &199750350
 AudioSource:
   m_ObjectHideFlags: 0
@@ -288,7 +288,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 365db0e02cb9c044ea4d94e69617254b, type: 3}
   m_Resource: {fileID: 8300000, guid: 365db0e02cb9c044ea4d94e69617254b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 0
   Mute: 0

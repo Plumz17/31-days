@@ -49,10 +49,10 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Flip()
-{
-    isFacingRight = !isFacingRight;
-    spriteRenderer.flipX = !isFacingRight;
-}
+    {
+        isFacingRight = !isFacingRight;
+        spriteRenderer.flipX = !isFacingRight;
+    }
 
     public void SetCanMove(bool value)
     {

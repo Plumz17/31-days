@@ -498,6 +498,14 @@ PrefabInstance:
       propertyPath: sceneIndex
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 2338945936872778097, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
+      propertyPath: spawnPosition.x
+      value: -19.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 2338945936872778097, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
+      propertyPath: spawnPosition.y
+      value: 1.58
+      objectReference: {fileID: 0}
     - target: {fileID: 4995878547271109786, guid: 69f03abec1aa0584eae750ea5015db4a, type: 3}
       propertyPath: m_Name
       value: Screen Trigger

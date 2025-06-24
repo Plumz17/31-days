@@ -275,7 +275,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43279ef05cdfbc14797b89d850439abc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneSpecificMusic: {fileID: 8300000, guid: 91d8f44f7fc1517409124ba6578b09dc, type: 3}
 --- !u!4 &297817444
 Transform:
   m_ObjectHideFlags: 0

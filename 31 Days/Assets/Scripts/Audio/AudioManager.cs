@@ -10,8 +10,8 @@ public class AudioManager : MonoBehaviour
     [Header("Music Clips")]
     public AudioClip defaultMusic;
     public AudioClip doorMusic;
-    [SerializeField] public float fadeTime = 0.2f;
-    [SerializeField] public float fullVolume = 1;
+    [SerializeField] public float fadeTime = 0.4f;
+    [SerializeField] public float fullVolume = 0.5f;
 
     void Awake()
     {
@@ -74,8 +74,6 @@ public class AudioManager : MonoBehaviour
         while (audioSource.volume > 0)
         {
             audioSource.volume -= startVolume * Time.deltaTime / FadeTime;
-
-            Debug.Log(audioSource.volume);
             yield return null;
         }
 
@@ -92,24 +90,23 @@ public class AudioManager : MonoBehaviour
         while (audioSource.volume < fullVolume)
         {
             audioSource.volume += Time.deltaTime / FadeTime;
-
-            Debug.Log(audioSource.volume);
             yield return null;
         }
 
         audioSource.volume = fullVolume;
     }
 
-    public void CrossfadeMusic(AudioClip newClip, float prevTime)
+    public void CrossfadeMusic(AudioClip newClip, float prevTime, bool saveTime)
     {
-        StartCoroutine(CrossfadeCoroutine(newClip, prevTime));
+        StartCoroutine(CrossfadeCoroutine(newClip, prevTime, saveTime));
     }
 
-    private IEnumerator CrossfadeCoroutine(AudioClip newClip, float prevTime)
+    private IEnumerator CrossfadeCoroutine(AudioClip newClip, float prevTime, bool saveTime)
     {
         yield return StartCoroutine(FadeOutEnumerator(audioSource, fadeTime));
         PlayMusic(newClip);
-        SetTime(prevTime);
+        if (saveTime)
+            SetTime(prevTime);
         yield return StartCoroutine(FadeInEnumerator(audioSource, fadeTime, fullVolume));
     }
 }

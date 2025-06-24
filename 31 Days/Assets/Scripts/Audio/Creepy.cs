@@ -17,7 +17,7 @@ public class Creepy : MonoBehaviour
 
             if (sceneSpecificMusic != null && sceneSpecificMusic != prevMusic)
             {
-                AudioManager.instance.CrossfadeMusic(sceneSpecificMusic, prevTime);
+                AudioManager.instance.CrossfadeMusic(sceneSpecificMusic, prevTime, false);
                 didChangeMusic = true;
             }
         }
@@ -27,7 +27,7 @@ public class Creepy : MonoBehaviour
     {
         if (AudioManager.instance != null && didChangeMusic)
         {
-            AudioManager.instance.CrossfadeMusic(prevMusic, prevTime);
+            AudioManager.instance.CrossfadeMusic(prevMusic, prevTime, true);
         }
     }
 }

@@ -11,7 +11,8 @@ public class LevelLoader : MonoBehaviour
     [SerializeField] private float transitionTime = 1;
     public static bool spawnFlipX = false;
     public static Vector3 spawnPosition = Vector3.zero; // Position to spawn player at
-    
+    private GameObject player;
+    private PlayerMovement movement;
 
     private void Awake()
     {
@@ -27,24 +28,21 @@ public class LevelLoader : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        player = GameObject.FindGameObjectWithTag("Player");
+        movement = player.GetComponent<PlayerMovement>();
     }
 
-    public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn)
+    public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn) //Called in TransitionTrigger.cs
     {
         spawnPosition = positionToSpawn;
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
-        {
-            SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
-            if (sr != null)
-            {
-                spawnFlipX = sr.flipX;
-            }
-        }
+            spawnFlipX = !movement.GetFacingDirection();
+            
         StartCoroutine(LoadLevel(sceneIndex));
     }
 
-    IEnumerator LoadLevel(int sceneIndex)
+    IEnumerator LoadLevel(int sceneIndex) 
     {
         anim.SetTrigger("Start");
 
@@ -53,18 +51,13 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Called when the scene first loads
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
         {
             player.transform.position = spawnPosition;
 
-            SpriteRenderer sr = player.GetComponent<SpriteRenderer>();
-            if (sr != null)
-            {
-                sr.flipX = spawnFlipX;
-            }
+            movement.SetFacingDirection(!spawnFlipX);
         }
     }
 

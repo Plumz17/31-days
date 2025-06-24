@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D rb;
     private Animator anim;
     private float movement;
-    private bool isFacingRight = true;
+    public bool isFacingRight = true;
     private bool canMove = true;
     private SpriteRenderer spriteRenderer;
 
@@ -57,6 +57,17 @@ public class PlayerMovement : MonoBehaviour
     public void SetCanMove(bool value)
     {
         canMove = value;
+    }
+
+    public bool GetFacingDirection()
+    {
+        return isFacingRight;
+    }
+
+    public void SetFacingDirection(bool facingRight)
+    {
+        isFacingRight = facingRight;
+        spriteRenderer.flipX = !facingRight;
     }
     
     void OnDisable()

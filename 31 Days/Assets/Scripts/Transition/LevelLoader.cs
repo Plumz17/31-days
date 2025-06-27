@@ -29,8 +29,7 @@ public class LevelLoader : MonoBehaviour
 
         SceneManager.sceneLoaded += OnSceneLoaded;
 
-        player = GameObject.FindGameObjectWithTag("Player");
-        movement = player.GetComponent<PlayerMovement>();
+        
     }
 
     public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn) //Called in TransitionTrigger.cs
@@ -53,10 +52,12 @@ public class LevelLoader : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Called when the scene first loads
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+
         if (player != null)
         {
             player.transform.position = spawnPosition;
-
+            movement = player.GetComponent<PlayerMovement>();
             movement.SetFacingDirection(!spawnFlipX);
         }
     }

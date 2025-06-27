@@ -6,11 +6,12 @@ TagManager:
   tags:
   - NPC
   - DialogueCanvas
+  - Enemy
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - background
   - Water
   - UI
   - object

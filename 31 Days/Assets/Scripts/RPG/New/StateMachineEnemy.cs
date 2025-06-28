@@ -22,12 +22,14 @@ public class StateMachineEnemy : MonoBehaviour
     private readonly float max_cooldown = 5f;
 
     private Vector3 startPosition;
+    public GameObject Selector;
     private bool actionStarted = false;
     public GameObject PlayerToAttack;
     private readonly float animspeed = 2f; // speed of the animation
         // Use this for initialization
     void Start()
     {
+        Selector.SetActive(false);
         currentState = TurnState.PROCESSING;
         BSM = GameObject.Find("BattleManager").GetComponent<StateMachineBattle>();
         startPosition = transform.position;

@@ -2,9 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 [System.Serializable]
-public class BaseEnemy
+public class BaseEnemy : MonoBehaviour
 {
-    public string name;
+    public string enemyName;
 
     public float baseHP;
     public float curHP;

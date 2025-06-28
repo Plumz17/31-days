@@ -7,6 +7,6 @@ public class EnemySelectButton : MonoBehaviour {
 
     public void SelectEnemy()
     {
-        GameObject.Find("BattleManager").GetComponent < StateMachineBattle> ();//save input enemy prefsab
+        GameObject.Find("BattleManager").GetComponent <StateMachineBattle>().Input2(EnemyPrefab);//save input enemy prefsab
     }
 }

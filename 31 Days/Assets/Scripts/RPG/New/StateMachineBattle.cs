@@ -1,6 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.UI;
+using TMPro;
 
 public class StateMachineBattle : MonoBehaviour
 {
@@ -31,16 +31,24 @@ public class StateMachineBattle : MonoBehaviour
     public PlayerGUI PlayerGUIState;
 
     public List<GameObject> PlayerToManage = new List<GameObject>();
-    private HandleTurn PlayerAction;
+    private HandleTurn PlayerChoice;
 
     public GameObject EnemyButton; // Prefab for enemy buttons
     public Transform Spacer;
+
+    public GameObject AttackPanel;
+    public GameObject EnemySelectPanel;
     // Use this for initialization
     void Start()
     {
         battleStates = PerformAction.WAIT;
         EnemysInBattle.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
         PlayersInBattle.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+        PlayerGUIState = PlayerGUI.ACTIVATE;
+
+        AttackPanel.SetActive(false);
+        EnemySelectPanel.SetActive(false);
+
         EnemyButtons();
     }
 
@@ -86,7 +94,9 @@ public class StateMachineBattle : MonoBehaviour
 
                 if (PerformList[0].Type == "Player")
                 {
-                    // Player logic here
+                    StateMachinePlayer HSM = performer.GetComponent<StateMachinePlayer>();
+                    HSM.EnemyToAttack = PerformList[0].AttackersTarget;
+                    HSM.currentState = StateMachinePlayer.TurnState.ACTION;
                 }
 
                 battleStates = PerformAction.PERFORMACTION;
@@ -95,7 +105,29 @@ public class StateMachineBattle : MonoBehaviour
             case PerformAction.PERFORMACTION:
                 break;
         }
+
+        switch (PlayerGUIState)
+        {
+            case PlayerGUI.ACTIVATE:
+                if (PlayerToManage.Count > 0)
+                {
+                    PlayerToManage[0].transform.Find("Selector").gameObject.SetActive(true);
+                    PlayerChoice = new HandleTurn();
+
+                    AttackPanel.SetActive(true);
+                    PlayerGUIState = PlayerGUI.WAITING;
+                }
+                break;
+            case PlayerGUI.WAITING:
+                // Activate player GUI logic here
+                break;
+            case PlayerGUI.DONE:
+                PlayerInputDone();
+                // Activate player GUI logic here
+                break;
+        }
     }
+
     public void CollectActions(HandleTurn input)
     {
         PerformList.Add(input);
@@ -123,7 +155,7 @@ public class StateMachineBattle : MonoBehaviour
                 Destroy(newButton); // Clean up the button we just created
                 continue;
             }
-            
+
             if (cur_enemy.enemy == null)
             {
                 Debug.LogError("BaseEnemy component is null on: " + enemy.name);
@@ -139,7 +171,7 @@ public class StateMachineBattle : MonoBehaviour
                 continue;
             }
 
-            Text buttonText = textTransform.GetComponent<Text>();
+            TMP_Text buttonText = textTransform.GetComponent<TMP_Text>();
             if (buttonText == null)
             {
                 Debug.LogError("Text component not found on Text GameObject in EnemyButton prefab.");
@@ -147,11 +179,39 @@ public class StateMachineBattle : MonoBehaviour
                 continue;
             }
 
-            buttonText.text = cur_enemy.enemy.enemyName;
+            buttonText.text = cur_enemy.enemy.theName;
             button.EnemyPrefab = enemy;
-            
+
+            // Set the parent to organize the UI
             // Set the parent to organize the UI
             newButton.transform.SetParent(Spacer, false);
         }
+    }
+
+    public void Input1()
+    {
+        if (PlayerToManage.Count > 0)
+        {
+            PlayerChoice.Attacker = PlayerToManage[0].name;
+            PlayerChoice.AttackersGameObject = PlayerToManage[0];
+            PlayerChoice.Type = "Player";
+
+            AttackPanel.SetActive(false);
+            EnemySelectPanel.SetActive(true);
+        }
+    }
+    public void Input2(GameObject chosenEnemy)
+    {
+        PlayerChoice.AttackersTarget = chosenEnemy;
+        PlayerGUIState = PlayerGUI.DONE;
+    }
+
+    void PlayerInputDone()
+    {
+        PerformList.Add(PlayerChoice);
+        EnemySelectPanel.SetActive(false);
+        PlayerToManage[0].transform.Find("Selector").gameObject.SetActive(false);
+        PlayerToManage.RemoveAt(0);
+        PlayerGUIState = PlayerGUI.ACTIVATE;
     }
 }

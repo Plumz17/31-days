@@ -33,22 +33,22 @@ public class StateMachineEnemy : MonoBehaviour
         startPosition = transform.position;
         
         // Try to get the BaseEnemy component
-        // Try to get the BaseEnemy component
-        enemy = GetComponent<BaseEnemy>();
-        
-        // Add comprehensive null checks
+        // Initialize enemy if not assigned in inspector
         if (enemy == null)
         {
-            Debug.LogError("BaseEnemy component not found on " + gameObject.name + ". Please add BaseEnemy component.");
-            // Optionally add the component automatically
-            enemy = gameObject.AddComponent<BaseEnemy>();
-            
-            // Initialize the BaseEnemy component if it was just added
-            if (enemy != null && string.IsNullOrEmpty(enemy.enemyName))
+            enemy = GetComponent<BaseEnemy>();
+            if (enemy == null)
             {
-                enemy.enemyName = gameObject.name;
+                enemy = gameObject.AddComponent<BaseEnemy>();
+                Debug.LogWarning("BaseEnemy not assigned in inspector for " + gameObject.name + ". Added component.");
             }
         }
+        // Initialize name if empty
+        if (string.IsNullOrEmpty(enemy.theName))
+        {
+            enemy.theName = gameObject.name;
+        }
+        
         if (BSM == null)
         {
             Debug.LogError("BattleManager not found! Make sure there's a GameObject named 'BattleManager' with StateMachineBattle component.");
@@ -104,7 +104,7 @@ public class StateMachineEnemy : MonoBehaviour
         
         HandleTurn myAttack = new HandleTurn
         {
-            Attacker = enemy.enemyName,
+            Attacker = enemy.theName,
             Type = "Enemy",
             AttackersGameObject = this.gameObject,
             AttackersTarget = BSM.PlayersInBattle[Random.Range(0, BSM.PlayersInBattle.Count)]
@@ -160,6 +160,4 @@ public class StateMachineEnemy : MonoBehaviour
     {
         return targetPosition != (transform.position = Vector3.MoveTowards(transform.position, targetPosition, animspeed * Time.deltaTime));
     }
-
-
 }

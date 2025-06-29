@@ -1,11 +1,12 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerPanelStats : MonoBehaviour
 {
-    public Text PlayerName;
-    public Text PlayerHP;
-    public Text PlayerMP;
+    public TMP_Text PlayerName;
+    public TMP_Text PlayerHP;
+    public TMP_Text PlayerMP;
     public Image ProgressBar;
 }

@@ -455,10 +455,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25f5aa966719c31488d9429374c89e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerName: {fileID: 0}
-  PlayerHP: {fileID: 0}
-  PlayerMP: {fileID: 0}
-  ProgressBar: {fileID: 0}
+  PlayerName: {fileID: 8519989161780268754}
+  PlayerHP: {fileID: 8984628241002217156}
+  PlayerMP: {fileID: 5929339381511859417}
+  ProgressBar: {fileID: 4242625541691273135}
 --- !u!1 &6521717338967351448
 GameObject:
   m_ObjectHideFlags: 0

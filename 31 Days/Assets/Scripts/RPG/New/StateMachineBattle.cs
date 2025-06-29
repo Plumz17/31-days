@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine.UI;
 
 public class StateMachineBattle : MonoBehaviour
 {
@@ -38,6 +39,12 @@ public class StateMachineBattle : MonoBehaviour
 
     public GameObject AttackPanel;
     public GameObject EnemySelectPanel;
+    public GameObject SkillPanel;
+
+    public Transform ActionSpacer;
+    public Transform SkillSpacer;
+    public GameObject ActionButton;
+    private List<GameObject> AtkButtons = new List<GameObject>();
     // Use this for initialization
     void Start()
     {
@@ -48,6 +55,7 @@ public class StateMachineBattle : MonoBehaviour
 
         AttackPanel.SetActive(false);
         EnemySelectPanel.SetActive(false);
+        SkillPanel.SetActive(false);
 
         EnemyButtons();
     }
@@ -128,6 +136,9 @@ public class StateMachineBattle : MonoBehaviour
                     PlayerChoice = new HandleTurn();
 
                     AttackPanel.SetActive(true);
+
+                    CreateAttackButtons();
+
                     PlayerGUIState = PlayerGUI.WAITING;
                 }
                 break;
@@ -223,8 +234,126 @@ public class StateMachineBattle : MonoBehaviour
     {
         PerformList.Add(PlayerChoice);
         EnemySelectPanel.SetActive(false);
+
+        //clean the attack buttons
+        foreach (GameObject atkBtn in AtkButtons)
+        {
+            Destroy(atkBtn);
+        }
+        AtkButtons.Clear();
+
         PlayerToManage[0].transform.Find("Selector").gameObject.SetActive(false);
         PlayerToManage.RemoveAt(0);
         PlayerGUIState = PlayerGUI.ACTIVATE;
+    }
+    void CreateAttackButtons()
+    {
+        // Add null check to prevent NullReferenceException
+        if (ActionButton == null)
+        {
+            Debug.LogError("ActionButton prefab is not assigned in the Inspector! Please assign it to prevent this error.");
+            return;
+        }
+
+        if (ActionSpacer == null)
+        {
+            Debug.LogError("ActionSpacer is not assigned in the Inspector!");
+            return;
+        }
+
+        GameObject AttackButton = Instantiate(ActionButton) as GameObject;
+
+        // Add null check for the instantiated button
+        if (AttackButton == null)
+        {
+            Debug.LogError("Failed to instantiate ActionButton!");
+            return;
+        }
+
+        // Find the Text component with null checking
+        Transform textTransform = AttackButton.transform.Find("Text (TMP)");
+        if (textTransform == null)
+        {
+            Debug.LogError("Text child not found in ActionButton prefab!");
+            Destroy(AttackButton);
+            return;
+        }
+
+        TMP_Text AttackButtonText = textTransform.GetComponent<TMP_Text>();
+        if (AttackButtonText == null)
+        {
+            Debug.LogError("TMP_Text component not found on Text child!");
+            Destroy(AttackButton);
+            return;
+        }
+
+        AttackButtonText.text = "Attack"; // Set the text for the button
+
+        // Add null check for Button component
+        Button buttonComponent = AttackButton.GetComponent<Button>();
+        if (buttonComponent == null)
+        {
+            Debug.LogError("Button component not found on ActionButton prefab!");
+            Destroy(AttackButton);
+            return;
+        }
+
+        buttonComponent.onClick.AddListener(() => Input1());
+        AttackButton.transform.SetParent(ActionSpacer, false);
+        AtkButtons.Add(AttackButton);
+        
+        // Add null check to prevent NullReferenceException
+        if (ActionButton == null)
+        {
+            Debug.LogError("ActionButton prefab is not assigned in the Inspector! Please assign it to prevent this error.");
+            return;
+        }
+        
+        if (ActionSpacer == null)
+        {
+            Debug.LogError("ActionSpacer is not assigned in the Inspector!");
+            return;
+        }
+
+        GameObject SkillButton = Instantiate(ActionButton) as GameObject;
+        
+        // Add null check for the instantiated button
+        if (SkillButton == null)
+        {
+            Debug.LogError("Failed to instantiate ActionButton!");
+            return;
+        }
+        
+        // Find the Text component with null checking
+        Transform textTransformSkill = SkillButton.transform.Find("Text (TMP)");
+        if (textTransformSkill == null)
+        {
+            Debug.LogError("Text child not found in ActionButton prefab!");
+            Destroy(SkillButton);
+            return;
+        }
+        
+        TMP_Text SkillButtonText = textTransformSkill.GetComponent<TMP_Text>();
+        if (SkillButtonText == null)
+        {
+            Debug.LogError("TMP_Text component not found on Text child!");
+            Destroy(SkillButton);
+            return;
+        }
+        
+        SkillButtonText.text = "Skill"; // Set the text for the button
+        
+        // Add null check for Button component
+        Button buttonComponentSkill = SkillButton.GetComponent<Button>();
+        if (buttonComponentSkill == null)
+        {
+            Debug.LogError("Button component not found on ActionButton prefab!");
+            Destroy(SkillButton);
+            return;
+        }
+        
+        
+        SkillButton.transform.SetParent(ActionSpacer, false);
+        AtkButtons.Add(SkillButton);
     }
 }

@@ -24,5 +24,5 @@ public class BasePlayer : MonoBehaviour
     public int dexterity;
     public int agility;
     
-    public List<BaseAttack> attacks = new List<BaseAttack>();
+    public List<BaseAttack> Skills = new List<BaseAttack>();
 }

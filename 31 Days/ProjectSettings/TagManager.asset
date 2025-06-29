@@ -7,6 +7,10 @@ TagManager:
   - NPC
   - DialogueCanvas
   - Enemy
+  - RPGPlayer
+  - RPGEnemy
+  - RPGPlayerDead
+  - RPGEnemyDead
   layers:
   - Default
   - TransparentFX

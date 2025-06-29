@@ -30,6 +30,10 @@ public class StateMachinePlayer : MonoBehaviour
     private Vector3 startPosition;
     private float animspeed = 2f; // speed of the animation
     private bool alive = true; // to check if the player is alive
+    //panel
+    private PlayerPanelStats stats;
+    public GameObject PlayerPanel;
+    private transform PlayerPanelSpacer;
 
     void Start()
     {
@@ -37,7 +41,7 @@ public class StateMachinePlayer : MonoBehaviour
         cur_cooldown = Random.Range(0, 2.5f); // Random cooldown for testing
         Selector.SetActive(false);
         BSM = GameObject.Find("BattleManager").GetComponent<StateMachineBattle>();
-        
+
         // Initialize player if not assigned in inspector
         if (player == null)
         {
@@ -48,13 +52,13 @@ public class StateMachinePlayer : MonoBehaviour
                 Debug.LogWarning("BasePlayer not assigned in inspector for " + gameObject.name + ". Added component.");
             }
         }
-        
+
         // Initialize name if empty
         if (string.IsNullOrEmpty(player.theName))
         {
             player.theName = gameObject.name;
         }
-        
+
         // Initialize player stats
         currentState = TurnState.PROCESSING;
     }
@@ -202,13 +206,20 @@ public class StateMachinePlayer : MonoBehaviour
             Debug.LogError("Player component is null in TakeDamage!");
             return;
         }
-        
+
         player.curHP -= getDamageAmount;
         if (player.curHP <= 0)
         {
+            player.curHP = 0; // Ensure HP doesn't go negative
             currentState = TurnState.DEAD;
             Debug.Log(player.theName + " has died.");
         }
         Debug.Log(player.theName + " took " + getDamageAmount + " damage. Current HP: " + player.curHP);
+    }
+
+    void CreatePlayerPanel()
+    {
+        PlayerPanel = Instantiate(PlayerPanel) as GameObject;
+        stats = PlayerPanel.GetComponent<PlayerPanelStats>();
     }
 }

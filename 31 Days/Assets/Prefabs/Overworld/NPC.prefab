@@ -116,6 +116,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641c0d2121494844f9af16d689903641, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueCanvas: {fileID: 0}
+  dialoguePanel: {fileID: 0}
   wordSpeed: 0.01
   selectedColor: {r: 0, g: 0.2901961, b: 0.6784314, a: 1}
   unselectedColor: {r: 1, g: 1, b: 1, a: 1}

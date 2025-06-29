@@ -438,6 +438,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1027066556}
     m_Modifications:
+    - target: {fileID: 5402606552600188085, guid: e025af131486dfa4e8052da6d938199d, type: 3}
+      propertyPath: dialoguePanel
+      value: 
+      objectReference: {fileID: 1301811011}
+    - target: {fileID: 5402606552600188085, guid: e025af131486dfa4e8052da6d938199d, type: 3}
+      propertyPath: dialogueCanvas
+      value: 
+      objectReference: {fileID: 1301811010}
     - target: {fileID: 6285315892259853682, guid: e025af131486dfa4e8052da6d938199d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 46.75
@@ -755,6 +763,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+--- !u!1 &1301811010 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7175926324385684725, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+  m_PrefabInstance: {fileID: 1301811009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1301811011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4206502754233431342, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+  m_PrefabInstance: {fileID: 1301811009}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1348504094
 GameObject:
   m_ObjectHideFlags: 0

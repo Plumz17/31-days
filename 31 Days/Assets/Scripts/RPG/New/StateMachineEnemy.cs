@@ -26,14 +26,14 @@ public class StateMachineEnemy : MonoBehaviour
     private bool actionStarted = false;
     public GameObject PlayerToAttack;
     private readonly float animspeed = 2f; // speed of the animation
-        // Use this for initialization
+                                           // Use this for initialization
     void Start()
     {
         Selector.SetActive(false);
         currentState = TurnState.PROCESSING;
         BSM = GameObject.Find("BattleManager").GetComponent<StateMachineBattle>();
         startPosition = transform.position;
-        
+
         // Try to get the BaseEnemy component
         // Initialize enemy if not assigned in inspector
         if (enemy == null)
@@ -50,7 +50,7 @@ public class StateMachineEnemy : MonoBehaviour
         {
             enemy.theName = gameObject.name;
         }
-        
+
         if (BSM == null)
         {
             Debug.LogError("BattleManager not found! Make sure there's a GameObject named 'BattleManager' with StateMachineBattle component.");
@@ -97,13 +97,13 @@ public class StateMachineEnemy : MonoBehaviour
             Debug.LogError("No players available to attack!");
             return;
         }
-        
+
         if (enemy == null)
         {
             Debug.LogError("Enemy component is null!");
             return;
         }
-        
+
         HandleTurn myAttack = new HandleTurn
         {
             Attacker = enemy.theName,
@@ -111,6 +111,11 @@ public class StateMachineEnemy : MonoBehaviour
             AttackersGameObject = this.gameObject,
             AttackersTarget = BSM.PlayersInBattle[Random.Range(0, BSM.PlayersInBattle.Count)]
         };
+
+        int num = Random.Range(0, enemy.attacks.Length);
+        myAttack.choosenAttack = enemy.attacks[num];
+        Debug.Log(this.gameObject.name + " chose " + myAttack.choosenAttack.attackName);
+
         BSM.CollectActions(myAttack);
     }
 
@@ -134,7 +139,7 @@ public class StateMachineEnemy : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // Do damage
-
+        DoDamage();
         // Animate back to start position
         Vector3 firstPosition = startPosition;
         while (MoveTowardsStart(firstPosition))
@@ -161,5 +166,10 @@ public class StateMachineEnemy : MonoBehaviour
     private bool MoveTowardsStart(Vector3 targetPosition)
     {
         return targetPosition != (transform.position = Vector3.MoveTowards(transform.position, targetPosition, animspeed * Time.deltaTime));
+    }
+    void DoDamage()
+    {
+        float calc_damage = enemy.curATK + BSM.PerformList[0].choosenAttack.attackDamage;
+        PlayerToAttack.GetComponent<StateMachinePlayer>().TakeDamage(calc_damage);
     }
 }

@@ -29,6 +29,7 @@ public class StateMachinePlayer : MonoBehaviour
     private bool actionStarted = false;
     private Vector3 startPosition;
     private float animspeed = 2f; // speed of the animation
+    private bool alive = true; // to check if the player is alive
 
     void Start()
     {
@@ -36,6 +37,24 @@ public class StateMachinePlayer : MonoBehaviour
         cur_cooldown = Random.Range(0, 2.5f); // Random cooldown for testing
         Selector.SetActive(false);
         BSM = GameObject.Find("BattleManager").GetComponent<StateMachineBattle>();
+        
+        // Initialize player if not assigned in inspector
+        if (player == null)
+        {
+            player = GetComponent<BasePlayer>();
+            if (player == null)
+            {
+                player = gameObject.AddComponent<BasePlayer>();
+                Debug.LogWarning("BasePlayer not assigned in inspector for " + gameObject.name + ". Added component.");
+            }
+        }
+        
+        // Initialize name if empty
+        if (string.IsNullOrEmpty(player.theName))
+        {
+            player.theName = gameObject.name;
+        }
+        
         // Initialize player stats
         currentState = TurnState.PROCESSING;
     }
@@ -60,6 +79,30 @@ public class StateMachinePlayer : MonoBehaviour
                 StartCoroutine(TimeForAction());
                 break;
             case (TurnState.DEAD):
+                if (!alive)
+                {
+                    return; // If already dead, do nothing
+                }
+                else
+                {
+                    //change tag
+
+                    //not attackable
+
+                    //not manageable
+
+                    //deactivate selector
+
+                    //reset gui
+
+                    //remove from perform list
+
+                    //change color / add animation
+
+                    //reset input
+
+                    alive = false;
+                }
                 break;
         }
     }
@@ -128,4 +171,21 @@ public class StateMachinePlayer : MonoBehaviour
         return targetPosition != (transform.position = Vector3.MoveTowards(transform.position, targetPosition, animspeed * Time.deltaTime));
     }
 
+    public void TakeDamage(float getDamageAmount)
+    {
+        // Add null check for safety
+        if (player == null)
+        {
+            Debug.LogError("Player component is null in TakeDamage!");
+            return;
+        }
+        
+        player.curHP -= getDamageAmount;
+        if (player.curHP <= 0)
+        {
+            currentState = TurnState.DEAD;
+            Debug.Log(player.theName + " has died.");
+        }
+        Debug.Log(player.theName + " took " + getDamageAmount + " damage. Current HP: " + player.curHP);
+    }
 }

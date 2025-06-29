@@ -184,6 +184,15 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "Esc",
+                    "type": "Button",
+                    "id": "f3eb4d0c-171b-476f-ac7c-318e99b62791",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Accept",
                     "type": "Button",
                     "id": "4350db8f-78bb-4e71-842e-61ca5504aa27",
@@ -233,6 +242,17 @@
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
                     "action": "Up",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "73fa1c0e-06ac-42c5-9f0f-120e3f62b9be",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Esc",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

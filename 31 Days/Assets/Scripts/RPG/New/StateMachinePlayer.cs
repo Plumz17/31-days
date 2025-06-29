@@ -86,21 +86,44 @@ public class StateMachinePlayer : MonoBehaviour
                 else
                 {
                     //change tag
-
+                    this.gameObject.tag = "RPGPlayerDead";
                     //not attackable
-
+                    BSM.PlayersInBattle.Remove(this.gameObject); // Remove from the list of players in battle
                     //not manageable
-
+                    BSM.PlayerToManage.Remove(this.gameObject); // Remove from the list of players to manage
                     //deactivate selector
-
+                    Selector.SetActive(false);
                     //reset gui
-
+                    BSM.AttackPanel.SetActive(false);
+                    BSM.EnemySelectPanel.SetActive(false);
                     //remove from perform list
-
-                    //change color / add animation
-
+                    for (int i = 0; i < BSM.PerformList.Count; i++)
+                    {
+                        if (BSM.PerformList[i].AttackersGameObject == this.gameObject)
+                        {
+                            BSM.PerformList.Remove(BSM.PerformList[i]);
+                        }
+                    }
+                    //change color / add animation - Fixed to find the SpriteRenderer on the child
+                    Transform squareChild = transform.Find("Square");
+                    if (squareChild != null)
+                    {
+                        SpriteRenderer spriteRenderer = squareChild.GetComponent<SpriteRenderer>();
+                        if (spriteRenderer != null)
+                        {
+                            spriteRenderer.color = Color.gray; // Change color to gray
+                        }
+                        else
+                        {
+                            Debug.LogWarning("SpriteRenderer not found on Square child of " + gameObject.name);
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Square child not found on " + gameObject.name);
+                    }
                     //reset input
-
+                    BSM.PlayerGUIState = StateMachineBattle.PlayerGUI.ACTIVATE;
                     alive = false;
                 }
                 break;

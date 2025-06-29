@@ -42,8 +42,8 @@ public class StateMachineBattle : MonoBehaviour
     void Start()
     {
         battleStates = PerformAction.WAIT;
-        EnemysInBattle.AddRange(GameObject.FindGameObjectsWithTag("Enemy"));
-        PlayersInBattle.AddRange(GameObject.FindGameObjectsWithTag("Player"));
+        EnemysInBattle.AddRange(GameObject.FindGameObjectsWithTag("RPGEnemy"));
+        PlayersInBattle.AddRange(GameObject.FindGameObjectsWithTag("RPGPlayer"));
         PlayerGUIState = PlayerGUI.ACTIVATE;
 
         AttackPanel.SetActive(false);
@@ -83,8 +83,21 @@ public class StateMachineBattle : MonoBehaviour
                     StateMachineEnemy ESM = performer.GetComponent<StateMachineEnemy>();
                     if (ESM != null)
                     {
-                        ESM.PlayerToAttack = PerformList[0].AttackersTarget;
-                        ESM.currentState = StateMachineEnemy.TurnState.ACTION;
+                        for (int i = 0; i < PlayersInBattle.Count; i++)
+                        {
+                            if (PerformList[0].AttackersTarget == PlayersInBattle[i])
+                            {
+                                ESM.PlayerToAttack = PerformList[0].AttackersTarget;
+                                ESM.currentState = StateMachineEnemy.TurnState.ACTION;
+                                break;
+                            }
+                            else
+                            {
+                                PerformList[0].AttackersTarget = PlayersInBattle[Random.Range(0, PlayersInBattle.Count)];
+                                ESM.PlayerToAttack = PerformList[0].AttackersTarget;
+                                ESM.currentState = StateMachineEnemy.TurnState.ACTION;
+                            }
+                        }
                     }
                     else
                     {

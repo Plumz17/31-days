@@ -33,7 +33,7 @@ public class StateMachinePlayer : MonoBehaviour
     //panel
     private PlayerPanelStats stats;
     public GameObject PlayerPanel;
-    private transform PlayerPanelSpacer;
+    private Transform PlayerPanelSpacer;
 
     void Start()
     {

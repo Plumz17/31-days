@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: ed2458780b4be8b45ba6f1169cae72c9
+guid: 6dbc139343739344c9273a97c093821f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2895157278119961449
-    second: Untitled design_0
+      213: -8453507605543398258
+    second: TextBox (2) 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 1
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled design_0
+      name: TextBox (2) 1_0
       rect:
         serializedVersion: 2
         x: 47
-        y: 674
-        width: 1826
-        height: 342
+        y: 569
+        width: 798
+        height: 84
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 79cd5c47bc552d7d0800000000000000
-      internalID: -2895157278119961449
+      spriteID: e84d5811f9b1faa80800000000000000
+      internalID: -8453507605543398258
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled design_0: -2895157278119961449
+      TextBox (2) 1_0: -8453507605543398258
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

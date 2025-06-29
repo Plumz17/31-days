@@ -2338,7 +2338,7 @@ Transform:
   m_GameObject: {fileID: 2047215672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.004637, y: 2.1678412, z: 0}
+  m_LocalPosition: {x: -4.0046372, y: 2.1678412, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2679,54 +2679,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1250851240772243171, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_Type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250851240772243171, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250851240772243171, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_Color.a
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250851240772243171, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_Color.b
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250851240772243171, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_Color.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250851240772243171, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250851240772243171, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_UseSpriteMesh
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250851240772243171, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580124363883686896, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580124363883686896, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580124363883686896, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -185
-      objectReference: {fileID: 0}
-    - target: {fileID: 3580124363883686896, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -64
-      objectReference: {fileID: 0}
     - target: {fileID: 4732383561105140219, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -2810,10 +2762,6 @@ PrefabInstance:
     - target: {fileID: 7175926324385684725, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
       propertyPath: m_Name
       value: DialogueCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 7175926324385684725, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

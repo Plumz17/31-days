@@ -1,9 +1,10 @@
+
+// Slash.cs
 using UnityEngine;
-using System.Collections;
 
 public class Slash : BaseAttack
 {
-    public Slash()
+    void Awake()
     {
         attackName = "Slash";
         attackDescription = "A quick and powerful slash with a sharp blade.";

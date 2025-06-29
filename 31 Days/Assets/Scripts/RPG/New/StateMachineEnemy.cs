@@ -25,10 +25,12 @@ public class StateMachineEnemy : MonoBehaviour
     public GameObject Selector;
     private bool actionStarted = false;
     public GameObject PlayerToAttack;
+    private bool alive = true;
     private readonly float animspeed = 2f; // speed of the animation
                                            // Use this for initialization
     void Start()
     {
+        alive = true;
         Selector.SetActive(false);
         currentState = TurnState.PROCESSING;
         BSM = GameObject.Find("BattleManager").GetComponent<StateMachineBattle>();
@@ -75,6 +77,54 @@ public class StateMachineEnemy : MonoBehaviour
                 StartCoroutine(TimeForAction());
                 break;
             case TurnState.DEAD:
+                if (!alive)
+                {
+                    return; // If already processed death, do nothing
+                }
+                else
+                {
+                    // Change tag to indicate death
+                    this.gameObject.tag = "RPGEnemyDead";
+                    
+                    // Remove from battle lists
+                    BSM.EnemysInBattle.Remove(this.gameObject);
+                    
+                    // Deactivate selector
+                    Selector.SetActive(false);
+                    
+                    // Remove from perform list
+                    for (int i = BSM.PerformList.Count - 1; i >= 0; i--)
+                    {
+                        if (BSM.PerformList[i].AttackersGameObject == this.gameObject)
+                        {
+                            BSM.PerformList.RemoveAt(i);
+                        }
+                    }
+                    
+                    // Visual feedback - change color to gray
+                    SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                    if (spriteRenderer != null)
+                    {
+                        spriteRenderer.color = Color.gray;
+                    }
+                    else
+                    {
+                        // Try to find SpriteRenderer on child objects
+                        SpriteRenderer childRenderer = GetComponentInChildren<SpriteRenderer>();
+                        if (childRenderer != null)
+                        {
+                            childRenderer.color = Color.gray;
+                        }
+                    }
+                    
+                    // Mark as dead
+                    alive = false;
+                    
+                    Debug.Log($"[ENEMY DEATH] {enemy.theName} has been removed from battle!");
+                    
+                    // Optionally disable the GameObject or play death animation
+                    // gameObject.SetActive(false);
+                }
                 break;
         }
     }

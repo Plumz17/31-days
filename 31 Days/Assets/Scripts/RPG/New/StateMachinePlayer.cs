@@ -38,7 +38,7 @@ public class StateMachinePlayer : MonoBehaviour
     void Start()
     {
         PlayerPanelSpacer = GameObject.Find("UI").transform.Find("MainPanel").transform.Find("PlayerBarSpacer");
-        
+
         startPosition = transform.position;
         cur_cooldown = Random.Range(0, 2.5f); // Random cooldown for testing
         Selector.SetActive(false);
@@ -160,7 +160,7 @@ public class StateMachinePlayer : MonoBehaviour
             currentState = TurnState.ADDTOLIST;
         }
     }
-    
+
     private IEnumerator TimeForAction()
     {
         if (actionStarted)
@@ -181,6 +181,7 @@ public class StateMachinePlayer : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // Do damage
+        DoDamage();
 
         // Animate back to start position
         Vector3 firstPosition = startPosition;
@@ -227,7 +228,7 @@ public class StateMachinePlayer : MonoBehaviour
             Debug.Log(player.theName + " has died.");
         }
         Debug.Log(player.theName + " took " + getDamageAmount + " damage. Current HP: " + player.curHP);
-        
+
         // Update the UI panel if it exists
         UpdatePlayerPanel();
     }
@@ -267,7 +268,7 @@ public class StateMachinePlayer : MonoBehaviour
 
         // Get the progress bar reference
         ProgressBar = stats.ProgressBar;
-        
+
         // Set the parent
         panelInstance.transform.SetParent(PlayerPanelSpacer, false);
     }
@@ -286,4 +287,72 @@ public class StateMachinePlayer : MonoBehaviour
     {
         UpdatePlayerPanelData();
     }
+    
+    void DoDamage()
+        {
+            if (BSM.PerformList.Count > 0 && BSM.PerformList[0].choosenAttack != null)
+            {
+                float calc_damage = player.curATK + BSM.PerformList[0].choosenAttack.attackDamage;
+                
+                // Check if the enemy has a StateMachineEnemy component for taking damage
+                StateMachineEnemy enemyComponent = EnemyToAttack.GetComponent<StateMachineEnemy>();
+                if (enemyComponent != null)
+                {
+                    // You'll need to add a TakeDamage method to StateMachineEnemy similar to StateMachinePlayer
+                    // enemyComponent.TakeDamage(calc_damage);
+                    
+                    // For now, you can directly modify the enemy's HP
+                    if (enemyComponent.enemy != null)
+                    {
+                        // LOG ENEMY STATE BEFORE DAMAGE
+                        Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} BEFORE DAMAGE - HP: {enemyComponent.enemy.curHP}/{enemyComponent.enemy.baseHP}");
+                        Debug.Log($"[ENEMY HEALTH] {player.theName} attacking {enemyComponent.enemy.theName} with {BSM.PerformList[0].choosenAttack.attackName} for {calc_damage} damage");
+                        
+                        enemyComponent.enemy.curHP -= calc_damage;
+                        
+                        // LOG ENEMY STATE AFTER DAMAGE
+                        Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} AFTER DAMAGE - HP: {enemyComponent.enemy.curHP}/{enemyComponent.enemy.baseHP}");
+                        
+                        if (enemyComponent.enemy.curHP <= 0)
+                        {
+                            enemyComponent.enemy.curHP = 0;
+                            enemyComponent.currentState = StateMachineEnemy.TurnState.DEAD;
+                            Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} has been DEFEATED! Final HP: 0/{enemyComponent.enemy.baseHP}");
+                        }
+                        else
+                        {
+                            Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} is still alive with {enemyComponent.enemy.curHP} HP remaining");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Default attack if no specific attack is chosen
+                float calc_damage = player.curATK;
+                StateMachineEnemy enemyComponent = EnemyToAttack.GetComponent<StateMachineEnemy>();
+                if (enemyComponent != null && enemyComponent.enemy != null)
+                {
+                    // LOG ENEMY STATE BEFORE DAMAGE (DEFAULT ATTACK)
+                    Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} BEFORE DAMAGE - HP: {enemyComponent.enemy.curHP}/{enemyComponent.enemy.baseHP}");
+                    Debug.Log($"[ENEMY HEALTH] {player.theName} attacking {enemyComponent.enemy.theName} with BASIC ATTACK for {calc_damage} damage");
+                    
+                    enemyComponent.enemy.curHP -= calc_damage;
+                    
+                    // LOG ENEMY STATE AFTER DAMAGE (DEFAULT ATTACK)
+                    Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} AFTER DAMAGE - HP: {enemyComponent.enemy.curHP}/{enemyComponent.enemy.baseHP}");
+                    
+                    if (enemyComponent.enemy.curHP <= 0)
+                    {
+                        enemyComponent.enemy.curHP = 0;
+                        enemyComponent.currentState = StateMachineEnemy.TurnState.DEAD;
+                        Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} has been DEFEATED! Final HP: 0/{enemyComponent.enemy.baseHP}");
+                    }
+                    else
+                    {
+                        Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} is still alive with {enemyComponent.enemy.curHP} HP remaining");
+                    }
+                }
+            }
+        }
 }

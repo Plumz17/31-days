@@ -44,20 +44,25 @@ public class StateMachineBattle : MonoBehaviour
     public Transform ActionSpacer;
     public Transform SkillSpacer;
     public GameObject ActionButton;
+    public GameObject SkillButton;
     private List<GameObject> AtkButtons = new List<GameObject>();
     // Use this for initialization
     void Start()
     {
+        Debug.Log("[BATTLE SYSTEM] Battle system initializing...");
         battleStates = PerformAction.WAIT;
         EnemysInBattle.AddRange(GameObject.FindGameObjectsWithTag("RPGEnemy"));
         PlayersInBattle.AddRange(GameObject.FindGameObjectsWithTag("RPGPlayer"));
         PlayerGUIState = PlayerGUI.ACTIVATE;
+
+        Debug.Log($"[BATTLE SYSTEM] Found {PlayersInBattle.Count} players and {EnemysInBattle.Count} enemies");
 
         AttackPanel.SetActive(false);
         EnemySelectPanel.SetActive(false);
         SkillPanel.SetActive(false);
 
         EnemyButtons();
+        Debug.Log("[BATTLE SYSTEM] Battle system initialization complete");
     }
 
 
@@ -132,6 +137,7 @@ public class StateMachineBattle : MonoBehaviour
             case PlayerGUI.ACTIVATE:
                 if (PlayerToManage.Count > 0)
                 {
+                    Debug.Log($"[PLAYER INPUT] Activating turn for player: {PlayerToManage[0].name}");
                     PlayerToManage[0].transform.Find("Selector").gameObject.SetActive(true);
                     PlayerChoice = new HandleTurn();
 
@@ -155,6 +161,11 @@ public class StateMachineBattle : MonoBehaviour
     public void CollectActions(HandleTurn input)
     {
         PerformList.Add(input);
+        Debug.Log($"[ACTION COLLECTED] {input.Attacker} ({input.Type}) will attack {(input.AttackersTarget != null ? input.AttackersTarget.name : "NULL")}");
+        if (input.choosenAttack != null)
+        {
+            Debug.Log($"[ACTION COLLECTED] Attack chosen: {input.choosenAttack.attackName}");
+        }
     }
 
     void EnemyButtons()
@@ -214,8 +225,10 @@ public class StateMachineBattle : MonoBehaviour
 
     public void Input1()
     {
+        Debug.Log($"[PLAYER INPUT] Input1() called - Player chose ATTACK");
         if (PlayerToManage.Count > 0)
         {
+            Debug.Log($"[PLAYER INPUT] Current player: {PlayerToManage[0].name} selecting attack action");
             PlayerChoice.Attacker = PlayerToManage[0].name;
             PlayerChoice.AttackersGameObject = PlayerToManage[0];
             PlayerChoice.Type = "Player";
@@ -223,15 +236,36 @@ public class StateMachineBattle : MonoBehaviour
             AttackPanel.SetActive(false);
             EnemySelectPanel.SetActive(true);
         }
+        else
+        {
+            Debug.LogWarning("[PLAYER INPUT] Input1() called but no players to manage!");
+        }
     }
+    
     public void Input2(GameObject chosenEnemy)
     {
+        Debug.Log($"[PLAYER INPUT] Input2() called - Player selected target: {(chosenEnemy != null ? chosenEnemy.name : "NULL")}");
+        if (chosenEnemy != null)
+        {
+            StateMachineEnemy enemyComponent = chosenEnemy.GetComponent<StateMachineEnemy>();
+            if (enemyComponent != null && enemyComponent.enemy != null)
+            {
+                Debug.Log($"[PLAYER INPUT] Target enemy details - Name: {enemyComponent.enemy.theName}, HP: {enemyComponent.enemy.curHP}");
+            }
+        }
+        
         PlayerChoice.AttackersTarget = chosenEnemy;
         PlayerGUIState = PlayerGUI.DONE;
     }
 
     void PlayerInputDone()
     {
+        Debug.Log($"[PLAYER INPUT] PlayerInputDone() - Finalizing turn for {PlayerChoice.Attacker}");
+        Debug.Log($"[PLAYER INPUT] Final action summary:");
+        Debug.Log($"  - Attacker: {PlayerChoice.Attacker}");
+        Debug.Log($"  - Target: {(PlayerChoice.AttackersTarget != null ? PlayerChoice.AttackersTarget.name : "NULL")}");
+        Debug.Log($"  - Attack: {(PlayerChoice.choosenAttack != null ? PlayerChoice.choosenAttack.attackName : "Basic Attack")}");
+        
         PerformList.Add(PlayerChoice);
         EnemySelectPanel.SetActive(false);
 
@@ -243,9 +277,11 @@ public class StateMachineBattle : MonoBehaviour
         AtkButtons.Clear();
 
         PlayerToManage[0].transform.Find("Selector").gameObject.SetActive(false);
+        
         PlayerToManage.RemoveAt(0);
         PlayerGUIState = PlayerGUI.ACTIVATE;
     }
+
     void CreateAttackButtons()
     {
         // Add null check to prevent NullReferenceException
@@ -261,6 +297,7 @@ public class StateMachineBattle : MonoBehaviour
             return;
         }
 
+        // Create Attack Button
         GameObject AttackButton = Instantiate(ActionButton) as GameObject;
 
         // Add null check for the instantiated button
@@ -301,59 +338,162 @@ public class StateMachineBattle : MonoBehaviour
         buttonComponent.onClick.AddListener(() => Input1());
         AttackButton.transform.SetParent(ActionSpacer, false);
         AtkButtons.Add(AttackButton);
-        
-        // Add null check to prevent NullReferenceException
-        if (ActionButton == null)
-        {
-            Debug.LogError("ActionButton prefab is not assigned in the Inspector! Please assign it to prevent this error.");
-            return;
-        }
-        
-        if (ActionSpacer == null)
-        {
-            Debug.LogError("ActionSpacer is not assigned in the Inspector!");
-            return;
-        }
 
+        // Create Skill Button
         GameObject SkillButton = Instantiate(ActionButton) as GameObject;
-        
+
         // Add null check for the instantiated button
         if (SkillButton == null)
         {
-            Debug.LogError("Failed to instantiate ActionButton!");
+            Debug.LogError("Failed to instantiate ActionButton for Skill!");
             return;
         }
-        
+
         // Find the Text component with null checking
         Transform textTransformSkill = SkillButton.transform.Find("Text (TMP)");
         if (textTransformSkill == null)
         {
-            Debug.LogError("Text child not found in ActionButton prefab!");
+            Debug.LogError("Text child not found in ActionButton prefab for Skill!");
             Destroy(SkillButton);
             return;
         }
-        
+
         TMP_Text SkillButtonText = textTransformSkill.GetComponent<TMP_Text>();
         if (SkillButtonText == null)
         {
-            Debug.LogError("TMP_Text component not found on Text child!");
+            Debug.LogError("TMP_Text component not found on Text child for Skill!");
             Destroy(SkillButton);
             return;
         }
-        
+
         SkillButtonText.text = "Skill"; // Set the text for the button
-        
+
         // Add null check for Button component
         Button buttonComponentSkill = SkillButton.GetComponent<Button>();
         if (buttonComponentSkill == null)
         {
-            Debug.LogError("Button component not found on ActionButton prefab!");
+            Debug.LogError("Button component not found on ActionButton prefab for Skill!");
             Destroy(SkillButton);
             return;
         }
         
-        
+        buttonComponentSkill.onClick.AddListener(() => Input3());
         SkillButton.transform.SetParent(ActionSpacer, false);
         AtkButtons.Add(SkillButton);
+
+        if (PlayerToManage.Count > 0 && 
+            PlayerToManage[0] != null && 
+            PlayerToManage[0].GetComponent<StateMachinePlayer>() != null &&
+            PlayerToManage[0].GetComponent<StateMachinePlayer>().player != null &&
+            PlayerToManage[0].GetComponent<StateMachinePlayer>().player.Skills != null &&
+            PlayerToManage[0].GetComponent<StateMachinePlayer>().player.Skills.Count > 0)
+        {
+            foreach (BaseAttack skill in PlayerToManage[0].GetComponent<StateMachinePlayer>().player.Skills)
+            {
+                if (skill == null) continue; // Skip null skills
+                
+                GameObject SkillButtonInstance = Instantiate(ActionButton) as GameObject;
+                if (SkillButtonInstance == null) continue; // Skip if instantiation failed
+                
+                Transform skillTextTransform = SkillButtonInstance.transform.Find("Text (TMP)");
+                if (skillTextTransform == null)
+                {
+                    Debug.LogError("Text child not found in skill button instance!");
+                    Destroy(SkillButtonInstance);
+                    continue;
+                }
+                
+                TMP_Text SkillText = skillTextTransform.GetComponent<TMP_Text>();
+                if (SkillText == null)
+                {
+                    Debug.LogError("TMP_Text component not found on skill button!");
+                    Destroy(SkillButtonInstance);
+                    continue;
+                }
+                
+                SkillText.text = skill.attackName;
+                
+                // ADD THIS: Get the Button component and add click listener
+                Button skillButtonComponent = SkillButtonInstance.GetComponent<Button>();
+                if (skillButtonComponent != null)
+                {
+                    // Create a local copy of the skill for the lambda closure
+                    BaseAttack currentSkill = skill;
+                    skillButtonComponent.onClick.AddListener(() => Input4(currentSkill));
+                }
+                else
+                {
+                    Debug.LogError("Button component not found on skill button instance!");
+                    Destroy(SkillButtonInstance);
+                    continue;
+                }
+                
+                // Optional: Keep the AttackButton component if you want to use it
+                AttackButton ATB = SkillButtonInstance.GetComponent<AttackButton>();
+                if (ATB != null)
+                {
+                    ATB.skillAttack = skill;
+                }
+                
+                // Parent to SkillSpacer
+                if (SkillSpacer != null)
+                {
+                    SkillButtonInstance.transform.SetParent(SkillSpacer, false);
+                }
+                else
+                {
+                    Debug.LogError("SkillSpacer is null! Cannot parent skill button.");
+                    Destroy(SkillButtonInstance);
+                    continue;
+                }
+                
+                AtkButtons.Add(SkillButtonInstance);
+            }
+        }
+        else
+        {
+            // If no skills available, disable the skill button
+            if (buttonComponentSkill != null)
+            {
+                buttonComponentSkill.interactable = false;
+            }
+        }
+    }
+
+    public void Input4(BaseAttack choosenSkill)
+    {
+        Debug.Log($"[PLAYER INPUT] Input4() called - Player selected skill: {(choosenSkill != null ? choosenSkill.attackName : "NULL")}");
+        
+        if (choosenSkill != null)
+        {
+            Debug.Log($"[PLAYER INPUT] Skill details - Name: {choosenSkill.attackName}, Damage: {choosenSkill.attackDamage}, Cost: {choosenSkill.attackCost}");
+        }
+        
+        if (PlayerToManage.Count > 0)
+        {
+            PlayerChoice.Attacker = PlayerToManage[0].name;
+            PlayerChoice.AttackersGameObject = PlayerToManage[0];
+            PlayerChoice.Type = "Player";
+            
+            // Store the chosen skill in the choosenAttack field instead of AttackersTarget
+            PlayerChoice.choosenAttack = choosenSkill;
+            
+            // AttackersTarget should be set when the player selects an enemy
+            // This will be handled in Input2() method
+            
+            SkillPanel.SetActive(false);
+            EnemySelectPanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("[PLAYER INPUT] Input4() called but no players to manage!");
+        }
+    }
+
+    public void Input3()
+    {
+        Debug.Log("[PLAYER INPUT] Input3() called - Player chose SKILL menu");
+        AttackPanel.SetActive(false);
+        SkillPanel.SetActive(true);
     }
 }

@@ -656,9 +656,17 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
+      propertyPath: Skills.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: attacks.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
+      propertyPath: 'Skills.Array.data[0]'
+      value: 
+      objectReference: {fileID: 6324845198912305009, guid: fc3e7a12245dc7845891dd1a8228059d, type: 3}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: 'attacks.Array.data[0]'
       value: 
@@ -1352,6 +1360,7 @@ MonoBehaviour:
   ActionSpacer: {fileID: 1253148931}
   SkillSpacer: {fileID: 665431238}
   ActionButton: {fileID: 1721187815292603385, guid: 8e980ebc613e1e044ac40517a318a574, type: 3}
+  SkillButton: {fileID: 5637449201861672123, guid: c7a7a9be80796674caa3e751921e09cf, type: 3}
 --- !u!4 &1927522612
 Transform:
   m_ObjectHideFlags: 0

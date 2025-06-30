@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 971381520322713964}
   m_Layer: 6
   m_Name: PlayerBase
-  m_TagString: Player
+  m_TagString: RPGPlayer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -148,6 +148,7 @@ MonoBehaviour:
   intellect: 0
   dexterity: 0
   agility: 0
+  attacks: []
 --- !u!114 &971381520322713964
 MonoBehaviour:
   m_ObjectHideFlags: 0

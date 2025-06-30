@@ -29,17 +29,44 @@ public class StateMachinePlayer : MonoBehaviour
     private bool actionStarted = false;
     private Vector3 startPosition;
     private float animspeed = 2f; // speed of the animation
+    private bool alive = true; // to check if the player is alive
+    //panel
+    private PlayerPanelStats stats;
+    public GameObject PlayerPanel;
+    private Transform PlayerPanelSpacer;
 
     void Start()
     {
+        PlayerPanelSpacer = GameObject.Find("UI").transform.Find("MainPanel").transform.Find("PlayerBarSpacer");
+
         startPosition = transform.position;
         cur_cooldown = Random.Range(0, 2.5f); // Random cooldown for testing
         Selector.SetActive(false);
         BSM = GameObject.Find("BattleManager").GetComponent<StateMachineBattle>();
+
+        // Initialize player if not assigned in inspector
+        if (player == null)
+        {
+            player = GetComponent<BasePlayer>();
+            if (player == null)
+            {
+                player = gameObject.AddComponent<BasePlayer>();
+                Debug.LogWarning("BasePlayer not assigned in inspector for " + gameObject.name + ". Added component.");
+            }
+        }
+
+        // Initialize name if empty
+        if (string.IsNullOrEmpty(player.theName))
+        {
+            player.theName = gameObject.name;
+        }
+
+        // Create player panel AFTER player is initialized
+        CreatePlayerPanel();
+
         // Initialize player stats
         currentState = TurnState.PROCESSING;
     }
-
 
     void Update()
     {
@@ -60,12 +87,66 @@ public class StateMachinePlayer : MonoBehaviour
                 StartCoroutine(TimeForAction());
                 break;
             case (TurnState.DEAD):
+                if (!alive)
+                {
+                    return; // If already dead, do nothing
+                }
+                else
+                {
+                    //change tag
+                    this.gameObject.tag = "RPGPlayerDead";
+                    //not attackable
+                    BSM.PlayersInBattle.Remove(this.gameObject); // Remove from the list of players in battle
+                    //not manageable
+                    BSM.PlayerToManage.Remove(this.gameObject); // Remove from the list of players to manage
+                    //deactivate selector
+                    Selector.SetActive(false);
+                    //reset gui
+                    BSM.AttackPanel.SetActive(false);
+                    BSM.EnemySelectPanel.SetActive(false);
+                    //remove from perform list
+                    for (int i = 0; i < BSM.PerformList.Count; i++)
+                    {
+                        if (BSM.PerformList[i].AttackersGameObject == this.gameObject)
+                        {
+                            BSM.PerformList.Remove(BSM.PerformList[i]);
+                        }
+                    }
+                    //change color / add animation - Fixed to find the SpriteRenderer on the child
+                    Transform squareChild = transform.Find("Square");
+                    if (squareChild != null)
+                    {
+                        SpriteRenderer spriteRenderer = squareChild.GetComponent<SpriteRenderer>();
+                        if (spriteRenderer != null)
+                        {
+                            spriteRenderer.color = Color.gray; // Change color to gray
+                        }
+                        else
+                        {
+                            Debug.LogWarning("SpriteRenderer not found on Square child of " + gameObject.name);
+                        }
+                    }
+                    else
+                    {
+                        Debug.LogWarning("Square child not found on " + gameObject.name);
+                    }
+                    //reset input
+                    BSM.PlayerGUIState = StateMachineBattle.PlayerGUI.ACTIVATE;
+                    alive = false;
+                }
                 break;
         }
     }
 
     void UpgradeProgressBar()
     {
+        // Add null check to prevent NullReferenceException
+        if (ProgressBar == null)
+        {
+            Debug.LogWarning("ProgressBar is null for " + gameObject.name + ". Skipping progress bar update.");
+            return;
+        }
+
         cur_cooldown = cur_cooldown + Time.deltaTime;
         float calc_cooldown = cur_cooldown / max_cooldown;
         ProgressBar.transform.localScale = new Vector3(
@@ -79,6 +160,7 @@ public class StateMachinePlayer : MonoBehaviour
             currentState = TurnState.ADDTOLIST;
         }
     }
+
     private IEnumerator TimeForAction()
     {
         if (actionStarted)
@@ -99,6 +181,7 @@ public class StateMachinePlayer : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         // Do damage
+        DoDamage();
 
         // Animate back to start position
         Vector3 firstPosition = startPosition;
@@ -128,4 +211,148 @@ public class StateMachinePlayer : MonoBehaviour
         return targetPosition != (transform.position = Vector3.MoveTowards(transform.position, targetPosition, animspeed * Time.deltaTime));
     }
 
+    public void TakeDamage(float getDamageAmount)
+    {
+        // Add null check for safety
+        if (player == null)
+        {
+            Debug.LogError("Player component is null in TakeDamage!");
+            return;
+        }
+
+        player.curHP -= getDamageAmount;
+        if (player.curHP <= 0)
+        {
+            player.curHP = 0; // Ensure HP doesn't go negative
+            currentState = TurnState.DEAD;
+            Debug.Log(player.theName + " has died.");
+        }
+        Debug.Log(player.theName + " took " + getDamageAmount + " damage. Current HP: " + player.curHP);
+
+        // Update the UI panel if it exists
+        UpdatePlayerPanel();
+    }
+
+    void CreatePlayerPanel()
+    {
+        // Add null checks
+        if (PlayerPanel == null)
+        {
+            Debug.LogError("PlayerPanel prefab is not assigned in the inspector for " + gameObject.name);
+            return;
+        }
+
+        if (PlayerPanelSpacer == null)
+        {
+            Debug.LogError("PlayerPanelSpacer not found. Make sure UI structure exists.");
+            return;
+        }
+
+        if (player == null)
+        {
+            Debug.LogError("Player component is null when creating panel for " + gameObject.name);
+            return;
+        }
+
+        GameObject panelInstance = Instantiate(PlayerPanel) as GameObject;
+        stats = panelInstance.GetComponent<PlayerPanelStats>();
+
+        if (stats == null)
+        {
+            Debug.LogError("PlayerPanelStats component not found on PlayerPanel prefab.");
+            return;
+        }
+
+        // Initialize the panel with player data
+        UpdatePlayerPanelData();
+
+        // Get the progress bar reference
+        ProgressBar = stats.ProgressBar;
+
+        // Set the parent
+        panelInstance.transform.SetParent(PlayerPanelSpacer, false);
+    }
+
+    void UpdatePlayerPanelData()
+    {
+        if (stats != null && player != null)
+        {
+            stats.PlayerName.text = player.theName;
+            stats.PlayerHP.text = "HP: " + player.curHP + "/" + player.baseHP;
+            stats.PlayerMP.text = "MP: " + player.curMP + "/" + player.baseMP;
+        }
+    }
+
+    void UpdatePlayerPanel()
+    {
+        UpdatePlayerPanelData();
+    }
+    
+    void DoDamage()
+        {
+            if (BSM.PerformList.Count > 0 && BSM.PerformList[0].choosenAttack != null)
+            {
+                float calc_damage = player.curATK + BSM.PerformList[0].choosenAttack.attackDamage;
+                
+                // Check if the enemy has a StateMachineEnemy component for taking damage
+                StateMachineEnemy enemyComponent = EnemyToAttack.GetComponent<StateMachineEnemy>();
+                if (enemyComponent != null)
+                {
+                    // You'll need to add a TakeDamage method to StateMachineEnemy similar to StateMachinePlayer
+                    // enemyComponent.TakeDamage(calc_damage);
+                    
+                    // For now, you can directly modify the enemy's HP
+                    if (enemyComponent.enemy != null)
+                    {
+                        // LOG ENEMY STATE BEFORE DAMAGE
+                        Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} BEFORE DAMAGE - HP: {enemyComponent.enemy.curHP}/{enemyComponent.enemy.baseHP}");
+                        Debug.Log($"[ENEMY HEALTH] {player.theName} attacking {enemyComponent.enemy.theName} with {BSM.PerformList[0].choosenAttack.attackName} for {calc_damage} damage");
+                        
+                        enemyComponent.enemy.curHP -= calc_damage;
+                        
+                        // LOG ENEMY STATE AFTER DAMAGE
+                        Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} AFTER DAMAGE - HP: {enemyComponent.enemy.curHP}/{enemyComponent.enemy.baseHP}");
+                        
+                        if (enemyComponent.enemy.curHP <= 0)
+                        {
+                            enemyComponent.enemy.curHP = 0;
+                            enemyComponent.currentState = StateMachineEnemy.TurnState.DEAD;
+                            Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} has been DEFEATED! Final HP: 0/{enemyComponent.enemy.baseHP}");
+                        }
+                        else
+                        {
+                            Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} is still alive with {enemyComponent.enemy.curHP} HP remaining");
+                        }
+                    }
+                }
+            }
+            else
+            {
+                // Default attack if no specific attack is chosen
+                float calc_damage = player.curATK;
+                StateMachineEnemy enemyComponent = EnemyToAttack.GetComponent<StateMachineEnemy>();
+                if (enemyComponent != null && enemyComponent.enemy != null)
+                {
+                    // LOG ENEMY STATE BEFORE DAMAGE (DEFAULT ATTACK)
+                    Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} BEFORE DAMAGE - HP: {enemyComponent.enemy.curHP}/{enemyComponent.enemy.baseHP}");
+                    Debug.Log($"[ENEMY HEALTH] {player.theName} attacking {enemyComponent.enemy.theName} with BASIC ATTACK for {calc_damage} damage");
+                    
+                    enemyComponent.enemy.curHP -= calc_damage;
+                    
+                    // LOG ENEMY STATE AFTER DAMAGE (DEFAULT ATTACK)
+                    Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} AFTER DAMAGE - HP: {enemyComponent.enemy.curHP}/{enemyComponent.enemy.baseHP}");
+                    
+                    if (enemyComponent.enemy.curHP <= 0)
+                    {
+                        enemyComponent.enemy.curHP = 0;
+                        enemyComponent.currentState = StateMachineEnemy.TurnState.DEAD;
+                        Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} has been DEFEATED! Final HP: 0/{enemyComponent.enemy.baseHP}");
+                    }
+                    else
+                    {
+                        Debug.Log($"[ENEMY HEALTH] {enemyComponent.enemy.theName} is still alive with {enemyComponent.enemy.curHP} HP remaining");
+                    }
+                }
+            }
+        }
 }

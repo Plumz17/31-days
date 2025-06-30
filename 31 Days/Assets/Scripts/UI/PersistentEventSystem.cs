@@ -11,10 +11,12 @@ public class PersistentEventSystem : MonoBehaviour
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            Debug.Log("Persistent Event System created and set to DontDestroyOnLoad.");
         }
         else if (instance != this)
         {
-
+            // If another Event System already exists and is persistent, destroy this one.
+            Debug.LogWarning("Duplicate Event System detected. Destroying new one.");
             Destroy(gameObject);
         }
     }

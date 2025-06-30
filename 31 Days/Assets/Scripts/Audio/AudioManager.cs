@@ -8,6 +8,7 @@ public class AudioManager : MonoBehaviour
     private AudioSource audioSource;
 
     [Header("Music Clips")]
+    public AudioClip mainMenuMusic;
     public AudioClip defaultMusic;
     public AudioClip doorMusic;
     [SerializeField] public float fadeTime = 0.4f;
@@ -22,10 +23,6 @@ public class AudioManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this.gameObject);
             audioSource = GetComponent<AudioSource>();
-            if (defaultMusic != null)
-            {
-                PlayMusic(defaultMusic);
-            }
         }
     }
 

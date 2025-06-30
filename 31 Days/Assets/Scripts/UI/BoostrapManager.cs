@@ -5,6 +5,6 @@ public class BoostrapManager : MonoBehaviour
 {
     void Start()
     {
-        SceneManager.LoadScene("Classroom");
+        SceneManager.LoadScene("Main Menu");
     }
 }

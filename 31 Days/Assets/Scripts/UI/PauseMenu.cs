@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static PauseMenu instance;
+
     public InputActions playerInput;
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
@@ -11,9 +13,17 @@ public class PauseMenu : MonoBehaviour
     private void OnEnable() => playerInput.UI.Enable();
     private void OnDisable() => playerInput.UI.Disable();
 
-    void Awake()
+    private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
         playerInput = new InputActions();
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -26,7 +36,6 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
-                Debug.Log("Test");
                 Pause();
             }
         }

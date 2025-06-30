@@ -11,6 +11,7 @@ TagManager:
   - RPGEnemy
   - RPGPlayerDead
   - RPGEnemyDead
+  - PauseMenuUI
   layers:
   - Default
   - TransparentFX

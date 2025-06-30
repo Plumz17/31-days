@@ -8,8 +8,8 @@ using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField] GameObject dialogueCanvas;
-    [SerializeField] GameObject dialoguePanel;
+    GameObject dialogueCanvas;
+    GameObject dialoguePanel;
     TMP_Text dialogueText;
     Image characterPortrait;
     TMP_Text characterName;
@@ -55,6 +55,12 @@ public class DialogueManager : MonoBehaviour
 
     private void SetUpReferences()
     {
+        if (dialogueCanvas == null)
+            dialogueCanvas = GameObject.Find("DialogueCanvas");
+
+        if (dialoguePanel == null && dialogueCanvas != null)
+            dialoguePanel = dialogueCanvas.transform.Find("DialoguePanel")?.gameObject;
+
         if (dialogueText == null)
             dialogueText = dialoguePanel.transform.Find("DialogueText")?.GetComponent<TMP_Text>();
 

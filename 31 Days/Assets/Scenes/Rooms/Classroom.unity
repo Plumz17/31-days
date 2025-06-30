@@ -1703,7 +1703,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7175926324385684725, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1729,11 +1729,11 @@ PrefabInstance:
     - target: {fileID: 5402606552600188085, guid: e025af131486dfa4e8052da6d938199d, type: 3}
       propertyPath: dialoguePanel
       value: 
-      objectReference: {fileID: 265721049}
+      objectReference: {fileID: 0}
     - target: {fileID: 5402606552600188085, guid: e025af131486dfa4e8052da6d938199d, type: 3}
       propertyPath: dialogueCanvas
       value: 
-      objectReference: {fileID: 542812195}
+      objectReference: {fileID: 0}
     - target: {fileID: 5402606552600188085, guid: e025af131486dfa4e8052da6d938199d, type: 3}
       propertyPath: selectedColor.b
       value: 0.43529415

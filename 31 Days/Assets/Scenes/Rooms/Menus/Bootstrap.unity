@@ -1933,18 +1933,6 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
---- !u!114 &992495533116469726
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7175926324004182455}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b77569632997404b82c33f4307dee6f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &3666793176768085204
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2047,7 +2035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7175926324385684725, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2126,7 +2114,6 @@ GameObject:
   - component: {fileID: 6864536222668903608}
   - component: {fileID: 277158595777495221}
   - component: {fileID: 4782540810503770421}
-  - component: {fileID: 992495533116469726}
   - component: {fileID: 7175926324004182456}
   m_Layer: 5
   m_Name: MenuCanvas

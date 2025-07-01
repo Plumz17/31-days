@@ -451,6 +451,12 @@ MonoBehaviour:
     time: 0
     hp: 100
     will: 50
+    xp: 0
+    level: 1
+    money: 0
+    currentScene: 
+    currentPosition: {x: 0, y: 0, z: 0}
+  loadedFromSave: 0
 --- !u!1 &444636453
 GameObject:
   m_ObjectHideFlags: 0
@@ -1255,7 +1261,7 @@ GameObject:
   - component: {fileID: 1324296167}
   - component: {fileID: 1324296166}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Curtain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

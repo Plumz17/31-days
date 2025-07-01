@@ -13,9 +13,17 @@ public class MainMenu : MonoBehaviour
         }
     }
 
-    public void OnStartButtonClick()
+    public void OnNewGameButtonClick()
+    {
+        SaveData.ResetToDefault();
+
+        AudioManager.instance.CrossfadeMusic(AudioManager.instance.defaultMusic, 0, false);
+        SaveData.Load();
+    }
+
+    public void OnContinueButtonClick()
     {
         AudioManager.instance.CrossfadeMusic(AudioManager.instance.defaultMusic, 0, false);
-        SceneManager.LoadScene("Classroom");
+        SaveData.Load();
     }
 }

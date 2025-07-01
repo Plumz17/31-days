@@ -10,6 +10,14 @@ public class PlayerData
     public int hp = 100;
     public int will = 50;
 
+    public int xp = 0;
+    public int level = 1;
+    public int money = 0;
+
+    public string currentScene = "Room";
+    public Vector3 currentPosition = new Vector3(-17, 2.125f, 0);
+
+
     // Social Links
     //public List<SocialLinkSaveData> socialLinks = new List<SocialLinkSaveData>();
 

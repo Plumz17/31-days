@@ -1,6 +1,7 @@
 using System.Data.Common;
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public static class SaveData
 {
@@ -8,9 +9,10 @@ public static class SaveData
 
     public static void Save()
     {
+        SavePrevScene();
+
         string json = JsonUtility.ToJson(PlayerDataManager.instance.currentData);
         File.WriteAllText(path, json);
-        Debug.Log("Saved in: " + path);
     }
 
     public static void Load()
@@ -24,7 +26,8 @@ public static class SaveData
 
         string json = File.ReadAllText(path);
         PlayerDataManager.instance.currentData = JsonUtility.FromJson<PlayerData>(json);
-        return;
+
+        LoadPrevScene();
     }
 
     public static void ResetToDefault()
@@ -37,5 +40,24 @@ public static class SaveData
             File.Delete(path);
             Debug.Log("Save file deleted at: " + path);
         }
+
+        Save();
+    }
+
+    public static void SavePrevScene()
+    {
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            PlayerDataManager.instance.currentData.currentScene = SceneManager.GetActiveScene().name;
+            PlayerDataManager.instance.currentData.currentPosition = player.transform.position;
+        }
+    }
+
+    public static void LoadPrevScene()
+    {
+        PlayerDataManager.instance.loadedFromSave = true;
+        string sceneToLoad = PlayerDataManager.instance.currentData.currentScene;
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

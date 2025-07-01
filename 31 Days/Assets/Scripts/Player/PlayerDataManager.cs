@@ -4,6 +4,7 @@ public class PlayerDataManager : MonoBehaviour
 {
     public static PlayerDataManager instance;
     public PlayerData currentData;
+    public bool loadedFromSave = false;
 
     void Awake()
     {

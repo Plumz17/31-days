@@ -11,7 +11,7 @@ public class PauseMenu : MonoBehaviour
     public GameObject pauseMenuUI;
 
     private void OnEnable() => playerInput.UI.Enable();
-    private void OnDisable() => playerInput.UI.Disable();
+    //private void OnDisable() => playerInput.UI.Disable();
 
     private void Awake()
     {
@@ -41,14 +41,14 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;

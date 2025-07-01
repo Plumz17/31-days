@@ -731,7 +731,7 @@ Transform:
   m_GameObject: {fileID: 1162171213}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.0179901, y: -0.70225954, z: 0}
+  m_LocalPosition: {x: -1.0179474, y: -0.70225954, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -917,7 +917,7 @@ Transform:
   m_GameObject: {fileID: 2047215672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.9311152, y: 2.1678412, z: 0}
+  m_LocalPosition: {x: -2.9311008, y: 2.1678412, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1327,15 +1327,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.644292
+      value: 4.644434
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.23732
+      value: 1.09732
       objectReference: {fileID: 0}
     - target: {fileID: 914689965977792638, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: Lens.OrthographicSize
-      value: 5.5
+      value: 5.4
       objectReference: {fileID: 0}
     - target: {fileID: 914689965977792638, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: Target.TrackingTarget
@@ -1439,11 +1439,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7372820851319650323, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.24
+      value: 1.0999999
       objectReference: {fileID: 0}
     - target: {fileID: 8047819064123680138, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: TargetOffset.y
-      value: 2.24
+      value: 2.1
       objectReference: {fileID: 0}
     - target: {fileID: 8047819064123680138, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: Composition.ScreenPosition.y

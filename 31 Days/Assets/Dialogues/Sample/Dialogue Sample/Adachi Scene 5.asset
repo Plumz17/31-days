@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: Adachi Scene 4
+  m_Name: Adachi Scene 5
   m_EditorClassIdentifier: 
   characterName: Adachi
   characterPortrait: {fileID: -4731953374162375773, guid: 74aee26b46aeed24c8c7150f1c11dabb, type: 3}
-  levelUpFlag: 0
+  levelUpFlag: 1
   dialogueLines:
-  - "Once everyone turns into Shadows\u2026 they'll still keep on living, oblivious
-    to all the things around them\u2026\r"
-  nextNode: {fileID: 11400000, guid: e320464036476bd419a95d09113bb254, type: 2}
+  - (Your Connection with Adachi increased)
+  nextNode: {fileID: 0}

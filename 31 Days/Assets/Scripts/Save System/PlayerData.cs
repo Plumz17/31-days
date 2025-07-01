@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 
@@ -14,12 +16,12 @@ public class PlayerData
     public int level = 1;
     public int money = 0;
 
-    public string currentScene = "Room";
-    public Vector3 currentPosition = new Vector3(-17, 2.125f, 0);
+    public string prevScene = "Room";
+    public Vector3 prevPosition = new Vector3(-17, 2.125f, 0);
 
 
     // Social Links
-    //public List<SocialLinkSaveData> socialLinks = new List<SocialLinkSaveData>();
+    public List<ConnectionSaveData> playerConnections = new List<ConnectionSaveData>();
 
     // You can also add flags or quest progress here
     //public List<string> unlockedEvents = new List<string>();

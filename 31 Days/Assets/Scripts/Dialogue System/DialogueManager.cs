@@ -147,6 +147,11 @@ public class DialogueManager : MonoBehaviour
             currentSingleNode = null;
             ShowChoices();
         }
+
+        if (node.levelUpFlag && !string.IsNullOrEmpty(node.characterName))
+        {
+            PlayerDataManager.instance.IncreaseConnection(node.characterName);
+        }
     }
 
     private void SetUpDialogueUI(BaseNode node) // Sets up the dialogue panel with the provided node's information

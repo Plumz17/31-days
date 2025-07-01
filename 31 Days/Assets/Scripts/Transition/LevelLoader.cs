@@ -57,7 +57,7 @@ public class LevelLoader : MonoBehaviour
         {
             if (PlayerDataManager.instance != null && PlayerDataManager.instance.loadedFromSave)
             {
-                player.transform.position = PlayerDataManager.instance.currentData.currentPosition;
+                player.transform.position = PlayerDataManager.instance.currentData.prevPosition;
                 PlayerDataManager.instance.loadedFromSave = false;
             }
             else

@@ -32,7 +32,7 @@ public static class SaveData
 
     public static void ResetToDefault()
     {
-        PlayerDataManager.instance.currentData = new PlayerData();
+        PlayerDataManager.instance.StartNewGame();
         Debug.Log("Player data reset to default.");
 
         if (File.Exists(path))
@@ -49,15 +49,15 @@ public static class SaveData
         GameObject player = GameObject.FindWithTag("Player");
         if (player != null)
         {
-            PlayerDataManager.instance.currentData.currentScene = SceneManager.GetActiveScene().name;
-            PlayerDataManager.instance.currentData.currentPosition = player.transform.position;
+            PlayerDataManager.instance.currentData.prevScene = SceneManager.GetActiveScene().name;
+            PlayerDataManager.instance.currentData.prevPosition = player.transform.position;
         }
     }
 
     public static void LoadPrevScene()
     {
         PlayerDataManager.instance.loadedFromSave = true;
-        string sceneToLoad = PlayerDataManager.instance.currentData.currentScene;
+        string sceneToLoad = PlayerDataManager.instance.currentData.prevScene;
         SceneManager.LoadScene(sceneToLoad);
     }
 }

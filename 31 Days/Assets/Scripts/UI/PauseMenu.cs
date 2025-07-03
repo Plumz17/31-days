@@ -70,8 +70,8 @@ public class PauseMenu : MonoBehaviour
         Resume();
     }
 
-    public void OnDeleteButtonClick()
+    public void OnAdvanceButtonClick()
     {
-       SaveData.ResetToDefault();
+        CalenderManager.instance.AdvanceTimeBlock();
     }
 }

@@ -11,8 +11,12 @@ public static class SaveData
     {
         SavePrevScene();
 
+        CalenderManager.instance.SaveToPlayerData(PlayerDataManager.instance.currentData); //Save Calendar State
+        CalenderManager.instance.UpdateCalenderUI();
+
         string json = JsonUtility.ToJson(PlayerDataManager.instance.currentData);
         File.WriteAllText(path, json);
+        
     }
 
     public static void Load()
@@ -28,6 +32,9 @@ public static class SaveData
         PlayerDataManager.instance.currentData = JsonUtility.FromJson<PlayerData>(json);
 
         LoadPrevScene();
+
+        CalenderManager.instance.LoadFromPlayerData(PlayerDataManager.instance.currentData); //Save Calendar State
+        CalenderManager.instance.UpdateCalenderUI();
     }
 
     public static void ResetToDefault()

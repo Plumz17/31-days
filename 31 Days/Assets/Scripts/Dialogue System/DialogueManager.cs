@@ -152,6 +152,11 @@ public class DialogueManager : MonoBehaviour
         {
             PlayerDataManager.instance.IncreaseConnection(node.characterName);
         }
+
+        if (node.advanceTimeFlag != 0)
+        {
+            CalenderManager.instance.AdvanceTimeBlock(node.advanceTimeFlag);
+        }
     }
 
     private void SetUpDialogueUI(BaseNode node) // Sets up the dialogue panel with the provided node's information
@@ -218,11 +223,11 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
     }
 
-    private void ShowChoices() // Displays the choices available in a MultipleChoiceNode
+    private void ShowChoices()
     {
-        for (int i = 0; i < currentMultipleNode.options.Length; i++)
+        for (int i = 0; i < choiceTextBoxes.Length; i++)
         {
-            if (i < choiceTexts.Length)
+            if (i < currentMultipleNode.options.Length)
             {
                 choiceTexts[i].gameObject.SetActive(true);
                 choiceTextBoxes[i].SetActive(true);
@@ -233,7 +238,6 @@ public class DialogueManager : MonoBehaviour
                 choiceTexts[i].gameObject.SetActive(false);
                 choiceTextBoxes[i].SetActive(false);
             }
-
         }
 
         HighlightCurrentOption();

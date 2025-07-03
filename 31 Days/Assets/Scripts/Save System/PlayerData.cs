@@ -6,8 +6,10 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerData
 {
-    public int day = 0;
-    public int time = 0; //0: morning, 1: afternoon, 2: night, -1: dusk
+    public int day = 4;
+    public int month = 8;
+    public int time = 0;
+    public int totalDaysPassed = 0;
 
     public int hp = 100;
     public int will = 50;

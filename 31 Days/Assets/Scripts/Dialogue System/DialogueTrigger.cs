@@ -1,84 +1,103 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-
+[RequireComponent(typeof(Collider2D))]
 public class DialogueTrigger : MonoBehaviour
 {
+    [Header("Dialogue")]
+    [Tooltip("The dialogue node to start from when interacting.")]
+    [SerializeField] private BaseNode startingNode;
 
-    [Header("Dialogue Nodes")] // Set up the starting node for the dialogue
-    [Tooltip("The node to start the dialogue from when the player interacts with the NPC.")]
-    [SerializeField] BaseNode startingNode;
+    [Header("Optional")]
+    [SerializeField] private bool facePlayerOnTalk = true;
 
-    Transform playerTransform;
-    DialogueManager dialogueManager;
-    ExclamationMark exclamationMark;
-
-    public InputActions playerInput;
-
+    private Transform playerTransform;
+    private ExclamationMark exclamationMark;
     private bool playerIsClose = false;
-    private void OnEnable() => playerInput.Player.Enable();
-    private void OnDisable() => playerInput.Player.Disable();
 
-    void Awake()
+    private InputActions inputActions;
+
+    private void Awake()
     {
-        playerInput = new InputActions();
-        exclamationMark = GetComponentInChildren<ExclamationMark>();
-        playerTransform = GameObject.FindWithTag("Player").transform;
-        dialogueManager = GetComponent<DialogueManager>();
+        playerTransform = GameObject.FindWithTag("Player")?.transform;
+        exclamationMark = GetComponentInChildren<ExclamationMark>(true);
+
+        inputActions = new InputActions();
+        inputActions.Player.Interact.performed += OnInteract;
     }
 
-    private void Update() // Handle player interaction with the NPC
+    private void OnEnable()
     {
-        if (!playerIsClose || !playerInput.Player.Interact.triggered) return; // Check if player is close and the interact input is triggered
+        inputActions.Enable();
+    }
 
-        if (!dialogueManager.IsActive) // When Clicked, If dialogue is not active, start it
+    private void OnDisable()
+    {
+        inputActions.Disable();
+    }
+
+    private void OnInteract(InputAction.CallbackContext context)
+    {
+        if (!playerIsClose || startingNode == null)
+            return;
+
+        var dialogueManager = DialogueManager.instance;
+        if (dialogueManager == null) return;
+
+        if (!dialogueManager.IsActive)
         {
-            FaceNPCToPlayer();
-            exclamationMark.SetVisible(false);
+            // Start dialogue
+            if (facePlayerOnTalk && playerTransform != null)
+                FaceNPCToPlayer();
+
+            exclamationMark?.SetVisible(false);
             dialogueManager.StartDialogue(startingNode);
         }
-        else if (dialogueManager.IsTyping) // When Clicked, If dialogue is active and currently typing, finish typing
+        else
         {
-            dialogueManager.FinishTyping();
-        }
-        else // When Clicked, If dialogue is active and not typing, go to the next line
-        {
-            dialogueManager.NextLine();
-            if (!dialogueManager.IsActive)
+            // Dialogue active
+            if (dialogueManager.UI.IsTyping)
             {
-                exclamationMark.SetVisible(true);
+                dialogueManager.FinishTyping();
+            }
+            else if (dialogueManager.CanAdvance)
+            {
+                dialogueManager.HandleSubmit();
+            }
+            else
+            {
+                dialogueManager.EndDialogue();
+                exclamationMark?.SetVisible(true);
             }
         }
     }
 
-    private void FaceNPCToPlayer() // Make the NPC face the player when interacting
+    private void FaceNPCToPlayer()
     {
         Vector3 direction = playerTransform.position - transform.position;
-        Transform npcRoot = transform.parent;
-        if (npcRoot == null) return;
+        Transform npcRoot = transform.parent != null ? transform.parent : transform;
 
-        if (direction.x > 0)
-            npcRoot.localScale = new Vector3(-Mathf.Abs(npcRoot.localScale.x), npcRoot.localScale.y, npcRoot.localScale.z); // Face right
-        else
-            npcRoot.localScale = new Vector3(Mathf.Abs(npcRoot.localScale.x), npcRoot.localScale.y, npcRoot.localScale.z); // Face left
+        float scaleX = Mathf.Abs(npcRoot.localScale.x);
+        npcRoot.localScale = new Vector3(direction.x > 0 ? -scaleX : scaleX, npcRoot.localScale.y, npcRoot.localScale.z);
     }
-    
-    void OnTriggerEnter2D(Collider2D collision) // Handle player entering the trigger area
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (!collision.CompareTag("Player")) return;
 
         playerIsClose = true;
-        exclamationMark.SetIsClose(true);
+        exclamationMark?.SetIsClose(true);
     }
 
-    void OnTriggerExit2D(Collider2D collision) // Handle player exiting the trigger area
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
-        {
-            playerIsClose = false;
-            exclamationMark.SetIsClose(false);
-            exclamationMark.SetVisible(true);
-            dialogueManager.EndDialogue(); // Clear dialogue when player exits trigger
-        }
+        if (!collision.CompareTag("Player")) return;
+
+        playerIsClose = false;
+        exclamationMark?.SetIsClose(false);
+        exclamationMark?.SetVisible(true);
+
+        if (DialogueManager.instance != null && DialogueManager.instance.IsActive)
+            DialogueManager.instance.EndDialogue();
     }
 }

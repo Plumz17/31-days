@@ -37,7 +37,7 @@ public class TransitionTrigger : MonoBehaviour
 
     void Update()
     {
-        if ((playerInTrigger && (playerInput.UI.Accept.triggered || isRoomChange)))
+        if ((playerInTrigger && (playerInput.UI.Submit.triggered || isRoomChange)))
         {
             LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
         }

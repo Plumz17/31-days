@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using NUnit.Framework.Constraints;
 
 public class DialogueUIManager : MonoBehaviour
 {
@@ -8,7 +9,11 @@ public class DialogueUIManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text characterNameText;
+    [SerializeField] private Image dialogueCircle;
     [SerializeField] private Image characterPortrait;
+    [SerializeField] private Image dialogueImageUI;
+    [SerializeField] private Sprite dialogueImage;
+    [SerializeField] private Sprite itemImage;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject choicePanel;
@@ -32,12 +37,31 @@ public class DialogueUIManager : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
         choicePanel.SetActive(false);
+        bool hasCharacter = !string.IsNullOrEmpty(node.characterName) || node.characterPortrait != null;
 
-        if (characterNameText != null)
-            characterNameText.text = node.characterName;
+        characterNameText.gameObject.SetActive(hasCharacter);
+        characterPortrait.gameObject.SetActive(hasCharacter);
+        dialogueCircle.gameObject.SetActive(hasCharacter);
 
-        if (characterPortrait != null)
-            characterPortrait.sprite = node.characterPortrait;
+        if (hasCharacter)
+        {
+            if (characterNameText != null)
+                characterNameText.text = node.characterName;
+
+            if (characterPortrait != null)
+                characterPortrait.sprite = node.characterPortrait;
+
+            // Use dialogue image if character exists
+            dialogueImageUI.sprite = dialogueImage;
+            dialogueImageUI.SetNativeSize();
+        }
+
+        else
+        {
+            // Use item image (or narration image)
+            dialogueImageUI.sprite = itemImage;
+            dialogueImageUI.SetNativeSize();
+        }
     }
 
     public void HideDialogueUI()

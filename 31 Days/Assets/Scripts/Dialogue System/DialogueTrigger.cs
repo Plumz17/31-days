@@ -60,14 +60,9 @@ public class DialogueTrigger : MonoBehaviour
             {
                 dialogueManager.FinishTyping();
             }
-            else if (dialogueManager.CanAdvance)
-            {
-                dialogueManager.HandleSubmit();
-            }
             else
             {
-                dialogueManager.EndDialogue();
-                exclamationMark?.SetVisible(true);
+                dialogueManager.HandleSubmit();
             }
         }
     }

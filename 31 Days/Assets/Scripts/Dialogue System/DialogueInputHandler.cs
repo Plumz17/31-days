@@ -46,8 +46,6 @@ public class DialogueInputHandler : MonoBehaviour
     {
         if (!isInChoiceMode) return;
 
-        Debug.Log("Test");
-
         if (inputVec.y < 0)
         {
             currentOptionIndex = (currentOptionIndex + 1) % optionCount;

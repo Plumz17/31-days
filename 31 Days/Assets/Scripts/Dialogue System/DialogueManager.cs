@@ -66,6 +66,8 @@ public class DialogueManager : MonoBehaviour
             currentMultipleNode = multiple;
             currentSingleNode = null;
             uiManager.ShowChoices(multiple.options);
+            inputHandler.EnableChoiceMode(multiple.options.Length);
+            inputHandler.OnNavigate += uiManager.HighlightOption;
         }
 
         if (node.levelUpFlag && !string.IsNullOrEmpty(node.characterName))
@@ -83,9 +85,24 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (currentNode is MultipleChoiceNode)
+        Debug.Log("test");
+        if (currentNode is MultipleChoiceNode multiple)
         {
-            // Choice selection should be handled in DialogueInputHandler
+            int selectedIndex = inputHandler.CurrentOptionIndex;
+            BaseNode nextNode = multiple.options[selectedIndex].nextNode;
+
+            if (nextNode != null)
+            {
+                StartDialogue(nextNode);
+            }
+            else
+            {
+                EndDialogue();
+            }
+
+            uiManager.HideChoices();
+            inputHandler.OnNavigate -= uiManager.HighlightOption;
+            inputHandler.DisableChoiceMode();
             return;
         }
 

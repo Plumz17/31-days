@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3855254493396616056}
   - component: {fileID: 826174203163512517}
   - component: {fileID: 5727092587755768649}
-  - component: {fileID: 5402606552600188085}
   - component: {fileID: 1642825563204616822}
   m_Layer: 0
   m_Name: DialogueManager
@@ -104,23 +103,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5402606552600188085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 240280494027844407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 641c0d2121494844f9af16d689903641, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueCanvas: {fileID: 0}
-  dialoguePanel: {fileID: 0}
-  wordSpeed: 0.01
-  selectedColor: {r: 0, g: 0.2901961, b: 0.6784314, a: 1}
-  unselectedColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &1642825563204616822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingNode: {fileID: 11400000, guid: 40b4fe536bc1be7438b8b35b830ce529, type: 2}
+  facePlayerOnTalk: 1
 --- !u!1 &1443691269441150625
 GameObject:
   m_ObjectHideFlags: 0

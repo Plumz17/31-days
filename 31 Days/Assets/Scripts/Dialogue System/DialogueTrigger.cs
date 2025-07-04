@@ -12,7 +12,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private bool facePlayerOnTalk = true;
 
     private Transform playerTransform;
-    private ExclamationMark exclamationMark;
+    public ExclamationMark exclamationMark;
     private bool playerIsClose = false;
 
     private InputActions inputActions;
@@ -52,6 +52,7 @@ public class DialogueTrigger : MonoBehaviour
 
             exclamationMark?.SetVisible(false);
             dialogueManager.StartDialogue(startingNode);
+            dialogueManager.OnDialogueEnded += OnDialogueEnded;
         }
         else
         {
@@ -90,9 +91,15 @@ public class DialogueTrigger : MonoBehaviour
 
         playerIsClose = false;
         exclamationMark?.SetIsClose(false);
-        exclamationMark?.SetVisible(true);
+
 
         if (DialogueManager.instance != null && DialogueManager.instance.IsActive)
             DialogueManager.instance.EndDialogue();
+    }
+    
+    private void OnDialogueEnded()
+    {
+        exclamationMark?.SetVisible(true);
+        DialogueManager.instance.OnDialogueEnded -= OnDialogueEnded; // Unsubscribe!
     }
 }

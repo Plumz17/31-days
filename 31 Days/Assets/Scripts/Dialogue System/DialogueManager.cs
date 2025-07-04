@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private DialogueUIManager uiManager;
     [SerializeField] private DialogueInputHandler inputHandler;
 
+    private PlayerMovement playerMovement;
+ 
     public DialogueUIManager UI => uiManager;
     public DialogueInputHandler Input => inputHandler;
 
@@ -36,6 +39,8 @@ public class DialogueManager : MonoBehaviour
     public bool IsActive => uiManager.DialoguePanel.activeSelf;
     public bool IsTyping => uiManager.IsTyping;
 
+    public event Action OnDialogueEnded;
+
     public bool CanAdvance
     {
         get
@@ -54,6 +59,8 @@ public class DialogueManager : MonoBehaviour
         currentLineIndex = 0;
 
         uiManager.ShowDialogueUI(node);
+        playerMovement = GameObject.FindWithTag("Player")?.GetComponent<PlayerMovement>();
+        playerMovement.SetCanMove(false);
 
         if (node is SingleChoiceNode single)
         {
@@ -174,5 +181,7 @@ public class DialogueManager : MonoBehaviour
         currentNode = null;
         currentSingleNode = null;
         currentMultipleNode = null;
+        playerMovement.SetCanMove(true);
+        OnDialogueEnded?.Invoke();
     }
 }

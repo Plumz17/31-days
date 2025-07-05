@@ -147,6 +147,13 @@ public class StateMachinePlayer : MonoBehaviour
             return;
         }
 
+        // NEW: Check if this character can fill their bar
+        if (!BSM.CanFillBar(this.gameObject))
+        {
+            // If this character can't fill their bar, don't update the progress
+            return;
+        }
+
         cur_cooldown = cur_cooldown + Time.deltaTime;
         float calc_cooldown = cur_cooldown / max_cooldown;
         ProgressBar.transform.localScale = new Vector3(
@@ -195,6 +202,9 @@ public class StateMachinePlayer : MonoBehaviour
 
         // Reset BSM -> WAIT
         BSM.battleStates = StateMachineBattle.PerformAction.WAIT;
+
+        // NEW: Notify BSM that action is completed
+        BSM.OnActionCompleted();
 
         actionStarted = false;
         // Reset cooldown

@@ -131,6 +131,13 @@ public class StateMachineEnemy : MonoBehaviour
 
     void UpgradeProgressBar()
     {
+        // NEW: Check if this character can fill their bar
+        if (!BSM.CanFillBar(this.gameObject))
+        {
+            // If this character can't fill their bar, don't update the progress
+            return;
+        }
+
         cur_cooldown += Time.deltaTime;
 
         if (cur_cooldown >= max_cooldown)
@@ -202,6 +209,9 @@ public class StateMachineEnemy : MonoBehaviour
 
         // Reset BSM -> WAIT
         BSM.battleStates = StateMachineBattle.PerformAction.WAIT;
+
+        // NEW: Notify BSM that action is completed
+        BSM.OnActionCompleted();
 
         actionStarted = false;
         // Reset cooldown

@@ -20,6 +20,9 @@ public class StateMachineBattle : MonoBehaviour
     public List<GameObject> PlayersInBattle = new List<GameObject>();
     public List<GameObject> EnemysInBattle = new List<GameObject>();
 
+    // CHANGED: Allow multiple characters to fill bars simultaneously
+    public bool IsActionInProgress = false;
+
     public enum PlayerGUI
     {
         ACTIVATE,
@@ -46,7 +49,7 @@ public class StateMachineBattle : MonoBehaviour
     public GameObject ActionButton;
     public GameObject SkillButton;
     private List<GameObject> AtkButtons = new List<GameObject>();
-    // Use this for initialization
+
     void Start()
     {
         Debug.Log("[BATTLE SYSTEM] Battle system initializing...");
@@ -62,11 +65,10 @@ public class StateMachineBattle : MonoBehaviour
         SkillPanel.SetActive(false);
 
         EnemyButtons();
+        
         Debug.Log("[BATTLE SYSTEM] Battle system initialization complete");
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         switch (battleStates)
@@ -75,6 +77,7 @@ public class StateMachineBattle : MonoBehaviour
                 if (PerformList.Count > 0)
                 {
                     battleStates = PerformAction.TAKEACTION;
+                    IsActionInProgress = true; // Mark that an action is starting
                 }
                 break;
 
@@ -88,6 +91,7 @@ public class StateMachineBattle : MonoBehaviour
                     Debug.LogError("Performer GameObject is null!");
                     PerformList.RemoveAt(0); // Remove the invalid action
                     battleStates = PerformAction.WAIT;
+                    IsActionInProgress = false; // Reset action flag
                     break;
                 }
 
@@ -158,6 +162,102 @@ public class StateMachineBattle : MonoBehaviour
         }
     }
 
+    // NEW: Modified method to check if any character has a full bar and is waiting to take action
+    public bool CanFillBar(GameObject character)
+    {
+        // Allow bar filling if no action is in progress
+        if (IsActionInProgress)
+        {
+            Debug.Log($"[BAR SYSTEM] {character.name} cannot fill bar - action in progress");
+            return false;
+        }
+
+        // Check if character is already in perform list
+        foreach (HandleTurn turn in PerformList)
+        {
+            if (turn.AttackersGameObject == character)
+            {
+                Debug.Log($"[BAR SYSTEM] {character.name} cannot fill bar - already has action queued");
+                return false; // Already has an action queued
+            }
+        }
+
+        // Check if character is alive
+        StateMachinePlayer playerComp = character.GetComponent<StateMachinePlayer>();
+        StateMachineEnemy enemyComp = character.GetComponent<StateMachineEnemy>();
+        
+        if (playerComp != null && playerComp.currentState == StateMachinePlayer.TurnState.DEAD)
+        {
+            Debug.Log($"[BAR SYSTEM] {character.name} cannot fill bar - player is dead");
+            return false;
+        }
+        if (enemyComp != null && enemyComp.currentState == StateMachineEnemy.TurnState.DEAD)
+        {
+            Debug.Log($"[BAR SYSTEM] {character.name} cannot fill bar - enemy is dead");
+            return false;
+        }
+
+        // NEW: Check if any other character has a full bar and is waiting for action
+        // This is the key change - if ANY character has a full bar, prevent others from filling
+        if (HasAnyCharacterWithFullBar(character))
+        {
+            Debug.Log($"[BAR SYSTEM] {character.name} cannot fill bar - another character has full bar");
+            return false;
+        }
+
+        return true; // Character can fill their bar
+    }
+
+    // NEW: Helper method to check if any character (except the current one) has a full bar
+    private bool HasAnyCharacterWithFullBar(GameObject currentCharacter)
+    {
+        // Check all players
+        foreach (GameObject player in PlayersInBattle)
+        {
+            if (player == currentCharacter) continue; // Skip the current character
+            
+            StateMachinePlayer playerComp = player.GetComponent<StateMachinePlayer>();
+            if (playerComp != null)
+            {
+                // Check if player is in ADDTOLIST state (full bar, waiting to be added to management)
+                // or in WAITING state and already in PlayerToManage list (full bar, waiting for input)
+                if (playerComp.currentState == StateMachinePlayer.TurnState.ADDTOLIST ||
+                    (playerComp.currentState == StateMachinePlayer.TurnState.WAITING && PlayerToManage.Contains(player)))
+                {
+                    Debug.Log($"[BAR SYSTEM] Player {player.name} has full bar - blocking others");
+                    return true;
+                }
+            }
+        }
+
+        // Check all enemies
+        foreach (GameObject enemy in EnemysInBattle)
+        {
+            if (enemy == currentCharacter) continue; // Skip the current character
+            
+            StateMachineEnemy enemyComp = enemy.GetComponent<StateMachineEnemy>();
+            if (enemyComp != null)
+            {
+                // Check if enemy is in CHOOSEACTION state (full bar, about to choose action)
+                // or in WAITING state with an action already queued
+                if (enemyComp.currentState == StateMachineEnemy.TurnState.CHOOSEACTION)
+                {
+                    Debug.Log($"[BAR SYSTEM] Enemy {enemy.name} has full bar - blocking others");
+                    return true;
+                }
+            }
+        }
+
+        return false; // No character has a full bar
+    }
+
+    // CHANGED: Method to be called when an action is completed
+    public void OnActionCompleted()
+    {
+        IsActionInProgress = false;
+        Debug.Log("[BAR SYSTEM] Action completed, eligible characters can now fill bars");
+    }
+
     public void CollectActions(HandleTurn input)
     {
         PerformList.Add(input);
@@ -217,7 +317,6 @@ public class StateMachineBattle : MonoBehaviour
             buttonText.text = cur_enemy.enemy.theName;
             button.EnemyPrefab = enemy;
 
-            // Set the parent to organize the UI
             // Set the parent to organize the UI
             newButton.transform.SetParent(Spacer, false);
         }

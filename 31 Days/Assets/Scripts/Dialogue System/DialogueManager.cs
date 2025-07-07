@@ -92,7 +92,6 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        Debug.Log("test");
         if (currentNode is MultipleChoiceNode multiple)
         {
             int selectedIndex = inputHandler.CurrentOptionIndex;

@@ -3,8 +3,8 @@ guid: 9b5b987846db4cf4b8817d37edadd5a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4364579182917311958
-    second: Cass 1_0
+      213: -2346250448562650863
+    second: Cass_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cass 1_0
+      name: Cass_0
       rect:
         serializedVersion: 2
         x: 32
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ddd9df64a9129c30800000000000000
-      internalID: 4364579182917311958
+      spriteID: 1118253e5a1707fd0800000000000000
+      internalID: -2346250448562650863
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 2e4d0b7f7a9799643ac10ccc0cf895c5
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cass 1_0: 4364579182917311958
+      Cass_0: -2346250448562650863
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

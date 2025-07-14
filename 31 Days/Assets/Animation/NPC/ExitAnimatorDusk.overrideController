@@ -6,7 +6,7 @@ AnimatorOverrideController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Exit Animator
+  m_Name: ExitAnimatorDusk
   m_Controller: {fileID: 9100000, guid: 3d489de41e05c0e4d9b189b12fc340ca, type: 2}
   m_Clips:
   - m_OriginalClip: {fileID: 7400000, guid: b8a8044c34437ef4184171f84849f2e8, type: 2}

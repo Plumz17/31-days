@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: d658d963f4865f640935da1819f47288, type: 2}
+  m_Motion: {fileID: 7400000, guid: b8778f8fe1dfcc24aa835a97c19e173f, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -95,7 +95,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 1bff5c7cefbbd074a83eb32038da4152, type: 2}
+  m_Motion: {fileID: 7400000, guid: 8ef4ea1a862289e4c8d904890b6c64f6, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -129,7 +129,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ExclamationAnimator
+  m_Name: ExclamationAnimatorDusk
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: isClose
@@ -259,7 +259,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b31ad4145ff1e3547a69094c8f8b814a, type: 2}
+  m_Motion: {fileID: 7400000, guid: 52cd1ff9bdde0b04f879a875eec58c59, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -286,7 +286,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 6d855fe45cf30834a9fc5cb6a592c1b0, type: 2}
+  m_Motion: {fileID: 7400000, guid: b8a8044c34437ef4184171f84849f2e8, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

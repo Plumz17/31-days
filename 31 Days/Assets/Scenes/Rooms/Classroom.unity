@@ -893,7 +893,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4411602139776121759}
-  - {fileID: 6285315893217203396}
+  - {fileID: 595680421797756694}
   - {fileID: 980075823}
   - {fileID: 501929230}
   - {fileID: 1555348459}
@@ -1240,6 +1240,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e265c5b040840044bca7a8042a14dd0, type: 3}
+--- !u!4 &595680421797756694 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4028923001003299933, guid: 1e265c5b040840044bca7a8042a14dd0, type: 3}
+  m_PrefabInstance: {fileID: 595680421797756693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2845946818103011985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1577,11 +1582,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
---- !u!4 &6285315893217203396 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2105653861429255650, guid: 1e265c5b040840044bca7a8042a14dd0, type: 3}
-  m_PrefabInstance: {fileID: 595680421797756693}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7446198714745376981
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1658,6 +1658,10 @@ PrefabInstance:
       propertyPath: spawnPosition.y
       value: 1.625
       objectReference: {fileID: 0}
+    - target: {fileID: 7188108431845876811, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: de70d042f6f82694b95048372930a25c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

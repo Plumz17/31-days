@@ -229,7 +229,65 @@ public class StateMachineEnemy : MonoBehaviour
     }
     void DoDamage()
     {
-        float calc_damage = enemy.curATK + BSM.PerformList[0].choosenAttack.attackDamage;
-        PlayerToAttack.GetComponent<StateMachinePlayer>().TakeDamage(calc_damage);
+        float calc_damage = enemy.curATK; // Start with base attack
+        
+        // Check if there's a specific attack/skill chosen
+        if (BSM.PerformList.Count > 0 && BSM.PerformList[0].choosenAttack != null)
+        {
+            calc_damage += BSM.PerformList[0].choosenAttack.attackDamage;
+            Debug.Log($"[ENEMY ATTACK] {enemy.theName} using skill: {BSM.PerformList[0].choosenAttack.attackName}");
+            Debug.Log($"[ENEMY ATTACK] Base ATK: {enemy.curATK}, Skill damage: {BSM.PerformList[0].choosenAttack.attackDamage}, Total: {calc_damage}");
+        }
+        else
+        {
+            Debug.Log($"[ENEMY ATTACK] {enemy.theName} using basic attack with damage: {calc_damage}");
+        }
+        
+        // Apply damage using the player's TakeDamage method (which includes defense calculation)
+        StateMachinePlayer playerComponent = PlayerToAttack.GetComponent<StateMachinePlayer>();
+        if (playerComponent != null)
+        {
+            Debug.Log($"[DAMAGE BEFORE DEFENSE] {calc_damage} damage going to {playerComponent.player.theName}");
+            playerComponent.TakeDamage(calc_damage);
+        }
+        else
+        {
+            Debug.LogError("StateMachinePlayer component not found on target!");
+        }
+    }
+    
+    // NEW: Add TakeDamage method for enemies similar to players
+    public void TakeDamage(float getDamageAmount)
+    {
+        // Add null check for safety
+        if (enemy == null)
+        {
+            Debug.LogError("Enemy component is null in TakeDamage!");
+            return;
+        }
+
+        Debug.Log($"[DEFENSE DEBUG] {enemy.theName} taking damage:");
+        Debug.Log($"[DEFENSE DEBUG] - Incoming damage: {getDamageAmount}");
+        Debug.Log($"[DEFENSE DEBUG] - Current defense: {enemy.curDEF}");
+
+        // Apply defense calculation - Damage taken = Atk - Current Def
+        float damageAfterDefense = getDamageAmount - enemy.curDEF;
+        
+        // Ensure damage doesn't go below 1 (minimum damage)
+        damageAfterDefense = Mathf.Max(damageAfterDefense, 1f);
+        
+        Debug.Log($"[DEFENSE DEBUG] - Final damage after defense: {damageAfterDefense}");
+        Debug.Log($"[DEFENSE DEBUG] - HP before: {enemy.curHP}");
+
+        enemy.curHP -= damageAfterDefense;
+        if (enemy.curHP <= 0)
+        {
+            enemy.curHP = 0; // Ensure HP doesn't go negative
+            currentState = TurnState.DEAD;
+            Debug.Log(enemy.theName + " has died.");
+        }
+        
+        Debug.Log($"[DEFENSE DEBUG] - HP after: {enemy.curHP}");
+        Debug.Log($"[DEFENSE RESULT] {enemy.theName} took {damageAfterDefense} damage (reduced from {getDamageAmount})");
     }
 }

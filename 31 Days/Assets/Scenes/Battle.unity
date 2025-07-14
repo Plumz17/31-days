@@ -1350,6 +1350,7 @@ MonoBehaviour:
   PerformList: []
   PlayersInBattle: []
   EnemysInBattle: []
+  IsActionInProgress: 0
   PlayerGUIState: 0
   PlayerToManage: []
   EnemyButton: {fileID: 3405113169178255068, guid: 50426681d2f6b3646a3851122ef5fea7, type: 3}
@@ -1521,7 +1522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: curHP
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: curMP
@@ -1529,7 +1530,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: level
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: baseHP
@@ -1545,7 +1546,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: curDEF
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: agility
@@ -1557,7 +1558,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: baseDEF
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: stamina

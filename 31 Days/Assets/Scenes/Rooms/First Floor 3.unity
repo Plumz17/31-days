@@ -766,6 +766,14 @@ PrefabInstance:
       propertyPath: spawnPosition.y
       value: 1.875
       objectReference: {fileID: 0}
+    - target: {fileID: 7188108431845876811, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 22100000, guid: ee8663e1894610e458eec48150af9864, type: 2}
+    - target: {fileID: 7680530181905035141, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1457965372644419469, guid: 00df43cd65539e24fbfe48d87689e443, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

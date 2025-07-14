@@ -16,10 +16,10 @@ public class CalenderManager : MonoBehaviour
     public enum timeOfDay { Pagi = 0, Siang = 1, Sore = 2, Malam = 3, Dusk = -1 }
     public timeOfDay currentTimeOfDay = timeOfDay.Pagi;
     public int totalDaysPassed = 0;
+    public bool calIsActive = true;
 
     private int daysInMonth = 31;
     private string[] dayNames = { "Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Mng" };
-
 
     void Awake()
     {
@@ -88,11 +88,12 @@ public class CalenderManager : MonoBehaviour
         totalDaysPassed = data.totalDaysPassed;
     }
     
-    public void SetCalendarUIActive(bool isActive)
+    public void SetCalendarUI()
     {
         if (calendarUIPanel != null)
         {
-            calendarUIPanel.SetActive(isActive);
+            calIsActive = !calIsActive;
+            calendarUIPanel.SetActive(calIsActive);
         }
     }
 }

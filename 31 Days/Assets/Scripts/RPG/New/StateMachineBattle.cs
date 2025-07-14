@@ -50,6 +50,9 @@ public class StateMachineBattle : MonoBehaviour
     public GameObject SkillButton;
     private List<GameObject> AtkButtons = new List<GameObject>();
 
+    // NEW: Defense boost amount when defending
+    public float defenseBoostAmount = 5f;
+
     void Start()
     {
         Debug.Log("[BATTLE SYSTEM] Battle system initializing...");
@@ -82,17 +85,26 @@ public class StateMachineBattle : MonoBehaviour
                 break;
 
             case PerformAction.TAKEACTION:
-                // Use the stored GameObject reference instead of searching by name
+                // FIXED: Get the performer from the PerformList
                 GameObject performer = PerformList[0].AttackersGameObject;
-
-                // Add null check for safety
-                if (performer == null)
+                
+                if (PerformList[0].Type == "Player")
                 {
-                    Debug.LogError("Performer GameObject is null!");
-                    PerformList.RemoveAt(0); // Remove the invalid action
-                    battleStates = PerformAction.WAIT;
-                    IsActionInProgress = false; // Reset action flag
-                    break;
+                    StateMachinePlayer HSM = performer.GetComponent<StateMachinePlayer>();
+                    
+                    // NEW: Handle defend action
+                    if (PerformList[0].choosenAttack != null && PerformList[0].choosenAttack.attackName == "Defend")
+                    {
+                        // Execute defend action immediately without target
+                        HSM.EnemyToAttack = null; // Explicitly set to null for defend
+                        HSM.currentState = StateMachinePlayer.TurnState.ACTION;
+                    }
+                    else
+                    {
+                        // Normal attack/skill action
+                        HSM.EnemyToAttack = PerformList[0].AttackersTarget;
+                        HSM.currentState = StateMachinePlayer.TurnState.ACTION;
+                    }
                 }
 
                 if (PerformList[0].Type == "Enemy")
@@ -120,13 +132,6 @@ public class StateMachineBattle : MonoBehaviour
                     {
                         Debug.LogError("StateMachineEnemy component not found on " + performer.name);
                     }
-                }
-
-                if (PerformList[0].Type == "Player")
-                {
-                    StateMachinePlayer HSM = performer.GetComponent<StateMachinePlayer>();
-                    HSM.EnemyToAttack = PerformList[0].AttackersTarget;
-                    HSM.currentState = StateMachinePlayer.TurnState.ACTION;
                 }
 
                 battleStates = PerformAction.PERFORMACTION;
@@ -201,7 +206,6 @@ public class StateMachineBattle : MonoBehaviour
         // This is the key change - if ANY character has a full bar, prevent others from filling
         if (HasAnyCharacterWithFullBar(character))
         {
-            Debug.Log($"[BAR SYSTEM] {character.name} cannot fill bar - another character has full bar");
             return false;
         }
 
@@ -224,7 +228,6 @@ public class StateMachineBattle : MonoBehaviour
                 if (playerComp.currentState == StateMachinePlayer.TurnState.ADDTOLIST ||
                     (playerComp.currentState == StateMachinePlayer.TurnState.WAITING && PlayerToManage.Contains(player)))
                 {
-                    Debug.Log($"[BAR SYSTEM] Player {player.name} has full bar - blocking others");
                     return true;
                 }
             }
@@ -357,6 +360,40 @@ public class StateMachineBattle : MonoBehaviour
         PlayerGUIState = PlayerGUI.DONE;
     }
 
+    // FIXED: Input5 method - completely handle defend action without enemy selection
+    public void Input5()
+    {
+        Debug.Log($"[PLAYER INPUT] Input5() called - Player chose DEFEND");
+        if (PlayerToManage.Count > 0)
+        {
+            Debug.Log($"[PLAYER INPUT] Current player: {PlayerToManage[0].name} selecting defend action");
+            PlayerChoice.Attacker = PlayerToManage[0].name;
+            PlayerChoice.AttackersGameObject = PlayerToManage[0];
+            PlayerChoice.Type = "Player";
+            
+            // Create a simple BaseAttack instance for defend
+            BaseAttack defendAction = new BaseAttack();
+            defendAction.attackName = "Defend";
+            defendAction.attackDamage = 0f; // No damage for defend
+            defendAction.attackCost = 0f; // No cost for defend
+            
+            PlayerChoice.choosenAttack = defendAction;
+            PlayerChoice.AttackersTarget = null; // No target needed for defend
+            
+            AttackPanel.SetActive(false);
+            EnemySelectPanel.SetActive(false); // Make sure enemy selection is hidden
+            SkillPanel.SetActive(false); // Make sure skill panel is hidden
+            
+            // Immediately finalize the defend action - bypassing enemy selection
+            PlayerGUIState = PlayerGUI.DONE;
+            PlayerInputDone();
+        }
+        else
+        {
+            Debug.LogWarning("[PLAYER INPUT] Input5() called but no players to manage!");
+        }
+    }
+
     void PlayerInputDone()
     {
         Debug.Log($"[PLAYER INPUT] PlayerInputDone() - Finalizing turn for {PlayerChoice.Attacker}");
@@ -479,6 +516,48 @@ public class StateMachineBattle : MonoBehaviour
         buttonComponentSkill.onClick.AddListener(() => Input3());
         SkillButton.transform.SetParent(ActionSpacer, false);
         AtkButtons.Add(SkillButton);
+
+        // NEW: Create Defend Button
+        GameObject DefendButton = Instantiate(ActionButton) as GameObject;
+
+        // Add null check for the instantiated button
+        if (DefendButton == null)
+        {
+            Debug.LogError("Failed to instantiate ActionButton for Defend!");
+            return;
+        }
+
+        // Find the Text component with null checking
+        Transform textTransformDefend = DefendButton.transform.Find("Text (TMP)");
+        if (textTransformDefend == null)
+        {
+            Debug.LogError("Text child not found in ActionButton prefab for Defend!");
+            Destroy(DefendButton);
+            return;
+        }
+
+        TMP_Text DefendButtonText = textTransformDefend.GetComponent<TMP_Text>();
+        if (DefendButtonText == null)
+        {
+            Debug.LogError("TMP_Text component not found on Text child for Defend!");
+            Destroy(DefendButton);
+            return;
+        }
+
+        DefendButtonText.text = "Defend"; // Set the text for the button
+
+        // Add null check for Button component
+        Button buttonComponentDefend = DefendButton.GetComponent<Button>();
+        if (buttonComponentDefend == null)
+        {
+            Debug.LogError("Button component not found on ActionButton prefab for Defend!");
+            Destroy(DefendButton);
+            return;
+        }
+        
+        buttonComponentDefend.onClick.AddListener(() => Input5());
+        DefendButton.transform.SetParent(ActionSpacer, false);
+        AtkButtons.Add(DefendButton);
 
         if (PlayerToManage.Count > 0 && 
             PlayerToManage[0] != null && 

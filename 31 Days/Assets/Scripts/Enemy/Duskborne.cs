@@ -67,7 +67,14 @@ public class Duskborne : MonoBehaviour
                 break;
 
             case duskState.Wander:
-                Wander();
+                if (!playerHiding.IsHiding())
+                {
+                    currentState = duskState.Follow;
+                }
+                else
+                {
+                    Wander();
+                }
                 break;
         }
     }

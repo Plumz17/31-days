@@ -70,7 +70,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 1, y: -2}
+  m_Offset: {x: 0.25, y: 1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -80,7 +80,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 5, y: 7}
+  m_Size: {x: 5.5, y: 8}
   m_EdgeRadius: 0
 --- !u!114 &6612512631810185339
 MonoBehaviour:
@@ -94,7 +94,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 952f632f21e16a949b70462b4768a513, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneIndex: 1
+  sceneIndex: 2
+  isScreenChange: 0
+  spawnPosition: {x: 39.625, y: 1.25, z: 0}
 --- !u!212 &7680530181905035141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -160,7 +162,7 @@ Animator:
   m_GameObject: {fileID: 2272789505462892155}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: ee8663e1894610e458eec48150af9864, type: 2}
+  m_Controller: {fileID: 22100000, guid: de70d042f6f82694b95048372930a25c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

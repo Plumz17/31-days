@@ -629,7 +629,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: curDEF
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: agility
@@ -641,7 +641,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: baseDEF
-      value: 10
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4437059735854238108, guid: ea7485708eaaf904db5ab22839744906, type: 3}
       propertyPath: stamina
@@ -1362,6 +1362,7 @@ MonoBehaviour:
   SkillSpacer: {fileID: 665431238}
   ActionButton: {fileID: 1721187815292603385, guid: 8e980ebc613e1e044ac40517a318a574, type: 3}
   SkillButton: {fileID: 5637449201861672123, guid: c7a7a9be80796674caa3e751921e09cf, type: 3}
+  defenseBoostAmount: 5
 --- !u!4 &1927522612
 Transform:
   m_ObjectHideFlags: 0
@@ -1620,6 +1621,14 @@ PrefabInstance:
     - target: {fileID: 5141268295235170532, guid: f643d71af161fe245922a1c6a4dd5e89, type: 3}
       propertyPath: m_TagString
       value: RPGEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982811143906526749, guid: f643d71af161fe245922a1c6a4dd5e89, type: 3}
+      propertyPath: curDEF
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7982811143906526749, guid: f643d71af161fe245922a1c6a4dd5e89, type: 3}
+      propertyPath: baseDEF
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 7982811143906526749, guid: f643d71af161fe245922a1c6a4dd5e89, type: 3}
       propertyPath: attacks.Array.size

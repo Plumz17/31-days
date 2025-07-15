@@ -752,7 +752,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: sceneIndex
-      value: 12
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: isRoomChange
@@ -760,11 +760,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: spawnPosition.x
-      value: 23
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: spawnPosition.y
-      value: 1.875
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 7188108431845876811, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: m_Controller

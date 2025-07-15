@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5767922014906625284}
   - component: {fileID: 2634451519388982904}
+  - component: {fileID: 8376753991740146164}
   m_Layer: 0
   m_Name: FollowTrigger
   m_TagString: Untagged
@@ -78,6 +79,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 16, y: 6}
   m_EdgeRadius: 0
+--- !u!114 &8376753991740146164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506255333741690573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdc7944ab0b88a74da12f2c925d34c7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6997154289475858922
 GameObject:
   m_ObjectHideFlags: 0
@@ -88,6 +101,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2955168820654628324}
   - component: {fileID: 2906827316771951754}
+  - component: {fileID: 9192434624451010975}
   m_Layer: 0
   m_Name: HitboxTrigger
   m_TagString: Untagged
@@ -156,6 +170,18 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &9192434624451010975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6997154289475858922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d784f8575343878479d3290ed451d768, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &9212820519182601709
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,7 +13,12 @@ public class HitboxTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            duskborne.OnPlayerHit();
+            PlayerHiding playerHiding = other.GetComponent<PlayerHiding>();
+
+            if (playerHiding != null && !playerHiding.IsHiding())
+            {
+                duskborne.OnPlayerHit();
+            }
         }
     }
 }

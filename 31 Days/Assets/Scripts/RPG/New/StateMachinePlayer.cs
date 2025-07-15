@@ -193,24 +193,25 @@ public class StateMachinePlayer : MonoBehaviour
             Debug.Log($"[TIME FOR ACTION] Current action: {BSM.PerformList[0].choosenAttack?.attackName ?? "NULL"}");
         }
 
+
         // NEW: Check if this is a defend action
-        if (BSM.PerformList.Count > 0 && BSM.PerformList[0].choosenAttack != null && 
-            BSM.PerformList[0].choosenAttack.attackName == "Defend")
+        if (BSM.PerformList.Count > 0 && BSM.PerformList[0].choosenAttack.attackName == "Defend")
         {
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             Debug.Log($"[DEFEND DETECTED] {player.theName} is executing defend action");
-            
+
             // Execute defend action
             ExecuteDefend();
-            
+
             // Wait a bit for visual effect
             yield return new WaitForSeconds(1f);
-            
+
             Debug.Log($"[DEFEND COMPLETE] {player.theName} finished defending. Defense is now {player.curDEF}");
         }
         else
         {
             Debug.Log($"[NORMAL ATTACK] {player.theName} is executing normal attack");
-            
+
             // Normal attack action - ADD NULL CHECK FOR EnemyToAttack
             if (EnemyToAttack == null)
             {

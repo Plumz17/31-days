@@ -535,7 +535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 4.8958335
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 6107350894250517577, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.x
@@ -935,22 +935,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4383063939318123095, guid: 5e060e06c353b60498cdbe45b40f0cd7, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 4383063939318123095, guid: 5e060e06c353b60498cdbe45b40f0cd7, type: 3}
-      propertyPath: m_SortingLayerID
-      value: 803398247
-      objectReference: {fileID: 0}
     - target: {fileID: 4728525482120117377, guid: 5e060e06c353b60498cdbe45b40f0cd7, type: 3}
       propertyPath: m_Name
       value: Locker
       objectReference: {fileID: 0}
-    - target: {fileID: 7160630185557774115, guid: 5e060e06c353b60498cdbe45b40f0cd7, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 3d489de41e05c0e4d9b189b12fc340ca, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

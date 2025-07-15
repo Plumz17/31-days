@@ -28,8 +28,6 @@ public class LevelLoader : MonoBehaviour
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
-
-        
     }
 
     public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn) //Called in TransitionTrigger.cs
@@ -52,11 +50,21 @@ public class LevelLoader : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Called when the scene first loads
     {
+        PauseMenu.instance.Resume();
         player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null)
         {
-            player.transform.position = spawnPosition;
+            if (PlayerDataManager.instance != null && PlayerDataManager.instance.loadedFromSave)
+            {
+                player.transform.position = PlayerDataManager.instance.currentData.prevPosition;
+                PlayerDataManager.instance.loadedFromSave = false;
+            }
+            else
+            {
+                player.transform.position = spawnPosition;
+            }
+
             movement = player.GetComponent<PlayerMovement>();
             movement.SetFacingDirection(!spawnFlipX);
         }

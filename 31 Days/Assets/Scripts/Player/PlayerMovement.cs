@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isFacingRight = true;
     private bool canMove = true;
     private SpriteRenderer spriteRenderer;
+    private CalenderManager calendar;
 
     private void Awake()
     {
@@ -22,6 +23,13 @@ public class PlayerMovement : MonoBehaviour
 
         playerInput = new InputActions();
         playerInput.Player.Enable();
+
+        playerInput.Player.Show.performed += OnShowCalendar;
+    }
+
+    private void Start()
+    {
+        calendar = CalenderManager.instance;
     }
 
     private void Update()
@@ -69,9 +77,17 @@ public class PlayerMovement : MonoBehaviour
         isFacingRight = facingRight;
         spriteRenderer.flipX = !facingRight;
     }
-    
+
     void OnDisable()
     {
         playerInput.Player.Disable();
+    }    
+
+    private void OnShowCalendar(InputAction.CallbackContext context)
+    {
+        if (calendar != null)
+        {
+            calendar.SetCalendarUI();
+        }
     }
 }

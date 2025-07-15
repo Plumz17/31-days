@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ExitAnimator
+  m_Controller: {fileID: 9100000, guid: 3d489de41e05c0e4d9b189b12fc340ca, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: b8a8044c34437ef4184171f84849f2e8, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4154a44148ba3d1459390cedce2e7875, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 52cd1ff9bdde0b04f879a875eec58c59, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: a5da058b175059a4e9484e57af1ee0d6, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8ef4ea1a862289e4c8d904890b6c64f6, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 43ce9e7d0f6a54f4a9d7ce2f0819f58d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b8778f8fe1dfcc24aa835a97c19e173f, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 41480229f72ddc64da36a5e685883291, type: 2}

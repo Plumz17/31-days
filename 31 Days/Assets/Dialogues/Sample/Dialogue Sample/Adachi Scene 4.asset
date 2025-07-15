@@ -14,9 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Adachi
   characterPortrait: {fileID: -4731953374162375773, guid: 74aee26b46aeed24c8c7150f1c11dabb, type: 3}
+  levelUpFlag: 0
   dialogueLines:
   - "Once everyone turns into Shadows\u2026 they'll still keep on living, oblivious
     to all the things around them\u2026\r"
-  - So how's that different from the way it is now? No, this'll make things much
-    easier for everyone.
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: e320464036476bd419a95d09113bb254, type: 2}

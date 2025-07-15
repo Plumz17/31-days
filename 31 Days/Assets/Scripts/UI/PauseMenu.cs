@@ -4,16 +4,26 @@ using UnityEngine;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static PauseMenu instance;
+
     public InputActions playerInput;
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
 
     private void OnEnable() => playerInput.UI.Enable();
-    private void OnDisable() => playerInput.UI.Disable();
+    //private void OnDisable() => playerInput.UI.Disable();
 
-    void Awake()
+    private void Awake()
     {
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = this;
         playerInput = new InputActions();
+        DontDestroyOnLoad(gameObject);
     }
 
     void Update()
@@ -26,20 +36,19 @@ public class PauseMenu : MonoBehaviour
             }
             else
             {
-                Debug.Log("Test");
                 Pause();
             }
         }
     }
 
-    private void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0;
@@ -61,8 +70,8 @@ public class PauseMenu : MonoBehaviour
         Resume();
     }
 
-    public void OnDeleteButtonClick()
+    public void OnAdvanceButtonClick()
     {
-       SaveData.ResetToDefault();
+        CalenderManager.instance.AdvanceTimeBlock();
     }
 }

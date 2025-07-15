@@ -5,7 +5,7 @@ public class TransitionTrigger : MonoBehaviour
     private InputActions playerInput;
     [SerializeField] int sceneIndex;
     private bool playerInTrigger = false;
-    [SerializeField] private bool isRoomChange = false;
+    [SerializeField] private bool isScreenChange = false;
     [SerializeField] private Vector3 spawnPosition = Vector3.zero;
 
     void Awake()
@@ -37,7 +37,7 @@ public class TransitionTrigger : MonoBehaviour
 
     void Update()
     {
-        if ((playerInTrigger && (playerInput.UI.Accept.triggered || isRoomChange)))
+        if ((playerInTrigger && (playerInput.UI.Submit.triggered || isScreenChange)))
         {
             LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
         }

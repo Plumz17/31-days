@@ -1,277 +1,137 @@
 using UnityEngine;
-using TMPro;
 using System.Collections;
+using TMPro;
 using UnityEngine.UI;
 using System;
-using UnityEngine.InputSystem;
-
 
 public class DialogueManager : MonoBehaviour
 {
-    GameObject dialogueCanvas;
-    GameObject dialoguePanel;
-    TMP_Text dialogueText;
-    Image characterPortrait;
-    TMP_Text characterName;
-    PlayerMovement playerMovement;
-    GameObject choicesPanel;
-    TMP_Text[] choiceTexts;
-    GameObject[] choiceTextBoxes;
+    public static DialogueManager instance { get; private set; }
 
+    [Header("UI References")]
+    [SerializeField] private DialogueUIManager uiManager;
+    [SerializeField] private DialogueInputHandler inputHandler;
 
-    [Header("Dialogue Settings")] // Settings for dialogue appearance and behavior
-    [Tooltip("The speed at which each word appears in the dialogue text.")]
-    [SerializeField] float wordSpeed = 0.05f;
-    [SerializeField] Color selectedColor = new Color(0, 74, 173);
-    [SerializeField] Color unselectedColor = Color.white;
-    //[SerializeField] bool isDialogue = true;
+    private PlayerMovement playerMovement;
+ 
+    public DialogueUIManager UI => uiManager;
+    public DialogueInputHandler Input => inputHandler;
 
-    private float choiceInputDelay = 0.1f; // Delay before processing choice input
-    private float choiceInputTimer = 0f; // Timer to manage input delay for choices
-
-    private InputActions playerInput;
     private BaseNode currentNode;
     private SingleChoiceNode currentSingleNode;
     private MultipleChoiceNode currentMultipleNode;
-    private bool selectingOption = false;
-    private bool isTyping = false;
+
     private int currentLineIndex = 0;
-    private int currentOptionIndex = 0;
-    Coroutine typingCoroutine;
-
-
-    public bool IsTyping => isTyping;
-    public bool IsActive => dialoguePanel.activeInHierarchy;
+    private Coroutine typingCoroutine;
 
     private void Awake()
     {
-        playerInput = new InputActions();
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        SetUpReferences();
-
-        dialoguePanel.SetActive(false);
-        choicesPanel.SetActive(false);
+        instance = this;
+        DontDestroyOnLoad(gameObject);
     }
 
-    private void SetUpReferences()
+    public bool IsActive => uiManager.DialoguePanel.activeSelf;
+    public bool IsTyping => uiManager.IsTyping;
+
+    public event Action OnDialogueEnded;
+
+    public bool CanAdvance
     {
-        dialogueCanvas = GameObject.FindGameObjectWithTag("DialogueCanvas");
-        dialoguePanel = dialogueCanvas.transform.Find("DialoguePanel")?.gameObject;
-
-        if (dialogueText == null)
-            dialogueText = dialoguePanel.transform.Find("DialogueText")?.GetComponent<TMP_Text>();
-
-        if (characterPortrait == null)
-            characterPortrait = dialoguePanel.transform.Find("DialogueImage")?.GetComponent<Image>();
-
-        if (characterName == null)
+        get
         {
-            TMP_Text[] texts = dialoguePanel?.GetComponentsInChildren<TMP_Text>();
-            foreach (var text in texts)
+            if (currentNode is SingleChoiceNode single)
             {
-                if (text.name.ToLower().Contains("name"))
-                {
-                    characterName = text;
-                    break;
-                }
+                return currentLineIndex < single.dialogueLines.Length - 1 || single.nextNode != null;
             }
-        }
-
-        choicesPanel = dialogueCanvas.transform.Find("ChoicePanel")?.gameObject; 
-
-        var boxList = new System.Collections.Generic.List<GameObject>();
-        foreach (Transform child in choicesPanel.transform)
-        {
-            if (child.name.ToLower().Contains("dialoguechoicebox"))
-            {
-                boxList.Add(child.gameObject);
-            }
-        }
-
-            // Sort to ensure consistent order: DialogueChoiceBox-1, -2, -3
-        boxList.Sort((a, b) => string.Compare(a.name, b.name, StringComparison.Ordinal));
-        choiceTextBoxes = boxList.ToArray();
-
-        var textList = new System.Collections.Generic.List<TMP_Text>();
-        foreach (var box in choiceTextBoxes)
-        {
-            TMP_Text text = box.GetComponentInChildren<TMP_Text>(true);
-            if (text != null)
-                textList.Add(text);
-        }
-        choiceTexts = textList.ToArray();
-
-        // Global PlayerMovement from tagged Player
-        if (playerMovement == null)
-        {
-            GameObject player = GameObject.FindGameObjectWithTag("Player");
-            if (player != null)
-                playerMovement = player.GetComponent<PlayerMovement>();
+            return false;
         }
     }
 
-    private void OnEnable() => playerInput.UI.Enable();
-    private void OnDisable()
-    {
-        playerInput.UI.Disable();
-        playerInput.Player.Disable();
-    }
-
-    void Update()
-    {
-        if (selectingOption && currentMultipleNode != null)
-        {
-            HandleChoiceInput();
-        }
-    }
-
-    public void StartDialogue(BaseNode node) // Starts the dialogue with the provided lines
+    public void StartDialogue(BaseNode node)
     {
         currentNode = node;
         currentLineIndex = 0;
-        SetUpDialogueUI(node);
+
+        uiManager.ShowDialogueUI(node);
+        playerMovement = GameObject.FindWithTag("Player")?.GetComponent<PlayerMovement>();
+        playerMovement.SetCanMove(false);
 
         if (node is SingleChoiceNode single)
         {
             currentSingleNode = single;
             currentMultipleNode = null;
-            currentOptionIndex = 0;
             StartTypingLine(single.dialogueLines[currentLineIndex]);
         }
         else if (node is MultipleChoiceNode multiple)
         {
             currentMultipleNode = multiple;
             currentSingleNode = null;
-            ShowChoices();
-        }
-    }
-
-    private void SetUpDialogueUI(BaseNode node) // Sets up the dialogue panel with the provided node's information
-    {
-        if (node is MultipleChoiceNode)
-        {
-            choicesPanel.SetActive(true);
-            EnterChoiceMode();
-        }
-        dialoguePanel.SetActive(true);
-        characterName.text = node.characterName;
-        characterPortrait.sprite = node.characterPortrait;
-        playerMovement.SetCanMove(false);
-    }
-
-    private void EnterChoiceMode() // Enters the choice mode, disabling player input and enabling UI input
-    {
-        playerInput.Player.Disable();
-        playerInput.UI.Enable();
-        selectingOption = true;
-        choiceInputTimer = choiceInputDelay;
-    }
-
-    private void ExitChoiceMode() // Exits the choice mode and re-enables player input
-    {
-        playerInput.UI.Disable();
-        playerInput.Player.Enable();
-        selectingOption = false;
-    }
-
-    private void HandleChoiceInput() // Handles input for navigating and selecting choices in a MultipleChoiceNode
-    {
-        if (choiceInputTimer > 0f)
-        {
-            choiceInputTimer -= Time.unscaledDeltaTime;
-            return; // Wait until delay passes
+            uiManager.ShowChoices(multiple.options);
+            inputHandler.EnableChoiceMode(multiple.options.Length);
+            inputHandler.OnNavigate += uiManager.HighlightOption;
         }
 
-        if (playerInput.UI.Down.triggered)
-        {
-            currentOptionIndex = (currentOptionIndex + 1) % currentMultipleNode.options.Length;
-            HighlightCurrentOption();
-        }
-        else if (playerInput.UI.Up.triggered)
-        {
-            currentOptionIndex = (currentOptionIndex + currentMultipleNode.options.Length - 1) % currentMultipleNode.options.Length;
-            HighlightCurrentOption();
-        }
-        else if (playerInput.UI.Accept.triggered)
-        {
-            SelectChoice();
-        }
+        if (node.levelUpFlag && !string.IsNullOrEmpty(node.characterName))
+            PlayerDataManager.instance.IncreaseConnection(node.characterName);
+
+        if (node.advanceTimeFlag != 0)
+            CalenderManager.instance.AdvanceTimeBlock(node.advanceTimeFlag);
     }
 
-    private void SelectChoice() // Selects the current choice in a MultipleChoiceNode and transitions to the next node
+    public void HandleSubmit()
     {
-        BaseNode nextNode = currentMultipleNode.options[currentOptionIndex].nextNode;
-        choicesPanel.SetActive(false);
-        ExitChoiceMode();
-
-        if (nextNode != null)
-            StartDialogue(nextNode);
-        else
-            EndDialogue();
-    }
-
-    private void ShowChoices() // Displays the choices available in a MultipleChoiceNode
-    {
-        for (int i = 0; i < currentMultipleNode.options.Length; i++)
-        {
-            if (i < choiceTexts.Length)
-            {
-                choiceTexts[i].gameObject.SetActive(true);
-                choiceTextBoxes[i].SetActive(true);
-                choiceTexts[i].text = currentMultipleNode.options[i].optionText;
-            }
-            else
-            {
-                choiceTexts[i].gameObject.SetActive(false);
-                choiceTextBoxes[i].SetActive(false);
-            }
-
-        }
-
-        HighlightCurrentOption();
-    }
-
-    private void HighlightCurrentOption() // Highlights the currently selected option in a MultipleChoiceNode; consntantly running in Update()
-    {
-        int optionsLength = currentMultipleNode.options.Length;
-
-        for (int i = 0; i < optionsLength; i++)
-        {
-            choiceTexts[i].color = (i == currentOptionIndex) ? selectedColor : unselectedColor;
-        }
-    }
-
-    public void NextLine() // Advance Dialogue
-    {
-        if (isTyping) // If currently typing, finish the line immediately
+        if (IsTyping)
         {
             FinishTyping();
             return;
         }
 
-        if (currentNode is not SingleChoiceNode single)
+        if (currentNode is MultipleChoiceNode multiple)
+        {
+            int selectedIndex = inputHandler.CurrentOptionIndex;
+            BaseNode nextNode = multiple.options[selectedIndex].nextNode;
+
+            if (nextNode != null)
+            {
+                StartDialogue(nextNode);
+            }
+            else
+            {
+                EndDialogue();
+            }
+
+            uiManager.HideChoices();
+            inputHandler.OnNavigate -= uiManager.HighlightOption;
+            inputHandler.DisableChoiceMode();
             return;
-
-        currentLineIndex++; // If the current node is a SingleChoiceNode, advance to the next line
-
-        if (currentLineIndex < single.dialogueLines.Length) // Check if there are more lines to display
-        {
-            StartTypingLine(single.dialogueLines[currentLineIndex]);
-            return; // Exit early to avoid further processing
         }
 
-        if (single.nextNode != null) // Check if there is a next node to transition to
+        if (currentNode is SingleChoiceNode single)
         {
-            StartDialogue(single.nextNode); // If so, do the loop all over again with the next node
-        }
+            currentLineIndex++;
 
-        else // If no next node, end the dialogue
-        {
-            EndDialogue();
+            if (currentLineIndex < single.dialogueLines.Length)
+            {
+                StartTypingLine(single.dialogueLines[currentLineIndex]);
+            }
+            else if (single.nextNode != null)
+            {
+                StartDialogue(single.nextNode);
+            }
+            else
+            {
+                EndDialogue();
+            }
         }
     }
 
-    private void StartTypingLine(string line) // Starts typing out the current line of dialogue
+    private void StartTypingLine(string line)
     {
         if (typingCoroutine != null)
             StopCoroutine(typingCoroutine);
@@ -279,42 +139,48 @@ public class DialogueManager : MonoBehaviour
         typingCoroutine = StartCoroutine(TypeLine(line));
     }
 
-
-    private IEnumerator TypeLine(string line) // Coroutine to type out the current line of dialogue
+    private IEnumerator TypeLine(string line)
     {
-        isTyping = true;
-        dialogueText.text = "";
+        uiManager.IsTyping = true;
+        uiManager.SetDialogueText("");
+
         foreach (char c in line)
         {
-            dialogueText.text += c;
-            yield return new WaitForSeconds(wordSpeed);
+            uiManager.AppendDialogueChar(c);
+            yield return new WaitForSeconds(uiManager.WordSpeed);
         }
-        isTyping = false;
+
+        typingCoroutine = null;
+        uiManager.IsTyping = false;
     }
 
-    public void FinishTyping() // Completes the current line of dialogue immediately
+    public void FinishTyping()
     {
         if (typingCoroutine != null)
+        {
             StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
 
-        if (currentNode is SingleChoiceNode)
-            dialogueText.text = currentSingleNode.dialogueLines[currentLineIndex];
+        if (currentSingleNode != null)
+            uiManager.SetDialogueText(currentSingleNode.dialogueLines[currentLineIndex]);
 
-        isTyping = false;
+        uiManager.IsTyping = false;
     }
 
-    public void EndDialogue() // Ends the dialogue and resets the state
+    public void EndDialogue()
     {
         if (typingCoroutine != null)
+        {
             StopCoroutine(typingCoroutine);
+            typingCoroutine = null;
+        }
 
-        dialogueText.text = "";
-        if (dialoguePanel != null)
-            dialoguePanel.SetActive(false);
-        if (choicesPanel != null)
-            choicesPanel.SetActive(false);
+        uiManager.HideDialogueUI();
+        currentNode = null;
+        currentSingleNode = null;
+        currentMultipleNode = null;
         playerMovement.SetCanMove(true);
+        OnDialogueEnded?.Invoke();
     }
-    
-    
 }

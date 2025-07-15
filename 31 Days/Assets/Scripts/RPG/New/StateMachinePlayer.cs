@@ -197,7 +197,6 @@ public class StateMachinePlayer : MonoBehaviour
         // NEW: Check if this is a defend action
         if (BSM.PerformList.Count > 0 && BSM.PerformList[0].choosenAttack.attackName == "Defend")
         {
-            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             Debug.Log($"[DEFEND DETECTED] {player.theName} is executing defend action");
 
             // Execute defend action

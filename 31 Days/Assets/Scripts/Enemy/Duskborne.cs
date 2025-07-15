@@ -27,12 +27,17 @@ public class Duskborne : MonoBehaviour
         rb.MovePosition(newPos);  
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    public void SetFollowState()
     {
-        if (collision.CompareTag("Player") && !playerHiding.IsHiding())
+        if (!playerHiding.IsHiding())
         {
-            currentState = duskState.Follow; 
+            currentState = duskState.Follow;
         }
+    }
+
+    public void OnPlayerHit()
+    {
+        Debug.Log("Player hit!");
     }
 
     private void Wander()
@@ -67,14 +72,7 @@ public class Duskborne : MonoBehaviour
                 break;
 
             case duskState.Wander:
-                if (!playerHiding.IsHiding())
-                {
-                    currentState = duskState.Follow;
-                }
-                else
-                {
-                    Wander();
-                }
+                Wander();
                 break;
         }
     }

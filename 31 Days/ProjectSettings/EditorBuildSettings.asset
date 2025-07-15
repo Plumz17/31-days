@@ -42,10 +42,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 2be9270c839d42348bc6bd03e6e41eb8
   - enabled: 1
-    path: Assets/Scenes/Rooms/Dusk Zone.unity
+    path: Assets/Scenes/Rooms/Dusk Rooms/Dusk Zone.unity
     guid: 7078922f857a060488abdd9be8eaff9d
   - enabled: 1
-    path: Assets/Scenes/Rooms/Dusk Classroom.unity
+    path: Assets/Scenes/Rooms/Dusk Rooms/Dusk Classroom.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/Rooms/Empty Classroom.unity

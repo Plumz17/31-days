@@ -35,6 +35,10 @@ public class StateMachinePlayer : MonoBehaviour
     public GameObject PlayerPanel;
     private Transform PlayerPanelSpacer;
 
+    // NEW: Defense boost tracking
+    private float originalDefense;
+    private bool isDefending = false;
+
     void Start()
     {
         PlayerPanelSpacer = GameObject.Find("UI").transform.Find("MainPanel").transform.Find("PlayerBarSpacer");
@@ -60,6 +64,9 @@ public class StateMachinePlayer : MonoBehaviour
         {
             player.theName = gameObject.name;
         }
+
+        // Store original defense value
+        originalDefense = player.curDEF;
 
         // Create player panel AFTER player is initialized
         CreatePlayerPanel();
@@ -168,6 +175,7 @@ public class StateMachinePlayer : MonoBehaviour
         }
     }
 
+
     private IEnumerator TimeForAction()
     {
         if (actionStarted)
@@ -176,25 +184,62 @@ public class StateMachinePlayer : MonoBehaviour
         }
 
         actionStarted = true;
-
-        // Animate the enemy near the player to attack
-        Vector3 enemyPosition = new Vector3(EnemyToAttack.transform.position.x + 1.5f, EnemyToAttack.transform.position.y, EnemyToAttack.transform.position.z);
-        while (!MoveTowardsTarget(enemyPosition))
+        
+        Debug.Log($"[TIME FOR ACTION] Starting action for {player.theName}");
+        Debug.Log($"[TIME FOR ACTION] PerformList count: {BSM.PerformList.Count}");
+        
+        if (BSM.PerformList.Count > 0)
         {
-            yield return null;
+            Debug.Log($"[TIME FOR ACTION] Current action: {BSM.PerformList[0].choosenAttack?.attackName ?? "NULL"}");
         }
 
-        // Wait a bit
-        yield return new WaitForSeconds(0.5f);
 
-        // Do damage
-        DoDamage();
-
-        // Animate back to start position
-        Vector3 firstPosition = startPosition;
-        while (MoveTowardsStart(firstPosition))
+        // NEW: Check if this is a defend action
+        if (BSM.PerformList.Count > 0 && BSM.PerformList[0].choosenAttack.attackName == "Defend")
         {
-            yield return null;
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+            Debug.Log($"[DEFEND DETECTED] {player.theName} is executing defend action");
+
+            // Execute defend action
+            ExecuteDefend();
+
+            // Wait a bit for visual effect
+            yield return new WaitForSeconds(1f);
+
+            Debug.Log($"[DEFEND COMPLETE] {player.theName} finished defending. Defense is now {player.curDEF}");
+        }
+        else
+        {
+            Debug.Log($"[NORMAL ATTACK] {player.theName} is executing normal attack");
+
+            // Normal attack action - ADD NULL CHECK FOR EnemyToAttack
+            if (EnemyToAttack == null)
+            {
+                Debug.LogError($"[ATTACK ERROR] {player.theName} has no target to attack!");
+                // Skip the action and proceed to cleanup
+            }
+            else
+            {
+                // Animate the enemy near the player to attack
+                Vector3 enemyPosition = new Vector3(EnemyToAttack.transform.position.x + 1.5f, EnemyToAttack.transform.position.y, EnemyToAttack.transform.position.z);
+                while (!MoveTowardsTarget(enemyPosition))
+                {
+                    yield return null;
+                }
+
+                // Wait a bit
+                yield return new WaitForSeconds(0.5f);
+
+                // Do damage
+                DoDamage();
+
+                // Animate back to start position
+                Vector3 firstPosition = startPosition;
+                while (MoveTowardsStart(firstPosition))
+                {
+                    yield return null;
+                }
+            }
         }
 
         // Remove this performer from the list in BSM
@@ -210,6 +255,81 @@ public class StateMachinePlayer : MonoBehaviour
         // Reset cooldown
         cur_cooldown = 0f;
         currentState = TurnState.PROCESSING;
+    }
+
+    // FIXED: Execute defend action - Apply defense boost immediately
+    private void ExecuteDefend()
+    {
+        // Store the original defense value if we're not already defending
+        if (!isDefending)
+        {
+            originalDefense = player.curDEF;
+            Debug.Log($"[DEFEND DEBUG] Original defense stored: {originalDefense}");
+        }
+        
+        // Apply defense boost
+        float defenseBoost = BSM.defenseBoostAmount;
+        player.curDEF += defenseBoost;
+        isDefending = true;
+        
+        Debug.Log($"[DEFEND ACTION] {player.theName} is defending!");
+        Debug.Log($"[DEFEND ACTION] Defense boost: +{defenseBoost}");
+        Debug.Log($"[DEFEND ACTION] Defense increased from {originalDefense} to {player.curDEF}");
+        
+        // Visual feedback
+        ShowDefendEffect();
+        
+        // Update the UI to show new defense value
+        UpdatePlayerPanel();
+    }
+
+    // NEW: Reset defense to original value - FIXED to use the stored original value
+    public void ResetDefense()
+    {
+        if (isDefending)
+        {
+            Debug.Log($"[DEFEND RESET] Resetting {player.theName}'s defense from {player.curDEF} to {originalDefense}");
+            player.curDEF = originalDefense;
+            isDefending = false;
+            
+            // Update the UI to show reset defense value
+            UpdatePlayerPanel();
+        }
+    }
+
+    // NEW: Show visual effect for defending (optional)
+    private void ShowDefendEffect()
+    {
+        // You can add visual effects here, such as:
+        // - Changing sprite color briefly
+        // - Playing a defend animation
+        // - Showing a shield effect
+        
+        // Simple example: briefly change color to blue
+        StartCoroutine(DefendColorEffect());
+    }
+
+    // NEW: Coroutine for defend visual effect
+    private IEnumerator DefendColorEffect()
+    {
+        Transform squareChild = transform.Find("Square");
+        if (squareChild != null)
+        {
+            SpriteRenderer spriteRenderer = squareChild.GetComponent<SpriteRenderer>();
+            if (spriteRenderer != null)
+            {
+                Color originalColor = spriteRenderer.color;
+                spriteRenderer.color = Color.blue; // Defensive color
+                yield return new WaitForSeconds(0.5f);
+                spriteRenderer.color = originalColor;
+            }
+        }
+    }
+
+    // NEW: Call this at the start of each turn to reset defense
+    public void StartNewTurn()
+    {
+        ResetDefense();
     }
 
     private bool MoveTowardsTarget(Vector3 targetPosition)
@@ -233,6 +353,7 @@ public class StateMachinePlayer : MonoBehaviour
         Debug.Log($"[DEFENSE DEBUG] {player.theName} taking damage:");
         Debug.Log($"[DEFENSE DEBUG] - Incoming damage: {getDamageAmount}");
         Debug.Log($"[DEFENSE DEBUG] - Current defense: {player.curDEF}");
+        Debug.Log($"[DEFENSE DEBUG] - Is defending: {isDefending}");
 
         // Apply defense calculation - Damage taken = Atk - Current Def
         float damageAfterDefense = getDamageAmount - player.curDEF;
@@ -253,6 +374,13 @@ public class StateMachinePlayer : MonoBehaviour
         
         Debug.Log($"[DEFENSE DEBUG] - HP after: {player.curHP}");
         Debug.Log($"[DEFENSE RESULT] {player.theName} took {damageAfterDefense} damage (reduced from {getDamageAmount})");
+
+        // NEW: Reset defense after taking damage (defend only lasts for one hit)
+        if (isDefending)
+        {
+            Debug.Log($"[DEFEND CONSUMED] {player.theName}'s defense boost consumed by incoming damage");
+            ResetDefense();
+        }
 
         // Update the UI panel if it exists
         UpdatePlayerPanel();
@@ -341,5 +469,4 @@ public class StateMachinePlayer : MonoBehaviour
             Debug.LogError("StateMachineEnemy component not found on target!");
         }
     }
-
 }

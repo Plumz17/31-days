@@ -3,6 +3,7 @@ using UnityEngine;
 public class Duskborne : MonoBehaviour
 {
     public enum duskState { Wander, Follow }
+    [SerializeField] private string enemyID;
     [SerializeField] private duskState currentState = duskState.Wander;
     [SerializeField] private Transform player;
     [SerializeField] float duskSpeed = 10f; 
@@ -18,6 +19,14 @@ public class Duskborne : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         playerHiding = player.GetComponent<PlayerHiding>();
+    }
+
+    void Start()
+    {
+        if (DuskManager.instance != null && DuskManager.instance.IsEnemyDefeated(enemyID))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     void FollowPlayer()
@@ -38,6 +47,9 @@ public class Duskborne : MonoBehaviour
     public void OnPlayerHit()
     {
         Debug.Log("Player hit!");
+        DuskManager.instance.MarkEnemyAsDefeated(enemyID);
+        // BattleLoader.currentEnemyID = enemyID;
+        LevelLoader.Instance.LoadNextLevel(15, Vector3.zero);
     }
 
     private void Wander()

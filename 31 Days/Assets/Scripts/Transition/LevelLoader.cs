@@ -39,11 +39,17 @@ public class LevelLoader : MonoBehaviour
         StartCoroutine(LoadLevel(sceneIndex));
     }
 
+    public void LoadNextLevelFromButton(int sceneIndex)
+    {
+        Vector3 defaultSpawnPosition = Vector3.zero;
+        LoadNextLevel(sceneIndex, new Vector3(22.5f,1.875f,0));
+    }
+
     IEnumerator LoadLevel(int sceneIndex) 
     {
         anim.SetTrigger("Start");
 
-        yield return new WaitForSeconds(transitionTime);
+        yield return new WaitForSeconds(transitionTime); //Fix this later
 
         SceneManager.LoadScene(sceneIndex);
     }

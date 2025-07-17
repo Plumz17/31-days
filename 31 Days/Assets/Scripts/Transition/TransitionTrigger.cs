@@ -35,6 +35,11 @@ public class TransitionTrigger : MonoBehaviour
         playerInput.Disable();
     }
 
+    void ChangeSceneButton()
+    {
+        LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
+    }
+
     void Update()
     {
         if ((playerInTrigger && (playerInput.UI.Submit.triggered || isScreenChange)))

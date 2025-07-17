@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: a08d106124ebe5f47a2439f22718864f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -752115222774426188
+    second: Bagas-Sheet_0
+  - first:
+      213: 7470528111653518173
+    second: Bagas-Sheet_1
+  - first:
+      213: -2849619875754927152
+    second: Bagas-Sheet_2
+  - first:
+      213: 6331366427455530367
+    second: Bagas-Sheet_3
+  - first:
+      213: 2289993823970608768
+    second: Bagas-Sheet_4
+  - first:
+      213: -8843944783904911478
+    second: Bagas-Sheet_5
+  - first:
+      213: 2088596726958191764
+    second: Bagas-Sheet_6
+  - first:
+      213: 1690131451460629603
+    second: Bagas-Sheet_7
+  - first:
+      213: -2262115067785318880
+    second: Bagas-Sheet_8
+  - first:
+      213: -4292985407063992044
+    second: Bagas-Sheet_9
+  - first:
+      213: 2757356549981501669
+    second: Bagas-Sheet_10
+  - first:
+      213: 3332057958203866544
+    second: Bagas-Sheet_11
+  - first:
+      213: 4295377525402918903
+    second: Bagas-Sheet_12
+  - first:
+      213: 1733921538247124475
+    second: Bagas-Sheet_13
+  - first:
+      213: 436405088022248263
+    second: Bagas-Sheet_14
+  - first:
+      213: 2359674770454048638
+    second: Bagas-Sheet_15
+  - first:
+      213: 8221865223102571366
+    second: Bagas-Sheet_16
+  - first:
+      213: 1618401272803635390
+    second: Bagas-Sheet_17
+  - first:
+      213: 618191975953137492
+    second: Bagas-Sheet_18
+  - first:
+      213: -5359816589544449967
+    second: Bagas-Sheet_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Bagas-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5dd549033ff85f0800000000000000
+      internalID: -752115222774426188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5b7dabacb5aca760800000000000000
+      internalID: 7470528111653518173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0db1cb822dd1478d0800000000000000
+      internalID: -2849619875754927152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f75225388388dd750800000000000000
+      internalID: 6331366427455530367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0864b9fff31b7cf10800000000000000
+      internalID: 2289993823970608768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8fcd26831ff34580800000000000000
+      internalID: -8843944783904911478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 0
+        width: 29
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 494f26548af2cfc10800000000000000
+      internalID: 2088596726958191764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 732
+        y: 0
+        width: 29
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 364b604b99d847710800000000000000
+      internalID: 1690131451460629603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 29
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02ee89fb45a5b90e0800000000000000
+      internalID: -2262115067785318880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 0
+        width: 29
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 419d30a74804c64c0800000000000000
+      internalID: -4292985407063992044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1032
+        y: 0
+        width: 29
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e87eb05c29144620800000000000000
+      internalID: 2757356549981501669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 0
+        width: 29
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bd31c91f09dd3e20800000000000000
+      internalID: 3332057958203866544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 0
+        width: 29
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff56d9f91f3c9b30800000000000000
+      internalID: 4295377525402918903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1332
+        y: 0
+        width: 29
+        height: 92
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf56e9bc370201810800000000000000
+      internalID: 1733921538247124475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1432
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74b3db98d1c6e0600800000000000000
+      internalID: 436405088022248263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1532
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7f6d5e93bf3fb020800000000000000
+      internalID: 2359674770454048638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 663aa2eebdee91270800000000000000
+      internalID: 8221865223102571366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1732
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb030890267b57610800000000000000
+      internalID: 1618401272803635390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45ffea9a352449800800000000000000
+      internalID: 618191975953137492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bagas-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 0
+        width: 29
+        height: 91
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15815f6953b1e95b0800000000000000
+      internalID: -5359816589544449967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bff619bc81114604392064516265e75e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Bagas-Sheet_0: -752115222774426188
+      Bagas-Sheet_1: 7470528111653518173
+      Bagas-Sheet_10: 2757356549981501669
+      Bagas-Sheet_11: 3332057958203866544
+      Bagas-Sheet_12: 4295377525402918903
+      Bagas-Sheet_13: 1733921538247124475
+      Bagas-Sheet_14: 436405088022248263
+      Bagas-Sheet_15: 2359674770454048638
+      Bagas-Sheet_16: 8221865223102571366
+      Bagas-Sheet_17: 1618401272803635390
+      Bagas-Sheet_18: 618191975953137492
+      Bagas-Sheet_19: -5359816589544449967
+      Bagas-Sheet_2: -2849619875754927152
+      Bagas-Sheet_3: 6331366427455530367
+      Bagas-Sheet_4: 2289993823970608768
+      Bagas-Sheet_5: -8843944783904911478
+      Bagas-Sheet_6: 2088596726958191764
+      Bagas-Sheet_7: 1690131451460629603
+      Bagas-Sheet_8: -2262115067785318880
+      Bagas-Sheet_9: -4292985407063992044
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

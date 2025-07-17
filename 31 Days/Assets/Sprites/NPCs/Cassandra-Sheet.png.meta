@@ -1,0 +1,637 @@
+fileFormatVersion: 2
+guid: b249449e45b171f4db299c867237bc10
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4201142854640814336
+    second: Cassandra-Sheet_0
+  - first:
+      213: -5064920222499535970
+    second: Cassandra-Sheet_1
+  - first:
+      213: 3288570164863936670
+    second: Cassandra-Sheet_2
+  - first:
+      213: 3931075584419502231
+    second: Cassandra-Sheet_3
+  - first:
+      213: -8854465244169918795
+    second: Cassandra-Sheet_4
+  - first:
+      213: 8792704136734622982
+    second: Cassandra-Sheet_5
+  - first:
+      213: 176909115511810367
+    second: Cassandra-Sheet_6
+  - first:
+      213: 5536313139198315556
+    second: Cassandra-Sheet_7
+  - first:
+      213: 8614399070774746079
+    second: Cassandra-Sheet_8
+  - first:
+      213: -4415413837811179635
+    second: Cassandra-Sheet_9
+  - first:
+      213: -3396776417382839734
+    second: Cassandra-Sheet_10
+  - first:
+      213: 4406823336602179189
+    second: Cassandra-Sheet_11
+  - first:
+      213: 2384330698420289615
+    second: Cassandra-Sheet_12
+  - first:
+      213: 2927208022802346776
+    second: Cassandra-Sheet_13
+  - first:
+      213: 7101681746778332455
+    second: Cassandra-Sheet_14
+  - first:
+      213: -1102030472739966160
+    second: Cassandra-Sheet_15
+  - first:
+      213: -1623961197069816172
+    second: Cassandra-Sheet_16
+  - first:
+      213: 271862135729794129
+    second: Cassandra-Sheet_17
+  - first:
+      213: 8853720538211127085
+    second: Cassandra-Sheet_18
+  - first:
+      213: 7717777392318119904
+    second: Cassandra-Sheet_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cassandra-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 009498dea257d4a30800000000000000
+      internalID: 4201142854640814336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e93093a84e9c5b9b0800000000000000
+      internalID: -5064920222499535970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98a9af242953ad20800000000000000
+      internalID: 3288570164863936670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79819829a6cfd8630800000000000000
+      internalID: 3931075584419502231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6a53df5ce9e1580800000000000000
+      internalID: -8854465244169918795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 0
+        width: 23
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 605cc2d93d5f50a70800000000000000
+      internalID: 8792704136734622982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 0
+        width: 23
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f392c9b37e1847200800000000000000
+      internalID: 176909115511810367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 0
+        width: 23
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42c4e3ba77fe4dc40800000000000000
+      internalID: 5536313139198315556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 752
+        y: 0
+        width: 23
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdbdbf6505e7c8770800000000000000
+      internalID: 8614399070774746079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 842
+        y: 0
+        width: 23
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8f9be4228c49b2c0800000000000000
+      internalID: -4415413837811179635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 0
+        width: 23
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ac87468d93cd0d0800000000000000
+      internalID: -3396776417382839734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 0
+        width: 23
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 576131ee97e282d30800000000000000
+      internalID: 4406823336602179189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1112
+        y: 0
+        width: 23
+        height: 79
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4086623328d61120800000000000000
+      internalID: 2384330698420289615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1202
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813bece00388f9820800000000000000
+      internalID: 2927208022802346776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72d19902ced3e8260800000000000000
+      internalID: 7101681746778332455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1382
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033bda4bf1dc4b0f0800000000000000
+      internalID: -1102030472739966160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ea2a735e78679e0800000000000000
+      internalID: -1623961197069816172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15cad0c0c29d5c300800000000000000
+      internalID: 271862135729794129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1652
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2f87a4abebbeda70800000000000000
+      internalID: 8853720538211127085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cassandra-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1742
+        y: 0
+        width: 23
+        height: 78
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ef79a4d5ad0b1b60800000000000000
+      internalID: 7717777392318119904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: a7bf28576adc55e4082be8805887c0e1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cassandra-Sheet_0: 4201142854640814336
+      Cassandra-Sheet_1: -5064920222499535970
+      Cassandra-Sheet_10: -3396776417382839734
+      Cassandra-Sheet_11: 4406823336602179189
+      Cassandra-Sheet_12: 2384330698420289615
+      Cassandra-Sheet_13: 2927208022802346776
+      Cassandra-Sheet_14: 7101681746778332455
+      Cassandra-Sheet_15: -1102030472739966160
+      Cassandra-Sheet_16: -1623961197069816172
+      Cassandra-Sheet_17: 271862135729794129
+      Cassandra-Sheet_18: 8853720538211127085
+      Cassandra-Sheet_19: 7717777392318119904
+      Cassandra-Sheet_2: 3288570164863936670
+      Cassandra-Sheet_3: 3931075584419502231
+      Cassandra-Sheet_4: -8854465244169918795
+      Cassandra-Sheet_5: 8792704136734622982
+      Cassandra-Sheet_6: 176909115511810367
+      Cassandra-Sheet_7: 5536313139198315556
+      Cassandra-Sheet_8: 8614399070774746079
+      Cassandra-Sheet_9: -4415413837811179635
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -231,6 +231,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 94558462608524911, guid: cddb539ce19d0ab408e4f00c3765e96d, type: 3}
+      propertyPath: transitionTime
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2345150735151282889, guid: cddb539ce19d0ab408e4f00c3765e96d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960.00006
@@ -461,6 +465,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 25173514}
+    - target: {fileID: 9008631394547257672, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
+      propertyPath: enemyID
+      value: two
+      objectReference: {fileID: 0}
     - target: {fileID: 9212820519182601709, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: m_Name
       value: Duskborne (1)
@@ -1105,6 +1113,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 25173514}
+    - target: {fileID: 9008631394547257672, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
+      propertyPath: enemyID
+      value: one
+      objectReference: {fileID: 0}
     - target: {fileID: 9212820519182601709, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: m_Name
       value: Duskborne

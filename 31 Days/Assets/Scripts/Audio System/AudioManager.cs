@@ -7,10 +7,6 @@ public class AudioManager : MonoBehaviour
     public static AudioManager instance;
     private AudioSource audioSource;
 
-    [Header("Music Clips")]
-    public AudioClip mainMenuMusic;
-    public AudioClip defaultMusic;
-    public AudioClip doorMusic;
     [SerializeField] public float fadeTime = 0.4f;
     [SerializeField] public float fullVolume = 0.5f;
 
@@ -61,7 +57,14 @@ public class AudioManager : MonoBehaviour
 
     public void SetTime(float newTime)
     {
-        audioSource.time = newTime;
+        if (audioSource.clip != null)
+        {
+            audioSource.time = Mathf.Clamp(newTime, 0f, audioSource.clip.length - 0.1f);
+        }
+        else
+        {
+            Debug.LogWarning("Tried to set time, but no clip is assigned.");
+        }
     }
 
     public static IEnumerator FadeOutEnumerator(AudioSource audioSource, float FadeTime)
@@ -82,7 +85,6 @@ public class AudioManager : MonoBehaviour
     public static IEnumerator FadeInEnumerator(AudioSource audioSource, float FadeTime, float fullVolume)
     {
         audioSource.volume = 0f;
-        audioSource.Play();
 
         while (audioSource.volume < fullVolume)
         {
@@ -102,8 +104,14 @@ public class AudioManager : MonoBehaviour
     {
         yield return StartCoroutine(FadeOutEnumerator(audioSource, fadeTime));
         PlayMusic(newClip);
-        if (saveTime)
-            SetTime(prevTime);
+        // Wait until the clip is assigned before setting time
+        yield return new WaitUntil(() => audioSource.clip == newClip);
+
+        if (saveTime && audioSource.clip != null)
+        {
+            prevTime = Mathf.Clamp(prevTime, 0f, audioSource.clip.length - 0.1f);
+            audioSource.time = prevTime;
+        }
         yield return StartCoroutine(FadeInEnumerator(audioSource, fadeTime, fullVolume));
     }
 }

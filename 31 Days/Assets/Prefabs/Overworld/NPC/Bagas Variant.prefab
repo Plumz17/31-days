@@ -10,16 +10,16 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 191653814421948546, guid: e025af131486dfa4e8052da6d938199d, type: 3}
       propertyPath: m_Size.x
-      value: 0.29
+      value: 1.8125
       objectReference: {fileID: 0}
     - target: {fileID: 191653814421948546, guid: e025af131486dfa4e8052da6d938199d, type: 3}
       propertyPath: m_Size.y
-      value: 0.91
+      value: 5.6875
       objectReference: {fileID: 0}
     - target: {fileID: 191653814421948546, guid: e025af131486dfa4e8052da6d938199d, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6831464311212280188, guid: 63a091cd3350e0949a991fb7227b41d1, type: 3}
+      objectReference: {fileID: -752115222774426188, guid: a08d106124ebe5f47a2439f22718864f, type: 3}
     - target: {fileID: 256707928966988176, guid: e025af131486dfa4e8052da6d938199d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -84,8 +84,39 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bagas Variant
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5727092587755768649, guid: e025af131486dfa4e8052da6d938199d, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1443691269441150625, guid: e025af131486dfa4e8052da6d938199d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 329325336115682425}
   m_SourcePrefab: {fileID: 100100000, guid: e025af131486dfa4e8052da6d938199d, type: 3}
+--- !u!1 &3791914985814388569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1443691269441150625, guid: e025af131486dfa4e8052da6d938199d, type: 3}
+  m_PrefabInstance: {fileID: 2348225992707617272}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &329325336115682425
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3791914985814388569}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: e7828c4f420d59d40b7a8a37c4a62558, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

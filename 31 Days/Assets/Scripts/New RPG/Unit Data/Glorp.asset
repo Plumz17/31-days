@@ -15,6 +15,6 @@ MonoBehaviour:
   unitName: Glorp
   maxHP: 30
   maxWILL: 100
-  damage: 5
+  damage: 20
   isPlayer: 0
   enemySprite: {fileID: -7539498615863296485, guid: 6cdf85fa0cac6924f83a9a3b405f0960, type: 3}

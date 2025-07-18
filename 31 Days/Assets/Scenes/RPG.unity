@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 147758070}
   - component: {fileID: 147758069}
   - component: {fileID: 147758071}
+  - component: {fileID: 147758072}
   m_Layer: 0
   m_Name: Cass
   m_TagString: Untagged
@@ -370,6 +371,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: f679e3b2891ba7c4d872568c4ece4454, type: 2}
+--- !u!114 &147758072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 147758066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e89898af0fd1ed4390b7a7a4132652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpSlider: {fileID: 1829760042}
+  willSlider: {fileID: 1469086345}
 --- !u!1 &151363159
 GameObject:
   m_ObjectHideFlags: 0
@@ -3388,6 +3403,8 @@ MonoBehaviour:
   - {fileID: 453033670}
   - {fileID: 2081706555}
   - {fileID: 258252945}
+  turnOrder: []
+  turnIndex: 0
   playerGroup: {fileID: 244521714}
   enemyGroup: {fileID: 1452664567}
   textBox: {fileID: 715048293}
@@ -5291,6 +5308,7 @@ GameObject:
   - component: {fileID: 1772310141}
   - component: {fileID: 1772310140}
   - component: {fileID: 1772310142}
+  - component: {fileID: 1772310143}
   m_Layer: 0
   m_Name: Klara
   m_TagString: Untagged
@@ -5372,6 +5390,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: eed440faa206c6d4998952c0e3c1f154, type: 2}
+--- !u!114 &1772310143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772310137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e89898af0fd1ed4390b7a7a4132652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpSlider: {fileID: 299239015}
+  willSlider: {fileID: 7814729}
 --- !u!1 &1829760040
 GameObject:
   m_ObjectHideFlags: 0
@@ -5882,6 +5914,7 @@ GameObject:
   - component: {fileID: 2001264824}
   - component: {fileID: 2001264823}
   - component: {fileID: 2001264825}
+  - component: {fileID: 2001264826}
   m_Layer: 0
   m_Name: Bagas
   m_TagString: Untagged
@@ -5963,6 +5996,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: {fileID: 11400000, guid: 51aa9e4360e586040a3b733430b482a6, type: 2}
+--- !u!114 &2001264826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001264820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e89898af0fd1ed4390b7a7a4132652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpSlider: {fileID: 1056835765}
+  willSlider: {fileID: 242219348}
 --- !u!1 &2081706550
 GameObject:
   m_ObjectHideFlags: 0

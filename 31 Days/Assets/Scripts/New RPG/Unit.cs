@@ -26,6 +26,7 @@ public class Unit : MonoBehaviour
         maxWILL = data.maxWILL;
         currentHP = maxHP;
         currentWILL = maxWILL;
+        Debug.Log(maxHP);
     }
 
     public void TakeDamage(int amount)

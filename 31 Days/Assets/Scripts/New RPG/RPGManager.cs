@@ -12,7 +12,8 @@ public class RPGManager : MonoBehaviour
     public BattleState currentState;
     public List<Unit> playerUnits;
     public List<Unit> enemyUnits;
-    private Queue<Unit> turnQueue = new Queue<Unit>();
+    public List<Unit> turnOrder = new List<Unit>();
+    public int turnIndex = 0;
 
     private Unit currentUnit;
     public PlayerBoxesGroup playerGroup;
@@ -30,13 +31,16 @@ public class RPGManager : MonoBehaviour
 
     private void SetupBattle() //Setup Battle
     {
+        Debug.Log(playerUnits[0].maxHP);
+        Debug.Log(playerUnits[1].maxHP);
+        Debug.Log(playerUnits[2].maxHP);
+        Debug.Log(playerUnits[3].maxHP);
         playerGroup.SetupPartyUI(playerUnits);
         enemyGroup.SetupEnemies(enemyUnits);
 
-        foreach (var unit in playerUnits)
-            turnQueue.Enqueue(unit);
-        foreach (var unit in enemyUnits)
-            turnQueue.Enqueue(unit);
+        turnOrder.Clear();
+        turnOrder.AddRange(playerUnits);
+        turnOrder.AddRange(enemyUnits);
         StartCoroutine(NextTurn());
     }
 
@@ -50,11 +54,11 @@ public class RPGManager : MonoBehaviour
             yield break;
         }
 
-        currentUnit = turnQueue.Dequeue();
+        currentUnit = turnOrder[turnIndex];
 
         if (currentUnit.IsDead())
         {
-            StartCoroutine(NextTurn());
+            EndTurn();
             yield break;
         }
 
@@ -95,12 +99,17 @@ public class RPGManager : MonoBehaviour
     IEnumerator PlayerAttack(Unit attacker, Unit target)
     {
         target.TakeDamage(attacker.damage);
-        textBox.text = target.Name + " took " + attacker.damage + " Damage";
+        textBox.text = target.Name + " took " + attacker.damage + " Damage, now it has " + target.currentHP + " HP";
 
         yield return new WaitForSeconds(1f);
 
         if (target.IsDead())
+        {
             enemyUnits.Remove(target);
+            turnOrder.Remove(target);
+            enemyGroup.OnEnemyDeath(target);
+            //enemyGroup.SetupEnemies(enemyUnits);
+        }
 
         EndTurn();
     }
@@ -118,14 +127,17 @@ public class RPGManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         if (target.IsDead())
+        {
             playerUnits.Remove(target);
+            turnOrder.Remove(target);
+        }
 
         playerGroup.SetupPartyUI(playerUnits);
     }
 
     void EndTurn()
     {
-        turnQueue.Enqueue(currentUnit);
+        turnIndex = (turnIndex + 1) % turnOrder.Count;
         StartCoroutine(NextTurn());
     }
 

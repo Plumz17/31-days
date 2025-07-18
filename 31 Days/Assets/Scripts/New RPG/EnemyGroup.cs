@@ -28,4 +28,20 @@ public class EnemyGroup : MonoBehaviour
             }
         }
     }
+
+    public void OnEnemyDeath(Unit deadEnemy)
+    {
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            GameObject enemyObj = enemies[i];
+            if (!enemyObj.activeSelf) continue;
+
+            Unit enemyUnit = enemyObj.GetComponent<Unit>();
+            if (enemyUnit == deadEnemy)
+            {
+                enemyObj.SetActive(false);
+                break;
+            }
+        }
+    }
 }

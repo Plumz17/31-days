@@ -26,9 +26,13 @@ public class DuskManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (this == null) return;
+
         if (!duskSceneNames.Contains(scene.name))
         {
             // Scene is not in overworld list — destroy the GameManager
+            Debug.Log("Destroyed");
+            defeatedEnemies.Clear();
             Destroy(gameObject);
         }
     }

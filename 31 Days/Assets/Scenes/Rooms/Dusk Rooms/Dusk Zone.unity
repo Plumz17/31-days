@@ -320,7 +320,7 @@ MonoBehaviour:
   duskSceneNames:
   - Dusk Classroom
   - Dusk Zone
-  - RPG Mockup
+  - RPG
 --- !u!4 &404828693
 Transform:
   m_ObjectHideFlags: 0

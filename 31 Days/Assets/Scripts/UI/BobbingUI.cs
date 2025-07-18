@@ -7,16 +7,18 @@ public class BobbingUI : MonoBehaviour
     [SerializeField] float floatStrength = 0.2f;
     private float originalY;
     private float phaseOffset;
+    private RectTransform rectTransform;
 
-    private void Awake() 
+    private void Awake()
     {
-        originalY = transform.position.y;
+        rectTransform = GetComponent<RectTransform>();
+        originalY = rectTransform.anchoredPosition.y;
         phaseOffset = UnityEngine.Random.Range(0f, 2 * Mathf.PI);
     }
 
-    private void Update() //Handle Bobbing effect
+    private void Update()
     {
         float newY = originalY + Mathf.Sin(Time.time + phaseOffset) * floatStrength;
-        transform.position = new Vector3(transform.position.x, newY, transform.position.z);
+        rectTransform.anchoredPosition = new Vector2(rectTransform.anchoredPosition.x, newY);
     }
 }

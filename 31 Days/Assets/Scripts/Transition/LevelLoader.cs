@@ -56,7 +56,7 @@ public class LevelLoader : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Called when the scene first loads
     {
-        PauseMenu.instance.Resume();
+        PauseMenu.instance?.Resume();
         player = GameObject.FindGameObjectWithTag("Player");
 
         if (player != null)

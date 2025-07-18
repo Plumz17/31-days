@@ -19,6 +19,8 @@ public class RPGManager : MonoBehaviour
     public EnemyGroup enemyGroup;
     public TMP_Text textBox;
 
+    public EncounterData encounter;
+
     private bool isChoosingTarget = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -31,7 +33,7 @@ public class RPGManager : MonoBehaviour
     private void SetupBattle() //Setup Battle
     {
         playerGroup.SetupPartyUI(playerUnits);
-        enemyGroup.SetupEnemies(enemyUnits);
+        enemyGroup.SetupEnemies(encounter, enemyUnits);
 
         foreach (var unit in playerUnits)
             turnQueue.Enqueue(unit);

@@ -8,7 +8,6 @@ public class EnemyClickTarget : MonoBehaviour
     void Awake()
     {
         enemyUnit = GetComponent<Unit>();
-        Debug.Log("Assigned unit to: " + gameObject.name);
     }
 
     public void OnEnemyClick()

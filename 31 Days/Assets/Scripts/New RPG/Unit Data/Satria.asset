@@ -15,5 +15,6 @@ MonoBehaviour:
   unitName: Satria
   maxHP: 100
   maxWILL: 100
-  damage: 50
+  damage: 10
   isPlayer: 1
+  icon: {fileID: 2205405838914150652, guid: 66e78bfeebddd914d9e207edf353b68e, type: 3}

@@ -19,6 +19,7 @@ public class RPGManager : MonoBehaviour
     public PlayerBoxesGroup playerGroup;
     public EnemyGroup enemyGroup;
     public TMP_Text textBox;
+    private bool isAttacking = false;
 
     private bool isChoosingTarget = false;
 
@@ -62,6 +63,7 @@ public class RPGManager : MonoBehaviour
         {
             currentState = BattleState.PLAYERTURN;
             textBox.text = currentUnit.Name + "'s Turn. Choose an action.";
+            isAttacking = false;
         }
 
         else
@@ -74,13 +76,15 @@ public class RPGManager : MonoBehaviour
 
     public void OnAttackButton()
     {
+        if (isAttacking) return;
+
         isChoosingTarget = true;
         textBox.text = "Choose a target.";
     }
 
     public bool CanSelectTarget()
     {
-        return isChoosingTarget && currentState == BattleState.PLAYERTURN;
+        return isChoosingTarget && currentState == BattleState.PLAYERTURN && !isAttacking;
     }
 
     public void OnEnemySelected(Unit selectedEnemy)
@@ -88,6 +92,7 @@ public class RPGManager : MonoBehaviour
         if (!CanSelectTarget()) return;
 
         isChoosingTarget = false;
+        isAttacking = true;
         StartCoroutine(PlayerAttack(currentUnit, selectedEnemy));
     }
 
@@ -106,7 +111,6 @@ public class RPGManager : MonoBehaviour
             enemyGroup.OnEnemyDeath(target);
             //enemyGroup.SetupEnemies(enemyUnits);
         }
-
         EndTurn();
     }
 

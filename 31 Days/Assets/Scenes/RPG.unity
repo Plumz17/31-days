@@ -1502,6 +1502,7 @@ GameObject:
   - component: {fileID: 453033667}
   - component: {fileID: 453033666}
   - component: {fileID: 453033668}
+  - component: {fileID: 453033669}
   m_Layer: 0
   m_Name: Station 1
   m_TagString: Untagged
@@ -1582,8 +1583,23 @@ MonoBehaviour:
   Name: Duskborne
   maxHP: 30
   currentHP: 30
+  maxWILL: 100
+  currentWILL: 0
   damage: 5
   isPlayer: 0
+--- !u!114 &453033669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 453033663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbb977a5bd7b49a49bf1b51e98105798, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1102836675}
 --- !u!1 &459922352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2179,6 +2195,7 @@ GameObject:
   - component: {fileID: 735358328}
   - component: {fileID: 735358327}
   - component: {fileID: 735358329}
+  - component: {fileID: 735358330}
   m_Layer: 0
   m_Name: Satria
   m_TagString: Untagged
@@ -2261,9 +2278,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Satria
   maxHP: 100
-  currentHP: 100
+  currentHP: 80
+  maxWILL: 100
+  currentWILL: 60
   damage: 50
   isPlayer: 1
+--- !u!114 &735358330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735358324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e89898af0fd1ed4390b7a7a4132652b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hpSlider: {fileID: 1930273481}
+  willSlider: {fileID: 1986130975}
 --- !u!1 &755778241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,6 +3276,8 @@ MonoBehaviour:
   currentState: 0
   playerUnit: {fileID: 735358329}
   enemyUnit: {fileID: 453033668}
+  playerUI: {fileID: 735358330}
+  textBox: {fileID: 715048293}
 --- !u!4 &1102836676
 Transform:
   m_ObjectHideFlags: 0
@@ -3731,7 +3766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1364404186}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1102836675}
+        m_TargetAssemblyTypeName: RPGManager, Assembly-CSharp
+        m_MethodName: OnAttackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1396481658
 GameObject:
   m_ObjectHideFlags: 0

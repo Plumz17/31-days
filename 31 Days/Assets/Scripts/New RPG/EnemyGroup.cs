@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class EnemyGroup : MonoBehaviour
 {
@@ -15,14 +16,16 @@ public class EnemyGroup : MonoBehaviour
                 GameObject enemy = enemyStations[i];
                 enemy.SetActive(true);
 
-                SpriteRenderer sr = enemy.GetComponentInChildren<SpriteRenderer>();
-                
+                Debug.Log(enemy.name);
+                Image img = enemyStations[i].transform.Find("Enemy")?.GetComponent<Image>();
+
                 Unit unit = enemyUnits[i];
                 unit.data = encounter.enemies[i];
 
-                if (unit.data is EnemyData enemyData && sr != null)
+                if (unit.data is EnemyData enemyData && img != null)
                 {
-                    sr.sprite = enemyData.enemySprite;
+                    Debug.Log("Image is Null");
+                    img.sprite = enemyData.enemySprite;
                 }
             }
             else

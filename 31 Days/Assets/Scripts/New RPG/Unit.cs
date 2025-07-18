@@ -15,6 +15,8 @@ public class Unit : MonoBehaviour
     public string Name => data.unitName;
     public int damage => data.damage;
 
+    public Sprite Icon => isPlayer ? ((CharacterData)data).icon : null;
+
     // Type flags
     public bool isPlayer => data is CharacterData;
 

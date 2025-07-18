@@ -4,15 +4,16 @@ using System.Collections.Generic;
 public class EnemyGroup : MonoBehaviour
 {
     [Header("Enemies")]
-    [SerializeField] private List<GameObject> enemyStations;
+    [SerializeField] public EncounterData encounter;
+    [SerializeField] private List<GameObject> enemies;
 
-    public void SetupEnemies(EncounterData encounter, List<Unit> enemyUnits)
+    public void SetupEnemies(List<Unit> enemyUnits)
     {
-        for (int i = 0; i < enemyStations.Count; i++)
+        for (int i = 0; i < enemies.Count; i++)
         {
             if (i < encounter.enemies.Count)
             {
-                GameObject enemy = enemyStations[i];
+                GameObject enemy = enemies[i];
                 enemy.SetActive(true);
 
                 SpriteRenderer sr = enemy.GetComponentInChildren<SpriteRenderer>();
@@ -27,7 +28,7 @@ public class EnemyGroup : MonoBehaviour
             }
             else
             {
-                enemyStations[i].SetActive(false); // Hide unused slots
+                enemies[i].SetActive(false); // Hide unused slots
             }
         }
     }

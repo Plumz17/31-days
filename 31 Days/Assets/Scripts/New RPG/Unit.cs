@@ -18,7 +18,7 @@ public class Unit : MonoBehaviour
     // Type flags
     public bool isPlayer => data is CharacterData;
 
-    private void Start()
+    private void Awake()
     {
         if (data == null) return;
 
@@ -26,7 +26,6 @@ public class Unit : MonoBehaviour
         maxWILL = data.maxWILL;
         currentHP = maxHP;
         currentWILL = maxWILL;
-        Debug.Log(maxHP);
     }
 
     public void TakeDamage(int amount)

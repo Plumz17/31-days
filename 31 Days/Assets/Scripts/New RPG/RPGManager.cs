@@ -31,10 +31,6 @@ public class RPGManager : MonoBehaviour
 
     private void SetupBattle() //Setup Battle
     {
-        Debug.Log(playerUnits[0].maxHP);
-        Debug.Log(playerUnits[1].maxHP);
-        Debug.Log(playerUnits[2].maxHP);
-        Debug.Log(playerUnits[3].maxHP);
         playerGroup.SetupPartyUI(playerUnits);
         enemyGroup.SetupEnemies(enemyUnits);
 

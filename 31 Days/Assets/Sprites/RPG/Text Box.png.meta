@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: cb573ab5b5780eb4bbc619cf4e3860e0
+guid: 97e7118ccc12ce742b6f38d07b934a6b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8134240072531119869
-    second: RPG Mockup_0
+      213: 8508808144625042074
+    second: Text Box_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: RPG Mockup_0
+      name: Text Box_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 320
-        height: 180
+        width: 112
+        height: 42
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dfe07f8bf30a2e070800000000000000
-      internalID: 8134240072531119869
+      spriteID: a92835a0deb551670800000000000000
+      internalID: 8508808144625042074
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      RPG Mockup_0: 8134240072531119869
+      Text Box_0: 8508808144625042074
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,8 +1,6 @@
 using System.Collections.Generic;
 using System.Data;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
-using UnityEngine.TextCore.Text;
 
 
 [System.Serializable]
@@ -26,8 +24,6 @@ public class PlayerData
 
     // Social Links
     public List<ConnectionSaveData> playerConnections = new List<ConnectionSaveData>();
-
-    public List<CharacterData> partyStats = new List<CharacterData>();
 
     // You can also add flags or quest progress here
     //public List<string> unlockedEvents = new List<string>();

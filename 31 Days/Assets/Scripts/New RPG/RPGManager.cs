@@ -12,8 +12,7 @@ public class RPGManager : MonoBehaviour
     public BattleState currentState;
     public List<Unit> playerUnits;
     public List<Unit> enemyUnits;
-    public List<Unit> turnOrder = new List<Unit>();
-    public int turnIndex = 0;
+    private Queue<Unit> turnQueue = new Queue<Unit>();
 
     private Unit currentUnit;
     public PlayerBoxesGroup playerGroup;
@@ -36,11 +35,10 @@ public class RPGManager : MonoBehaviour
         playerGroup.SetupPartyUI(playerUnits);
         enemyGroup.SetupEnemies(encounter, enemyUnits);
 
-        turnOrder.Clear();
-        turnOrder.AddRange(playerUnits);
-        turnOrder.AddRange(enemyUnits);
-        turnIndex = 0;
-
+        foreach (var unit in playerUnits)
+            turnQueue.Enqueue(unit);
+        foreach (var unit in enemyUnits)
+            turnQueue.Enqueue(unit);
         StartCoroutine(NextTurn());
     }
 
@@ -54,11 +52,13 @@ public class RPGManager : MonoBehaviour
             yield break;
         }
 
-        do
+        currentUnit = turnQueue.Dequeue();
+
+        if (currentUnit.IsDead())
         {
-            currentUnit = turnOrder[turnIndex];
-            turnIndex = (turnIndex + 1) % turnOrder.Count;
-        } while (currentUnit.IsDead());
+            StartCoroutine(NextTurn());
+            yield break;
+        }
 
         if (currentUnit.isPlayer)
         {
@@ -96,11 +96,8 @@ public class RPGManager : MonoBehaviour
 
     IEnumerator PlayerAttack(Unit attacker, Unit target)
     {
-        Debug.Log("Player Attack()");
-        Debug.Log(target.name);
         target.TakeDamage(attacker.damage);
         textBox.text = target.Name + " took " + attacker.damage + " Damage";
-        Debug.Log("Take Damage Successful");
 
         yield return new WaitForSeconds(1f);
 
@@ -130,6 +127,7 @@ public class RPGManager : MonoBehaviour
 
     void EndTurn()
     {
+        turnQueue.Enqueue(currentUnit);
         StartCoroutine(NextTurn());
     }
 
@@ -160,7 +158,5 @@ public class RPGManager : MonoBehaviour
         {
             textBox.text = "You Lost :(";
         }
-
-        LevelLoader.Instance.LoadNextLevelFromButton(12);
     }    
 }

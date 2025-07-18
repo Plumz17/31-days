@@ -754,11 +754,6 @@ MonoBehaviour:
     prevScene: Room
     prevPosition: {x: -17, y: 2.125, z: 0}
     playerConnections: []
-    partyStats:
-    - {fileID: 11400000, guid: 4ef46813109fa154f8611425ce669f96, type: 2}
-    - {fileID: 11400000, guid: 51aa9e4360e586040a3b733430b482a6, type: 2}
-    - {fileID: 11400000, guid: eed440faa206c6d4998952c0e3c1f154, type: 2}
-    - {fileID: 11400000, guid: f679e3b2891ba7c4d872568c4ece4454, type: 2}
   loadedFromSave: 0
 --- !u!1 &444636453
 GameObject:

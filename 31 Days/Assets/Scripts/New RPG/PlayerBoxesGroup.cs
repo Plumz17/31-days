@@ -10,10 +10,9 @@ public class PlayerBoxesGroup : MonoBehaviour
     {
         for (int i = 0; i < characterBoxes.Count; i++)
         {
-            if (i < PlayerDataManager.instance.currentData.partyStats.Count)
+            if (i < activePartyMembers.Count)
             {
                 characterBoxes[i].SetActive(true);
-                activePartyMembers[i].data = PlayerDataManager.instance.currentData.partyStats[i];
 
                 PlayerUI uiBox = characterBoxes[i].GetComponent<PlayerUI>();
                 if (uiBox != null)

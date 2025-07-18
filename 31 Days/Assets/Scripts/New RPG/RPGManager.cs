@@ -2,15 +2,21 @@ using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
+
 
 public enum BattleState {START, ENEMYTURN, PLAYERTURN, WIN, LOSS}
 
 public class RPGManager : MonoBehaviour
 {
     public BattleState currentState;
-    public Unit playerUnit;
-    public Unit enemyUnit;
-    public PlayerUI playerUI;
+    public List<Unit> playerUnits;
+    public List<Unit> enemyUnits;
+    private Queue<Unit> turnQueue = new Queue<Unit>();
+
+    private Unit currentUnit;
+    public PlayerBoxesGroup playerGroup;
+    public EnemyGroup enemyGroup;
     public TMP_Text textBox;
 
     private bool isChoosingTarget = false;
@@ -24,15 +30,46 @@ public class RPGManager : MonoBehaviour
 
     private void SetupBattle() //Setup Battle
     {
-        playerUI.UpdateUI(playerUnit);
+        playerGroup.SetupPartyUI(playerUnits);
+        enemyGroup.SetupEnemies(enemyUnits);
 
-        currentState = BattleState.PLAYERTURN;
-        PlayerTurn();
+        foreach (var unit in playerUnits)
+            turnQueue.Enqueue(unit);
+        foreach (var unit in enemyUnits)
+            turnQueue.Enqueue(unit);
+        StartCoroutine(NextTurn());
     }
 
-    private void PlayerTurn()
+    IEnumerator NextTurn()
     {
-        textBox.text = "Player's Turn";
+        yield return new WaitForSeconds(1f);
+
+        if (IsBattleOver())
+        {
+            EndBattle();
+            yield break;
+        }
+
+        currentUnit = turnQueue.Dequeue();
+
+        if (currentUnit.IsDead())
+        {
+            StartCoroutine(NextTurn());
+            yield break;
+        }
+
+        if (currentUnit.isPlayer)
+        {
+            currentState = BattleState.PLAYERTURN;
+            textBox.text = currentUnit.Name + "'s Turn. Choose an action.";
+        }
+
+        else
+        {
+            currentState = BattleState.ENEMYTURN;
+            yield return StartCoroutine(EnemyAttack(currentUnit));
+            EndTurn();
+        }
     }
 
     public void OnAttackButton()
@@ -51,48 +88,62 @@ public class RPGManager : MonoBehaviour
         if (!CanSelectTarget()) return;
 
         isChoosingTarget = false;
-        StartCoroutine(AttackEnemy(selectedEnemy));
+        StartCoroutine(PlayerAttack(currentUnit, selectedEnemy));
     }
 
 
-    IEnumerator AttackEnemy(Unit target)
+    IEnumerator PlayerAttack(Unit attacker, Unit target)
     {
-        target.TakeDamage(playerUnit.damage);
-        textBox.text = target.Name + " took " + playerUnit.damage + " Damage";
+        target.TakeDamage(attacker.damage);
+        textBox.text = target.Name + " took " + attacker.damage + " Damage";
 
         yield return new WaitForSeconds(1f);
 
         if (target.IsDead())
-        {
-            currentState = BattleState.WIN;
-            EndBattle();
-        }
-        else
-        {
-            currentState = BattleState.ENEMYTURN;
-            StartCoroutine(AttackPlayer());
-        }
+            enemyUnits.Remove(target);
+
+        EndTurn();
     }
 
-    IEnumerator AttackPlayer()
+    IEnumerator EnemyAttack(Unit enemy)
     {
-        playerUnit.TakeDamage(enemyUnit.damage);
-        textBox.text = enemyUnit.Name + " deals " + enemyUnit.damage + " Damage";
+        var validTargets = playerUnits.FindAll(p => !p.IsDead());
+        if (validTargets.Count == 0) yield break;
+
+        Unit target = validTargets[UnityEngine.Random.Range(0, validTargets.Count)];
+        target.TakeDamage(enemy.damage);
+
+        textBox.text = enemy.Name + " attacks " + target.Name + " for " + enemy.damage + " damage.";
 
         yield return new WaitForSeconds(1f);
 
-        playerUI.UpdateUI(playerUnit);
+        if (target.IsDead())
+            playerUnits.Remove(target);
 
-        if (playerUnit.IsDead())
+        playerGroup.SetupPartyUI(playerUnits);
+    }
+
+    void EndTurn()
+    {
+        turnQueue.Enqueue(currentUnit);
+        StartCoroutine(NextTurn());
+    }
+
+    bool IsBattleOver()
+    {
+        if (playerUnits.Count == 0)
         {
             currentState = BattleState.LOSS;
-            EndBattle();
+            return true;
         }
-        else
+
+        if (enemyUnits.Count == 0)
         {
-            currentState = BattleState.PLAYERTURN;
-            PlayerTurn();
+            currentState = BattleState.WIN;
+            return true;
         }
+
+        return false;
     }
 
     private void EndBattle()

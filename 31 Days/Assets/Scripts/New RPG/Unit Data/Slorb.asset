@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 218573b5c5c689547987b61edccee39b, type: 3}
+  m_Name: Slorb
+  m_EditorClassIdentifier: 
+  unitName: Slorb
+  maxHP: 30
+  maxWILL: 100
+  damage: 5
+  isPlayer: 0
+  enemySprite: {fileID: -2635220530030887118, guid: 2dbe6c4261d7dbf46be868bf7ce65252, type: 3}

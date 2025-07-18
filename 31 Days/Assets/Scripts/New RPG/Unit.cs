@@ -2,12 +2,31 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour
 {
-    public string Name;
-    public int maxHP, currentHP;
-    public int maxWILL = 100;
-    public int currentWILL;
-    public int damage;
-    public bool isPlayer;
+    [Header("Data")]
+    public UnitData data; // Can be CharacterData (player) or EnemyData (enemy)
+
+    [Header("Runtime Stats")]
+    public int currentHP { get; private set; }
+    public int currentWILL { get; private set; }
+    public int maxHP { get; private set; }
+    public int maxWILL { get; private set; }
+
+    // Properties from data
+    public string Name => data.unitName;
+    public int damage => data.damage;
+
+    // Type flags
+    public bool isPlayer => data is CharacterData;
+
+    private void Start()
+    {
+        if (data == null) return;
+
+        maxHP = data.maxHP;
+        maxWILL = data.maxWILL;
+        currentHP = maxHP;
+        currentWILL = maxWILL;
+    }
 
     public void TakeDamage(int amount)
     {

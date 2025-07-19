@@ -47,6 +47,7 @@ public class Duskborne : MonoBehaviour
 
     public void OnPlayerHit()
     {
+        Debug.Log("Player hit!");
         Time.timeScale = 0f;
         DuskManager.instance.StartEncounter(encounterData, enemyID);
     }

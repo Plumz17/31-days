@@ -15,8 +15,9 @@ public class ButtonsGroup : MonoBehaviour
         textBox.text = "Choose a target.";
     }
 
-    public void OnRunButton()
+    public void OnRunButton(int sceneIndex)
     {
-        rpgManager.EndBattle(true);
+        LevelLoader.Instance.LoadNextLevel(sceneIndex, new Vector3(22.5f,1.875f,0));
     }
+
 }

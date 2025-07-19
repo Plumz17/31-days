@@ -19,9 +19,9 @@ public class RPGManager : MonoBehaviour
     public PlayerBoxesGroup playerGroup;
     public EnemyGroup enemyGroup;
     public TMP_Text textBox;
-    private bool isAttacking = false;
+    public bool isAttacking = false;
 
-    private bool isChoosingTarget = false;
+    public bool isChoosingTarget = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -74,14 +74,6 @@ public class RPGManager : MonoBehaviour
             yield return StartCoroutine(EnemyAttack(currentUnit));
             EndTurn();
         }
-    }
-
-    public void OnAttackButton()
-    {
-        if (isAttacking) return;
-
-        isChoosingTarget = true;
-        textBox.text = "Choose a target.";
     }
 
     public bool CanSelectTarget()
@@ -165,6 +157,7 @@ public class RPGManager : MonoBehaviour
         if (currentState == BattleState.WIN)
         {
             textBox.text = "You Won!";
+            LevelLoader.Instance.LoadNextLevel(12, new Vector3(22.5f,1.875f,0));
         }
         else
         {

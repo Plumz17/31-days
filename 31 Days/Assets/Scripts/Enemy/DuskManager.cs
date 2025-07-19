@@ -48,7 +48,11 @@ public class DuskManager : MonoBehaviour
         for (int i = 0; i < partyUnits.Count; i++)
         {
             Debug.Log("Before: " + partyUnits[i].currentHP);
+            int currentHP = partyUnits[i].currentHP;
+            int currentWILL = partyUnits[i].currentWILL;
             partyData.Add((CharacterData)partyUnits[i].data);
+            partyUnits[i].data.currentHP = currentHP;
+            partyUnits[i].data.currentHP = currentWILL;
             Debug.Log("After: " + partyData[i].currentHP);
         }
         Debug.Log("Party Saved!");

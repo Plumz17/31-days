@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class DuskManager : MonoBehaviour
 {
     [SerializeField] private List<string> duskSceneNames = new List<string> { "Dusk Classroom", "Dusk Zone", "RPG Mockup" };
+    public List<RuntimeUnitData> party = new List<RuntimeUnitData>();
     public static DuskManager instance;
 
     private HashSet<string> defeatedEnemies = new HashSet<string>(); //List without dupes and no order
@@ -33,6 +34,15 @@ public class DuskManager : MonoBehaviour
         {
             defeatedEnemies.Clear();
             Destroy(gameObject);
+        }
+    }
+
+    public void InitParty(List<CharacterData> characters)
+    {
+        party.Clear();
+        foreach (var data in characters)
+        {
+            party.Add(new RuntimeUnitData(data));
         }
     }
 

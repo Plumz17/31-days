@@ -9,6 +9,7 @@ public class DuskManager : MonoBehaviour
 
     private HashSet<string> defeatedEnemies = new HashSet<string>(); //List without dupes and no order
 
+    public Encounter currentEncounter;
 
     private void Awake()
     {
@@ -20,7 +21,7 @@ public class DuskManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-        
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -44,5 +45,20 @@ public class DuskManager : MonoBehaviour
     {
         return defeatedEnemies.Contains(id);
     }
+
+    public void StartEncounter(Encounter encounter, string id)
+    {
+        MarkEnemyAsDefeated(id);
+        currentEncounter = encounter;
+        LevelLoader.Instance.LoadNextLevel(15, Vector3.zero);
+    }
+
+    public List<EnemyData> GetEnemyData()
+    {
+        return currentEncounter != null ? currentEncounter.enemies : new List<EnemyData>();
+    }
+
+    
+
 }
 

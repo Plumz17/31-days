@@ -106,8 +106,9 @@ public class RPGManager : MonoBehaviour
 
         if (target.IsDead())
         {
-            enemyUnits.Remove(target);
+            Debug.Log(target + " is dead");
             turnOrder.Remove(target);
+            enemyUnits.Remove(target);
             enemyGroup.OnEnemyDeath(target);
             //enemyGroup.SetupEnemies(enemyUnits);
         }

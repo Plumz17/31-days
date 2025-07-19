@@ -321,6 +321,7 @@ MonoBehaviour:
   - Dusk Classroom
   - Dusk Zone
   - RPG
+  currentEncounter: {fileID: 0}
 --- !u!4 &404828693
 Transform:
   m_ObjectHideFlags: 0
@@ -1117,6 +1118,10 @@ PrefabInstance:
       propertyPath: enemyID
       value: one
       objectReference: {fileID: 0}
+    - target: {fileID: 9008631394547257672, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
+      propertyPath: encounterData
+      value: 
+      objectReference: {fileID: 11400000, guid: f62b0601e9ea26d4091721fbd982a650, type: 2}
     - target: {fileID: 9212820519182601709, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: m_Name
       value: Duskborne

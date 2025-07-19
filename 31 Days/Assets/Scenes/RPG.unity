@@ -3401,10 +3401,7 @@ MonoBehaviour:
   - {fileID: 2001264825}
   - {fileID: 1772310142}
   - {fileID: 147758071}
-  enemyUnits:
-  - {fileID: 453033670}
-  - {fileID: 2081706555}
-  - {fileID: 258252945}
+  enemyUnits: []
   turnOrder: []
   turnIndex: 0
   playerGroup: {fileID: 244521714}
@@ -3624,7 +3621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1232350577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4268,10 +4265,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65eeba3b7e7518642baba9f9afb700ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies:
+  enemyStations:
   - {fileID: 453033663}
   - {fileID: 2081706550}
   - {fileID: 258252940}
+  enemyDataList: []
 --- !u!1 &1458790169
 GameObject:
   m_ObjectHideFlags: 0

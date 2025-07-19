@@ -5,36 +5,43 @@ using UnityEngine.UI;
 public class EnemyGroup : MonoBehaviour
 {
     [Header("Enemies")]
-    [SerializeField] private List<GameObject> enemies;
+    [SerializeField] private List<GameObject> enemyStations;
+    [SerializeField] private List<EnemyData> enemyDataList;
 
     public void SetupEnemies(List<Unit> enemyUnits)
     {
-        for (int i = 0; i < enemies.Count; i++)
+        enemyDataList = DuskManager.instance.GetEnemyData();
+        Debug.Log(enemyDataList.Count);
+        Debug.Log(enemyStations.Count);
+        Debug.Log(enemyUnits.Count);
+        for (int i = 0; i < enemyStations.Count; i++)
         {
-            if (i < enemyUnits.Count)
+            if (i < enemyDataList.Count)
             {
-                GameObject enemy = enemies[i];
-                enemy.SetActive(true);
+                GameObject enemyStation = enemyStations[i];
+                enemyStation.SetActive(true);
 
-                Image img = enemy.transform.Find("Enemy")?.GetComponent<Image>();
-                Unit unit = enemyUnits[i];
-                if (unit.data is EnemyData enemyData && img != null)
+                Image img = enemyStation.transform.Find("Enemy")?.GetComponent<Image>();
+                Unit unit = enemyStation.GetComponent<Unit>();
+                unit.data = enemyDataList[i];
+                enemyUnits.Add(unit); //Doesnt add properly
+                if (img != null)
                 {
-                    img.sprite = enemyData.enemySprite;
+                    img.sprite = enemyDataList[i].enemySprite;
                 }
             }
             else
             {
-                enemies[i].SetActive(false); // Hide unused slots
+                enemyStations[i].SetActive(false); // Hide unused slots
             }
         }
     }
 
     public void OnEnemyDeath(Unit deadEnemy)
     {
-        for (int i = 0; i < enemies.Count; i++)
+        for (int i = 0; i < enemyStations.Count; i++)
         {
-            GameObject enemyObj = enemies[i];
+            GameObject enemyObj = enemyStations[i];
             if (!enemyObj.activeSelf) continue;
 
             Unit enemyUnit = enemyObj.GetComponent<Unit>();

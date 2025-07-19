@@ -38,6 +38,8 @@ public class RPGManager : MonoBehaviour
         turnOrder.Clear();
         turnOrder.AddRange(playerUnits);
         turnOrder.AddRange(enemyUnits);
+        turnOrder.Sort((a, b) => b.speed.CompareTo(a.speed));
+
         StartCoroutine(NextTurn());
     }
 
@@ -106,7 +108,6 @@ public class RPGManager : MonoBehaviour
 
         if (target.IsDead())
         {
-            Debug.Log(target + " is dead");
             turnOrder.Remove(target);
             enemyUnits.Remove(target);
             enemyGroup.OnEnemyDeath(target);

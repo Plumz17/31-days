@@ -14,7 +14,9 @@ public class Unit : MonoBehaviour
     // Properties from data
     public string Name => data.unitName;
     public int damage => data.damage;
+    public int speed => data.speed;
 
+    //Character/Enemy Exclusive Data
     public Sprite Icon => isPlayer ? ((CharacterData)data).icon : null;
 
     // Type flags

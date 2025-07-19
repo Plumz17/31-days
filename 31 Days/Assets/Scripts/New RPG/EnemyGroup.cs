@@ -28,6 +28,7 @@ public class EnemyGroup : MonoBehaviour
                 if (img != null)
                 {
                     img.sprite = enemyDataList[i].enemySprite;
+                    img.SetNativeSize();
                 }
             }
             else

@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 218573b5c5c689547987b61edccee39b, type: 3}
-  m_Name: Slorb
+  m_Script: {fileID: 11500000, guid: 8e30274c9811fe440a6ebf3a15de28b1, type: 3}
+  m_Name: Satria
   m_EditorClassIdentifier: 
-  unitName: Slorb
-  maxHP: 30
+  unitName: Satria
+  maxHP: 100
   maxWILL: 100
-  damage: 5
-  isPlayer: 0
-  enemySprite: {fileID: -2635220530030887118, guid: 2dbe6c4261d7dbf46be868bf7ce65252, type: 3}
+  damage: 10
+  speed: 10
+  isPlayer: 1
+  icon: {fileID: 2205405838914150652, guid: 66e78bfeebddd914d9e207edf353b68e, type: 3}

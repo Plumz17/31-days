@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e30274c9811fe440a6ebf3a15de28b1, type: 3}
-  m_Name: Klara
+  m_Name: Cass
   m_EditorClassIdentifier: 
-  unitName: Klara
+  unitName: Cass
   maxHP: 100
   maxWILL: 100
   damage: 10
+  speed: 15
   isPlayer: 1
-  icon: {fileID: -6271680148837993794, guid: becc8e677a6ea7347a8af5b2328cc14c, type: 3}
+  icon: {fileID: 7975594737678354346, guid: 1ad0a25241cc24e499a18454eb63bf38, type: 3}

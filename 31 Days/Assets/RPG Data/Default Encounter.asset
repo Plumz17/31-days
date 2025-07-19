@@ -15,4 +15,6 @@ MonoBehaviour:
   encounterName: Default Enemy
   enemies:
   - {fileID: 11400000, guid: fc9dcb25e695bf246b392e71336982c0, type: 2}
+  - {fileID: 11400000, guid: 8759bcdfe0980414498dd46c910ccdd2, type: 2}
+  - {fileID: 11400000, guid: bd2650a5d4ba5964e94c035c9c68ddd3, type: 2}
   introText: 

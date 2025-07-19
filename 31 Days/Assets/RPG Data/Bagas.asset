@@ -18,4 +18,4 @@ MonoBehaviour:
   damage: 10
   speed: 5
   isPlayer: 1
-  icon: {fileID: 2205405838914150652, guid: 66e78bfeebddd914d9e207edf353b68e, type: 3}
+  icon: {fileID: -5384022194519253384, guid: ed6d9c4ee40dca14f8dd3ea88bb143b4, type: 3}

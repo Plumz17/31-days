@@ -24,7 +24,6 @@ public class MusicChanger : MonoBehaviour
 
             if (sceneMusic != null && sceneMusic != prevMusic)
             {
-                Debug.Log("Change " + sceneMusic.name);
                 AudioManager.instance.CrossfadeMusic(sceneMusic, prevTime, false);
                 //didChangeMusic = true;
             }

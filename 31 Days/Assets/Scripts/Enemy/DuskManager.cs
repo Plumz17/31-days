@@ -50,6 +50,7 @@ public class DuskManager : MonoBehaviour
     {
         MarkEnemyAsDefeated(id);
         currentEncounter = encounter;
+        Time.timeScale = 1f;
         LevelLoader.Instance.LoadNextLevel(15, Vector3.zero);
     }
 
@@ -57,8 +58,5 @@ public class DuskManager : MonoBehaviour
     {
         return currentEncounter != null ? currentEncounter.enemies : new List<EnemyData>();
     }
-
-    
-
 }
 

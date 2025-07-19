@@ -11,9 +11,7 @@ public class EnemyGroup : MonoBehaviour
     public void SetupEnemies(List<Unit> enemyUnits)
     {
         enemyDataList = DuskManager.instance.GetEnemyData();
-        Debug.Log(enemyDataList.Count);
-        Debug.Log(enemyStations.Count);
-        Debug.Log(enemyUnits.Count);
+
         for (int i = 0; i < enemyStations.Count; i++)
         {
             if (i < enemyDataList.Count)

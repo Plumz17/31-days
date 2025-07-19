@@ -3096,7 +3096,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 94558462608524911, guid: cddb539ce19d0ab408e4f00c3765e96d, type: 3}
       propertyPath: transitionTime
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2090305885733102553, guid: cddb539ce19d0ab408e4f00c3765e96d, type: 3}
       propertyPath: m_SortingOrder

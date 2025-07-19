@@ -126,7 +126,7 @@ public class RPGManager : MonoBehaviour
             turnOrder.Remove(target);
         }
 
-        playerGroup.SetupPartyUI(playerUnits);
+        playerGroup.UpdatePartyUI(playerUnits);
     }
 
     void EndTurn()
@@ -152,12 +152,24 @@ public class RPGManager : MonoBehaviour
         return false;
     }
 
-    private void EndBattle()
+    public void EndBattle(bool isFleeing = false)
     {
+        Debug.Log("From Manager 2" + playerUnits[0].currentHP);
+        Debug.Log("From Manager 2" + playerUnits[1].currentHP);
+        Debug.Log("From Manager 2" + playerUnits[2].currentHP);
+        Debug.Log("From Manager 2" + playerUnits[3].currentHP);
+        DuskManager.instance.SavePartyData(playerUnits);
+
+        if (isFleeing)
+        {
+            textBox.text = "You ran away!";
+            LevelLoader.Instance.LoadNextLevel(12, new Vector3(22.5f, 1.875f, 0));
+        }
+
         if (currentState == BattleState.WIN)
         {
             textBox.text = "You Won!";
-            LevelLoader.Instance.LoadNextLevel(12, new Vector3(22.5f,1.875f,0));
+            LevelLoader.Instance.LoadNextLevel(12, new Vector3(22.5f, 1.875f, 0));
         }
         else
         {

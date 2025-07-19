@@ -321,6 +321,11 @@ MonoBehaviour:
   - Dusk Classroom
   - Dusk Zone
   - RPG
+  partyData:
+  - {fileID: 11400000, guid: 51aa9e4360e586040a3b733430b482a6, type: 2}
+  - {fileID: 11400000, guid: 4ef46813109fa154f8611425ce669f96, type: 2}
+  - {fileID: 11400000, guid: eed440faa206c6d4998952c0e3c1f154, type: 2}
+  - {fileID: 11400000, guid: f679e3b2891ba7c4d872568c4ece4454, type: 2}
   currentEncounter: {fileID: 0}
 --- !u!4 &404828693
 Transform:
@@ -657,7 +662,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 5.015625
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 6107350894250517577, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.x

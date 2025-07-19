@@ -22,7 +22,7 @@ public class EnemyGroup : MonoBehaviour
                 Image img = enemyStation.transform.Find("Enemy")?.GetComponent<Image>();
                 Unit unit = enemyStation.GetComponent<Unit>();
                 unit.data = enemyDataList[i];
-                enemyUnits.Add(unit); //Doesnt add properly
+                enemyUnits.Add(unit);
                 if (img != null)
                 {
                     img.sprite = enemyDataList[i].enemySprite;

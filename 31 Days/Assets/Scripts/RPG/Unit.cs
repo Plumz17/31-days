@@ -22,6 +22,9 @@ public class Unit : MonoBehaviour
     // Type flags
     public bool isPlayer => data is CharacterData;
 
+    // Battle flags
+    public bool isDefending { get; private set; } = false;
+
     private void Awake()
     {
         if (data == null) return;
@@ -32,14 +35,30 @@ public class Unit : MonoBehaviour
         currentWILL = maxWILL;
     }
 
-    public void TakeDamage(int amount)
+    public int TakeDamage(int amount)
     {
+        if (isDefending)
+        {
+            amount = Mathf.CeilToInt(amount * 0.5f);
+            Debug.Log("Unit defended hit becomes " + amount);
+        }
         currentHP = Mathf.Max(currentHP - amount, 0);
+        return amount;
+    }
+
+    public void Defend()
+    {
+        isDefending = true;
+    }
+
+    public void ResetDefend()
+    {
+        isDefending = false;
     }
 
     public bool IsDead() => currentHP <= 0;
 
-    public void SetStats(int hp, int will)
+    public void SetStats(int hp, int will) //May be useless, check later
     {
         currentHP = Mathf.Clamp(hp, 0, maxHP);
         currentWILL = Mathf.Clamp(will, 0, maxWILL);

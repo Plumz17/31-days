@@ -15,11 +15,11 @@ public class RPGManager : MonoBehaviour
     public List<Unit> turnOrder = new List<Unit>();
     public int turnIndex = 0;
 
-    private Unit currentUnit;
+    public Unit currentUnit;
     public PlayerBoxesGroup playerGroup;
     public EnemyGroup enemyGroup;
     public TMP_Text textBox;
-    public bool isAttacking = false;
+    public bool isBusy = false;
 
     public bool isChoosingTarget = false;
 
@@ -54,6 +54,7 @@ public class RPGManager : MonoBehaviour
         }
 
         currentUnit = turnOrder[turnIndex];
+        currentUnit.ResetDefend();
 
         if (currentUnit.IsDead())
         {
@@ -65,7 +66,7 @@ public class RPGManager : MonoBehaviour
         {
             currentState = BattleState.PLAYERTURN;
             textBox.text = currentUnit.Name + "'s Turn. Choose an action.";
-            isAttacking = false;
+            isBusy = false;
         }
 
         else
@@ -78,7 +79,7 @@ public class RPGManager : MonoBehaviour
 
     public bool CanSelectTarget()
     {
-        return isChoosingTarget && currentState == BattleState.PLAYERTURN && !isAttacking;
+        return isChoosingTarget && currentState == BattleState.PLAYERTURN && !isBusy;
     }
 
     public void OnEnemySelected(Unit selectedEnemy)
@@ -86,7 +87,7 @@ public class RPGManager : MonoBehaviour
         if (!CanSelectTarget()) return;
 
         isChoosingTarget = false;
-        isAttacking = true;
+        isBusy = true;
         StartCoroutine(PlayerAttack(currentUnit, selectedEnemy));
     }
 
@@ -107,6 +108,7 @@ public class RPGManager : MonoBehaviour
         }
         EndTurn();
     }
+    
 
     IEnumerator EnemyAttack(Unit enemy)
     {
@@ -114,9 +116,8 @@ public class RPGManager : MonoBehaviour
         if (validTargets.Count == 0) yield break;
 
         Unit target = validTargets[UnityEngine.Random.Range(0, validTargets.Count)];
-        target.TakeDamage(enemy.damage);
 
-        textBox.text = enemy.Name + " attacks " + target.Name + " for " + enemy.damage + " damage.";
+        textBox.text = enemy.Name + " attacks " + target.Name + " for " + target.TakeDamage(enemy.damage) + " damage.";
 
         yield return new WaitForSeconds(1f);
 
@@ -129,7 +130,7 @@ public class RPGManager : MonoBehaviour
         playerGroup.UpdatePartyUI(playerUnits);
     }
 
-    void EndTurn()
+    public void EndTurn()
     {
         turnIndex = (turnIndex + 1) % turnOrder.Count;
         StartCoroutine(NextTurn());

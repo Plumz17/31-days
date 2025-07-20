@@ -30,7 +30,7 @@ public class LevelLoader : MonoBehaviour
 
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
-
+    
     public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn) //Called in TransitionTrigger.cs
     {
         if (isLoading) return;
@@ -39,14 +39,13 @@ public class LevelLoader : MonoBehaviour
         spawnPosition = positionToSpawn;
         if (player != null)
             spawnFlipX = !movement.GetFacingDirection();
-            
+
         StartCoroutine(LoadLevel(sceneIndex));
     }
 
     IEnumerator LoadLevel(int sceneIndex)
     {
         anim.SetTrigger("Start");
-        Debug.Log("Animation Start!");
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         operation.allowSceneActivation = false;

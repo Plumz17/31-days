@@ -13,18 +13,19 @@ public class LevelLoader : MonoBehaviour
     public static Vector3 spawnPosition = Vector3.zero; // Position to spawn player at
     private GameObject player;
     private PlayerMovement movement;
+    private bool isLoading = false;
 
     private void Awake()
     {
-        // Make sure there's only one instance
-        if (Instance == null)
+        if (Instance == null || Instance != this)
         {
             Instance = this;
-
         }
-        else
+
+        else if (Instance != this)
         {
             Destroy(gameObject);
+            return;
         }
 
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -32,6 +33,9 @@ public class LevelLoader : MonoBehaviour
 
     public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn) //Called in TransitionTrigger.cs
     {
+        if (isLoading) return;
+
+        isLoading = true;
         spawnPosition = positionToSpawn;
         if (player != null)
             spawnFlipX = !movement.GetFacingDirection();
@@ -41,22 +45,19 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(int sceneIndex)
     {
-        // AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        // operation.allowSceneActivation = false;
-
-        // while (operation.progress < 0.9f)
-        // {
-        //     yield return null;
-        // }
-
-
         anim.SetTrigger("Start");
         Debug.Log("Animation Start!");
 
-        yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(sceneIndex);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        operation.allowSceneActivation = false;
 
-        //operation.allowSceneActivation = true;
+        while (operation.progress < 0.9f)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(transitionTime);
+
+        operation.allowSceneActivation = true;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Called when the scene first loads

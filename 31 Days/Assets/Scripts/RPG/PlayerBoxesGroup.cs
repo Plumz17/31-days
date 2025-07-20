@@ -20,8 +20,8 @@ public class PlayerBoxesGroup : MonoBehaviour
 
                 PlayerUI uiBox = characterBoxes[i].GetComponent<PlayerUI>();
                 Unit unit = characterBox.GetComponent<Unit>();
-                int loadedHP = playerDataList[i].currentHP;
-                int loadedWILL = playerDataList[i].currentWILL;
+                int loadedHP = playerDataList[i].savedHP;
+                int loadedWILL = playerDataList[i].savedWILL;
                 unit.data = playerDataList[i];
                 unit.SetStats(loadedHP, loadedWILL);
                 partyUnits.Add(unit);

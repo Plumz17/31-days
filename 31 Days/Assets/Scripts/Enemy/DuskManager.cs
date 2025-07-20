@@ -50,8 +50,8 @@ public class DuskManager : MonoBehaviour
             int updatedHP = newPartyUnits[i].currentHP;
             int updatedWILL = newPartyUnits[i].currentWILL;
             partyData.Add((CharacterData)newPartyUnits[i].data);
-            partyData[i].currentHP = updatedHP;
-            partyData[i].currentWILL = updatedWILL; // Note: currentHP in CharacterData and Unit are different
+            partyData[i].savedHP = updatedHP;
+            partyData[i].savedWILL = updatedWILL; // Note: currentHP in CharacterData and Unit are different
         }
     }
 
@@ -59,8 +59,8 @@ public class DuskManager : MonoBehaviour
     {
         for (int i = 0; i < partyData.Count; i++)
         {
-            partyData[i].currentHP = partyData[i].maxHP;
-            partyData[i].currentWILL = partyData[i].maxWILL;
+            partyData[i].savedHP = partyData[i].maxHP;
+            partyData[i].savedWILL = partyData[i].maxWILL;
         }
     }
 

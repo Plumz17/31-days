@@ -5,18 +5,18 @@ using UnityEngine;
 public class CharacterData : UnitData
 {
     public Sprite icon;
-    public int currentHP;
-    public int currentWILL;
+    public int savedHP;
+    public int savedWILL;
 
     private void OnEnable() //This is just for in the overworld
     {
-        if (currentHP == 0) Heal();
-        if (currentWILL == 0) Heal();
+        if (savedHP == 0) Heal();
+        if (savedWILL == 0) Heal();
     }
 
     public void Heal()
     {
-        currentHP = maxHP;
-        currentWILL = maxWILL;
+        savedHP = maxHP;
+        savedWILL = maxWILL;
     }
 }

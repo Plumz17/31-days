@@ -875,6 +875,7 @@ MonoBehaviour:
   - {fileID: 2001264820}
   - {fileID: 1772310137}
   - {fileID: 147758066}
+  playerDataList: []
 --- !u!1 &258252940
 GameObject:
   m_ObjectHideFlags: 0
@@ -3400,11 +3401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentState: 0
-  playerUnits:
-  - {fileID: 735358331}
-  - {fileID: 2001264825}
-  - {fileID: 1772310142}
-  - {fileID: 147758071}
+  playerUnits: []
   enemyUnits: []
   turnOrder: []
   turnIndex: 0

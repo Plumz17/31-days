@@ -126,7 +126,7 @@ public class RPGManager : MonoBehaviour
             turnOrder.Remove(target);
         }
 
-        playerGroup.SetupPartyUI(playerUnits);
+        playerGroup.UpdatePartyUI(playerUnits);
     }
 
     void EndTurn()

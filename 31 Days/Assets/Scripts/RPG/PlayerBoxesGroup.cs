@@ -33,4 +33,23 @@ public class PlayerBoxesGroup : MonoBehaviour
             }
         }
     }
+
+    public void UpdatePartyUI(List<Unit> partyUnits)
+    {
+        for (int i = 0; i < characterBoxes.Count; i++)
+        {
+            if (i < playerDataList.Count)
+            {
+                GameObject characterBox = characterBoxes[i];
+                characterBox.SetActive(true);
+
+                PlayerUI uiBox = characterBoxes[i].GetComponent<PlayerUI>();
+                uiBox?.UpdateUI(partyUnits[i]);
+            }
+            else
+            {
+                characterBoxes[i].SetActive(false);
+            }
+        }
+    }
 }

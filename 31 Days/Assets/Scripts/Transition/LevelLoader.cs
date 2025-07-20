@@ -31,7 +31,7 @@ public class LevelLoader : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn, string transition = "CrossfadeExit") //Called in TransitionTrigger.cs
+    public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn) //Called in TransitionTrigger.cs
     {
         if (isLoading) return;
 
@@ -40,12 +40,12 @@ public class LevelLoader : MonoBehaviour
         if (player != null)
             spawnFlipX = !movement.GetFacingDirection();
             
-        StartCoroutine(LoadLevel(sceneIndex, transition));
+        StartCoroutine(LoadLevel(sceneIndex));
     }
 
-    IEnumerator LoadLevel(int sceneIndex, string transition)
+    IEnumerator LoadLevel(int sceneIndex)
     {
-        anim.SetTrigger(transition);
+        anim.SetTrigger("Start");
         Debug.Log("Animation Start!");
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
@@ -62,7 +62,6 @@ public class LevelLoader : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Called when the scene first loads
     {
-        anim.SetTrigger("CrossfadeEnter");
         PauseMenu.instance?.Resume();
         player = GameObject.FindGameObjectWithTag("Player");
 

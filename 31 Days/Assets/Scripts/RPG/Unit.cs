@@ -28,19 +28,8 @@ public class Unit : MonoBehaviour
 
         maxHP = data.maxHP;
         maxWILL = data.maxWILL;
-
-        if (isPlayer)
-        {
-            // Load runtime stats from CharacterData
-            CharacterData cData = (CharacterData)data;
-            currentHP = cData.currentHP <= 0 ? maxHP : cData.currentHP;
-            currentWILL = cData.currentWILL <= 0 ? maxWILL : cData.currentWILL;
-        }
-        else
-        {
-            currentHP = maxHP;
-            currentWILL = maxWILL;
-        }
+        currentHP = maxHP;
+        currentWILL = maxWILL;
     }
 
     public void TakeDamage(int amount)

@@ -9,7 +9,7 @@ public class PlayerBoxesGroup : MonoBehaviour
 
     public void SetupPartyUI(List<Unit> partyUnits)
     {
-        playerDataList = PlayerDataManager.instance.LoadPartyData();
+        playerDataList = DuskManager.instance.LoadPartyData();
 
         for (int i = 0; i < characterBoxes.Count; i++)
         {
@@ -22,28 +22,6 @@ public class PlayerBoxesGroup : MonoBehaviour
                 Unit unit = characterBox.GetComponent<Unit>();
                 unit.data = playerDataList[i];
                 partyUnits.Add(unit);
-                if (uiBox != null)
-                {
-                    uiBox.UpdateUI(partyUnits[i]);
-                }
-            }
-            else
-            {
-                characterBoxes[i].SetActive(false);
-            }
-        }
-    }
-
-    public void UpdatePartyUI(List<Unit> partyUnits)
-    {
-        for (int i = 0; i < characterBoxes.Count; i++)
-        {
-            if (i < playerDataList.Count)
-            {
-                GameObject characterBox = characterBoxes[i];
-                characterBox.SetActive(true);
-
-                PlayerUI uiBox = characterBoxes[i].GetComponent<PlayerUI>();
                 if (uiBox != null)
                 {
                     uiBox.UpdateUI(partyUnits[i]);

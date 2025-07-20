@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using NUnit.Framework;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerDataManager : MonoBehaviour
@@ -38,32 +35,6 @@ public class PlayerDataManager : MonoBehaviour
         if (connection != null && connection.level < 5)
         {
             connection.level++;
-        }
-    }
-
-    public List<CharacterData> LoadPartyData()
-    {
-        return currentData.partyStats;
-    }
-
-    public void SavePartyData(List<Unit> newPartyUnit)
-    {
-        currentData.partyStats.Clear();
-
-        foreach (var unit in newPartyUnit)
-        {
-            if (unit.data is CharacterData characterData)
-            {
-                // Save runtime values into CharacterData before saving
-                characterData.currentHP = unit.currentHP;
-                characterData.currentWILL = unit.currentWILL;
-
-                currentData.partyStats.Add(characterData);
-            }
-            else
-            {
-                Debug.LogWarning($"Unit {unit.name} does not have CharacterData!");
-            }
         }
     }
 }

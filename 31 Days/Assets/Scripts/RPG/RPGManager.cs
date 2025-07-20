@@ -126,7 +126,7 @@ public class RPGManager : MonoBehaviour
             turnOrder.Remove(target);
         }
 
-        playerGroup.UpdatePartyUI(playerUnits);
+        playerGroup.SetupPartyUI(playerUnits);
     }
 
     void EndTurn()
@@ -154,12 +154,10 @@ public class RPGManager : MonoBehaviour
 
     private void EndBattle()
     {
-        PlayerDataManager.instance.SavePartyData(playerUnits);
-
         if (currentState == BattleState.WIN)
         {
             textBox.text = "You Won!";
-            LevelLoader.Instance.LoadNextLevel(12, new Vector3(22.5f, 1.875f, 0));
+            LevelLoader.Instance.LoadNextLevel(12, new Vector3(22.5f,1.875f,0));
         }
         else
         {

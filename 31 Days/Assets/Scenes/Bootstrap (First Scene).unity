@@ -754,7 +754,6 @@ MonoBehaviour:
     prevScene: Room
     prevPosition: {x: -17, y: 2.125, z: 0}
     playerConnections: []
-    partyStats: []
   loadedFromSave: 0
 --- !u!1 &444636453
 GameObject:

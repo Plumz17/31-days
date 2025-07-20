@@ -5,6 +5,4 @@ using UnityEngine;
 public class CharacterData : UnitData
 {
     public Sprite icon;
-    public int currentHP;
-    public int currentWILL;
 }

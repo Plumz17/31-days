@@ -31,7 +31,7 @@ public class LevelLoader : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn) //Called in TransitionTrigger.cs
+    public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn, string transitionTrigger = "Circle") //Called in TransitionTrigger.cs
     {
         if (isLoading) return;
 
@@ -40,13 +40,14 @@ public class LevelLoader : MonoBehaviour
         if (player != null)
             spawnFlipX = !movement.GetFacingDirection();
             
-        StartCoroutine(LoadLevel(sceneIndex));
+        StartCoroutine(LoadLevel(sceneIndex, transitionTrigger));
     }
 
-    IEnumerator LoadLevel(int sceneIndex)
+    IEnumerator LoadLevel(int sceneIndex, string trigger)
     {
-        anim.SetTrigger("Start");
-        Debug.Log("Animation Start!");
+        anim.SetTrigger(trigger);
+
+        yield return new WaitForSeconds(transitionTime);
 
         AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
         operation.allowSceneActivation = false;

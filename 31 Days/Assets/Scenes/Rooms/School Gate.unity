@@ -193,6 +193,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1081304881579967996, guid: cddb539ce19d0ab408e4f00c3765e96d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2345150735151282889, guid: cddb539ce19d0ab408e4f00c3765e96d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 960.00006
@@ -238,6 +242,10 @@ PrefabInstance:
       value: LevelLoader
       objectReference: {fileID: 0}
     - target: {fileID: 3265595565555631930, guid: cddb539ce19d0ab408e4f00c3765e96d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5444452222983756217, guid: cddb539ce19d0ab408e4f00c3765e96d, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

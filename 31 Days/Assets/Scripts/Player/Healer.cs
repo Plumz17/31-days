@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Heal : MonoBehaviour
+public class Healer : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D collision)
     {

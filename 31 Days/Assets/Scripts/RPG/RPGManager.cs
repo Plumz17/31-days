@@ -152,18 +152,22 @@ public class RPGManager : MonoBehaviour
         return false;
     }
 
-    private void EndBattle()
+    public void EndBattle(bool didPlayerFlee = false)
     {
         DuskManager.instance.SavePartyData(playerUnits);
 
-        if (currentState == BattleState.WIN)
+        if (didPlayerFlee)
+        {
+            textBox.text = "You ran!";
+        }
+        else if (currentState == BattleState.WIN)
         {
             textBox.text = "You Won!";
-            LevelLoader.Instance.LoadNextLevel(12, new Vector3(22.5f, 1.875f, 0));
         }
         else
         {
             textBox.text = "You Lost :(";
         }
+        LevelLoader.Instance.LoadNextLevel(12, new Vector3(22.5f, 1.875f, 0));
     }    
 }

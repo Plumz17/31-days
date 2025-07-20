@@ -55,6 +55,15 @@ public class DuskManager : MonoBehaviour
         }
     }
 
+    public void HealParty()
+    {
+        for (int i = 0; i < partyData.Count; i++)
+        {
+            partyData[i].currentHP = partyData[i].maxHP;
+            partyData[i].currentWILL = partyData[i].maxWILL;
+        }
+    }
+
     public void MarkEnemyAsDefeated(string id)
     {
         defeatedEnemies.Add(id);

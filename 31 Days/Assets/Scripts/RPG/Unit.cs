@@ -45,9 +45,9 @@ public class Unit : MonoBehaviour
         currentWILL = Mathf.Clamp(will, 0, maxWILL);
     }
 
-    // public void HealCharacter()
-    // {
-    //     currentHP = maxHP;
-    //     currentWILL = maxWILL;
-    // }
+    public void HealCharacter() //For Healing in Battle (maxHP and maxWILL in this is for in battle, the one in CharData is in the overworld)
+    {
+        currentHP = maxHP;
+        currentWILL = maxWILL;
+    }
 }

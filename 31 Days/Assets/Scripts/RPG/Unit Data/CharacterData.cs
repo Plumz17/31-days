@@ -8,7 +8,7 @@ public class CharacterData : UnitData
     public int currentHP;
     public int currentWILL;
 
-    private void OnEnable()
+    private void OnEnable() //This is just for in the overworld
     {
         if (currentHP == 0) Heal();
         if (currentWILL == 0) Heal();

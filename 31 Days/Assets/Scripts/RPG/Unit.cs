@@ -37,5 +37,11 @@ public class Unit : MonoBehaviour
         currentHP = Mathf.Max(currentHP - amount, 0);
     }
 
+    public void ForceSetStats(int hp, int will)
+    {
+        currentHP = hp;
+        currentWILL = will;
+    }
+
     public bool IsDead() => currentHP <= 0;
 }

@@ -38,4 +38,16 @@ public class Unit : MonoBehaviour
     }
 
     public bool IsDead() => currentHP <= 0;
+
+    public void SetStats(int hp, int will)
+    {
+        currentHP = Mathf.Clamp(hp, 0, maxHP);
+        currentWILL = Mathf.Clamp(will, 0, maxWILL);
+    }
+
+    // public void HealCharacter()
+    // {
+    //     currentHP = maxHP;
+    //     currentWILL = maxWILL;
+    // }
 }

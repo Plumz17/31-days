@@ -41,21 +41,22 @@ public class LevelLoader : MonoBehaviour
 
     IEnumerator LoadLevel(int sceneIndex)
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
-        operation.allowSceneActivation = false;
+        // AsyncOperation operation = SceneManager.LoadSceneAsync(sceneIndex);
+        // operation.allowSceneActivation = false;
 
-        while (operation.progress < 0.9f)
-        {
-            yield return null;
-        }
+        // while (operation.progress < 0.9f)
+        // {
+        //     yield return null;
+        // }
 
 
         anim.SetTrigger("Start");
         Debug.Log("Animation Start!");
 
         yield return new WaitForSeconds(transitionTime);
+        SceneManager.LoadScene(sceneIndex);
 
-        operation.allowSceneActivation = true;
+        //operation.allowSceneActivation = true;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Called when the scene first loads

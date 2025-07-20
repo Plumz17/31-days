@@ -42,6 +42,19 @@ public class DuskManager : MonoBehaviour
         return partyData;
     }
 
+    public void SavePartyData(List<Unit> newPartyUnits)
+    {
+        partyData.Clear();
+        for (int i = 0; i < newPartyUnits.Count; i++)
+        {
+            int updatedHP = newPartyUnits[i].currentHP;
+            int updatedWILL = newPartyUnits[i].currentWILL;
+            partyData.Add((CharacterData)newPartyUnits[i].data);
+            partyData[i].currentHP = updatedHP;
+            partyData[i].currentWILL = updatedWILL; // Note: currentHP in CharacterData and Unit are different
+        }
+    }
+
     public void MarkEnemyAsDefeated(string id)
     {
         defeatedEnemies.Add(id);

@@ -17,6 +17,7 @@ public class ButtonsGroup : MonoBehaviour
 
         rpgManager.isChoosingTarget = true;
         textBox.text = "Choose a target.";
+        rpgManager.currentAction = "attack";
         ShowBackButton(true);
     }
 
@@ -45,9 +46,20 @@ public class ButtonsGroup : MonoBehaviour
 
     public void OnBackButton()
     {
+        rpgManager.currentAction = ""; //reset current action
         rpgManager.isChoosingTarget = false;
         ShowBackButton(false);
         textBox.text = rpgManager.currentUnit.Name + "'s Turn. Choose an action.";
+    }
+
+    public void OnCheckButton()
+    {
+        if (rpgManager.isBusy) return;
+
+        rpgManager.currentAction = "check";
+        rpgManager.isChoosingTarget = true;
+        textBox.text = "Choose an Enemy.";
+        ShowBackButton(true); 
     }
 
     public void ShowBackButton(bool isShow)

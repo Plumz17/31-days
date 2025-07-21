@@ -4,4 +4,5 @@ using UnityEngine;
 public class EnemyData : UnitData
 {
     public Sprite enemySprite;
+    public string enemyInfo;
 }

@@ -19,3 +19,4 @@ MonoBehaviour:
   speed: 0
   isPlayer: 0
   enemySprite: {fileID: 5983182966278971822, guid: aa3548ff966c3b94f9b75eb0099d256a, type: 3}
+  enemyInfo: An Ancient Evil

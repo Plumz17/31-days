@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 public enum BattleState {START, ENEMYTURN, PLAYERTURN, WIN, LOSS}
 
+
 public class RPGManager : MonoBehaviour
 {
     public BattleState currentState;
@@ -14,6 +15,7 @@ public class RPGManager : MonoBehaviour
     public List<Unit> enemyUnits;
     public List<Unit> turnOrder = new List<Unit>();
     public int turnIndex = 0;
+    public string currentAction = "";
 
     public Unit currentUnit;
     public PlayerBoxesGroup playerGroup;
@@ -88,11 +90,18 @@ public class RPGManager : MonoBehaviour
     {
         if (!CanSelectTarget()) return;
 
-        isChoosingTarget = false;
-        isBusy = true;
-        StartCoroutine(PlayerAttack(currentUnit, selectedEnemy));
-    }
+        if (currentAction == "attack")
+        {
+            isChoosingTarget = false;
+            isBusy = true;
+            StartCoroutine(PlayerAttack(currentUnit, selectedEnemy));
+        }
 
+        else if (currentAction == "check")
+        {
+            textBox.text = $"{selectedEnemy.Name} HP: {selectedEnemy.currentHP}/{selectedEnemy.maxHP}\nInfo:{selectedEnemy.enemyInfo}";
+        }
+    }
 
     IEnumerator PlayerAttack(Unit attacker, Unit target)
     {
@@ -136,6 +145,9 @@ public class RPGManager : MonoBehaviour
     public void EndTurn()
     {
         turnIndex = (turnIndex + 1) % turnOrder.Count;
+
+        currentAction = ""; //reset current action
+
         StartCoroutine(NextTurn());
     }
 

@@ -64,12 +64,28 @@ public class ButtonsGroup : MonoBehaviour
         ShowBackButton(true); 
     }
 
+    public void OnFocusButton()
+    {
+        if (rpgManager.isBusy) return;
+
+        int will = 30;
+
+        rpgManager.isBusy = true;
+        rpgManager.currentUnit.RestoreWILL(will);
+        rpgManager.playerGroup.UpdatePartyUI(rpgManager.playerUnits);
+
+        textBox.text = rpgManager.currentUnit.Name + " Focused! and gained +" + will + " WILL";
+
+        StartCoroutine(EndTurnAfterDelay());
+    }
+
     public void OnBackButton()
     {
         rpgManager.isChoosingTarget = false;
         ShowBackButton(false);
         textBox.text = rpgManager.currentUnit.Name + "'s Turn. Choose an action.";
     }
+    
 
     public void ShowBackButton(bool isShow)
     {

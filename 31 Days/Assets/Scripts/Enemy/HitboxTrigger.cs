@@ -17,6 +17,7 @@ public class HitboxTrigger : MonoBehaviour
 
             if (playerHiding != null && !playerHiding.IsHiding())
             {
+                DuskManager.instance.currentLocation = other.transform.position;
                 duskborne.OnPlayerHit();
             }
         }

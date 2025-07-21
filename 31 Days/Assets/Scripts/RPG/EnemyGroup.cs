@@ -22,9 +22,7 @@ public class EnemyGroup : MonoBehaviour
                 Image img = enemyStation.transform.Find("Enemy")?.GetComponent<Image>();
                 Unit unit = enemyStation.GetComponent<Unit>();
                 unit.Init(enemyDataList[i]);
-
-                Debug.Log(unit.maxHP);
-                Debug.Log(unit.currentHP);
+                
                 enemyUnits.Add(unit); //Doesnt add properly
                 if (img != null)
                 {

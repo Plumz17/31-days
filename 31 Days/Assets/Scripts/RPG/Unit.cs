@@ -52,6 +52,11 @@ public class Unit : MonoBehaviour
         currentWILL = Mathf.Max(currentWILL - amount, 0);
     }
 
+    public void RestoreWILL(int amount)
+    {
+        currentWILL = Mathf.Min(currentWILL + amount, 100);
+    }
+
     public void Defend()
     {
         isDefending = true;

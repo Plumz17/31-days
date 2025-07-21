@@ -9,6 +9,7 @@ public class DuskManager : MonoBehaviour
     public static DuskManager instance;
 
     private HashSet<string> defeatedEnemies = new HashSet<string>(); //List without dupes and no order
+    public Vector2 currentLocation = new Vector2();
 
     public Encounter currentEncounter;
 

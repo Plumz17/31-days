@@ -136,6 +136,7 @@ public class RPGManager : MonoBehaviour
 
         if (target.IsDead())
         {
+            textBox.text = target.Name + " died"; 
             turnOrder.Remove(target);
             enemyUnits.Remove(target);
             enemyGroup.OnEnemyDeath(target);
@@ -158,6 +159,7 @@ public class RPGManager : MonoBehaviour
 
         if (target.IsDead())
         {
+            textBox.text = target.Name + " died"; 
             playerUnits.Remove(target);
             turnOrder.Remove(target);
         }
@@ -207,6 +209,6 @@ public class RPGManager : MonoBehaviour
         {
             textBox.text = "You Lost :(";
         }
-        LevelLoader.Instance.LoadNextLevel(12, new Vector3(22.5f, 1.875f, 0));
+        LevelLoader.Instance.LoadNextLevel(12, DuskManager.instance.currentLocation);
     }    
 }

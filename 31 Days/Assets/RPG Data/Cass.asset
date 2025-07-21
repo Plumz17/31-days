@@ -16,6 +16,9 @@ MonoBehaviour:
   maxHP: 100
   maxWILL: 100
   damage: 10
+  skillDamage: 50
   speed: 15
   isPlayer: 1
   icon: {fileID: 7975594737678354346, guid: 1ad0a25241cc24e499a18454eb63bf38, type: 3}
+  savedHP: 100
+  savedWILL: 100

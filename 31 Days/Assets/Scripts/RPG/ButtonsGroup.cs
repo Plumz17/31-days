@@ -44,12 +44,14 @@ public class ButtonsGroup : MonoBehaviour
         rpgManager.EndTurn(); // Ends the player's turn and starts the next one
     }
 
-    public void OnBackButton()
+    public void OnSkillButton()
     {
-        rpgManager.currentAction = ""; //reset current action
-        rpgManager.isChoosingTarget = false;
-        ShowBackButton(false);
-        textBox.text = rpgManager.currentUnit.Name + "'s Turn. Choose an action.";
+        if (rpgManager.isBusy) return;
+
+        rpgManager.isChoosingTarget = true;
+        textBox.text = "Choose a target.";
+        rpgManager.currentAction = "skill";
+        ShowBackButton(true);
     }
 
     public void OnCheckButton()
@@ -60,6 +62,13 @@ public class ButtonsGroup : MonoBehaviour
         rpgManager.isChoosingTarget = true;
         textBox.text = "Choose an Enemy.";
         ShowBackButton(true); 
+    }
+
+    public void OnBackButton()
+    {
+        rpgManager.isChoosingTarget = false;
+        ShowBackButton(false);
+        textBox.text = rpgManager.currentUnit.Name + "'s Turn. Choose an action.";
     }
 
     public void ShowBackButton(bool isShow)

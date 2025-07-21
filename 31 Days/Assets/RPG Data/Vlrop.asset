@@ -13,9 +13,10 @@ MonoBehaviour:
   m_Name: Vlrop
   m_EditorClassIdentifier: 
   unitName: Vlrop
-  maxHP: 100
+  maxHP: 200
   maxWILL: 100
   damage: 100
+  skillDamage: 0
   speed: 0
   isPlayer: 0
   enemySprite: {fileID: 5983182966278971822, guid: aa3548ff966c3b94f9b75eb0099d256a, type: 3}

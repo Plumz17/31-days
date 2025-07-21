@@ -90,11 +90,11 @@ public class RPGManager : MonoBehaviour
     {
         if (!CanSelectTarget()) return;
 
-        if (currentAction == "attack")
+        if (currentAction == "attack" || currentAction == "skill")
         {
             isChoosingTarget = false;
             isBusy = true;
-            StartCoroutine(PlayerAttack(currentUnit, selectedEnemy));
+            StartCoroutine(PlayerAttack(currentUnit, selectedEnemy, currentAction));
         }
 
         else if (currentAction == "check")
@@ -103,10 +103,32 @@ public class RPGManager : MonoBehaviour
         }
     }
 
-    IEnumerator PlayerAttack(Unit attacker, Unit target)
+    IEnumerator PlayerAttack(Unit attacker, Unit target, string currentAction)
     {
-        target.TakeDamage(attacker.damage);
-        textBox.text = target.Name + " took " + attacker.damage + " Damage, now it has " + target.currentHP + " HP";
+        int damage = 0;
+        int skillCost = 50;
+
+        if (currentAction == "attack")
+            damage = attacker.damage;
+        else if (currentAction == "skill")
+        {
+            if (attacker.currentWILL >= skillCost)
+            {
+                damage = attacker.skillDamage;
+                attacker.UseWILL(skillCost);
+            }
+            else
+            {
+                textBox.text = $"{attacker.Name} tried to use a skill but didn’t have enough WILL!";
+                yield return new WaitForSeconds(waitingTime);
+                EndTurn();
+                yield break;
+            }
+        }
+
+        target.TakeDamage(damage);
+        
+        textBox.text = target.Name + " took " + damage + " Damage, now it has " + target.currentHP + " HP";
         buttonsGroup.ShowBackButton(false);
 
         yield return new WaitForSeconds(waitingTime);

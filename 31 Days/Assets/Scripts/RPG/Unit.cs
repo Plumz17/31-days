@@ -14,6 +14,7 @@ public class Unit : MonoBehaviour
     // Properties from data
     public string Name => data.unitName;
     public int damage => data.damage;
+    public int skillDamage => data.skillDamage;
     public int speed => data.speed;
 
     //Character/Enemy Exclusive Data
@@ -45,6 +46,11 @@ public class Unit : MonoBehaviour
         }
         currentHP = Mathf.Max(currentHP - amount, 0);
         return amount;
+    }
+
+    public void UseWILL(int amount)
+    {
+        currentWILL = Mathf.Max(currentWILL - amount, 0);
     }
 
     public void Defend()

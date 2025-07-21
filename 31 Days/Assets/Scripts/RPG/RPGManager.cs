@@ -18,7 +18,9 @@ public class RPGManager : MonoBehaviour
     public Unit currentUnit;
     public PlayerBoxesGroup playerGroup;
     public EnemyGroup enemyGroup;
+    public ButtonsGroup buttonsGroup;
     public TMP_Text textBox;
+    public float waitingTime = 1f;
     public bool isBusy = false;
 
     public bool isChoosingTarget = false;
@@ -45,7 +47,7 @@ public class RPGManager : MonoBehaviour
 
     IEnumerator NextTurn()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(waitingTime);
 
         if (IsBattleOver())
         {
@@ -96,8 +98,9 @@ public class RPGManager : MonoBehaviour
     {
         target.TakeDamage(attacker.damage);
         textBox.text = target.Name + " took " + attacker.damage + " Damage, now it has " + target.currentHP + " HP";
+        buttonsGroup.ShowBackButton(false);
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(waitingTime);
 
         if (target.IsDead())
         {
@@ -119,7 +122,7 @@ public class RPGManager : MonoBehaviour
 
         textBox.text = enemy.Name + " attacks " + target.Name + " for " + target.TakeDamage(enemy.damage) + " damage.";
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(waitingTime);
 
         if (target.IsDead())
         {

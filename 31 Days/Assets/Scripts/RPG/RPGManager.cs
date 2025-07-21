@@ -129,6 +129,7 @@ public class RPGManager : MonoBehaviour
         target.TakeDamage(damage);
         
         textBox.text = target.Name + " took " + damage + " Damage, now it has " + target.currentHP + " HP";
+        playerGroup.UpdatePartyUI(playerUnits);
         buttonsGroup.ShowBackButton(false);
 
         yield return new WaitForSeconds(waitingTime);

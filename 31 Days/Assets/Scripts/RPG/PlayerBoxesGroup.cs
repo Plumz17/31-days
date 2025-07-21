@@ -41,7 +41,7 @@ public class PlayerBoxesGroup : MonoBehaviour
     {
         for (int i = 0; i < characterBoxes.Count; i++)
         {
-            if (i < playerDataList.Count)
+            if (i < partyUnits.Count)
             {
                 GameObject characterBox = characterBoxes[i];
                 characterBox.SetActive(true);

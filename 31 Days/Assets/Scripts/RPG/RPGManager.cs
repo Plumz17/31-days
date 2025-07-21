@@ -38,6 +38,7 @@ public class RPGManager : MonoBehaviour
     {
         playerGroup.SetupPartyUI(playerUnits);
         enemyGroup.SetupEnemies(enemyUnits);
+        Debug.Log(enemyUnits[0].currentHP);
 
         turnOrder.Clear();
         turnOrder.AddRange(playerUnits);
@@ -105,6 +106,7 @@ public class RPGManager : MonoBehaviour
 
     IEnumerator PlayerAttack(Unit attacker, Unit target, string currentAction)
     {
+        Debug.Log(enemyUnits[0].data.maxHP);
         int damage = 0;
         int skillCost = 50;
 

@@ -34,6 +34,7 @@ public class EnemyGroup : MonoBehaviour
                 enemyStations[i].SetActive(false); // Hide unused slots
             }
         }
+        
     }
 
     public void OnEnemyDeath(Unit deadEnemy)

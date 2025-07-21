@@ -27,15 +27,14 @@ public class Unit : MonoBehaviour
     // Battle flags
     public bool isDefending { get; private set; } = false;
 
-    private void Awake()
+    public void Init(UnitData newData)
     {
-        if (data == null) return;
-
+        data = newData;
         maxHP = data.maxHP;
         maxWILL = data.maxWILL;
         currentHP = maxHP;
         currentWILL = maxWILL;
-        Debug.Log(currentHP);
+        isDefending = false;
     }
 
     public int TakeDamage(int amount)
@@ -43,7 +42,6 @@ public class Unit : MonoBehaviour
         if (isDefending)
         {
             amount = Mathf.CeilToInt(amount * 0.5f);
-            Debug.Log("Unit defended hit becomes " + amount);
         }
         currentHP = Mathf.Max(currentHP - amount, 0);
         return amount;

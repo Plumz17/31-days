@@ -22,7 +22,7 @@ public class PlayerBoxesGroup : MonoBehaviour
                 Unit unit = characterBox.GetComponent<Unit>();
                 int loadedHP = playerDataList[i].savedHP;
                 int loadedWILL = playerDataList[i].savedWILL;
-                unit.data = playerDataList[i];
+                unit.Init(playerDataList[i]);
                 unit.SetStats(loadedHP, loadedWILL);
                 partyUnits.Add(unit);
                 if (uiBox != null)

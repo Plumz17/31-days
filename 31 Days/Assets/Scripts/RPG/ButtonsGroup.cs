@@ -86,6 +86,8 @@ public class ButtonsGroup : MonoBehaviour
 
     public void OnBackButton()
     {
+        if (rpgManager.isBusy) return;
+
         rpgManager.enemyGroup.SetEnemyHighlights(false);
         rpgManager.infoBox.gameObject.SetActive(false);
         rpgManager.isChoosingTarget = false;

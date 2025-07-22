@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e30274c9811fe440a6ebf3a15de28b1, type: 3}
-  m_Name: Klara
+  m_Name: Bagas
   m_EditorClassIdentifier: 
-  unitName: Klara
+  unitName: Bagas
   maxHP: 100
   maxWILL: 100
   damage: 10
-  skillDamage: 50
-  speed: 20
+  speed: 5
   isPlayer: 1
-  icon: {fileID: -6271680148837993794, guid: becc8e677a6ea7347a8af5b2328cc14c, type: 3}
+  icon: {fileID: -5384022194519253384, guid: ed6d9c4ee40dca14f8dd3ea88bb143b4, type: 3}
+  skill: {fileID: 11400000, guid: e22d6d4158d2d4b47a7dce338349c86e, type: 2}
   savedHP: 100
   savedWILL: 100

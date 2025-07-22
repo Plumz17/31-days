@@ -5,6 +5,7 @@ using UnityEngine;
 public class CharacterData : UnitData
 {
     public Sprite icon;
+    public Skill skill;
     public int savedHP;
     public int savedWILL;
 

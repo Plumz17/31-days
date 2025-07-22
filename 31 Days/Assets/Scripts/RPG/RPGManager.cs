@@ -71,6 +71,7 @@ public class RPGManager : MonoBehaviour
 
         if (currentUnit.isPlayer)
         {
+            buttonsGroup.ShowBackButton(false);
             currentState = BattleState.PLAYERTURN;
             textBox.text = currentUnit.Name + "'s Turn. Choose an action.";
             isBusy = false;
@@ -116,31 +117,36 @@ public class RPGManager : MonoBehaviour
     {
         buttonsGroup.SetButtonHighlights(false);
         int damage = 0;
-        int skillCost = 50;
+        int skillCost = attacker.skill.willCost;
 
         if (currentAction == "attack")
+        {
             damage = attacker.damage;
+            textBox.text = $"{attacker.Name} attacked!";
+        }
         else if (currentAction == "skill")
         {
             if (attacker.currentWILL >= skillCost)
             {
-                damage = attacker.skillDamage;
+                damage = attacker.skill.damage;
                 attacker.UseWILL(skillCost);
+                textBox.text = $"{attacker.Name} used {attacker.skill.skillName}!";
             }
             else
             {
-                textBox.text = $"{attacker.Name} tried to use a skill but didn’t have enough WILL!";
+                textBox.text = $"{attacker.Name} tried to use a {attacker.skill.skillName} but didn’t have enough WILL!";
                 yield return new WaitForSeconds(waitingTime);
                 EndTurn();
                 yield break;
             }
         }
 
+        yield return new WaitForSeconds(waitingTime);
+
         target.TakeDamage(damage);
         
         textBox.text = target.Name + " took " + damage + " Damage, now it has " + target.currentHP + " HP";
         playerGroup.UpdatePartyUI(playerUnits);
-        buttonsGroup.ShowBackButton(false);
 
         yield return new WaitForSeconds(waitingTime);
 

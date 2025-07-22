@@ -14,11 +14,11 @@ public class Unit : MonoBehaviour
     // Properties from data
     public string Name => data.unitName;
     public int damage => data.damage;
-    public int skillDamage => data.skillDamage;
     public int speed => data.speed;
 
     //Character/Enemy Exclusive Data
     public Sprite Icon => isPlayer ? ((CharacterData)data).icon : null;
+    public Skill  skill => isPlayer ? ((CharacterData)data).skill : null;
     public Sprite enemyInfoBox => !isPlayer ? ((EnemyData)data).enemyInfoBox : null;
 
     // Type flags

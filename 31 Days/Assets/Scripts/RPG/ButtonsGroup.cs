@@ -15,6 +15,8 @@ public class ButtonsGroup : MonoBehaviour
     {
         if (rpgManager.isBusy) return;
 
+        rpgManager.enemyGroup.SetEnemyHighlights(true);
+
         rpgManager.isChoosingTarget = true;
         textBox.text = "Choose a target.";
         rpgManager.currentAction = "attack";
@@ -48,6 +50,7 @@ public class ButtonsGroup : MonoBehaviour
     {
         if (rpgManager.isBusy) return;
 
+        rpgManager.enemyGroup.SetEnemyHighlights(true);
         rpgManager.isChoosingTarget = true;
         textBox.text = "Choose a target.";
         rpgManager.currentAction = "skill";
@@ -58,6 +61,7 @@ public class ButtonsGroup : MonoBehaviour
     {
         if (rpgManager.isBusy) return;
 
+        rpgManager.enemyGroup.SetEnemyHighlights(true);
         rpgManager.currentAction = "check";
         rpgManager.isChoosingTarget = true;
         textBox.text = "Choose an Enemy.";
@@ -81,6 +85,7 @@ public class ButtonsGroup : MonoBehaviour
 
     public void OnBackButton()
     {
+        rpgManager.enemyGroup.SetEnemyHighlights(false);
         rpgManager.infoBox.gameObject.SetActive(false);
         rpgManager.isChoosingTarget = false;
         ShowBackButton(false);

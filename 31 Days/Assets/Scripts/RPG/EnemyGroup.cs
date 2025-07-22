@@ -22,7 +22,7 @@ public class EnemyGroup : MonoBehaviour
                 Image img = enemyStation.transform.Find("Enemy")?.GetComponent<Image>();
                 Unit unit = enemyStation.GetComponent<Unit>();
                 unit.Init(enemyDataList[i]);
-                
+
                 enemyUnits.Add(unit); //Doesnt add properly
                 if (img != null)
                 {
@@ -35,7 +35,7 @@ public class EnemyGroup : MonoBehaviour
                 enemyStations[i].SetActive(false); // Hide unused slots
             }
         }
-        
+
     }
 
     public void OnEnemyDeath(Unit deadEnemy)
@@ -51,6 +51,24 @@ public class EnemyGroup : MonoBehaviour
                 enemyObj.SetActive(false);
                 break;
             }
+        }
+    }
+    
+    public void SetEnemyHighlights(bool enable = false)
+    {
+        Button button;
+
+        foreach (GameObject station in enemyStations)
+        {
+            button = station.GetComponentInChildren<Button>();
+            if (button == null) continue;
+
+            Color softGray = new Color32(200, 200, 200, 255);
+
+            ColorBlock colors = button.colors;
+            colors.highlightedColor = enable ? Color.whiteSmoke : Color.white;
+            colors.pressedColor = enable ? softGray : Color.white;
+            button.colors = colors;
         }
     }
 }

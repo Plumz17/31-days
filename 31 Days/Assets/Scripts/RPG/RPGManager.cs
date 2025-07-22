@@ -92,6 +92,8 @@ public class RPGManager : MonoBehaviour
     {
         if (!CanSelectTarget()) return;
 
+        enemyGroup.SetEnemyHighlights(false);
+
         if (currentAction == "attack" || currentAction == "skill")
         {
             isChoosingTarget = false;

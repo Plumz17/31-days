@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218573b5c5c689547987b61edccee39b, type: 3}
-  m_Name: Zeb'ruk
+  m_Name: Zebruk
   m_EditorClassIdentifier: 
-  unitName: Zeb'ruk
+  unitName: Zebruk
   maxHP: 50
   maxWILL: 100
   damage: 10

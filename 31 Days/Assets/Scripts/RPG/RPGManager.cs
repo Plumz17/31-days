@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 
 public enum BattleState {START, ENEMYTURN, PLAYERTURN, WIN, LOSS}
@@ -22,6 +23,7 @@ public class RPGManager : MonoBehaviour
     public EnemyGroup enemyGroup;
     public ButtonsGroup buttonsGroup;
     public TMP_Text textBox;
+    public GameObject infoBox;
     public float waitingTime = 1f;
     public bool isBusy = false;
 
@@ -99,7 +101,11 @@ public class RPGManager : MonoBehaviour
 
         else if (currentAction == "check")
         {
-            textBox.text = $"{selectedEnemy.Name} HP: {selectedEnemy.currentHP}/{selectedEnemy.maxHP}\nInfo:{selectedEnemy.enemyInfo}";
+            textBox.text = $"{selectedEnemy.Name} HP: {selectedEnemy.currentHP}/{selectedEnemy.maxHP}";
+            infoBox.gameObject.SetActive(true);
+            Image image = infoBox.GetComponentInChildren<Image>();
+            image.sprite = selectedEnemy.enemyInfoBox;
+            image.SetNativeSize();
         }
     }
 

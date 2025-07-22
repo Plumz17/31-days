@@ -81,6 +81,7 @@ public class ButtonsGroup : MonoBehaviour
 
     public void OnBackButton()
     {
+        rpgManager.infoBox.gameObject.SetActive(false);
         rpgManager.isChoosingTarget = false;
         ShowBackButton(false);
         textBox.text = rpgManager.currentUnit.Name + "'s Turn. Choose an action.";

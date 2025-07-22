@@ -19,7 +19,7 @@ public class Unit : MonoBehaviour
 
     //Character/Enemy Exclusive Data
     public Sprite Icon => isPlayer ? ((CharacterData)data).icon : null;
-    public string enemyInfo => !isPlayer ? ((EnemyData)data).enemyInfo : null;
+    public Sprite enemyInfoBox => !isPlayer ? ((EnemyData)data).enemyInfoBox : null;
 
     // Type flags
     public bool isPlayer => data is CharacterData;

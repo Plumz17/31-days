@@ -20,6 +20,4 @@ MonoBehaviour:
   speed: 10
   isPlayer: 0
   enemySprite: {fileID: 407907198125173640, guid: d0e38bb347daa644dbf30f617b145a60, type: 3}
-  enemyInfo: 'An Italian Cat who resides on a landfill after its owner abandoned
-    her. After her death, her torment and misery accumulated into this form in the
-    Dusk Zone. '
+  enemyInfoBox: {fileID: -25216170820584564, guid: 28d1629847880f14995f9f60cb487afb, type: 3}

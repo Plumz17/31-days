@@ -52,6 +52,7 @@ public class RPGManager : MonoBehaviour
     IEnumerator NextTurn()
     {
         yield return new WaitForSeconds(waitingTime);
+        buttonsGroup.SetButtonHighlights(true);
 
         if (IsBattleOver())
         {
@@ -113,6 +114,7 @@ public class RPGManager : MonoBehaviour
 
     IEnumerator PlayerAttack(Unit attacker, Unit target, string currentAction)
     {
+        buttonsGroup.SetButtonHighlights(false);
         int damage = 0;
         int skillCost = 50;
 
@@ -156,6 +158,7 @@ public class RPGManager : MonoBehaviour
 
     IEnumerator EnemyAttack(Unit enemy)
     {
+        buttonsGroup.SetButtonHighlights(false);
         var validTargets = playerUnits.FindAll(p => !p.IsDead());
         if (validTargets.Count == 0) yield break;
 

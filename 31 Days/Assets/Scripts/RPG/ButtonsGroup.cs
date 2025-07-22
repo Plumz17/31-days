@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ButtonsGroup : MonoBehaviour
 {
@@ -65,7 +66,7 @@ public class ButtonsGroup : MonoBehaviour
         rpgManager.currentAction = "check";
         rpgManager.isChoosingTarget = true;
         textBox.text = "Choose an Enemy.";
-        ShowBackButton(true); 
+        ShowBackButton(true);
     }
 
     public void OnFocusButton()
@@ -91,7 +92,7 @@ public class ButtonsGroup : MonoBehaviour
         ShowBackButton(false);
         textBox.text = rpgManager.currentUnit.Name + "'s Turn. Choose an action.";
     }
-    
+
 
     public void ShowBackButton(bool isShow)
     {
@@ -105,6 +106,24 @@ public class ButtonsGroup : MonoBehaviour
             {
                 child.gameObject.SetActive(!isShow);
             }
+        }
+    }
+    
+    public void SetButtonHighlights(bool enable = true)
+    {
+        Button button;
+
+        foreach (GameObject buttons in ActiveButtons)
+        {
+            button = buttons.GetComponent<Button>();
+            if (button == null) continue;
+
+            Color softGray = new Color32(200, 200, 200, 255);
+
+            ColorBlock colors = button.colors;
+            colors.highlightedColor = enable ? Color.whiteSmoke : Color.white;
+            colors.pressedColor = enable ? softGray : Color.white;
+            button.colors = colors;
         }
     }
 }

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218573b5c5c689547987b61edccee39b, type: 3}
-  m_Name: Glorp
+  m_Name: Rodan
   m_EditorClassIdentifier: 
-  unitName: Glorp
+  unitName: Rodan
   maxHP: 30
   maxWILL: 100
   damage: 20
@@ -20,4 +20,6 @@ MonoBehaviour:
   speed: 20
   isPlayer: 0
   enemySprite: {fileID: -7539498615863296485, guid: 6cdf85fa0cac6924f83a9a3b405f0960, type: 3}
-  enemyInfo: An Ancient Evil
+  enemyInfo: A pair of rodents who dwell in the slums of Jakarta. When the water
+    rose, they turned a nearby tire into their shelter. They died in silence, their
+    cycle of struggle and neglect accumulated into this form in the Dusk Zone.

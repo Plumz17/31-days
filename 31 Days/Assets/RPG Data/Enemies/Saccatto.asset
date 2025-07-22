@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: Saccatto
   m_EditorClassIdentifier: 
   unitName: Saccatto
-  maxHP: 100
-  maxWILL: 100
-  damage: 5
-  skillDamage: 0
+  maxHP: 30
+  maxWILL: 0
+  damage: 15
   speed: 10
   isPlayer: 0
   enemySprite: {fileID: 407907198125173640, guid: d0e38bb347daa644dbf30f617b145a60, type: 3}

@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218573b5c5c689547987b61edccee39b, type: 3}
-  m_Name: Rodan
+  m_Name: Ashru
   m_EditorClassIdentifier: 
-  unitName: Rodan
-  maxHP: 40
+  unitName: Ashru
+  maxHP: 100
   maxWILL: 0
   damage: 10
-  speed: 20
+  speed: 0
   isPlayer: 0
-  enemySprite: {fileID: -7539498615863296485, guid: 6cdf85fa0cac6924f83a9a3b405f0960, type: 3}
-  enemyInfoBox: {fileID: -581594986254865369, guid: e627b6350be5d2d499f0546825407e6d, type: 3}
+  enemySprite: {fileID: -7605192924567851618, guid: d1771fba96361c045843707d8eeb9b26, type: 3}
+  enemyInfoBox: {fileID: -7427395966196215969, guid: 12e35f10f863f684396dbfaf19bc3fce, type: 3}

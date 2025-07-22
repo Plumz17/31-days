@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3927ad7e7a9cc346961b249ae64af03, type: 3}
-  m_Name: OP Encounter
+  m_Name: Second Encounter
   m_EditorClassIdentifier: 
-  encounterName: Default Enemy
+  encounterName: Second Encounter
   enemies:
-  - {fileID: 11400000, guid: fc9dcb25e695bf246b392e71336982c0, type: 2}
-  - {fileID: 11400000, guid: bd2650a5d4ba5964e94c035c9c68ddd3, type: 2}
-  introText: Vlrop Emerges!
+  - {fileID: 11400000, guid: 625831e0c24d24443bed679aee087c80, type: 2}
+  - {fileID: 11400000, guid: ec86db668d3ff544983d72ab63d16085, type: 2}
+  introText: 

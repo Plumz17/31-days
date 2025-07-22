@@ -318,6 +318,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f679e3b2891ba7c4d872568c4ece4454, type: 2}
   - {fileID: 11400000, guid: eed440faa206c6d4998952c0e3c1f154, type: 2}
   - {fileID: 11400000, guid: 4ef46813109fa154f8611425ce669f96, type: 2}
+  currentLocation: {x: 0, y: 0}
   currentEncounter: {fileID: 0}
 --- !u!4 &404828693
 Transform:
@@ -344,7 +345,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2284897064750300093, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 30
+      value: 42.77
       objectReference: {fileID: 0}
     - target: {fileID: 2284897064750300093, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: m_LocalPosition.y
@@ -401,7 +402,7 @@ PrefabInstance:
     - target: {fileID: 9008631394547257672, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: encounterData
       value: 
-      objectReference: {fileID: 11400000, guid: 26ee5d0e7c9223a43af41168c31d4c9d, type: 2}
+      objectReference: {fileID: 11400000, guid: f62b0601e9ea26d4091721fbd982a650, type: 2}
     - target: {fileID: 9212820519182601709, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: m_Name
       value: Duskborne (2)
@@ -529,6 +530,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8047063154593476912, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4078845555186393652, guid: eb1ea72ab245ba74aac556522ac4a998, type: 3}
+    - target: {fileID: 8047063154593476912, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: m_SortingLayer
       value: 4
       objectReference: {fileID: 0}
@@ -547,7 +552,7 @@ PrefabInstance:
     - target: {fileID: 9008631394547257672, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: encounterData
       value: 
-      objectReference: {fileID: 11400000, guid: f62b0601e9ea26d4091721fbd982a650, type: 2}
+      objectReference: {fileID: 11400000, guid: 5be91d227e4ef034b8bb1055ecfea919, type: 2}
     - target: {fileID: 9212820519182601709, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: m_Name
       value: Duskborne (1)
@@ -731,7 +736,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 6.671875
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 6107350894250517577, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1340,13 +1345,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 25173514}
     - target: {fileID: 9008631394547257672, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
-      propertyPath: enemyID
-      value: one
-      objectReference: {fileID: 0}
-    - target: {fileID: 9008631394547257672, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: encounterData
       value: 
-      objectReference: {fileID: 11400000, guid: f62b0601e9ea26d4091721fbd982a650, type: 2}
+      objectReference: {fileID: 11400000, guid: 0967cc4f85175ad4fb8417b9ee59e4e6, type: 2}
     - target: {fileID: 9212820519182601709, guid: f62d773dc81b7494a9f64a556a804953, type: 3}
       propertyPath: m_Name
       value: Duskborne

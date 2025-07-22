@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218573b5c5c689547987b61edccee39b, type: 3}
-  m_Name: Rodan
+  m_Name: Bak'rel
   m_EditorClassIdentifier: 
-  unitName: Rodan
-  maxHP: 40
-  maxWILL: 0
-  damage: 10
-  speed: 20
+  unitName: Bak'rel
+  maxHP: 50
+  maxWILL: 100
+  damage: 40
+  speed: 0
   isPlayer: 0
-  enemySprite: {fileID: -7539498615863296485, guid: 6cdf85fa0cac6924f83a9a3b405f0960, type: 3}
-  enemyInfoBox: {fileID: -581594986254865369, guid: e627b6350be5d2d499f0546825407e6d, type: 3}
+  enemySprite: {fileID: 5983182966278971822, guid: aa3548ff966c3b94f9b75eb0099d256a, type: 3}
+  enemyInfoBox: {fileID: 0}

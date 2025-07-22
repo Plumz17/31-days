@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 218573b5c5c689547987b61edccee39b, type: 3}
-  m_Name: Slorb
+  m_Name: Zeb'ruk
   m_EditorClassIdentifier: 
-  unitName: Slorb
-  maxHP: 30
+  unitName: Zeb'ruk
+  maxHP: 50
   maxWILL: 100
-  damage: 5
+  damage: 10
   speed: 5
   isPlayer: 0
   enemySprite: {fileID: -2635220530030887118, guid: 2dbe6c4261d7dbf46be868bf7ce65252, type: 3}
-  enemyInfo: An Ancient Evil
+  enemyInfoBox: {fileID: -1157384598128471400, guid: 01f577e6a74531d408ec02634130bfbe, type: 3}

@@ -262,7 +262,7 @@ SpriteRenderer:
   m_SortingLayerID: 749624177
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Sprite: {fileID: 4078845555186393652, guid: eb1ea72ab245ba74aac556522ac4a998, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -285,6 +285,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0f5a7cc629fce544a9093da7d08cccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemyID: one
+  encounterData: {fileID: 11400000, guid: f62b0601e9ea26d4091721fbd982a650, type: 2}
   currentState: 0
   player: {fileID: 0}
   duskSpeed: 6.1

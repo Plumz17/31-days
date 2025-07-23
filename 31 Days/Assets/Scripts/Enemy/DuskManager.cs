@@ -68,6 +68,7 @@ public class DuskManager : MonoBehaviour
         {
             partyData[i].savedHP = partyData[i].maxHP;
             partyData[i].savedWILL = partyData[i].maxWILL;
+            Debug.Log("Healed " + partyData[i].unitName);
         }
     }
 

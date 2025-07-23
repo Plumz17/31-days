@@ -7,4 +7,5 @@ public abstract class BaseNode : ScriptableObject
     public Sprite characterPortrait;
     public bool levelUpFlag;
     public int advanceTimeFlag;
+    public bool saveDataFlag;
 }

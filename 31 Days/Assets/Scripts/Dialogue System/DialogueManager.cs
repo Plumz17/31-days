@@ -82,6 +82,9 @@ public class DialogueManager : MonoBehaviour
 
         if (node.advanceTimeFlag != 0)
             CalenderManager.instance.AdvanceTimeBlock(node.advanceTimeFlag);
+
+        if (node.saveDataFlag)
+            SaveData.Save();
     }
 
     public void HandleSubmit()

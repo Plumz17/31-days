@@ -310,9 +310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duskSceneNames:
-  - Dusk Classroom
-  - Dusk Zone
   - RPG
+  - Dusk Zone
   partyData:
   - {fileID: 11400000, guid: 51aa9e4360e586040a3b733430b482a6, type: 2}
   - {fileID: 11400000, guid: f679e3b2891ba7c4d872568c4ece4454, type: 2}

@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class DuskManager : MonoBehaviour
 {
-    [SerializeField] private List<string> duskSceneNames = new List<string> { "Dusk Classroom", "Dusk Zone", "RPG Mockup" };
+    [SerializeField] private List<string> duskSceneNames = new List<string> {"Dusk Zone", "RPG" };
     [SerializeField] private List<CharacterData> partyData = new List<CharacterData>();
     public static DuskManager instance;
 
@@ -33,10 +33,16 @@ public class DuskManager : MonoBehaviour
 
         if (!duskSceneNames.Contains(scene.name))
         {
+            PauseMenu.instance.SetCanPause(true);
             defeatedEnemies.Clear();
             Destroy(gameObject);
         }
+        else
+        {
+            PauseMenu.instance.SetCanPause(false);
+        }
     }
+
 
     public List<CharacterData> LoadPartyData()
     {

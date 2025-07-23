@@ -1,6 +1,7 @@
 using System;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public InputActions playerInput;
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
+    private bool canPause = true;
+    public Button saveButton;
 
     private void OnEnable() => playerInput.UI.Enable();
     //private void OnDisable() => playerInput.UI.Disable();
@@ -28,6 +31,8 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        if (!canPause) return;
+
         if (playerInput.UI.Esc.triggered)
         {
             if (gameIsPaused)
@@ -73,5 +78,10 @@ public class PauseMenu : MonoBehaviour
     public void OnAdvanceButtonClick()
     {
         CalenderManager.instance.AdvanceTimeBlock();
+    }
+
+    public void SetCanPause(bool set)
+    {
+        canPause = set;
     }
 }

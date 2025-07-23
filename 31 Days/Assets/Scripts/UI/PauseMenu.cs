@@ -31,8 +31,6 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (!canPause) return;
-
         if (playerInput.UI.Esc.triggered)
         {
             if (gameIsPaused)
@@ -82,6 +80,6 @@ public class PauseMenu : MonoBehaviour
 
     public void SetCanPause(bool set)
     {
-        canPause = set;
+        saveButton.gameObject.SetActive(set);
     }
 }

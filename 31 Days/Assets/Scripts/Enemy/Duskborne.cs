@@ -1,4 +1,6 @@
 using UnityEngine;
+using Unity.Cinemachine;
+using System.Collections;
 
 public class Duskborne : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class Duskborne : MonoBehaviour
     [SerializeField] float duskSpeed = 10f; 
     [SerializeField] private float wanderSpeed = 2f;
     [SerializeField] private float wanderChangeInterval = 2f;
+    [SerializeField] private CinemachineCamera zoomCam;
+    [SerializeField] private float zoomDuration = 1.2f;
 
     private float wanderTimer;
     private float wanderDirection = 0; // -1 = left, 1 = right, 0 = idle
@@ -47,7 +51,24 @@ public class Duskborne : MonoBehaviour
 
     public void OnPlayerHit()
     {
+        if (zoomCam != null)
+        {
+            zoomCam.Follow = transform;
+            zoomCam.LookAt = transform;
+        }
+        StartCoroutine(ZoomThenStartBattle());
+    }
+
+    private IEnumerator ZoomThenStartBattle()
+    {
+        zoomCam.Priority = 2;
+        yield return new WaitForSeconds(zoomDuration);
         Time.timeScale = 0f;
+
+        if (zoomCam != null)
+            zoomCam.gameObject.SetActive(false);
+
+        Time.timeScale = 1f;
         DuskManager.instance.StartEncounter(encounterData, enemyID);
     }
 

@@ -848,7 +848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d3b116daaaa5b499a122938bb70194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popScale: 1.1
+  popScale: 1.5
   popSpeed: 10
   highlightArrow: {fileID: 0}
 --- !u!114 &1182490357
@@ -1091,7 +1091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2d3b116daaaa5b499a122938bb70194, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  popScale: 1.1
+  popScale: 1.5
   popSpeed: 10
   highlightArrow: {fileID: 0}
 --- !u!1 &1349867288

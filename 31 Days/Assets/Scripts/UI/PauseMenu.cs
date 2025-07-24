@@ -13,6 +13,9 @@ public class PauseMenu : MonoBehaviour
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
     public Button saveButton;
+    public GameObject controlsGuide;
+    public GameObject buttonContainer;
+    private bool isControlUp = false;
 
     private void OnEnable() => playerInput.UI.Enable();
     //private void OnDisable() => playerInput.UI.Disable();
@@ -32,7 +35,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
-        if (playerInput.UI.Esc.triggered)
+        if (playerInput.UI.Esc.triggered && !isControlUp)
         {
             if (gameIsPaused)
             {
@@ -55,7 +58,7 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
         gameIsPaused = true;
     }
 
@@ -76,7 +79,23 @@ public class PauseMenu : MonoBehaviour
 
     public void OnMenuButtonClick()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(11);
+    }
+
+    public void OnControlsButtonClick()
+    {
+        if (!isControlUp)
+        {
+            controlsGuide.SetActive(true);
+            isControlUp = true;
+        }
+    }
+
+    public void CloseControlsGuide()
+    {
+        controlsGuide.SetActive(false);
+        isControlUp = false;
     }
 
     public void OnAdvanceButtonClick()

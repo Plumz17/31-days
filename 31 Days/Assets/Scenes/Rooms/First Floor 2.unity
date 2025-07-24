@@ -293,6 +293,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 929178408400631942, guid: 0b5a9d4c9fa35d143968a3506d5a5005, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.125
+      objectReference: {fileID: 0}
     - target: {fileID: 5295384017987918029, guid: 0b5a9d4c9fa35d143968a3506d5a5005, type: 3}
       propertyPath: m_Name
       value: Cass Variant

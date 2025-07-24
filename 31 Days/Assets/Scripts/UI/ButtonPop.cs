@@ -22,7 +22,7 @@ public class ButtonPop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     void Update()
     {
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, Time.unscaledDeltaTime * popSpeed);
-        
+
     }
 
     public void OnPointerEnter(PointerEventData eventData)

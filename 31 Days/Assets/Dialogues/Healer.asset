@@ -19,4 +19,4 @@ MonoBehaviour:
   saveDataFlag: 0
   dialogueLines:
   - Party Healed, do you want to save?
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 924ba307469a8f443be2c023c3614256, type: 2}

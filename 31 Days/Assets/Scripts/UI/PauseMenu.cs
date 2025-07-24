@@ -1,6 +1,8 @@
 using System;
 using NUnit.Framework;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
@@ -70,6 +72,11 @@ public class PauseMenu : MonoBehaviour
     public void OnResumeButtonClick()
     {
         Resume();
+    }
+
+    public void OnMenuButtonClick()
+    {
+        SceneManager.LoadScene(11);
     }
 
     public void OnAdvanceButtonClick()

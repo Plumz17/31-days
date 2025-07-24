@@ -81,6 +81,12 @@ public class LevelLoader : MonoBehaviour
         }
     }
 
+    IEnumerator WaitOneSecond()
+    {
+        yield return new WaitForSeconds(transitionTime);
+    }
+
+
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;

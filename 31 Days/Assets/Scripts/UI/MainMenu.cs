@@ -15,4 +15,9 @@ public class MainMenu : MonoBehaviour
     {
         SaveData.Load();
     }
+
+    public void OnExitButtonClick()
+    {
+        Application.Quit();
+    }
 }

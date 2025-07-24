@@ -38,7 +38,17 @@ public class ButtonsGroup : MonoBehaviour
 
     public void OnRunButton()
     {
-        rpgManager.EndBattle(true);
+        float chance = Random.value;
+        if (chance <= (0.1f / rpgManager.playerUnits.Count))
+        {
+            textBox.text = "Successfully fled";
+            rpgManager.EndBattle(true);
+        }
+        else
+        {
+            textBox.text = "There's no opening, Failed to flee!";
+            StartCoroutine(EndTurnAfterDelay());
+        }
     }
 
     private IEnumerator EndTurnAfterDelay()

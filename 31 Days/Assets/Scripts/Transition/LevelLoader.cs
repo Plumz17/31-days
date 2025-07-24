@@ -61,7 +61,6 @@ public class LevelLoader : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Called when the scene first loads
     {
-        anim.SetTrigger("Open");
         PauseMenu.instance?.Resume();
         player = GameObject.FindGameObjectWithTag("Player");
 
@@ -80,7 +79,6 @@ public class LevelLoader : MonoBehaviour
             movement = player.GetComponent<PlayerMovement>();
             movement.SetFacingDirection(!spawnFlipX);
         }
-
     }
 
 

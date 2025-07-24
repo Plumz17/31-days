@@ -10,7 +10,6 @@ public class PauseMenu : MonoBehaviour
     public InputActions playerInput;
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
-    private bool canPause = true;
     public Button saveButton;
 
     private void OnEnable() => playerInput.UI.Enable();

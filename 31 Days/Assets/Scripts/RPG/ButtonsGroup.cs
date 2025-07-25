@@ -61,11 +61,20 @@ public class ButtonsGroup : MonoBehaviour
     {
         if (rpgManager.isBusy) return;
 
-        rpgManager.enemyGroup.SetEnemyHighlights(true);
-        rpgManager.isChoosingTarget = true;
-        textBox.text = "Choose a target.";
-        rpgManager.currentAction = "skill";
-        ShowBackButton(true);
+        if (rpgManager.currentUnit.skill.skillType == "attack")
+        {
+            rpgManager.enemyGroup.SetEnemyHighlights(true);
+            rpgManager.isChoosingTarget = true;
+            textBox.text = "Choose an enemy target.";
+            rpgManager.currentAction = "skill";
+            ShowBackButton(true);
+        }
+        else if (rpgManager.currentUnit.skill.skillType == "heal")
+        {
+            rpgManager.currentAction = "skill";
+            rpgManager.isBusy = true;
+            StartCoroutine(rpgManager.PlayerAttack(rpgManager.currentUnit, null, "skill"));
+        }
     }
 
     public void OnCheckButton()

@@ -18,7 +18,7 @@ public class Unit : MonoBehaviour
 
     //Character/Enemy Exclusive Data
     public Sprite Icon => isPlayer ? ((CharacterData)data).icon : null;
-    public Skill  skill => isPlayer ? ((CharacterData)data).skill : null;
+    public Skill skill => isPlayer ? ((CharacterData)data).skill : null;
     public Sprite enemyInfoBox => !isPlayer ? ((EnemyData)data).enemyInfoBox : null;
 
     // Type flags
@@ -79,5 +79,13 @@ public class Unit : MonoBehaviour
     {
         currentHP = maxHP;
         currentWILL = maxWILL;
+    }
+
+    public void HealSkill(int percentage)
+    {
+        float healAmount = percentage * maxHP / 100;
+        currentHP += (int) healAmount;
+        if (currentHP > maxHP)
+            currentHP = maxHP;
     }
 }

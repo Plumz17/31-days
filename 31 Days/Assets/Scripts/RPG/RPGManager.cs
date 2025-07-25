@@ -113,54 +113,61 @@ public class RPGManager : MonoBehaviour
         }
     }
 
-    IEnumerator PlayerAttack(Unit attacker, Unit target, string currentAction)
+    public IEnumerator PlayerAttack(Unit attacker, Unit target, string currentAction)
     {
         buttonsGroup.SetButtonHighlights(false);
-        int damage = 0;
         int skillCost = attacker.skill.willCost;
 
         if (currentAction == "attack")
         {
-            damage = attacker.damage;
+            int damage = attacker.damage;
             textBox.text = $"{attacker.Name} attacked!";
+            yield return new WaitForSeconds(waitingTime);
+            target.TakeDamage(damage);
+            textBox.text = $"{target.Name} took {damage} damage, now it has {target.currentHP} HP.";
         }
+
         else if (currentAction == "skill")
         {
-            if (attacker.currentWILL >= skillCost)
+            if (attacker.currentWILL < skillCost)
             {
-                damage = attacker.skill.damage;
-                attacker.UseWILL(skillCost);
-                textBox.text = $"{attacker.Name} used {attacker.skill.skillName}!";
-            }
-            else
-            {
-                textBox.text = $"{attacker.Name} tried to use a {attacker.skill.skillName} but didn’t have enough WILL!";
+                textBox.text = $"{attacker.Name} tried to use {attacker.skill.skillName}, but didn’t have enough WILL!";
                 yield return new WaitForSeconds(waitingTime);
                 EndTurn();
                 yield break;
             }
+
+            attacker.UseWILL(skillCost);
+
+            if (attacker.skill.skillType == "attack")
+            {
+                int damage = attacker.skill.skillAmount;
+                textBox.text = $"{attacker.Name} used {attacker.skill.skillName}!";
+                yield return new WaitForSeconds(waitingTime);
+                target.TakeDamage(damage);
+                textBox.text = $"{target.Name} took {damage} damage, now it has {target.currentHP} HP.";
+            }
+            else if (attacker.skill.skillType == "heal")
+            {
+                int healPercentage = attacker.skill.skillAmount;
+                textBox.text = $"{attacker.Name} used {attacker.skill.skillName} and healed the party!";
+                yield return new WaitForSeconds(waitingTime);
+
+                foreach (var ally in playerUnits)
+                {
+                    if (!ally.IsDead())
+                    {
+                        ally.HealSkill(healPercentage);
+                    }
+                }
+                playerGroup.UpdatePartyUI(playerUnits);
+            }
         }
 
         yield return new WaitForSeconds(waitingTime);
-
-        target.TakeDamage(damage);
-        
-        textBox.text = target.Name + " took " + damage + " Damage, now it has " + target.currentHP + " HP";
-        playerGroup.UpdatePartyUI(playerUnits);
-
-        yield return new WaitForSeconds(waitingTime);
-
-        if (target.IsDead())
-        {
-            textBox.text = target.Name + " died"; 
-            turnOrder.Remove(target);
-            enemyUnits.Remove(target);
-            enemyGroup.OnEnemyDeath(target);
-            //enemyGroup.SetupEnemies(enemyUnits);
-        }
         EndTurn();
     }
-    
+        
 
     IEnumerator EnemyAttack(Unit enemy)
     {

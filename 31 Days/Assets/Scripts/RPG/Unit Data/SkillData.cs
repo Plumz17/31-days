@@ -4,6 +4,9 @@ using UnityEngine;
 public class Skill : ScriptableObject
 {
     public string skillName;
-    public int damage;
+    [Tooltip("How many damage delt or HP healed")]
+    public int skillAmount;
     public int willCost;
+    [Tooltip("Either heal or attack")]
+    public string skillType;
 }

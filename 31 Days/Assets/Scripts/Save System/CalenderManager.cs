@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class CalenderManager : MonoBehaviour
 {
@@ -11,8 +10,6 @@ public class CalenderManager : MonoBehaviour
     public TMP_Text dayText;
     public TMP_Text timeOfDayText;
     public GameObject calendarUIPanel;
-    public GameObject calendarPanel;
-    public GameObject phonePanel;
 
     public int currentMonth = 8;
     public int currentDay = 4;
@@ -34,7 +31,6 @@ public class CalenderManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
-        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     public void AdvanceTimeBlock(int blockAdvanced = 1) // To Move Morning to Afternoon, etc (block = Morning, afternoon, etc.)
@@ -76,22 +72,6 @@ public class CalenderManager : MonoBehaviour
         timeOfDayText.text = currentTimeOfDay.ToString();         // e.g. Morning
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (this == null) return;
-
-        if (DuskManager.instance.duskSceneNames.Contains(scene.name))
-        {
-            calendarPanel.SetActive(false);
-            phonePanel.SetActive(true);
-        }
-        else
-        {
-            phonePanel.SetActive(true);
-            calendarPanel.SetActive(false);
-        }
-    }
-
     public void SaveToPlayerData(PlayerData data)
     {
         data.day = currentDay;
@@ -107,7 +87,7 @@ public class CalenderManager : MonoBehaviour
         currentTimeOfDay = (timeOfDay)data.time;
         totalDaysPassed = data.totalDaysPassed;
     }
-
+    
     public void SetCalendarUI()
     {
         if (calendarUIPanel != null)

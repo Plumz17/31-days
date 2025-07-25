@@ -125,6 +125,8 @@ public class RPGManager : MonoBehaviour
             yield return new WaitForSeconds(waitingTime);
             target.TakeDamage(damage);
             textBox.text = $"{target.Name} took {damage} damage, now it has {target.currentHP} HP.";
+            HandleEnemyDeath(target);
+            yield return new WaitForSeconds(waitingTime);
         }
 
         else if (currentAction == "skill")
@@ -138,6 +140,7 @@ public class RPGManager : MonoBehaviour
             }
 
             attacker.UseWILL(skillCost);
+            playerGroup.UpdatePartyUI(playerUnits);
 
             if (attacker.skill.skillType == "attack")
             {
@@ -146,6 +149,8 @@ public class RPGManager : MonoBehaviour
                 yield return new WaitForSeconds(waitingTime);
                 target.TakeDamage(damage);
                 textBox.text = $"{target.Name} took {damage} damage, now it has {target.currentHP} HP.";
+                HandleEnemyDeath(target);
+                yield return new WaitForSeconds(waitingTime);
             }
             else if (attacker.skill.skillType == "heal")
             {
@@ -198,6 +203,17 @@ public class RPGManager : MonoBehaviour
         currentAction = ""; //reset current action
 
         StartCoroutine(NextTurn());
+    }
+
+    void HandleEnemyDeath(Unit target)
+    {
+        if (target.IsDead())
+        {
+            textBox.text = target.Name + " died";
+            turnOrder.Remove(target);
+            enemyUnits.Remove(target);
+            enemyGroup.OnEnemyDeath(target);
+        }
     }
 
     bool IsBattleOver()

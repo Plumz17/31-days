@@ -14,6 +14,7 @@ public class Duskborne : MonoBehaviour
     [SerializeField] private float wanderChangeInterval = 2f;
     [SerializeField] private CinemachineCamera zoomCam;
     [SerializeField] private float zoomDuration = 1.2f;
+    [SerializeField] private bool isStatic = false;
 
     private float wanderTimer;
     private float wanderDirection = 0; // -1 = left, 1 = right, 0 = idle
@@ -89,7 +90,8 @@ public class Duskborne : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (player == null) return;        
+        if (player == null || isStatic) return;
+              
         switch (currentState)
         {
             case duskState.Follow:

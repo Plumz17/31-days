@@ -24,6 +24,7 @@ public class PlayerData
 
     // Social Links
     public List<ConnectionSaveData> playerConnections = new List<ConnectionSaveData>();
+    public List<CharacterData> partyMembers = new List<CharacterData>();
 
     // You can also add flags or quest progress here
     //public List<string> unlockedEvents = new List<string>();

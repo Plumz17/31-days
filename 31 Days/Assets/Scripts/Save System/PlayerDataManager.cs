@@ -5,6 +5,7 @@ public class PlayerDataManager : MonoBehaviour
     public static PlayerDataManager instance;
     public PlayerData currentData;
     public bool loadedFromSave = false;
+    public CharacterData protagCharacterData;
 
     void Awake()
     {
@@ -25,6 +26,8 @@ public class PlayerDataManager : MonoBehaviour
 
         currentData.playerConnections.Add(new ConnectionSaveData("Adachi", 0)); // Add all characters
 
+        AddPartyMember(protagCharacterData);
+
         //Reset calendar to day 1
         CalenderManager.instance.LoadFromPlayerData(PlayerDataManager.instance.currentData);
     }
@@ -35,6 +38,18 @@ public class PlayerDataManager : MonoBehaviour
         if (connection != null && connection.level < 5)
         {
             connection.level++;
+        }
+    }
+
+    public void AddPartyMember(CharacterData newMember)
+    {
+        if (!PlayerDataManager.instance.currentData.partyMembers.Contains(newMember))
+        {
+            PlayerDataManager.instance.currentData.partyMembers.Add(newMember);
+        }
+        else
+        {
+            Debug.Log("Member already exist");
         }
     }
 }

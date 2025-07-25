@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class DuskManager : MonoBehaviour
 {
-    [SerializeField] private List<string> duskSceneNames = new List<string> {"Dusk Zone", "RPG" };
+    [SerializeField] private List<string> duskSceneNames = new List<string> {"Dusk Zone", "RPG"};
     [SerializeField] private List<CharacterData> partyData = new List<CharacterData>();
     public static DuskManager instance;
 
-    private HashSet<string> defeatedEnemies = new HashSet<string>(); //List without dupes and no order
+    private HashSet<string> defeatedEnemies = new HashSet<string>();
     public Vector2 currentLocation = new Vector2();
 
     public Encounter currentEncounter;
@@ -39,6 +39,11 @@ public class DuskManager : MonoBehaviour
         }
         else
         {
+            partyData.Clear();
+            foreach (var charData in PlayerDataManager.instance.currentData.partyMembers)
+            {
+                partyData.Add(Instantiate(charData));
+            }
             PauseMenu.instance.SetCanPause(false);
         }
     }
@@ -46,6 +51,7 @@ public class DuskManager : MonoBehaviour
 
     public List<CharacterData> LoadPartyData()
     {
+        Debug.Log(partyData.Count);
         return partyData;
     }
 

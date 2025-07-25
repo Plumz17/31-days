@@ -85,6 +85,9 @@ public class DialogueManager : MonoBehaviour
 
         if (node.saveDataFlag)
             SaveData.Save();
+
+        if (node.newMemberFlag != null)
+            PlayerDataManager.instance.AddPartyMember(node.newMemberFlag);
     }
 
     public void HandleSubmit()

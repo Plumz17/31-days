@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("Footstep Settings")]
     public AudioSource audioSource;
     public AudioClip footstepClip;
+    public AudioClip enemyClip;
     public float stepDelay = 0.4f; // Delay between steps
     private float stepTimer;
 
@@ -116,6 +117,15 @@ public class PlayerMovement : MonoBehaviour
                 audioSource.pitch = Random.Range(0.9f, 1.1f);
                 audioSource.PlayOneShot(footstepClip);
             }
+    }
+
+    public void PlayEnemySFX()
+    {
+        if (enemyClip != null && audioSource != null)
+        {
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(enemyClip);
+        }
     }
 
     private void OnShowCalendar(InputAction.CallbackContext context)

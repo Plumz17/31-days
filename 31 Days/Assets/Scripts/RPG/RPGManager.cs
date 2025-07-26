@@ -136,9 +136,9 @@ public class RPGManager : MonoBehaviour
 
         if (currentAction == "attack")
         {
+            PlaySFX(attackSFX);
             int damage = attacker.damage;
             textBox.text = $"{attacker.Name} attacked!";
-            PlaySFX(attackSFX);
             StartCoroutine(target.FlickerAlpha());
             yield return new WaitForSeconds(waitingTime);
             target.TakeDamage(damage);
@@ -162,9 +162,9 @@ public class RPGManager : MonoBehaviour
 
             if (attacker.skill.skillType == "attack")
             {
+                PlaySFX(attackSFX);
                 int damage = attacker.skill.skillAmount;
                 textBox.text = $"{attacker.Name} used {attacker.skill.skillName}!";
-                PlaySFX(attackSFX);
                 StartCoroutine(target.FlickerAlpha());
                 yield return new WaitForSeconds(waitingTime);
                 target.TakeDamage(damage);

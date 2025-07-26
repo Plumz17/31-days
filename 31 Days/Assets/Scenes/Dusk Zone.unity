@@ -239,6 +239,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 595406753519286123, guid: a8270b637abcb094786b9abf16380f12, type: 3}
+      propertyPath: enemyClip
+      value: 
+      objectReference: {fileID: 8300000, guid: af585ea25f77f7b449c9e5418f078415, type: 3}
     - target: {fileID: 3176680076276312277, guid: a8270b637abcb094786b9abf16380f12, type: 3}
       propertyPath: m_Name
       value: Player
@@ -713,7 +717,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 7.5625
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 5425169048719876304, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x

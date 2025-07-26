@@ -24,6 +24,7 @@ public class Escapable : MonoBehaviour
         if (input.UI.Esc.triggered && gameObject.activeSelf)
         {
             PauseMenu.instance.CloseControlsGuide();
+            PauseMenu.instance.PlayCancelSFX();
         }
     }
 }

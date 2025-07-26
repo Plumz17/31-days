@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Random = UnityEngine.Random;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -14,6 +16,12 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true;
     private SpriteRenderer spriteRenderer;
     private CalenderManager calendar;
+
+    [Header("Footstep Settings")]
+    public AudioSource audioSource;
+    public AudioClip footstepClip;
+    public float stepDelay = 0.4f; // Delay between steps
+    private float stepTimer;
 
     private void Awake()
     {
@@ -48,7 +56,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Flip();
         }
-
+        HandleFootsteps();
     }
 
     private void FixedUpdate()
@@ -81,7 +89,34 @@ public class PlayerMovement : MonoBehaviour
     void OnDisable()
     {
         playerInput.Player.Disable();
-    }    
+    }
+
+    private void HandleFootsteps()
+    {
+        if (Mathf.Abs(movement) > 0.1f) //if is Moving
+        {
+            stepTimer -= Time.deltaTime;
+
+            if (stepTimer <= 0f)
+            {
+                PlayFootstep();
+                stepTimer = stepDelay;
+            }
+        }
+        else
+        {
+            stepTimer = 0f;
+        }
+    }
+
+    private void PlayFootstep()
+    {
+        if (footstepClip != null && audioSource != null)
+            {
+                audioSource.pitch = Random.Range(0.9f, 1.1f);
+                audioSource.PlayOneShot(footstepClip);
+            }
+    }
 
     private void OnShowCalendar(InputAction.CallbackContext context)
     {

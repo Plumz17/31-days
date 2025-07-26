@@ -6,12 +6,16 @@ public class ButtonPop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public float popScale = 1.1f;
     public float popSpeed = 10f;
     public GameObject highlightArrow;
+    [SerializeField] private AudioClip hoverSound;
+    private AudioSource audioSource;
 
     private Vector3 originalScale;
     private Vector3 targetScale;
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.2f;
         originalScale = transform.localScale;
         targetScale = originalScale;
 
@@ -30,6 +34,11 @@ public class ButtonPop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         targetScale = originalScale * popScale;
         if (highlightArrow != null)
             highlightArrow.SetActive(true);
+        if (audioSource != null && hoverSound != null)
+        {
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(hoverSound);
+        }
     }
 
     public void OnPointerExit(PointerEventData eventData)

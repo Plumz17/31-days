@@ -47,6 +47,11 @@ public class DuskManager : MonoBehaviour
             PauseMenu.instance.SetCanPause(false);
         }
     }
+    
+    public bool IsInDuskZone()
+    {
+        return duskSceneNames.Contains(SceneManager.GetActiveScene().name);
+    }
 
 
     public List<CharacterData> LoadPartyData()

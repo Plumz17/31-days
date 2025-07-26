@@ -31,6 +31,7 @@ public class ButtonsGroup : MonoBehaviour
         rpgManager.currentUnit.Defend();
         rpgManager.isBusy = true;
 
+        rpgManager.PlaySFX(rpgManager.defendSFX);
         textBox.text = rpgManager.currentUnit.Name + " Defended!";
 
         StartCoroutine(EndTurnAfterDelay());
@@ -98,6 +99,7 @@ public class ButtonsGroup : MonoBehaviour
         rpgManager.currentUnit.RestoreWILL(will);
         rpgManager.playerGroup.UpdatePartyUI(rpgManager.playerUnits);
 
+        rpgManager.PlaySFX(rpgManager.focusSFX);
         textBox.text = rpgManager.currentUnit.Name + " Focused! and gained +" + will + " WILL";
 
         StartCoroutine(EndTurnAfterDelay());
@@ -107,13 +109,13 @@ public class ButtonsGroup : MonoBehaviour
     {
         if (rpgManager.isBusy) return;
 
+        rpgManager.PlaySFX(rpgManager.backSFX);
         rpgManager.enemyGroup.SetEnemyHighlights(false);
         rpgManager.infoBox.gameObject.SetActive(false);
         rpgManager.isChoosingTarget = false;
         ShowBackButton(false);
         textBox.text = rpgManager.currentUnit.Name + "'s Turn. Choose an action.";
     }
-
 
     public void ShowBackButton(bool isShow)
     {

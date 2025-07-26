@@ -1399,7 +1399,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 463621579}
   inputHandler: {fileID: 463621577}
-  typingSFX: {fileID: 8300000, guid: 6f218be97fd26594098134ce123f78f6, type: 3}
+  typingSFX: {fileID: 8300000, guid: b22c4d764ce231349b41d0003e67d6d9, type: 3}
   charSoundInterval: 2
   pitchVariation: 0.1
   typingAudioSource: {fileID: 463621581}

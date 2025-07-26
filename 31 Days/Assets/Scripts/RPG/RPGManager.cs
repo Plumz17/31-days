@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public enum BattleState {START, ENEMYTURN, PLAYERTURN, WIN, LOSS}
@@ -26,6 +27,14 @@ public class RPGManager : MonoBehaviour
     public GameObject infoBox;
     public float waitingTime = 1f;
     public bool isBusy = false;
+    public AudioSource sfxSource;
+    public AudioClip attackSFX;
+    public AudioClip healSFX;
+    public AudioClip focusSFX;
+    public AudioClip defendSFX;
+    public AudioClip fleeSFX;
+    public AudioClip backSFX;
+    public float defaultVolume = 1;
 
     public bool isChoosingTarget = false;
 
@@ -36,8 +45,15 @@ public class RPGManager : MonoBehaviour
         SetupBattle();
     }
 
+    public void PlaySFX(AudioClip sfx)
+    {
+        sfxSource.pitch = UnityEngine.Random.Range(0.9f, 1.1f);
+        sfxSource.PlayOneShot(sfx);
+    }
+
     private void SetupBattle() //Setup Battle
     {
+        sfxSource.volume = defaultVolume;
         playerGroup.SetupPartyUI(playerUnits);
         enemyGroup.SetupEnemies(enemyUnits);
 
@@ -122,6 +138,8 @@ public class RPGManager : MonoBehaviour
         {
             int damage = attacker.damage;
             textBox.text = $"{attacker.Name} attacked!";
+            PlaySFX(attackSFX);
+            StartCoroutine(target.FlickerAlpha());
             yield return new WaitForSeconds(waitingTime);
             target.TakeDamage(damage);
             textBox.text = $"{target.Name} took {damage} damage, now it has {target.currentHP} HP.";
@@ -146,6 +164,8 @@ public class RPGManager : MonoBehaviour
             {
                 int damage = attacker.skill.skillAmount;
                 textBox.text = $"{attacker.Name} used {attacker.skill.skillName}!";
+                PlaySFX(attackSFX);
+                StartCoroutine(target.FlickerAlpha());
                 yield return new WaitForSeconds(waitingTime);
                 target.TakeDamage(damage);
                 textBox.text = $"{target.Name} took {damage} damage, now it has {target.currentHP} HP.";
@@ -154,6 +174,7 @@ public class RPGManager : MonoBehaviour
             }
             else if (attacker.skill.skillType == "heal")
             {
+                PlaySFX(healSFX);
                 int healPercentage = attacker.skill.skillAmount;
                 textBox.text = $"{attacker.Name} used {attacker.skill.skillName} and healed the party!";
                 yield return new WaitForSeconds(waitingTime);
@@ -183,7 +204,7 @@ public class RPGManager : MonoBehaviour
         Unit target = validTargets[UnityEngine.Random.Range(0, validTargets.Count)];
 
         textBox.text = enemy.Name + " attacks " + target.Name + " for " + target.TakeDamage(enemy.damage) + " damage.";
-
+        PlaySFX(attackSFX);
         yield return new WaitForSeconds(waitingTime);
 
         if (target.IsDead())
@@ -240,14 +261,18 @@ public class RPGManager : MonoBehaviour
         if (didPlayerFlee)
         {
             textBox.text = "You ran!";
+            PlaySFX(fleeSFX);
         }
         else if (currentState == BattleState.WIN)
         {
             textBox.text = "You Won!";
+            PlaySFX(fleeSFX);
         }
         else
         {
             textBox.text = "You Lost :(";
+            Time.timeScale = 1;
+            SceneManager.LoadScene(11);
         }
         LevelLoader.Instance.LoadNextLevel(12, DuskManager.instance.currentLocation);
     }    

@@ -7,13 +7,15 @@ public class ButtonPop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public float popSpeed = 10f;
     public GameObject highlightArrow;
     [SerializeField] private AudioClip hoverSound;
-    [SerializeField] private AudioSource audioSource;
+    private AudioSource audioSource;
 
     private Vector3 originalScale;
     private Vector3 targetScale;
 
     void Awake()
     {
+        audioSource = GetComponent<AudioSource>();
+        audioSource.volume = 0.2f;
         originalScale = transform.localScale;
         targetScale = originalScale;
 

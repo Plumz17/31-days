@@ -11,6 +11,12 @@ public class DialogueManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private DialogueUIManager uiManager;
     [SerializeField] private DialogueInputHandler inputHandler;
+    [Header("Typing SFX")]
+    [SerializeField] private AudioClip typingSFX;
+    [SerializeField] private int charSoundInterval = 2; // play every N characters
+    [SerializeField] private float pitchVariation = 0.05f; // optional
+    [SerializeField] private AudioSource typingAudioSource;
+    private int charsSinceLastSFX = 0;
 
     private PlayerMovement playerMovement;
  
@@ -149,15 +155,35 @@ public class DialogueManager : MonoBehaviour
     {
         uiManager.IsTyping = true;
         uiManager.SetDialogueText("");
+        charsSinceLastSFX = 0;
 
         foreach (char c in line)
         {
             uiManager.AppendDialogueChar(c);
+
+            if (!char.IsWhiteSpace(c))
+            {
+                charsSinceLastSFX++;
+                if (charsSinceLastSFX >= charSoundInterval)
+                {
+                    PlayTypingSFX();
+                    charsSinceLastSFX = 0;
+                }
+            }
             yield return new WaitForSeconds(uiManager.WordSpeed);
         }
 
         typingCoroutine = null;
         uiManager.IsTyping = false;
+    }
+
+    private void PlayTypingSFX()
+    {
+        if (typingSFX != null && typingAudioSource != null)
+        {
+            typingAudioSource.pitch = UnityEngine.Random.Range(1f - pitchVariation, 1f + pitchVariation);
+            typingAudioSource.PlayOneShot(typingSFX);
+        }
     }
 
     public void FinishTyping()

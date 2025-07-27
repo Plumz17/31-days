@@ -21,14 +21,6 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
             }
         }
 
-        StartCoroutine(StartCutscene());
-    }
-
-    private IEnumerator StartCutscene()
-    {
-        yield return new WaitForSeconds(1f); // Optional delay
-
-
         if (npcToActivate != null)
         {
             npcToActivate.SetActive(true);
@@ -39,6 +31,13 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
             if (dialogueTrigger == null)
                 dialogueTrigger = npcToActivate.GetComponentInChildren<DialogueTrigger>();
         }
+
+        StartCoroutine(StartCutscene());
+    }
+
+    private IEnumerator StartCutscene()
+    {
+        yield return new WaitForSeconds(1f); // Optional delay
 
         if (targetTransform != null)
         {

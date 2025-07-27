@@ -969,6 +969,10 @@ PrefabInstance:
       value: 8/4_Gate_1
       objectReference: {fileID: 0}
     - target: {fileID: 4635517392453654203, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: m_InitialState
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635517392453654203, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: m_PlayableAsset
       value: 
       objectReference: {fileID: 11400000, guid: 916a351a5debf9f49b6387d998cf1f90, type: 2}
@@ -1057,7 +1061,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   npcToActivate: {fileID: 4418670720055910662}
-  stopDistance: 2
+  stopDistance: 4
 --- !u!320 &2037125161 stripped
 PlayableDirector:
   m_CorrespondingSourceObject: {fileID: 4635517392453654203, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}

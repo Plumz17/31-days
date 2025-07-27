@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: Satpam8_4
+  m_Name: 3
   m_EditorClassIdentifier: 
   characterName: Satpam
   characterPortrait: {fileID: 0}
@@ -18,7 +18,8 @@ MonoBehaviour:
   advanceTimeFlag: 0
   saveDataFlag: 0
   newMemberFlag: {fileID: 0}
+  onlyPlayedOnce: 1
   dialogueLines:
-  - hey kid!
-  - haven't seen you around here... are you new?
-  nextNode: {fileID: 0}
+  - Thought so... Name's Sugeng. Security. If you have questions or trouble. come
+    to me.
+  nextNode: {fileID: 11400000, guid: 806de4c5e8d60dc4fafd54e86f6937fe, type: 2}

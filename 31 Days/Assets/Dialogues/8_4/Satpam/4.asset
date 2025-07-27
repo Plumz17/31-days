@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: 4
+  m_EditorClassIdentifier: 
+  characterName: Satpam
+  characterPortrait: {fileID: 0}
+  levelUpFlag: 0
+  advanceTimeFlag: 0
+  saveDataFlag: 0
+  newMemberFlag: {fileID: 0}
+  onlyPlayedOnce: 1
+  dialogueLines:
+  - Hm? Quiet type huh? Name's Sugeng. Security. Just stay out of trouble...
+  nextNode: {fileID: 11400000, guid: 806de4c5e8d60dc4fafd54e86f6937fe, type: 2}

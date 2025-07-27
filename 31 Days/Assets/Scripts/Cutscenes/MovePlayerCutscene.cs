@@ -3,13 +3,22 @@ using System.Collections;
 
 public class MovePlayerCutscene : MonoBehaviour
 {
-    public PlayerMovement player;
+    private PlayerMovement player;
     public Transform targetTransform;
     public ItemPickUp itemToOpen; 
     public float stopDistance = 0.1f;
 
     public void PlayCutscene()
     {
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.GetComponent<PlayerMovement>();
+            }
+        }
+
         StartCoroutine(StartCutscene());
     }
 

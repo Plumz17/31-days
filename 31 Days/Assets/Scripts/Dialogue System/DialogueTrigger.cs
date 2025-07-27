@@ -96,10 +96,28 @@ public class DialogueTrigger : MonoBehaviour
         if (DialogueManager.instance != null && DialogueManager.instance.IsActive)
             DialogueManager.instance.EndDialogue();
     }
-    
+
     private void OnDialogueEnded()
     {
         exclamationMark?.SetVisible(true);
         DialogueManager.instance.OnDialogueEnded -= OnDialogueEnded; // Unsubscribe!
+    }
+    
+    public void TriggerDialogue()
+    {
+        if (startingNode == null) return;
+
+        var dialogueManager = DialogueManager.instance;
+        if (dialogueManager == null) return;
+
+        if (!dialogueManager.IsActive)
+        {
+            if (facePlayerOnTalk && playerTransform != null)
+                FaceNPCToPlayer();
+
+            exclamationMark?.SetVisible(false);
+            dialogueManager.StartDialogue(startingNode);
+            dialogueManager.OnDialogueEnded += OnDialogueEnded;
+        }
     }
 }

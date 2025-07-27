@@ -1,16 +1,70 @@
 using UnityEngine;
+using System.Collections;
 
 public class MovePlayerAndTalkCutscene : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private PlayerMovement player;
+    private Transform targetTransform;
+    private DialogueTrigger dialogueTrigger; // Optional: triggers dialogue
+    public GameObject npcToActivate; // NPC that only appears during cutscene
+    public float stopDistance = 0.1f;
+
+    public void PlayCutscene()
     {
-        
+        Debug.Log("Cutscene Played");
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.GetComponent<PlayerMovement>();
+            }
+        }
+
+        StartCoroutine(StartCutscene());
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator StartCutscene()
     {
-        
+        yield return new WaitForSeconds(1f); // Optional delay
+
+
+        if (npcToActivate != null)
+        {
+            npcToActivate.SetActive(true);
+
+            if (targetTransform == null)
+                targetTransform = npcToActivate.transform;
+
+            if (dialogueTrigger == null)
+                dialogueTrigger = npcToActivate.GetComponentInChildren<DialogueTrigger>();
+        }
+
+        if (targetTransform != null)
+        {
+            player.WalkToPosition(targetTransform.position, stopDistance);
+        }
+        else
+        {
+            Debug.LogWarning("Target Transform is not assigned.");
+            yield break;
+        }
+
+        // Wait until player reaches destination
+        while (Vector2.Distance(player.transform.position, targetTransform.position) > stopDistance)
+        {
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(0.2f);
+
+        Debug.Log(dialogueTrigger != null);
+        // Trigger dialogue if available
+        if (dialogueTrigger != null)
+        {
+            dialogueTrigger.TriggerDialogue(); // Your dialogue system call
+        }
+
+        //npcToActivate.SetActive(false);
     }
 }

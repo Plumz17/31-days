@@ -475,6 +475,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3309360165964216468, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+      propertyPath: cutscenes.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309360165964216468, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+      propertyPath: cutscenes.Array.data[0].timeline
+      value: 
+      objectReference: {fileID: 2037125161}
+    - target: {fileID: 3309360165964216468, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+      propertyPath: cutscenes.Array.data[0].cutsceneID
+      value: 8/4_Gate_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3309360165964216468, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+      propertyPath: cutscenes.Array.data[0].playOnStart
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5454548630777366945, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
       propertyPath: m_Name
       value: CutsceneManager
@@ -952,6 +968,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: 8/4_Gate_1
       objectReference: {fileID: 0}
+    - target: {fileID: 4635517392453654203, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: m_PlayableAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 916a351a5debf9f49b6387d998cf1f90, type: 2}
+    - target: {fileID: 4635517392453654203, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: m_SceneBindings.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4635517392453654203, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: m_SceneBindings.Array.data[1].key
+      value: 
+      objectReference: {fileID: 7539386235957101226, guid: 916a351a5debf9f49b6387d998cf1f90, type: 2}
+    - target: {fileID: 4635517392453654203, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: m_SceneBindings.Array.data[1].value
+      value: 
+      objectReference: {fileID: 2037125162}
     - target: {fileID: 5288989798725444573, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.89735
@@ -999,8 +1031,68 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2657027205402652476, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2037125160}
+    - targetCorrespondingSourceObject: {fileID: 2657027205402652476, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2037125162}
   m_SourcePrefab: {fileID: 100100000, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+--- !u!1 &2037125159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2657027205402652476, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+  m_PrefabInstance: {fileID: 2037125158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2037125160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037125159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c7ca68bf2f3ed48be969b861adb73c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npcToActivate: {fileID: 4418670720055910662}
+  stopDistance: 2
+--- !u!320 &2037125161 stripped
+PlayableDirector:
+  m_CorrespondingSourceObject: {fileID: 4635517392453654203, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+  m_PrefabInstance: {fileID: 2037125158}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2037125162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2037125159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 3b7169af9dcbc1347bb3abbfe36e9176, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2037125160}
+          m_TargetAssemblyTypeName: MovePlayerAndTalkCutscene, Assembly-CSharp
+          m_MethodName: PlayCutscene
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &2131955853
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1103,9 +1195,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 998879889}
     m_Modifications:
+    - target: {fileID: 3464688313094851038, guid: 036e1092f0e935d408c00e479e35c837, type: 3}
+      propertyPath: startingNode
+      value: 
+      objectReference: {fileID: 11400000, guid: 2a1d4696b937bee499bfceca532eaff3, type: 2}
     - target: {fileID: 5776943358827814299, guid: 036e1092f0e935d408c00e479e35c837, type: 3}
       propertyPath: m_Name
-      value: Satpam
+      value: Satpam 8/4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5776943358827814299, guid: 036e1092f0e935d408c00e479e35c837, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8205728998899932890, guid: 036e1092f0e935d408c00e479e35c837, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1155,6 +1255,11 @@ PrefabInstance:
 --- !u!4 &4418670720055910661 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8205728998899932890, guid: 036e1092f0e935d408c00e479e35c837, type: 3}
+  m_PrefabInstance: {fileID: 4418670720055910660}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4418670720055910662 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5776943358827814299, guid: 036e1092f0e935d408c00e479e35c837, type: 3}
   m_PrefabInstance: {fileID: 4418670720055910660}
   m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807

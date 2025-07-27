@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5454548630777366945
+--- !u!1 &7656753035204136627
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1573387710949737197}
-  - component: {fileID: 3309360165964216468}
+  - component: {fileID: 6792525631361162251}
+  - component: {fileID: 3547725665319863344}
   m_Layer: 0
   m_Name: CutsceneManager
   m_TagString: Untagged
@@ -17,34 +17,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1573387710949737197
+--- !u!4 &6792525631361162251
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5454548630777366945}
+  m_GameObject: {fileID: 7656753035204136627}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1078.1213, y: 175.64641, z: 0}
+  m_LocalPosition: {x: -3.89735, y: 2.31692, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3309360165964216468
+--- !u!114 &3547725665319863344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5454548630777366945}
+  m_GameObject: {fileID: 7656753035204136627}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 04a407cc6c56e3043b92cdf8e0f351a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   cutscenes:
-  - cutsceneID: 4/8_room_1
+  - cutsceneID: 8/4_Gate_1
     timeline: {fileID: 0}
     playOnStart: 1

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
   m_Name: 2
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Satpam
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0

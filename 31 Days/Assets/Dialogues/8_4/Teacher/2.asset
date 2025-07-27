@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
-  m_Name: 6
+  m_Name: 2
   m_EditorClassIdentifier: 
-  characterName: Sugeng
+  characterName: Indah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
@@ -20,7 +20,9 @@ MonoBehaviour:
   newMemberFlag: {fileID: 0}
   onlyPlayedOnce: 1
   options:
-  - optionText: No Clue.
-    nextNode: {fileID: 11400000, guid: 6af3f00ba5a89d047844b2816ce3b0b9, type: 2}
-  - optionText: 10B, I think?
-    nextNode: {fileID: 11400000, guid: be2cd815b49316b43a96beacd784ce62, type: 2}
+  - optionText: "Yes, ma\u2019am."
+    nextNode: {fileID: 11400000, guid: 45e00bf8463044940b0980fd1837cbb7, type: 2}
+  - optionText: Satria. Just transferred.
+    nextNode: {fileID: 11400000, guid: a931e91624438d2449e654c8217a4547, type: 2}
+  - optionText: ...Are you okay?
+    nextNode: {fileID: 11400000, guid: 4fccc05e54d205a4fbffd00479be9eea, type: 2}

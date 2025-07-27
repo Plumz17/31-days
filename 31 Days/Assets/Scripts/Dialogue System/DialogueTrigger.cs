@@ -13,6 +13,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private Transform playerTransform;
     public ExclamationMark exclamationMark;
+    public GameObject objectToAppearAtTheEnd; //For Cutscenes
     private bool playerIsClose = false;
     private bool hasPlayedOnce = false;
 
@@ -110,6 +111,11 @@ public class DialogueTrigger : MonoBehaviour
         else
         {
             exclamationMark?.SetVisible(true);
+        }
+
+        if (objectToAppearAtTheEnd != null)
+        {
+            objectToAppearAtTheEnd.SetActive(true);
         }
     }
     

@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -113,10 +114,10 @@ public class PlayerMovement : MonoBehaviour
     private void PlayFootstep()
     {
         if (footstepClip != null && audioSource != null)
-            {
-                audioSource.pitch = Random.Range(0.9f, 1.1f);
-                audioSource.PlayOneShot(footstepClip);
-            }
+        {
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(footstepClip);
+        }
     }
 
     public void PlayEnemySFX()
@@ -134,5 +135,31 @@ public class PlayerMovement : MonoBehaviour
         {
             calendar.SetCalendarUI();
         }
+    }
+    
+    public void WalkToPosition(Vector2 targetPosition, float stopDistance = 0.1f)
+    {
+        StartCoroutine(WalkCoroutine(targetPosition, stopDistance));
+    }
+
+    private IEnumerator WalkCoroutine(Vector2 targetPosition, float stopDistance)
+    {
+        canMove = false; // Disable player input
+
+        while (Vector2.Distance(transform.position, targetPosition) > stopDistance)
+        {
+            float direction = Mathf.Sign(targetPosition.x - transform.position.x);
+            movement = direction;
+            anim.SetBool("isMoving", true);
+
+            if ((direction > 0 && !isFacingRight) || (direction < 0 && isFacingRight))
+                Flip();
+
+            yield return null;
+        }
+
+        movement = 0;
+        anim.SetBool("isMoving", false);
+        canMove = true; // Re-enable player input
     }
 }

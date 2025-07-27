@@ -62,6 +62,14 @@ public class ItemPickUp : MonoBehaviour
 
         playerIsClose = false;
         exclamationMark?.SetIsClose(false);
+    }
 
+    public void ForceOpenItem()
+    {
+        if (!itemCanvas.gameObject.activeInHierarchy)
+        {
+            exclamationMark?.SetVisible(false);
+            itemCanvas.gameObject.SetActive(true);
+        }
     }
 }

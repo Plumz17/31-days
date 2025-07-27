@@ -14,6 +14,7 @@ public class DialogueUIManager : MonoBehaviour
     [SerializeField] private Image dialogueImageUI;
     [SerializeField] private Sprite dialogueImage;
     [SerializeField] private Sprite itemImage;
+    [SerializeField] private Sprite portraitlessDialogueImage;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject choicePanel;
@@ -37,13 +38,14 @@ public class DialogueUIManager : MonoBehaviour
     {
         dialoguePanel.SetActive(true);
         choicePanel.SetActive(false);
-        bool hasCharacter = !string.IsNullOrEmpty(node.characterName) || node.characterPortrait != null;
+        bool hasCharacterName = !string.IsNullOrEmpty(node.characterName);
+        bool hasCharacterPortrait = node.characterPortrait != null;
 
-        characterNameText.gameObject.SetActive(hasCharacter);
-        characterPortrait.gameObject.SetActive(hasCharacter);
-        dialogueCircle.gameObject.SetActive(hasCharacter);
+        characterNameText.gameObject.SetActive(hasCharacterName);
+        characterPortrait.gameObject.SetActive(hasCharacterPortrait);
+        dialogueCircle.gameObject.SetActive(hasCharacterPortrait);
 
-        if (hasCharacter)
+        if (hasCharacterPortrait) //First Possibility: Has Char Portrait and Char Name
         {
             if (characterNameText != null)
                 characterNameText.text = node.characterName;
@@ -54,13 +56,31 @@ public class DialogueUIManager : MonoBehaviour
             // Use dialogue image if character exists
             dialogueImageUI.sprite = dialogueImage;
             dialogueImageUI.SetNativeSize();
+            Vector2 anchoredPos = dialogueImageUI.rectTransform.anchoredPosition;
+            anchoredPos.y = 250f;
+            dialogueImageUI.rectTransform.anchoredPosition = anchoredPos;
         }
-
-        else
+        else if (hasCharacterName) //Second Possibility: Has Char Name
         {
-            // Use item image (or narration image)
+            if (characterNameText != null)
+                characterNameText.text = node.characterName;
+
+            // Use dialogue image if character exists
+            dialogueImageUI.sprite = portraitlessDialogueImage;
+            dialogueImageUI.SetNativeSize();
+
+            Vector2 anchoredPos = dialogueImageUI.rectTransform.anchoredPosition;
+            anchoredPos.y = 228f;
+            dialogueImageUI.rectTransform.anchoredPosition = anchoredPos;
+        }
+        else //Third Possibility: Has none, a.k.a item
+        {
             dialogueImageUI.sprite = itemImage;
             dialogueImageUI.SetNativeSize();
+
+            Vector2 anchoredPos = dialogueImageUI.rectTransform.anchoredPosition;
+            anchoredPos.y = 250f;
+            dialogueImageUI.rectTransform.anchoredPosition = anchoredPos;
         }
     }
 

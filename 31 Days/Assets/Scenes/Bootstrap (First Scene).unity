@@ -1195,6 +1195,7 @@ MonoBehaviour:
     prevPosition: {x: -17, y: 2.125, z: 0}
     playerConnections: []
     partyMembers: []
+    completedCutscenes: []
   loadedFromSave: 0
   protagCharacterData: {fileID: 11400000, guid: 4ef46813109fa154f8611425ce669f96, type: 2}
 --- !u!1 &444636453
@@ -1423,6 +1424,7 @@ MonoBehaviour:
   dialogueImageUI: {fileID: 1854453334}
   dialogueImage: {fileID: 5270489816147972353, guid: bc5c54c75f92c4e439c07d5ade4e8418, type: 3}
   itemImage: {fileID: 6665288920351507323, guid: 7b5385d051e45ad4498ad80216e002d3, type: 3}
+  portraitlessDialogueImage: {fileID: 8681143794451434230, guid: f1a948bb6c7fb2f459447ee47b0a46ef, type: 3}
   choicePanel: {fileID: 1307999862}
   choiceBoxes:
   - {fileID: 1674847978}
@@ -4761,6 +4763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7b4ab5feea7f945a6d638642fda493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPause: 1
   pauseMenuUI: {fileID: 444636453}
   saveButton: {fileID: 1156046959}
   controlsGuide: {fileID: 1696006354}

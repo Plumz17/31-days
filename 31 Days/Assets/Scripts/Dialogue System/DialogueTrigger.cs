@@ -14,6 +14,7 @@ public class DialogueTrigger : MonoBehaviour
     private Transform playerTransform;
     public ExclamationMark exclamationMark;
     private bool playerIsClose = false;
+    private bool hasPlayedOnce = false;
 
     private InputActions inputActions;
 
@@ -38,7 +39,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        if (!playerIsClose || startingNode == null)
+        if (!playerIsClose || startingNode == null || (startingNode.onlyPlayedOnce && hasPlayedOnce))
             return;
 
         var dialogueManager = DialogueManager.instance;
@@ -99,13 +100,23 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnDialogueEnded()
     {
-        exclamationMark?.SetVisible(true);
-        DialogueManager.instance.OnDialogueEnded -= OnDialogueEnded; // Unsubscribe!
+        DialogueManager.instance.OnDialogueEnded -= OnDialogueEnded;
+
+        if (startingNode.onlyPlayedOnce)
+        {
+            hasPlayedOnce = true;
+            exclamationMark?.SetVisible(false);
+        }
+        else
+        {
+            exclamationMark?.SetVisible(true);
+        }
     }
     
     public void TriggerDialogue()
     {
-        if (startingNode == null) return;
+        if (startingNode == null || (startingNode.onlyPlayedOnce && hasPlayedOnce))
+            return;
 
         var dialogueManager = DialogueManager.instance;
         if (dialogueManager == null) return;

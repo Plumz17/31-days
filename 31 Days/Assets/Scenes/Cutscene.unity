@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -6149121266646364400, guid: 04e5d57386cc1f04c9c47cba6a0af749, type: 3}
+  m_Sprite: {fileID: -7244093059430438775, guid: 38aa3440950e7c4419d09b53b51af653, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 227426771}
-  newSprite: {fileID: 0}
+  newSprite: {fileID: -4769503426150032792, guid: 8bc45fe6a83c8ad4eb0701f78a5d7358, type: 3}
 --- !u!1 &479178850
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,83 +731,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!1 &679573512
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 679573513}
-  - component: {fileID: 679573515}
-  - component: {fileID: 679573514}
-  m_Layer: 0
-  m_Name: Image 1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &679573513
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679573512}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1303475612}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &679573514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679573512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals:
-    - {fileID: 11400000, guid: 014b66d2800259c4a8ae81f6da41af8e, type: 2}
-    m_Events:
-    - m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 679573515}
-          m_TargetAssemblyTypeName: ImageSetter, Assembly-CSharp
-          m_MethodName: SetImage
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &679573515
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 679573512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bab3c1d8cd6cb74eb9f0c60b7a43a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetImage: {fileID: 227426771}
-  newSprite: {fileID: 0}
 --- !u!1 &807214032
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,8 +779,6 @@ PlayableDirector:
     value: {fileID: 670930076}
   - key: {fileID: 4892297921343365652, guid: f7eca527e8ee4bb489848476f477d0dc, type: 2}
     value: {fileID: 227426773}
-  - key: {fileID: 4905140254832101288, guid: f7eca527e8ee4bb489848476f477d0dc, type: 2}
-    value: {fileID: 679573514}
   - key: {fileID: 1889968578287951515, guid: f7eca527e8ee4bb489848476f477d0dc, type: 2}
     value: {fileID: 1953740321}
   - key: {fileID: 9221043977090939315, guid: f7eca527e8ee4bb489848476f477d0dc, type: 2}
@@ -1084,7 +1005,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 679573513}
   - {fileID: 1859835366}
   - {fileID: 1953740320}
   - {fileID: 335842502}
@@ -1453,8 +1373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54a30bd0900cbf41bdbc136688b7492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeCanvasGroup: {fileID: 670930077}
-  fadeDuration: 5
   nextSceneName: Room
 --- !u!4 &1833314895
 Transform:
@@ -1577,7 +1495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 227426771}
-  newSprite: {fileID: 0}
+  newSprite: {fileID: -5453799318760675382, guid: 876d2eec32f77bc4d8a9b34e5fcd5861, type: 3}
 --- !u!1 &1953740319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1654,7 +1572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 227426771}
-  newSprite: {fileID: 0}
+  newSprite: {fileID: 3129370254906604291, guid: 2c3ad47854b8a974eab90fc95d58c7e4, type: 3}
 --- !u!1 &1976812512
 GameObject:
   m_ObjectHideFlags: 0

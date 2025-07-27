@@ -236,11 +236,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 149712585}
   m_SourcePrefab: {fileID: 100100000, guid: a8270b637abcb094786b9abf16380f12, type: 3}
---- !u!95 &149712583 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 7635987258714419877, guid: a8270b637abcb094786b9abf16380f12, type: 3}
-  m_PrefabInstance: {fileID: 149712582}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &149712584 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3176680076276312277, guid: a8270b637abcb094786b9abf16380f12, type: 3}
@@ -653,11 +648,7 @@ PlayableDirector:
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 5783068150957168468, guid: d08249b338086f2408bd2927e7fa6f55, type: 2}
-    value: {fileID: 149712583}
-  - key: {fileID: -8148071490502827222, guid: d08249b338086f2408bd2927e7fa6f55, type: 2}
-    value: {fileID: 149712585}
+  m_SceneBindings: []
   m_ExposedReferences:
     m_References: []
 --- !u!1 &719806135

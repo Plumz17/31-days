@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Random = UnityEngine.Random;
+using System.Collections;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private bool canMove = true;
     private SpriteRenderer spriteRenderer;
     private CalenderManager calendar;
+    private bool isAutoMoving = false;
 
     [Header("Footstep Settings")]
     public AudioSource audioSource;
@@ -113,10 +115,10 @@ public class PlayerMovement : MonoBehaviour
     private void PlayFootstep()
     {
         if (footstepClip != null && audioSource != null)
-            {
-                audioSource.pitch = Random.Range(0.9f, 1.1f);
-                audioSource.PlayOneShot(footstepClip);
-            }
+        {
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(footstepClip);
+        }
     }
 
     public void PlayEnemySFX()
@@ -134,5 +136,31 @@ public class PlayerMovement : MonoBehaviour
         {
             calendar.SetCalendarUI();
         }
+    }
+    
+    public IEnumerator WalkTo(Vector2 destination, Action onArrive = null)
+    {
+        SetCanMove(false);
+        isAutoMoving = true;
+
+        float threshold = 0.1f;
+        anim.SetBool("isMoving", true);
+
+        while (Vector2.Distance(transform.position, destination) > threshold)
+        {
+            Vector2 direction = (destination - (Vector2)transform.position).normalized;
+            rb.MovePosition(rb.position + direction * moveSpeed * Time.deltaTime);
+
+            if ((direction.x > 0 && !isFacingRight) || (direction.x < 0 && isFacingRight))
+            {
+                Flip();
+            }
+
+            yield return null;
+        }
+
+        anim.SetBool("isMoving", false);
+        rb.linearVelocity = Vector2.zero;
+        onArrive?.Invoke();
     }
 }

@@ -51,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         movement = playerInput.Player.Move.ReadValue<float>();
+        if (anim.runtimeAnimatorController == null)
+            Debug.Log("Test");
         anim.SetBool("isMoving", movement != 0);
 
         if ((movement > 0 && !isFacingRight) || (movement < 0 && isFacingRight))

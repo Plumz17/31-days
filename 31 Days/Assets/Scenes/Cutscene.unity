@@ -1454,7 +1454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeCanvasGroup: {fileID: 670930077}
-  fadeDuration: 1
+  fadeDuration: 5
   nextSceneName: Room
 --- !u!4 &1833314895
 Transform:

@@ -18,7 +18,7 @@ public class PlayerData
     public int level = 1;
     public int money = 0;
 
-    public string prevScene = "Room";
+    public string prevScene = "Cutscene";
     public Vector3 prevPosition = new Vector3(-17, 2.125f, 0);
 
 

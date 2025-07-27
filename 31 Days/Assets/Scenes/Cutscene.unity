@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -7244093059430438775, guid: 38aa3440950e7c4419d09b53b51af653, type: 3}
+  m_Sprite: {fileID: -6149121266646364400, guid: 04e5d57386cc1f04c9c47cba6a0af749, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -373,7 +373,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 227426771}
-  newSprite: {fileID: -4769503426150032792, guid: 8bc45fe6a83c8ad4eb0701f78a5d7358, type: 3}
+  newSprite: {fileID: 0}
 --- !u!1 &479178850
 GameObject:
   m_ObjectHideFlags: 0
@@ -1453,6 +1453,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d54a30bd0900cbf41bdbc136688b7492, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fadeCanvasGroup: {fileID: 670930077}
+  fadeDuration: 5
   nextSceneName: Room
 --- !u!4 &1833314895
 Transform:
@@ -1575,7 +1577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 227426771}
-  newSprite: {fileID: -5453799318760675382, guid: 876d2eec32f77bc4d8a9b34e5fcd5861, type: 3}
+  newSprite: {fileID: 0}
 --- !u!1 &1953740319
 GameObject:
   m_ObjectHideFlags: 0
@@ -1652,7 +1654,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetImage: {fileID: 227426771}
-  newSprite: {fileID: 3129370254906604291, guid: 2c3ad47854b8a974eab90fc95d58c7e4, type: 3}
+  newSprite: {fileID: 0}
 --- !u!1 &1976812512
 GameObject:
   m_ObjectHideFlags: 0

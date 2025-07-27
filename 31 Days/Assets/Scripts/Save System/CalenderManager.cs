@@ -39,15 +39,8 @@ public class CalenderManager : MonoBehaviour
         int dayPassed = totalBlocks / 4;
         int newBlock = totalBlocks % 4;
         currentTimeOfDay = (timeOfDay)newBlock;
-        AdvanceDay(dayPassed);
 
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Time Dependant");
-        foreach (GameObject obj in objs)
-        {
-            TimeDependantActivator activator = obj.GetComponent<TimeDependantActivator>();
-            if (activator != null)
-                activator.Refresh();
-        }
+        AdvanceDay(dayPassed);
     }
 
     public void AdvanceDay(int days = 1)

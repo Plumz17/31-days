@@ -5,7 +5,7 @@ public class StoryManager : MonoBehaviour
 {
     public static StoryManager instance;
 
-    private HashSet<string> completedCutscenes = new HashSet<string>();
+    public HashSet<string> completedCutscenes = new HashSet<string>();
 
     void Awake()
     {
@@ -21,11 +21,29 @@ public class StoryManager : MonoBehaviour
 
     public void MarkCutscenePlayed(string cutsceneID)
     {
-        completedCutscenes.Add(cutsceneID);
+        if (!completedCutscenes.Contains(cutsceneID))
+        {
+            completedCutscenes.Add(cutsceneID);
+            PlayerDataManager.instance.currentData.completedCutscenes.Add(cutsceneID); 
+        }
     }
 
     public bool HasCutscenePlayed(string cutsceneID)
     {
         return completedCutscenes.Contains(cutsceneID);
+    }
+
+    public void LoadCutscenesFromPlayerData()
+    {
+        completedCutscenes = new HashSet<string>(PlayerDataManager.instance.currentData.completedCutscenes);
+    }
+
+    public void PrintCompletedCutscenes()
+    {
+        Debug.Log("Completed Cutscenes:");
+        foreach (var cutsceneID in completedCutscenes)
+        {
+            Debug.Log(cutsceneID);
+        }
     }
 }

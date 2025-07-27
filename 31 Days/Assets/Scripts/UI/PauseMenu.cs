@@ -10,6 +10,7 @@ public class PauseMenu : MonoBehaviour
     public static PauseMenu instance;
 
     public InputActions playerInput;
+    public bool canPause = true;
     public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
     public Button saveButton;
@@ -38,6 +39,7 @@ public class PauseMenu : MonoBehaviour
 
     void Update()
     {
+        if (!canPause) return;
         if (SceneManager.GetActiveScene().name == "Main Menu" || SceneManager.GetActiveScene().name.Contains("Cutscene")) return;
         if (playerInput.UI.Esc.triggered && !isControlUp)
         {
@@ -113,9 +115,14 @@ public class PauseMenu : MonoBehaviour
         CalenderManager.instance.AdvanceTimeBlock();
     }
 
-    public void SetCanPause(bool set)
+    public void SetCanSave(bool set)
     {
         saveButton.gameObject.SetActive(set);
+    }
+
+    public void SetCanPause(bool set)
+    {
+        canPause = set;
     }
 
     private void PlayClickSFX()

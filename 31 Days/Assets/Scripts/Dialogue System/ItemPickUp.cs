@@ -1,6 +1,7 @@
 using Microsoft.Unity.VisualStudio.Editor;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 [RequireComponent(typeof(Collider2D))]
 public class ItemPickUp : MonoBehaviour

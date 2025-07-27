@@ -33,7 +33,7 @@ public class DuskManager : MonoBehaviour
 
         if (!duskSceneNames.Contains(scene.name))
         {
-            PauseMenu.instance.SetCanPause(true);
+            PauseMenu.instance.SetCanSave(true);
             defeatedEnemies.Clear();
             Destroy(gameObject);
         }
@@ -44,7 +44,7 @@ public class DuskManager : MonoBehaviour
             {
                 partyData.Add(Instantiate(charData));
             }
-            PauseMenu.instance.SetCanPause(false);
+            PauseMenu.instance.SetCanSave(false);
         }
     }
     

@@ -31,6 +31,8 @@ public static class SaveData
         string json = File.ReadAllText(path);
         PlayerDataManager.instance.currentData = JsonUtility.FromJson<PlayerData>(json);
 
+        StoryManager.instance.LoadCutscenesFromPlayerData();
+
         LoadPrevScene();
 
         CalenderManager.instance.LoadFromPlayerData(PlayerDataManager.instance.currentData); //Save Calendar State

@@ -45,6 +45,7 @@ public class CutsceneManager : MonoBehaviour
             }
         }
 
+        StoryManager.instance.PrintCompletedCutscenes();
         // Re-enable player input here if needed
     }
 

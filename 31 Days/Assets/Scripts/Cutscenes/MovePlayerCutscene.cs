@@ -8,7 +8,7 @@ public class MovePlayerCutscene : MonoBehaviour
     public ItemPickUp itemToOpen; 
     public float stopDistance = 0.1f;
 
-    private void Start()
+    public void PlayCutscene()
     {
         StartCoroutine(StartCutscene());
     }

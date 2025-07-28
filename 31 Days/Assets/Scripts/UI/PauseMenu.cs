@@ -81,6 +81,11 @@ public class PauseMenu : MonoBehaviour
         SaveData.Save();
     }
 
+    public void OnDebugButtonClick()
+    {
+        StoryManager.instance.PrintCompletedCutscenes();
+    }
+
     public void OnResumeButtonClick()
     {
         PlayCancelSFX();

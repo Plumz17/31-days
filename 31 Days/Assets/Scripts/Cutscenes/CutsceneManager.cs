@@ -26,7 +26,12 @@ public class CutsceneManager : MonoBehaviour
             if (!StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID))
             {
                 cutscene.rootObject.SetActive(true);
-                break;
+                if (cutscene.playOnStart)
+                {
+                    Debug.Log($"Playing cutscene on start: {cutscene.cutsceneID}");
+                    PlayCutscene(cutscene);
+                }
+                break; // Only one cutscene per start
             }
         }
     }

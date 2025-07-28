@@ -23,8 +23,8 @@ MonoBehaviour:
   m_Clips: []
   m_Markers:
     m_Objects:
-    - {fileID: -4665188826362609860}
---- !u!114 &-4665188826362609860
+    - {fileID: -566346026809526386}
+--- !u!114 &-566346026809526386
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,7 +38,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Time: 0
   m_Retroactive: 0
-  m_EmitOnce: 1
+  m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 3b7169af9dcbc1347bb3abbfe36e9176, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:

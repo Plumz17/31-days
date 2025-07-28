@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CutsceneTrigger : MonoBehaviour
 {
+    public MovePlayerAndTalkCutscene cutsceneScript;
     public string cutsceneID;
 
     void Start()
@@ -14,16 +15,12 @@ public class CutsceneTrigger : MonoBehaviour
     {
         if (!other.CompareTag("Player")) return;
 
-        CutsceneManager cutsceneManager = FindFirstObjectByType<CutsceneManager>();
-        if (cutsceneManager != null)
+        if (cutsceneScript != null)
         {
-            cutsceneManager.PlayCutsceneByID(cutsceneID);
+            cutsceneScript.PlayCutscene();
             StoryManager.instance.MarkCutscenePlayed(cutsceneID);
-            gameObject.SetActive(false); // Disable trigger after play
-        }
-        else
-        {
-            Debug.LogWarning("CutsceneManager not found in scene.");
+
+            gameObject.SetActive(false);
         }
     }
 }

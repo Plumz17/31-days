@@ -10,6 +10,9 @@ public class CutsceneManager : MonoBehaviour
         public PlayableDirector timeline;
         public bool playOnStart;
         public GameObject rootObject;
+
+        [Header("Optional Prerequisite")]
+        public string requiredCutsceneID;
     }
 
     public CutsceneData[] cutscenes;
@@ -23,16 +26,24 @@ public class CutsceneManager : MonoBehaviour
 
         foreach (var cutscene in cutscenes)
         {
-            if (!StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID))
+            // Skip if already played
+            if (StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID))
+                continue;
+
+            // Check prerequisite if set
+            if (!string.IsNullOrEmpty(cutscene.requiredCutsceneID) &&
+                !StoryManager.instance.HasCutscenePlayed(cutscene.requiredCutsceneID))
+                continue;
+
+            cutscene.rootObject.SetActive(true);
+
+            if (cutscene.playOnStart)
             {
-                cutscene.rootObject.SetActive(true);
-                if (cutscene.playOnStart)
-                {
-                    Debug.Log($"Playing cutscene on start: {cutscene.cutsceneID}");
-                    PlayCutscene(cutscene);
-                }
-                break; // Only one cutscene per start
+                Debug.Log($"Playing cutscene on start: {cutscene.cutsceneID}");
+                PlayCutscene(cutscene);
             }
+
+            break;
         }
     }
 

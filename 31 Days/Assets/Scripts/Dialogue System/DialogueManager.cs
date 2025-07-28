@@ -16,9 +16,11 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private int charSoundInterval = 2; // play every N characters
     [SerializeField] private float pitchVariation = 0.05f; // optional
     [SerializeField] private AudioSource typingAudioSource;
+    public BaseNode LastPlayedNode { get; private set; }
     private int charsSinceLastSFX = 0;
 
     private PlayerMovement playerMovement;
+    
  
     public DialogueUIManager UI => uiManager;
     public DialogueInputHandler Input => inputHandler;
@@ -61,6 +63,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(BaseNode node)
     {
+        LastPlayedNode = null;
         currentNode = node;
         currentLineIndex = 0;
 
@@ -115,6 +118,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
+                LastPlayedNode = currentNode;
                 EndDialogue();
             }
 
@@ -138,6 +142,7 @@ public class DialogueManager : MonoBehaviour
             }
             else
             {
+                LastPlayedNode = currentNode;
                 EndDialogue();
             }
         }

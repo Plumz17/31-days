@@ -40,7 +40,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        if (!playerIsClose || startingNode == null || (startingNode.onlyPlayedOnce && hasPlayedOnce))
+        if (!playerIsClose || startingNode == null || hasPlayedOnce)
             return;
 
         var dialogueManager = DialogueManager.instance;
@@ -103,7 +103,9 @@ public class DialogueTrigger : MonoBehaviour
     {
         DialogueManager.instance.OnDialogueEnded -= OnDialogueEnded;
 
-        if (startingNode.onlyPlayedOnce)
+        var lastNode = DialogueManager.instance.LastPlayedNode;
+
+        if (lastNode != null && lastNode.onlyPlayedOnce)
         {
             hasPlayedOnce = true;
             exclamationMark?.SetVisible(false);

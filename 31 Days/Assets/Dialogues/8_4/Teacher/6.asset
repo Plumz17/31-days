@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Name: 6
   m_EditorClassIdentifier: 
-  characterName: Indah
+  characterName: 
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
@@ -20,6 +20,5 @@ MonoBehaviour:
   newMemberFlag: {fileID: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - "...Name\u2019s Indah. I teach math. Don\u2019t let the name fool you."
-  - You the transfer?
-  nextNode: {fileID: 11400000, guid: 534508a74ba9b53429c598efb4bdf822, type: 2}
+  - Are you ready to begin? Starting Class will advance your time.
+  nextNode: {fileID: 11400000, guid: 143aa23ee03d6ba47a494c5c9052141a, type: 2}

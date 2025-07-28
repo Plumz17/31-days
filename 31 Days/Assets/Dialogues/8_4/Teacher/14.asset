@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 13
+  m_Name: 14
   m_EditorClassIdentifier: 
-  characterName: Klara
+  characterName: Indah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
@@ -24,5 +24,9 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - "Cool name. You\u2019ll get used to this place... eventually."
-  nextNode: {fileID: 11400000, guid: 7d9f00fb18aceb149a70189f76aaf794, type: 2}
+  - 'Close enough. He can dig through it later, assuming he ever checks his desk.
+
+'
+  - "Alright, everyone. Break\u2019s over. Sit back down. Let\u2019s get through
+    trigonometry before I collapse."
+  nextNode: {fileID: 0}

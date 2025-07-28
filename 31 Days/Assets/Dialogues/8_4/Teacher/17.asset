@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 13
+  m_Name: 17
   m_EditorClassIdentifier: 
-  characterName: Klara
+  characterName: Indah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
-  advanceTimeFlag: 0
+  advanceTimeFlag: 1
   saveDataFlag: 0
   turnFlag: 0
   newMemberFlag: {fileID: 0}
   transitionFlag:
-    flagID: 0
-    position: {x: 0, y: 0}
+    flagID: 10
+    position: {x: -4, y: -1}
   onlyPlayedOnce: 1
   dialogueLines:
-  - "Cool name. You\u2019ll get used to this place... eventually."
-  nextNode: {fileID: 11400000, guid: 7d9f00fb18aceb149a70189f76aaf794, type: 2}
+  - Alright, Brace yourselves...
+  nextNode: {fileID: 0}

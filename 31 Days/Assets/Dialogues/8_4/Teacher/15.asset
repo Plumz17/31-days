@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 13
+  m_Name: 15
   m_EditorClassIdentifier: 
-  characterName: Klara
+  characterName: 
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
-  advanceTimeFlag: 0
+  advanceTimeFlag: 1
   saveDataFlag: 0
   turnFlag: 0
   newMemberFlag: {fileID: 0}
@@ -24,5 +24,5 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - "Cool name. You\u2019ll get used to this place... eventually."
-  nextNode: {fileID: 11400000, guid: 7d9f00fb18aceb149a70189f76aaf794, type: 2}
+  - Are you ready to begin? Starting Class will advance your time.
+  nextNode: {fileID: 11400000, guid: c2fa19e34997dd9408dff2115e4a14bf, type: 2}

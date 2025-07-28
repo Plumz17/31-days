@@ -4505,6 +4505,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1421494044311268565, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+      propertyPath: m_fontSize
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421494044311268565, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 1421494044311268565, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+      propertyPath: m_enableAutoSizing
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3350667740409308336, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
       propertyPath: m_IsActive
       value: 1

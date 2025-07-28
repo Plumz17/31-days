@@ -18,7 +18,10 @@ MonoBehaviour:
   advanceTimeFlag: 0
   saveDataFlag: 0
   newMemberFlag: {fileID: 0}
-  onlyPlayedOnce: 1
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  onlyPlayedOnce: 0
   dialogueLines:
   - Are you ready to begin? Starting Class will advance your time.
   nextNode: {fileID: 11400000, guid: 143aa23ee03d6ba47a494c5c9052141a, type: 2}

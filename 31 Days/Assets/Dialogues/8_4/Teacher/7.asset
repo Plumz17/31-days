@@ -18,7 +18,10 @@ MonoBehaviour:
   advanceTimeFlag: 0
   saveDataFlag: 0
   newMemberFlag: {fileID: 0}
-  onlyPlayedOnce: 1
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  onlyPlayedOnce: 0
   options:
   - optionText: Yes
     nextNode: {fileID: 11400000, guid: 486a8750472ea344dbaadd918528c2a1, type: 2}

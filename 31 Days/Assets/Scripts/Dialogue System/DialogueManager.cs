@@ -219,5 +219,10 @@ public class DialogueManager : MonoBehaviour
         currentMultipleNode = null;
         playerMovement.SetCanMove(true);
         OnDialogueEnded?.Invoke();
+
+        if (LastPlayedNode.transitionFlag != null && LastPlayedNode.transitionFlag.flagID != 0)
+        {
+            LevelLoader.Instance.LoadNextLevel(LastPlayedNode.transitionFlag.flagID, LastPlayedNode.transitionFlag.position);
+        }
     }
 }

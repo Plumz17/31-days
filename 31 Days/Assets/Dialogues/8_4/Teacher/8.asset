@@ -18,6 +18,9 @@ MonoBehaviour:
   advanceTimeFlag: 0
   saveDataFlag: 0
   newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 10
+    position: {x: -4, y: -1}
   onlyPlayedOnce: 1
   dialogueLines:
   - "...Alright. Let\u2019s just get this over with."

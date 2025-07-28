@@ -222,7 +222,7 @@ public class DialogueManager : MonoBehaviour
 
         if (LastPlayedNode.transitionFlag != null && LastPlayedNode.transitionFlag.flagID != 0)
         {
-            LevelLoader.Instance.LoadNextLevel(LastPlayedNode.transitionFlag.flagID, LastPlayedNode.transitionFlag.position);
+            LevelLoader.Instance.LoadNextLevel(LastPlayedNode.transitionFlag.flagID, LastPlayedNode.transitionFlag.position, LastPlayedNode.transitionFlag.additiveSceneID);
         }
     }
 }

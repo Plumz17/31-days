@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutscenes:
-  - cutsceneID: 8/4_Gate_1
+  - cutsceneID: 8/4_Classroom_1
     timeline: {fileID: 0}
-    playOnStart: 1
+    playOnStart: 0

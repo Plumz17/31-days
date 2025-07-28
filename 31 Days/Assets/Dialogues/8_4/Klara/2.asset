@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 9
+  m_Name: 2
   m_EditorClassIdentifier: 
-  characterName: Indah
+  characterName: Faris
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
@@ -23,9 +23,7 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - "...Break time. Go walk around. Touch some grass. Or don\u2019t. I\u2019m not
-    your mom."
-  - Oh right, Coach Yuda wanted someone to drop these forms off at the basketball
-    court. Player list or whatever.
-  - Are you bored enough to go?
-  nextNode: {fileID: 11400000, guid: ab04d712a8f077545a93d080aeac8405, type: 2}
+  - "Serious players only, Klara. Look, Klara... this court\u2019s for the main team. "
+  - "You\u2019d probably be more comfortable somewhere else, somewhere a little less
+    intense.\r\n"
+  nextNode: {fileID: 11400000, guid: 04d89d0036a714740bae8804a590eed1, type: 2}

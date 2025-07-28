@@ -7,6 +7,7 @@ public class TransitionTrigger : MonoBehaviour
     private bool playerInTrigger = false;
     [SerializeField] private bool isScreenChange = false;
     [SerializeField] private Vector3 spawnPosition = Vector3.zero;
+    [SerializeField] private int AdvanceTimeFlag = 0;
 
     void Awake()
     {
@@ -35,15 +36,12 @@ public class TransitionTrigger : MonoBehaviour
         playerInput.Disable();
     }
 
-    void ChangeSceneButton()
-    {
-        LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
-    }
-
     void Update()
     {
-        if ((playerInTrigger && (playerInput.UI.Submit.triggered || isScreenChange)))
+        if (playerInTrigger && (playerInput.UI.Submit.triggered || isScreenChange))
         {
+            if (AdvanceTimeFlag != 0)
+                CalenderManager.instance.AdvanceTimeBlock(AdvanceTimeFlag);
             LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
         }
     }

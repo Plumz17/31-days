@@ -890,6 +890,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+      propertyPath: AdvanceTimeFlag
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: spawnPosition.x
       value: -1.875
       objectReference: {fileID: 0}
@@ -908,9 +912,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2272789505462892155, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2131955856}
-    - targetCorrespondingSourceObject: {fileID: 2272789505462892155, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2131955857}
   m_SourcePrefab: {fileID: 100100000, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
 --- !u!4 &2131955854 stripped
 Transform:
@@ -935,19 +936,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activateAt: 2
---- !u!114 &2131955857
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2131955855}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34dad06b0e50f9544a9e9dffd290bfa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  requiredCutsceneID: TBD
 --- !u!4 &1355086570991893883
 Transform:
   m_ObjectHideFlags: 0
@@ -1201,6 +1189,7 @@ MonoBehaviour:
     timeline: {fileID: 5344347431017698718}
     playOnStart: 1
     rootObject: {fileID: 4205121345659028672}
+    requiredCutsceneID: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

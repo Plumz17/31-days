@@ -74,7 +74,7 @@ public class CalenderManager : MonoBehaviour
 
     public void UpdateCalenderUI()
     {
-        dateText.text = $"{currentDay}/{currentMonth}";          // e.g. 8/4
+        dateText.text = $"{currentMonth}/{currentDay}";          // e.g. 8/4
         dayText.text = dayNames[totalDaysPassed % 7];               // e.g. Monday
         timeOfDayText.text = currentTimeOfDay.ToString();         // e.g. Morning
     }

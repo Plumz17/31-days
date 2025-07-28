@@ -51,7 +51,6 @@ public class MovePlayerCutscene : MonoBehaviour
             itemToOpen.ForceOpenItem();
         }
 
-        SaveData.Save();
         // Do next cutscene action, e.g. dialogue or animation
     }
 }

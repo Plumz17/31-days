@@ -17,6 +17,7 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0

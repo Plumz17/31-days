@@ -9,7 +9,6 @@ public class CutsceneManager : MonoBehaviour
         public string cutsceneID;
         public PlayableDirector timeline;
         public bool playOnStart;
-        public GameObject rootObject;
     }
 
     public CutsceneData[] cutscenes;
@@ -18,53 +17,49 @@ public class CutsceneManager : MonoBehaviour
     {
         foreach (var cutscene in cutscenes)
         {
-            cutscene.rootObject.SetActive(false); // Disable all at start
-        }
-
-        foreach (var cutscene in cutscenes)
-        {
-            Debug.Log(!StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID));
-            if (!StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID))
+            if (cutscene.playOnStart && !StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID))
             {
-                Debug.Log(cutscene.cutsceneID);
-                cutscene.rootObject.SetActive(true); // Only activate first unplayed one
-                break;
+                PlayCutscene(cutscene);
+                break; // Optional: only one cutscene per start
             }
         }
     }
 
     public void PlayCutscene(CutsceneData data)
     {
-        if (data.rootObject != null)
-            data.rootObject.SetActive(true); // Ensure cutscene is active
-
-        Debug.Log("Subscribing to stopped on " + data.timeline.name);
         data.timeline.stopped += OnCutsceneEnded;
         data.timeline.Play();
 
-        // TODO: disable player input here
+        // Disable player input here if needed
     }
 
     private void OnCutsceneEnded(PlayableDirector director)
     {
-        Debug.Log("Cutscene Ends");
         foreach (var cutscene in cutscenes)
         {
             if (cutscene.timeline == director)
             {
                 StoryManager.instance.MarkCutscenePlayed(cutscene.cutsceneID);
-                Debug.Log("Marked Cutscene Played!");
                 cutscene.timeline.stopped -= OnCutsceneEnded;
-
-                if (cutscene.rootObject != null)
-                    cutscene.rootObject.SetActive(false); // Clean up cutscene object
-
                 break;
             }
         }
 
         StoryManager.instance.PrintCompletedCutscenes();
+        // Re-enable player input here if needed
+    }
 
-        // TODO: re-enable player input here
+    public void PlayCutsceneByID(string id)
+    {
+        foreach (var cutscene in cutscenes)
+        {
+            if (cutscene.cutsceneID == id)
+            {
+                PlayCutscene(cutscene);
+                return;
+            }
+        }
+
+        Debug.LogWarning("Cutscene ID not found: " + id);
     }
 }

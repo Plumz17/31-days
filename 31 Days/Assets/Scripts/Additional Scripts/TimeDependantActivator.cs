@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TimeDependantActivator : MonoBehaviour
 {
-    public CalenderManager.timeOfDay activateAt = CalenderManager.timeOfDay.Malam;
+    public CalenderManager.timeOfDay activateAt = CalenderManager.timeOfDay.Night;
 
     void Start()
     {

@@ -13,13 +13,13 @@ public class CalenderManager : MonoBehaviour
 
     public int currentMonth = 8;
     public int currentDay = 4;
-    public enum timeOfDay { Pagi = 0, Siang = 1, Sore = 2, Malam = 3, Dusk = -1 }
-    public timeOfDay currentTimeOfDay = timeOfDay.Pagi;
+    public enum timeOfDay { Morn = 0, Noon = 1, Even = 2, Night = 3, Dusk = -1 }
+    public timeOfDay currentTimeOfDay = timeOfDay.Morn;
     public int totalDaysPassed = 0;
     public bool calIsActive = true;
 
     private int daysInMonth = 31;
-    private string[] dayNames = { "Sen", "Sel", "Rab", "Kam", "Jum", "Sab", "Mng" };
+    private string[] dayNames = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
 
     void Awake()
     {

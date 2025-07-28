@@ -9,19 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 8
+  m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
+  m_Name: 10
   m_EditorClassIdentifier: 
   characterName: Indah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
-  advanceTimeFlag: 1
+  advanceTimeFlag: 0
   saveDataFlag: 0
   newMemberFlag: {fileID: 0}
   transitionFlag:
-    flagID: 10
-    position: {x: -4, y: -1}
+    flagID: 0
+    position: {x: 0, y: 0}
   onlyPlayedOnce: 1
-  dialogueLines:
-  - "...Alright. Let\u2019s just get this over with."
-  nextNode: {fileID: 0}
+  options:
+  - optionText: I'll do it.
+    nextNode: {fileID: 11400000, guid: 64f2a4b9038a68a44ac87e4ec3d688e1, type: 2}
+  - optionText: Sure. why not?
+    nextNode: {fileID: 11400000, guid: 64f2a4b9038a68a44ac87e4ec3d688e1, type: 2}

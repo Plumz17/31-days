@@ -10,18 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 8
+  m_Name: 9
   m_EditorClassIdentifier: 
   characterName: Indah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
-  advanceTimeFlag: 1
+  advanceTimeFlag: 0
   saveDataFlag: 0
   newMemberFlag: {fileID: 0}
   transitionFlag:
-    flagID: 10
-    position: {x: -4, y: -1}
+    flagID: 0
+    position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - "...Alright. Let\u2019s just get this over with."
+  - "...Break time. Go walk around. Touch some grass. Or don\u2019t. I\u2019m not
+    your mom."
+  - Oh right, Coach Yuda wanted someone to drop these forms off at the basketball
+    court. Player list or whatever.
+  - Anyone bored enough to go?
   nextNode: {fileID: 0}

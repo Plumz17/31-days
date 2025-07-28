@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 15
+  m_Name: 22
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Diah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 1
@@ -24,5 +24,9 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - Are you ready to begin? Starting Class will advance your time.
-  nextNode: {fileID: 11400000, guid: 687e53b7043306c43bbee8118884aac9, type: 2}
+  - "Anyway, welcome to Tunas High. You\u2019ll be fine.\r\n"
+  - "Normally, I\u2019d invite you to swing by the school shop during break, but...\r\n"
+  - "it\u2019s closed until next week. Some delivery issue, nothing exciting.\r\n"
+  - "Until then, guess you\u2019ll just have to survive without overpriced utensils
+    and snacks.\r\n"
+  nextNode: {fileID: 11400000, guid: 1a04220f743c68b4291a4fb79096492c, type: 2}

@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
-  m_Name: 13
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: 27
   m_EditorClassIdentifier: 
-  characterName: Indah
+  characterName: 
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
-  advanceTimeFlag: 0
+  advanceTimeFlag: 1
   saveDataFlag: 0
   turnFlag: 0
   newMemberFlag: {fileID: 0}
@@ -23,8 +23,6 @@ MonoBehaviour:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
-  options:
-  - optionText: Gave the forms to a girl named Klara.
-    nextNode: {fileID: 11400000, guid: b1f9702873790dd48829b0bf81c922ae, type: 2}
-  - optionText: "Coach wasn\u2019t there, but I handed them off."
-    nextNode: {fileID: 11400000, guid: b1f9702873790dd48829b0bf81c922ae, type: 2}
+  dialogueLines:
+  - Are you ready to begin? Starting Class will advance your time.
+  nextNode: {fileID: 11400000, guid: 19197a4fb3bbcfe4f9de54004558cf69, type: 2}

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
-  m_Name: 13
+  m_Name: 19
   m_EditorClassIdentifier: 
-  characterName: Indah
+  characterName: Diah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   options:
-  - optionText: Gave the forms to a girl named Klara.
-    nextNode: {fileID: 11400000, guid: b1f9702873790dd48829b0bf81c922ae, type: 2}
-  - optionText: "Coach wasn\u2019t there, but I handed them off."
-    nextNode: {fileID: 11400000, guid: b1f9702873790dd48829b0bf81c922ae, type: 2}
+  - optionText: "Barely, but I\u2019m hanging in there."
+    nextNode: {fileID: 11400000, guid: e17dfe9b1fd5c9a458a7babc3163b1e9, type: 2}
+  - optionText: You seem more awake than Miss Indah
+    nextNode: {fileID: 11400000, guid: 080229821bb35174c868abbe1554a314, type: 2}

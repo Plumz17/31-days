@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f1a948bb6c7fb2f459447ee47b0a46ef
+guid: 32b59a8c7fc5a09419f138f4558d62d7
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8681143794451434230
-    second: TextBox 1_0
+      213: -9006175537975413254
+    second: diah_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TextBox 1_0
+      name: diah_0
       rect:
         serializedVersion: 2
-        x: 47
-        y: 621
-        width: 1826
-        height: 395
+        x: 0
+        y: 0
+        width: 31
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6fa4d50594e997870800000000000000
-      internalID: 8681143794451434230
+      spriteID: af5b922a013a30380800000000000000
+      internalID: -9006175537975413254
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TextBox 1_0: 8681143794451434230
+      diah_0: -9006175537975413254
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

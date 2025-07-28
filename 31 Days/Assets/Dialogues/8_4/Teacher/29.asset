@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 15
+  m_Name: 29
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Diah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 1
@@ -20,9 +20,9 @@ MonoBehaviour:
   turnFlag: 0
   newMemberFlag: {fileID: 0}
   transitionFlag:
-    flagID: 0
-    position: {x: 0, y: 0}
+    flagID: 10
+    position: {x: -4, y: -1}
   onlyPlayedOnce: 1
   dialogueLines:
-  - Are you ready to begin? Starting Class will advance your time.
-  nextNode: {fileID: 11400000, guid: 687e53b7043306c43bbee8118884aac9, type: 2}
+  - Nice. Prepare for FUN!
+  nextNode: {fileID: 0}

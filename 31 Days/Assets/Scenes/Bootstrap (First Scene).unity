@@ -4489,6 +4489,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 277158594708063735, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 277158594708063735, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 277158594708063735, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 277158594708063735, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
+      propertyPath: m_ReferencePixelsPerUnit
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 1250851240772243171, guid: 81a937d3d3313324f84422a91402ed10, type: 3}
       propertyPath: m_Color.a
       value: 1

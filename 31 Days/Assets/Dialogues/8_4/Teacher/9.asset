@@ -17,6 +17,7 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
@@ -25,7 +26,7 @@ MonoBehaviour:
   dialogueLines:
   - "...Break time. Go walk around. Touch some grass. Or don\u2019t. I\u2019m not
     your mom."
-  - Oh right, Coach Yuda wanted someone to drop these forms off at the basketball
+  - Oh right, Coach Budi wanted someone to drop these forms off at the basketball
     court. Player list or whatever.
   - Are you bored enough to go?
   nextNode: {fileID: 11400000, guid: ab04d712a8f077545a93d080aeac8405, type: 2}

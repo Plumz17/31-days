@@ -308,6 +308,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 332659984}
     - target: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: cutsceneID
+      value: 8/4_Classroom_1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: stopDistance
       value: 4
       objectReference: {fileID: 0}
@@ -354,23 +358,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2324032644380429551, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
   m_PrefabInstance: {fileID: 332659982}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 332659985}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &332659985 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+--- !u!1 &332659985 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5946110487467732349, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
   m_PrefabInstance: {fileID: 332659982}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2c7ca68bf2f3ed48be969b861adb73c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &332659986 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3970820991727864281, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
@@ -482,13 +480,33 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+      propertyPath: cutscenes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
       propertyPath: cutscenes.Array.data[0].timeline
       value: 
       objectReference: {fileID: 332659983}
     - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+      propertyPath: cutscenes.Array.data[1].timeline
+      value: 
+      objectReference: {fileID: 1626103383}
+    - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
       propertyPath: cutscenes.Array.data[0].cutsceneID
       value: 8/4_Classroom_1
       objectReference: {fileID: 0}
+    - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+      propertyPath: cutscenes.Array.data[0].rootObject
+      value: 
+      objectReference: {fileID: 332659985}
+    - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+      propertyPath: cutscenes.Array.data[1].cutsceneID
+      value: 8/4_Classroom_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+      propertyPath: cutscenes.Array.data[1].rootObject
+      value: 
+      objectReference: {fileID: 1626103379}
     - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
       propertyPath: cutscenes.Array.data[0].playOnStart
       value: 0
@@ -542,6 +560,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
+--- !u!114 &551980755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+  m_PrefabInstance: {fileID: 332659982}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332659985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2c7ca68bf2f3ed48be969b861adb73c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,7 +667,7 @@ GameObject:
   - component: {fileID: 654785594}
   - component: {fileID: 654785593}
   m_Layer: 0
-  m_Name: CutsceneTrigger
+  m_Name: CutsceneTrigger 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1146,7 +1175,7 @@ Transform:
   m_GameObject: {fileID: 1162171213}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.77148855, y: 0, z: 0}
+  m_LocalPosition: {x: 2.5414264, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1404,7 +1433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1626103380
 Transform:
   m_ObjectHideFlags: 0
@@ -1436,6 +1465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcToActivate: {fileID: 1114023356}
   stopDistance: 4
+  cutsceneID: 8/4_Classroom_2
 --- !u!114 &1626103382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1535,7 +1565,7 @@ GameObject:
   - component: {fileID: 1865103251}
   - component: {fileID: 1865103250}
   m_Layer: 0
-  m_Name: CutsceneTrigger
+  m_Name: CutsceneTrigger 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1614,7 +1644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd8f60143f938af4db4b54efe979d1b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cutsceneScript: {fileID: 332659985}
+  cutsceneScript: {fileID: 551980755}
   cutsceneID: 8/4_Classroom_1
 --- !u!4 &1949224448 stripped
 Transform:
@@ -1648,7 +1678,7 @@ Transform:
   m_GameObject: {fileID: 2047215672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5904961, y: 3.5, z: 0}
+  m_LocalPosition: {x: 1.1804754, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2307,7 +2337,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3558130622903435676, guid: 21f7401f59df5824f98bb841e55707a4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5863647382793999833, guid: 21f7401f59df5824f98bb841e55707a4, type: 3}
       propertyPath: startingNode

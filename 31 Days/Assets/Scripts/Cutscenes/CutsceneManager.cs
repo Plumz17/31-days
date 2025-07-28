@@ -9,14 +9,26 @@ public class CutsceneManager : MonoBehaviour
         public string cutsceneID;
         public PlayableDirector timeline;
         public bool playOnStart;
+        public GameObject rootObject;
     }
 
     public CutsceneData[] cutscenes;
+
+    void Awake()
+    {
+        // Deactivate all cutscenes at start
+        foreach (var cutscene in cutscenes)
+        {
+            if (cutscene.rootObject != null)
+                cutscene.rootObject.SetActive(false);
+        }
+    }
 
     void Start()
     {
         foreach (var cutscene in cutscenes)
         {
+            Debug.Log(!StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID));
             if (cutscene.playOnStart && !StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID))
             {
                 PlayCutscene(cutscene);
@@ -27,10 +39,13 @@ public class CutsceneManager : MonoBehaviour
 
     public void PlayCutscene(CutsceneData data)
     {
+        if (data.rootObject != null)
+            data.rootObject.SetActive(true);
+
         data.timeline.stopped += OnCutsceneEnded;
         data.timeline.Play();
 
-        // Disable player input here if needed
+        // Disable player control here, if needed
     }
 
     private void OnCutsceneEnded(PlayableDirector director)
@@ -41,12 +56,17 @@ public class CutsceneManager : MonoBehaviour
             {
                 StoryManager.instance.MarkCutscenePlayed(cutscene.cutsceneID);
                 cutscene.timeline.stopped -= OnCutsceneEnded;
+
+                // Disable the cutscene object after it's done
+                if (cutscene.rootObject != null)
+                    cutscene.rootObject.SetActive(false);
+
                 break;
             }
         }
 
         StoryManager.instance.PrintCompletedCutscenes();
-        // Re-enable player input here if needed
+        // Re-enable player control here
     }
 
     public void PlayCutsceneByID(string id)

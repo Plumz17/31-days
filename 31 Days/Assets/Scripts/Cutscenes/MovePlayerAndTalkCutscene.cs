@@ -63,9 +63,6 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
         {
             dialogueTrigger.TriggerDialogue(); // Your dialogue system call
         }
-        
-        StoryManager.instance.PrintCompletedCutscenes();
-
         //npcToActivate.SetActive(false);
     }
 }

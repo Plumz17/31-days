@@ -328,7 +328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 8.4375
+      value: 6.75
       objectReference: {fileID: 0}
     - target: {fileID: 5425169048719876304, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
@@ -947,12 +947,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9069425563657199309, guid: c14d913038701e544b3e1dd5ece804e8, type: 3}
+      propertyPath: npcToFlip
+      value: 
+      objectReference: {fileID: 1719689128}
+    - target: {fileID: 9069425563657199309, guid: c14d913038701e544b3e1dd5ece804e8, type: 3}
       propertyPath: startingNode
       value: 
       objectReference: {fileID: 11400000, guid: d1ccc7614416cb345845d9abf99c4157, type: 2}
     - target: {fileID: 9069425563657199309, guid: c14d913038701e544b3e1dd5ece804e8, type: 3}
       propertyPath: facePlayerOnTalk
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -967,6 +971,11 @@ GameObject:
 --- !u!4 &1719689127 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4334858514281810377, guid: c14d913038701e544b3e1dd5ece804e8, type: 3}
+  m_PrefabInstance: {fileID: 1719689125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1719689128 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7006348773522533283, guid: c14d913038701e544b3e1dd5ece804e8, type: 3}
   m_PrefabInstance: {fileID: 1719689125}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1734042147

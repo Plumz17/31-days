@@ -11,12 +11,14 @@ public class DialogueManager : MonoBehaviour
     [Header("UI References")]
     [SerializeField] private DialogueUIManager uiManager;
     [SerializeField] private DialogueInputHandler inputHandler;
+    
     [Header("Typing SFX")]
     [SerializeField] private AudioClip typingSFX;
     [SerializeField] private int charSoundInterval = 2; // play every N characters
     [SerializeField] private float pitchVariation = 0.05f; // optional
     [SerializeField] private AudioSource typingAudioSource;
     public BaseNode LastPlayedNode { get; private set; }
+    private DialogueTrigger activeTrigger;
     private int charsSinceLastSFX = 0;
 
     private PlayerMovement playerMovement;
@@ -31,6 +33,7 @@ public class DialogueManager : MonoBehaviour
 
     private int currentLineIndex = 0;
     private Coroutine typingCoroutine;
+    public event Action<BaseNode> OnNodeStarted;
 
     private void Awake()
     {
@@ -86,6 +89,7 @@ public class DialogueManager : MonoBehaviour
             inputHandler.OnNavigate += uiManager.HighlightOption;
         }
 
+
         if (node.levelUpFlag && !string.IsNullOrEmpty(node.characterName))
             PlayerDataManager.instance.IncreaseConnection(node.characterName);
 
@@ -97,6 +101,9 @@ public class DialogueManager : MonoBehaviour
 
         if (node.newMemberFlag != null)
             PlayerDataManager.instance.AddPartyMember(node.newMemberFlag);
+
+        if (node.turnFlag)
+            OnNodeStarted?.Invoke(node);
     }
 
     public void HandleSubmit()

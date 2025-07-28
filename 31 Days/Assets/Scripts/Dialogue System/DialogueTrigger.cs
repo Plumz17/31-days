@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private BaseNode startingNode;
 
     [Header("Optional")]
+    [SerializeField] private Transform npcToFlip;
     [SerializeField] private bool facePlayerOnTalk = true;
 
     private Transform playerTransform;
@@ -31,11 +32,20 @@ public class DialogueTrigger : MonoBehaviour
     private void OnEnable()
     {
         inputActions.Enable();
+        if (DialogueManager.instance != null)
+            DialogueManager.instance.OnNodeStarted += HandleFlip;
     }
 
     private void OnDisable()
     {
         inputActions.Disable();
+        if (DialogueManager.instance != null)
+            DialogueManager.instance.OnNodeStarted -= HandleFlip;
+    }
+
+    private void HandleFlip(BaseNode node)
+    {
+        FlipNPC();
     }
 
     private void OnInteract(InputAction.CallbackContext context)
@@ -77,6 +87,14 @@ public class DialogueTrigger : MonoBehaviour
 
         float scaleX = Mathf.Abs(npcRoot.localScale.x);
         npcRoot.localScale = new Vector3(direction.x > 0 ? -scaleX : scaleX, npcRoot.localScale.y, npcRoot.localScale.z);
+    }
+
+    public void FlipNPC()
+    {
+        Transform root = npcToFlip != null ? npcToFlip : transform;
+        Vector3 scale = root.localScale;
+        scale.x *= -1;
+        root.localScale = scale;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

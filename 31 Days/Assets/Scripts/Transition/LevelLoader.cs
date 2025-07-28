@@ -31,7 +31,7 @@ public class LevelLoader : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
     
-    public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn, string additiveScene = null) //Called in TransitionTrigger.cs
+    public void LoadNextLevel(int sceneIndex, Vector3 positionToSpawn) //Called in TransitionTrigger.cs
     {
         if (isLoading) return;
 
@@ -40,10 +40,10 @@ public class LevelLoader : MonoBehaviour
         if (player != null)
             spawnFlipX = !movement.GetFacingDirection();
 
-        StartCoroutine(LoadLevel(sceneIndex, additiveScene));
+        StartCoroutine(LoadLevel(sceneIndex));
     }
 
-    IEnumerator LoadLevel(int sceneIndex, string additiveScene)
+    IEnumerator LoadLevel(int sceneIndex)
     {
         anim.SetTrigger("Start");
 
@@ -57,13 +57,6 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         operation.allowSceneActivation = true;
-
-        if (!string.IsNullOrEmpty(additiveScene))
-        {
-            SceneManager.LoadSceneAsync(additiveScene, LoadSceneMode.Additive);
-        }
-
-        isLoading = false;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode) //Called when the scene first loads

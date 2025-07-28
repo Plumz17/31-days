@@ -7,7 +7,6 @@ public class TransitionTrigger : MonoBehaviour
     private bool playerInTrigger = false;
     [SerializeField] private bool isScreenChange = false;
     [SerializeField] private Vector3 spawnPosition = Vector3.zero;
-    [SerializeField] private string additiveScene = null;
 
     void Awake()
     {
@@ -45,7 +44,7 @@ public class TransitionTrigger : MonoBehaviour
     {
         if ((playerInTrigger && (playerInput.UI.Submit.triggered || isScreenChange)))
         {
-            LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition, additiveScene);
+            LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
         }
     }
 }

@@ -9,18 +9,24 @@ public class CutsceneManager : MonoBehaviour
         public string cutsceneID;
         public PlayableDirector timeline;
         public bool playOnStart;
+        public GameObject rootObject;
     }
 
     public CutsceneData[] cutscenes;
 
-    void Start()
+     void Start()
     {
         foreach (var cutscene in cutscenes)
         {
-            if (cutscene.playOnStart && !StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID))
+            cutscene.rootObject.SetActive(false);
+        }
+
+        foreach (var cutscene in cutscenes)
+        {
+            if (!StoryManager.instance.HasCutscenePlayed(cutscene.cutsceneID))
             {
-                PlayCutscene(cutscene);
-                break; // Optional: only one cutscene per start
+                cutscene.rootObject.SetActive(true);
+                break;
             }
         }
     }

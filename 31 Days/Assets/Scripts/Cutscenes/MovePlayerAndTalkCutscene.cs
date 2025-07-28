@@ -9,9 +9,8 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
     public GameObject npcToActivate; // NPC that only appears during cutscene
     public float stopDistance = 0.1f;
 
-    public void PlayCutscene()
+    public void PlayCutscene(string cutsceneID)
     {
-        Debug.Log("Cutscene Played");
         if (player == null)
         {
             GameObject playerObj = GameObject.FindWithTag("Player");
@@ -32,6 +31,7 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
                 dialogueTrigger = npcToActivate.GetComponentInChildren<DialogueTrigger>();
         }
 
+        StoryManager.instance.MarkCutscenePlayed(cutsceneID);
         StartCoroutine(StartCutscene());
     }
 
@@ -57,12 +57,14 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
 
-        Debug.Log(dialogueTrigger != null);
+
         // Trigger dialogue if available
         if (dialogueTrigger != null)
         {
             dialogueTrigger.TriggerDialogue(); // Your dialogue system call
         }
+        
+        StoryManager.instance.PrintCompletedCutscenes();
 
         //npcToActivate.SetActive(false);
     }

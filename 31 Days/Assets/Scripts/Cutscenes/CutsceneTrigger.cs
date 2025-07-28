@@ -17,8 +17,7 @@ public class CutsceneTrigger : MonoBehaviour
 
         if (cutsceneScript != null)
         {
-            cutsceneScript.PlayCutscene();
-            StoryManager.instance.MarkCutscenePlayed(cutsceneID);
+            cutsceneScript.PlayCutscene(cutsceneID);
 
             gameObject.SetActive(false);
         }

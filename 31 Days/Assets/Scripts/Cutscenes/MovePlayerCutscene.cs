@@ -10,6 +10,7 @@ public class MovePlayerCutscene : MonoBehaviour
 
     public void PlayCutscene()
     {
+        Debug.Log("Cutscene Played");
         if (player == null)
         {
             GameObject playerObj = GameObject.FindWithTag("Player");

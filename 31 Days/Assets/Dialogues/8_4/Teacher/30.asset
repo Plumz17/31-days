@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 26
+  m_Name: 30
   m_EditorClassIdentifier: 
   characterName: Diah
   characterPortrait: {fileID: 0}
@@ -24,6 +24,8 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - "Alright, enough chit-chat, let\u2019s jump in before Miss Indah can drink another
-    set of coffee."
-  nextNode: {fileID: 0}
+  - "Alright, that\u2019s enough science for one day."
+  - 'Pack your bag kids, you''re free to go.
+
+'
+  nextNode: {fileID: 11400000, guid: 964bbb7b3a2b2d3448fd5a9fbc696bff, type: 2}

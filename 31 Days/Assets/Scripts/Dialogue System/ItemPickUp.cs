@@ -6,7 +6,7 @@ using System.Collections;
 [RequireComponent(typeof(Collider2D))]
 public class ItemPickUp : MonoBehaviour
 {
-    private Transform playerTransform;
+    private PlayerMovement player;
     public ExclamationMark exclamationMark;
     public Canvas itemCanvas;
     private bool playerIsClose = false;
@@ -15,7 +15,7 @@ public class ItemPickUp : MonoBehaviour
 
     private void Awake()
     {
-        playerTransform = GameObject.FindWithTag("Player")?.transform;
+        player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
         exclamationMark = GetComponentInChildren<ExclamationMark>(true);
 
         inputActions = new InputActions();
@@ -39,11 +39,13 @@ public class ItemPickUp : MonoBehaviour
 
         if (!itemCanvas.gameObject.activeInHierarchy)
         {
+            player.SetCanMove(false);
             exclamationMark?.SetVisible(false);
             itemCanvas.gameObject.SetActive(true);
         }
         else
         {
+            player.SetCanMove(true);
             exclamationMark?.SetVisible(true);
             itemCanvas.gameObject.SetActive(false);
         }
@@ -69,6 +71,7 @@ public class ItemPickUp : MonoBehaviour
     {
         if (!itemCanvas.gameObject.activeInHierarchy)
         {
+            player.SetCanMove(false);
             exclamationMark?.SetVisible(false);
             itemCanvas.gameObject.SetActive(true);
         }

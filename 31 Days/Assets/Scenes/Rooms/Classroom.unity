@@ -459,6 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcToActivate:
   - {fileID: 89728061}
+  itemToOpen: {fileID: 0}
   stopDistance: 4
 --- !u!1001 &332659982
 PrefabInstance:
@@ -468,6 +469,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 285981054595305308, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 375845820070256466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.08115
@@ -512,9 +517,17 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5946110487467732349, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6113272730144581446, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: m_Name
       value: Cutscenes
+      objectReference: {fileID: 0}
+    - target: {fileID: 6512676630263465531, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -528,13 +541,43 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 375845820070256466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       insertIndex: -1
       addedObject: {fileID: 307357893}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4078586156839227049, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 332659985}
   m_SourcePrefab: {fileID: 100100000, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
 --- !u!4 &332659983 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 375845820070256466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
   m_PrefabInstance: {fileID: 332659982}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &332659984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4078586156839227049, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+  m_PrefabInstance: {fileID: 332659982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &332659985
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332659984}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 6ff724815ac5e2244850e15b55ff7a07, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &387238669 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5946110487467732349, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
@@ -1367,6 +1410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcToActivate:
   - {fileID: 1697724153}
+  itemToOpen: {fileID: 0}
   stopDistance: 4
 --- !u!1 &1162171213
 GameObject:
@@ -1395,7 +1439,7 @@ Transform:
   m_GameObject: {fileID: 1162171213}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.486549, y: 0, z: 0}
+  m_LocalPosition: {x: 0.65148866, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1769,6 +1813,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcToActivate:
   - {fileID: 718455326}
+  itemToOpen: {fileID: 0}
   stopDistance: 4
 --- !u!1 &1697724153 stripped
 GameObject:
@@ -1939,7 +1984,7 @@ Transform:
   m_GameObject: {fileID: 2047215672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1621828, y: 3.5, z: 0}
+  m_LocalPosition: {x: 0.5504961, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2259,11 +2304,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.454416
+      value: 4.337549
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.05794
+      value: 1.0765799
       objectReference: {fileID: 0}
     - target: {fileID: 914689965977792638, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: Lens.OrthographicSize
@@ -2279,19 +2324,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 4.6354165
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.055208337
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.16666667
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.41203701
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5425169048719876304, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x

@@ -116,6 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingNode: {fileID: 11400000, guid: 40b4fe536bc1be7438b8b35b830ce529, type: 2}
+  npcToFlip: {fileID: 0}
   facePlayerOnTalk: 1
   exclamationMark: {fileID: 0}
   objectToAppearAtTheEnd: {fileID: 0}
@@ -196,12 +197,12 @@ SpriteRenderer:
   m_SortingLayerID: -1468987367
   m_SortingLayer: 3
   m_SortingOrder: 3
-  m_Sprite: {fileID: 2299127118058011379, guid: 3de1c995ceb732640be32a25c4d14704, type: 3}
+  m_Sprite: {fileID: -6334064187238655119, guid: 19b6173d60595d24da9f4109d8ee6b73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.9375, y: 5.4375}
+  m_Size: {x: 5.625, y: 5.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

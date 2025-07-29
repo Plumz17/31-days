@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class CutsceneTrigger : MonoBehaviour
 {
-    public MovePlayerAndTalkCutscene cutsceneScript;
+    public Cutscene cutsceneScript;
     public string cutsceneID;
 
     void Start()

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class MovePlayerAndTalkCutscene : MonoBehaviour
+public class Cutscene : MonoBehaviour
 {
     private PlayerMovement player;
     private Transform targetTransform;

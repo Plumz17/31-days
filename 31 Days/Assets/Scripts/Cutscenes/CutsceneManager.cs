@@ -40,31 +40,15 @@ public class CutsceneManager : MonoBehaviour
             if (cutscene.playOnStart)
             {
                 Debug.Log($"Playing cutscene on start: {cutscene.cutsceneID}");
-                PlayCutscene(cutscene.rootObject.GetComponent<MovePlayerAndTalkCutscene>(), cutscene.cutsceneID);
+                PlayCutscene(cutscene.rootObject.GetComponent<Cutscene>(), cutscene.cutsceneID);
             }
 
             break;
         }
     }
 
-    public void PlayCutscene(MovePlayerAndTalkCutscene data, string id)
+    public void PlayCutscene(Cutscene data, string id)
     {
         data.PlayCutscene(id);
     }
-
-    // private void OnCutsceneEnded(PlayableDirector director)
-    // {
-    //     foreach (var cutscene in cutscenes)
-    //     {
-    //         if (cutscene.timeline == director)
-    //         {
-    //             StoryManager.instance.MarkCutscenePlayed(cutscene.cutsceneID);
-    //             cutscene.timeline.stopped -= OnCutsceneEnded;
-    //             break;
-    //         }
-    //     }
-
-    //     StoryManager.instance.PrintCompletedCutscenes();
-    //     // Re-enable player input here if needed
-    // }
 }

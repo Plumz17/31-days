@@ -40,48 +40,31 @@ public class CutsceneManager : MonoBehaviour
             if (cutscene.playOnStart)
             {
                 Debug.Log($"Playing cutscene on start: {cutscene.cutsceneID}");
-                PlayCutscene(cutscene);
+                PlayCutscene(cutscene.rootObject.GetComponent<MovePlayerAndTalkCutscene>(), cutscene.cutsceneID);
             }
 
             break;
         }
     }
 
-    public void PlayCutscene(CutsceneData data)
+    public void PlayCutscene(MovePlayerAndTalkCutscene data, string id)
     {
-        data.timeline.stopped += OnCutsceneEnded;
-        data.timeline.Play();
-
-        // Disable player input here if needed
+        data.PlayCutscene(id);
     }
 
-    private void OnCutsceneEnded(PlayableDirector director)
-    {
-        foreach (var cutscene in cutscenes)
-        {
-            if (cutscene.timeline == director)
-            {
-                StoryManager.instance.MarkCutscenePlayed(cutscene.cutsceneID);
-                cutscene.timeline.stopped -= OnCutsceneEnded;
-                break;
-            }
-        }
+    // private void OnCutsceneEnded(PlayableDirector director)
+    // {
+    //     foreach (var cutscene in cutscenes)
+    //     {
+    //         if (cutscene.timeline == director)
+    //         {
+    //             StoryManager.instance.MarkCutscenePlayed(cutscene.cutsceneID);
+    //             cutscene.timeline.stopped -= OnCutsceneEnded;
+    //             break;
+    //         }
+    //     }
 
-        StoryManager.instance.PrintCompletedCutscenes();
-        // Re-enable player input here if needed
-    }
-
-    public void PlayCutsceneByID(string id)
-    {
-        foreach (var cutscene in cutscenes)
-        {
-            if (cutscene.cutsceneID == id)
-            {
-                PlayCutscene(cutscene);
-                return;
-            }
-        }
-
-        Debug.LogWarning("Cutscene ID not found: " + id);
-    }
+    //     StoryManager.instance.PrintCompletedCutscenes();
+    //     // Re-enable player input here if needed
+    // }
 }

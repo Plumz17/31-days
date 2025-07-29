@@ -7,6 +7,7 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
     private Transform targetTransform;
     private DialogueTrigger dialogueTrigger; // Optional: triggers dialogue
     public GameObject[] npcToActivate; // NPC that only appears during cutscene
+    public ItemPickUp itemToOpen;
     public float stopDistance = 0.1f;
 
     public void PlayCutscene(string cutsceneID)
@@ -76,6 +77,10 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
         {
             dialogueTrigger.TriggerDialogue(); // Your dialogue system call
         }
-        //npcToActivate.SetActive(false);
+
+        if (itemToOpen != null)
+        {
+            itemToOpen.ForceOpenItem();
+        }
     }
 }

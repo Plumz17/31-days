@@ -41,8 +41,6 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
 
     private IEnumerator StartCutscene()
     {
-        yield return new WaitForSeconds(1f); // Optional delay
-
         if (targetTransform != null)
         {
             player.WalkToPosition(targetTransform.position, stopDistance);
@@ -53,9 +51,20 @@ public class MovePlayerAndTalkCutscene : MonoBehaviour
             yield break;
         }
 
+        float stepDelay = player.stepDelay; // Access step delay from PlayerMovement
+        float stepTimer = 0f;
+
+
         // Wait until player reaches destination
         while (Vector2.Distance(player.transform.position, targetTransform.position) > stopDistance)
         {
+            stepTimer -= Time.deltaTime;
+            if (stepTimer <= 0f)
+            {
+                player.PlayFootstep();
+                stepTimer = stepDelay;
+            }
+
             yield return null;
         }
 

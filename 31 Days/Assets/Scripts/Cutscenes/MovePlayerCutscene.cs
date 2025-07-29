@@ -36,10 +36,19 @@ public class MovePlayerCutscene : MonoBehaviour
             Debug.LogWarning("Target Transform is not assigned.");
             yield break;
         }
+        
+        float stepDelay = player.stepDelay; // Access step delay from PlayerMovement
+        float stepTimer = 0f;
 
         // Wait until player can move again (cutscene done)
         while (Vector2.Distance(player.transform.position, targetTransform.position) > stopDistance)
         {
+            stepTimer -= Time.deltaTime;
+            if (stepTimer <= 0f)
+            {
+                player.PlayFootstep();
+                stepTimer = stepDelay;
+            }
             yield return null;
         }
 

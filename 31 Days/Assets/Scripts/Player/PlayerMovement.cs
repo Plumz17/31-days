@@ -111,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    private void PlayFootstep()
+    public void PlayFootstep()
     {
         if (footstepClip != null && audioSource != null)
         {

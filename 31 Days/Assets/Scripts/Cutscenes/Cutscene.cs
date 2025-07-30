@@ -8,7 +8,7 @@ public class Cutscene : MonoBehaviour
     private DialogueTrigger dialogueTrigger; // Optional: triggers dialogue
     public GameObject[] npcToActivate; // NPC that only appears during cutscene
     public ItemPickUp itemToOpen;
-    public float stopDistance = 0.1f;
+    public float stopDistance = 0.1f; //If Stop distance is 0, don't
 
     public void PlayCutscene(string cutsceneID)
     {
@@ -42,40 +42,34 @@ public class Cutscene : MonoBehaviour
 
     private IEnumerator StartCutscene()
     {
-        if (targetTransform != null)
+        if (targetTransform != null && stopDistance > 0f)
         {
             player.WalkToPosition(targetTransform.position, stopDistance);
         }
-        else
+
+        if (stopDistance > 0f)
         {
-            Debug.LogWarning("Target Transform is not assigned.");
-            yield break;
-        }
+            float stepDelay = player.stepDelay; // Access step delay from PlayerMovement
+            float stepTimer = 0f;
 
-        float stepDelay = player.stepDelay; // Access step delay from PlayerMovement
-        float stepTimer = 0f;
-
-
-        // Wait until player reaches destination
-        while (Vector2.Distance(player.transform.position, targetTransform.position) > stopDistance)
-        {
-            stepTimer -= Time.deltaTime;
-            if (stepTimer <= 0f)
+            // Wait until player reaches destination
+            while (Vector2.Distance(player.transform.position, targetTransform.position) > stopDistance)
             {
-                player.PlayFootstep();
-                stepTimer = stepDelay;
-            }
+                stepTimer -= Time.deltaTime;
+                if (stepTimer <= 0f)
+                {
+                    player.PlayFootstep();
+                    stepTimer = stepDelay;
+                }
 
-            yield return null;
+                yield return null;
+            }
         }
 
-        yield return new WaitForSeconds(0.2f);
-
-
-        // Trigger dialogue if available
         if (dialogueTrigger != null)
         {
-            dialogueTrigger.TriggerDialogue(); // Your dialogue system call
+            yield return new WaitForSeconds(stopDistance != 0 ? 0.2f : 1f);
+            dialogueTrigger.TriggerDialogue(true);
         }
 
         if (itemToOpen != null)

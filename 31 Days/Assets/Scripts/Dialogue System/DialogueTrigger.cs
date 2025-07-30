@@ -17,6 +17,8 @@ public class DialogueTrigger : MonoBehaviour
     public GameObject objectToAppearAtTheEnd; //For Cutscenes
     private bool playerIsClose = false;
     private bool hasPlayedOnce = false;
+    private bool isCutscene = false;
+
 
     private InputActions inputActions;
 
@@ -50,7 +52,7 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext context)
     {
-        if (!playerIsClose || startingNode == null || hasPlayedOnce)
+        if ((!playerIsClose && !isCutscene) || startingNode == null || hasPlayedOnce)
             return;
 
         var dialogueManager = DialogueManager.instance;
@@ -137,15 +139,19 @@ public class DialogueTrigger : MonoBehaviour
         {
             objectToAppearAtTheEnd.SetActive(true);
         }
+
+        isCutscene = false;
     }
     
-    public void TriggerDialogue()
+    public void TriggerDialogue(bool fromCutscene = false)
     {
         if (startingNode == null || (startingNode.onlyPlayedOnce && hasPlayedOnce))
             return;
 
         var dialogueManager = DialogueManager.instance;
         if (dialogueManager == null) return;
+
+        isCutscene = fromCutscene;
 
         if (!dialogueManager.IsActive)
         {

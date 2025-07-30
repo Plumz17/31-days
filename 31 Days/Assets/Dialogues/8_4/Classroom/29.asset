@@ -21,7 +21,7 @@ MonoBehaviour:
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 10
-    position: {x: -4, y: -1}
+    position: {x: -6.75, y: -1}
   onlyPlayedOnce: 1
   dialogueLines:
   - Nice. Prepare for FUN!

@@ -25,5 +25,5 @@ MonoBehaviour:
   onlyPlayedOnce: 1
   dialogueLines:
   - Anyways, I'll pass these to Pak Budi Later.
-  - Well, see you around, newbie..
+  - Well, see you around, rookie...
   nextNode: {fileID: 11400000, guid: 5f5959c3968f96f4f972aff951bc7eb4, type: 2}

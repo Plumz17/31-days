@@ -17,13 +17,14 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   options:
-  - optionText: These are for Pak Budi...
+  - optionText: These are for Pak Budi
     nextNode: {fileID: 11400000, guid: a2320290e99d21f40b71312d6bbd1adc, type: 2}
   - optionText: Bu Indah told me to give these
     nextNode: {fileID: 11400000, guid: a2320290e99d21f40b71312d6bbd1adc, type: 2}

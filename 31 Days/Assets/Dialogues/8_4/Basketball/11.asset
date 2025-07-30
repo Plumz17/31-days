@@ -17,6 +17,7 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
@@ -25,5 +26,5 @@ MonoBehaviour:
   options:
   - optionText: You handled that pretty well.
     nextNode: {fileID: 11400000, guid: 98f52b00405e8aa4184f141fa5235fc1, type: 2}
-  - optionText: Heh. Comes with practice.
+  - optionText: I'm Satria, nice to meet you too.
     nextNode: {fileID: 11400000, guid: 7d170edd6a100704282e6af57f1b591f, type: 2}

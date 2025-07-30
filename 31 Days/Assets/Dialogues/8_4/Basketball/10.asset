@@ -24,9 +24,10 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'Ignore him. He''s a jerk.
+  - 'Shut up dude...
 
 '
+  - Ignore him. He's a jerk.
   - "Anyway\u2026 thanks for the delivery. And sorry you had to see that.\r\n"
   - "My name\u2019s Klara, by the way. Nice to meet you.\r\n"
   nextNode: {fileID: 11400000, guid: 82aa4a372d734fb418fc37e074a67f51, type: 2}

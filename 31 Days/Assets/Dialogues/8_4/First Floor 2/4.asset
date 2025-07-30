@@ -25,5 +25,5 @@ MonoBehaviour:
   onlyPlayedOnce: 1
   dialogueLines:
   - "(Well, that didn\u2019t go well.)"
-  - (I should head back...)
+  - (You should head back...)
   nextNode: {fileID: 0}

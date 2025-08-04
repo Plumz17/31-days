@@ -17,6 +17,8 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: Deliver Papers to the Basketball Court
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0

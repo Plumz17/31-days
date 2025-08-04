@@ -105,9 +105,9 @@ public class DialogueManager : MonoBehaviour
         if (node.turnFlag)
             OnNodeStarted?.Invoke(node);
 
-        if (!string.IsNullOrEmpty(node.objecttiveFlag))
+        if (!string.IsNullOrEmpty(node.objectiveFlag))
         {
-            CalenderAndObjectiveManager.instance.currentObjective = node.objecttiveFlag;
+            CalenderAndObjectiveManager.instance.currentObjective = node.objectiveFlag;
             CalenderAndObjectiveManager.instance.UpdateObjectiveUI();
         }
             

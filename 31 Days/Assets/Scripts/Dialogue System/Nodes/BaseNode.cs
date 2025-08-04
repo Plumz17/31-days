@@ -9,7 +9,7 @@ public abstract class BaseNode : ScriptableObject
     public int advanceTimeFlag;
     public bool saveDataFlag;
     public bool turnFlag;
-    public string objecttiveFlag;
+    public string objectiveFlag;
     public CharacterData newMemberFlag;
     public TransitionData transitionFlag;
     public bool onlyPlayedOnce = true;

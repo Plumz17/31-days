@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34dad06b0e50f9544a9e9dffd290bfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  requiredCutsceneID: 
+  requiredCutsceneID: TBD
 --- !u!1001 &149712582
 PrefabInstance:
   m_ObjectHideFlags: 0

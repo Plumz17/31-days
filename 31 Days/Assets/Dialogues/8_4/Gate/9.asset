@@ -17,7 +17,12 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: Go to 10B
   newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
   - Don't be late.

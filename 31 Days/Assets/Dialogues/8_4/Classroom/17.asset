@@ -18,6 +18,7 @@ MonoBehaviour:
   advanceTimeFlag: 1
   saveDataFlag: 0
   turnFlag: 0
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 10

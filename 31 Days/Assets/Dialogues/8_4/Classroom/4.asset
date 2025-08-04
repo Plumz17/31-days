@@ -17,7 +17,12 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: Attend Ms.Indah's Class
   newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
   - Cool. Grab a seat. Behave.

@@ -17,7 +17,12 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: Attend Ms.Indah's Class
   newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
   - Am I Okay? Kid, I teach math to 16 year olds at 7 AM.

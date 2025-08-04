@@ -17,12 +17,17 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   options:
+  - optionText: ...Are you okay?
+    nextNode: {fileID: 11400000, guid: 4fccc05e54d205a4fbffd00479be9eea, type: 2}
   - optionText: "Yes, ma\u2019am."
     nextNode: {fileID: 11400000, guid: 45e00bf8463044940b0980fd1837cbb7, type: 2}
   - optionText: Satria. Just transferred.
     nextNode: {fileID: 11400000, guid: a931e91624438d2449e654c8217a4547, type: 2}
-  - optionText: ...Are you okay?
-    nextNode: {fileID: 11400000, guid: 4fccc05e54d205a4fbffd00479be9eea, type: 2}

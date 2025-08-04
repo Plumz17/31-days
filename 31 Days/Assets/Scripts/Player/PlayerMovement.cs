@@ -169,7 +169,6 @@ public class PlayerMovement : MonoBehaviour
 
         movement = 0;
         rb.linearVelocity = Vector2.zero;
-        transform.position = new Vector2(targetPosition.x, transform.position.y);
         anim.SetBool("isMoving", false);
         canMove = true; // Re-enable player input
     }

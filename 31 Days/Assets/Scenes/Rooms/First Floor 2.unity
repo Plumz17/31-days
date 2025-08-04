@@ -339,7 +339,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1371295922496524450, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: cutsceneID
-      value: 8/4_FirstFloor1_1
+      value: 8/4_FirstFloor2_1
       objectReference: {fileID: 0}
     - target: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: haveDialogue
@@ -350,6 +350,14 @@ PrefabInstance:
       value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: cutsceneDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: dialogueDelay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: GameObjectToGoTo
       value: 
       objectReference: {fileID: 509442720}
@@ -357,6 +365,10 @@ PrefabInstance:
       propertyPath: gameObjectToGoTo
       value: 
       objectReference: {fileID: 509442720}
+    - target: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: haveOpeningDialogue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3256721504890827466, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: npcToActivate.Array.size
       value: 0
@@ -371,7 +383,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5946110487467732349, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: m_Name
-      value: 8/4_FirstFloor1_1
+      value: 8/4_FirstFloor2_1
       objectReference: {fileID: 0}
     - target: {fileID: 5946110487467732349, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: m_IsActive
@@ -1205,7 +1217,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
       propertyPath: cutscenes.Array.data[0].cutsceneID
-      value: 8/4_FirstFloor1_1
+      value: 8/4_FirstFloor2_1
       objectReference: {fileID: 0}
     - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
       propertyPath: cutscenes.Array.data[0].rootObject

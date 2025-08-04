@@ -12,7 +12,8 @@ public class Cutscene : MonoBehaviour
     [Header("Optional")]
     public ItemPickUp itemToOpen;
     public Transform GameObjectToGoTo;
-    public bool haveDialogue; //Have Opening Dialogue
+    public bool haveOpeningDialogue; //Have Opening Dialogue
+    public float cutsceneDelay = 0;
 
     public void PlayCutscene(string cutsceneID)
     {
@@ -51,11 +52,16 @@ public class Cutscene : MonoBehaviour
     private IEnumerator StartCutscene()
     {
         StoryManager.instance.SetCutsceneState(true);
-        if (haveDialogue)
+        if (haveOpeningDialogue)
         {
             dialogueTrigger = GetComponent<DialogueTrigger>();
+            player.SetCanMove(false);
+
             if (dialogueTrigger != null)
             {
+                if (cutsceneDelay > 0f)
+                    yield return new WaitForSeconds(cutsceneDelay);
+
                 dialogueTrigger.TriggerDialogue(true);
 
                 // Wait until dialogue is finished
@@ -90,7 +96,7 @@ public class Cutscene : MonoBehaviour
             }
         }
 
-        if (dialogueTrigger != null && !haveDialogue)
+        if (dialogueTrigger != null && !haveOpeningDialogue)
         {
             yield return new WaitForSeconds(stopDistance != 0 ? 0.2f : 1f);
             dialogueTrigger.TriggerDialogue(true);

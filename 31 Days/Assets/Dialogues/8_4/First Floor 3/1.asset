@@ -25,5 +25,5 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - (You felt an ominous presence coming from the room to your right.)
+  - (What the...)
   nextNode: {fileID: 0}

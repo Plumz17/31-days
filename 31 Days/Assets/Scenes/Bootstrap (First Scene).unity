@@ -314,6 +314,7 @@ MonoBehaviour:
   timeOfDayText: {fileID: 172182442}
   UIPanel: {fileID: 1684459542}
   objectiveText: {fileID: 302361498}
+  calendarCanvasGroup: {fileID: 1684459546}
   currentMonth: 8
   currentDay: 4
   currentTimeOfDay: 0
@@ -4068,13 +4069,14 @@ GameObject:
   - component: {fileID: 1684459545}
   - component: {fileID: 1684459544}
   - component: {fileID: 1684459543}
+  - component: {fileID: 1684459546}
   m_Layer: 5
   m_Name: UIPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1684459543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4138,6 +4140,18 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: -540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1684459546
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684459542}
+  m_Enabled: 1
+  m_Alpha: 0
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1696006354
 GameObject:
   m_ObjectHideFlags: 0

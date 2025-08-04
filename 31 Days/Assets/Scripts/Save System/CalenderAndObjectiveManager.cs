@@ -11,13 +11,15 @@ public class CalenderAndObjectiveManager : MonoBehaviour
     public TMP_Text timeOfDayText;
     [SerializeField] private GameObject UIPanel;
     [SerializeField] private TMP_Text objectiveText;
+    public CanvasGroup calendarCanvasGroup;
 
     public int currentMonth = 8;
     public int currentDay = 4;
     public enum timeOfDay { Morn = 0, Noon = 1, Even = 2, Night = 3}
     public timeOfDay currentTimeOfDay = timeOfDay.Morn;
     private int totalDaysPassed = 0;
-    private bool calIsActive = true;
+    private bool calIsActive = false;
+    private string lastDateText, lastDayText, lastTimeText;
 
     public string currentObjective;
 
@@ -77,9 +79,13 @@ public class CalenderAndObjectiveManager : MonoBehaviour
 
     public void UpdateCalenderUI()
     {
-        dateText.text = $"{currentMonth}/{currentDay}";          // e.g. 8/4
-        dayText.text = dayNames[totalDaysPassed % 7];               // e.g. Monday
-        timeOfDayText.text = currentTimeOfDay.ToString();         // e.g. Morning
+        string newDate = $"{currentMonth}/{currentDay}";
+        string newDay = dayNames[totalDaysPassed % 7];
+        string newTime = currentTimeOfDay.ToString();
+
+        if (dateText.text != newDate) dateText.text = newDate;
+        if (dayText.text != newDay) dayText.text = newDay;
+        if (timeOfDayText.text != newTime) timeOfDayText.text = newTime;
     }
 
     public void UpdateObjectiveUI()
@@ -107,10 +113,9 @@ public class CalenderAndObjectiveManager : MonoBehaviour
     
     public void SetCalendarUI()
     {
-        if (UIPanel != null)
-        {
-            calIsActive = !calIsActive;
-            UIPanel.SetActive(calIsActive);
-        }
+        calIsActive = !calIsActive;
+        calendarCanvasGroup.alpha = calIsActive ? 1 : 0;
+        calendarCanvasGroup.interactable = calIsActive;
+        calendarCanvasGroup.blocksRaycasts = calIsActive;
     }
 }

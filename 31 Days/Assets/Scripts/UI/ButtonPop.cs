@@ -45,4 +45,23 @@ public class ButtonPop : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         if (highlightArrow != null)
             highlightArrow.SetActive(false);
     }
+
+    public void ResetPop()
+    {
+        targetScale = originalScale;
+        transform.localScale = originalScale;
+
+        if (highlightArrow != null)
+            highlightArrow.SetActive(false);
+    }
+
+    void OnEnable()
+    {
+        PauseMenu.OnPauseMenuClosed += ResetPop;
+    }
+
+    void OnDisable()
+    {
+        PauseMenu.OnPauseMenuClosed -= ResetPop;
+    }
 }

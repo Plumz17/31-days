@@ -20,6 +20,8 @@ public class PauseMenu : MonoBehaviour
     [SerializeField] private AudioClip cancelSound;
     [SerializeField] private AudioClip clickSound;
     [SerializeField] private AudioSource audioSource;
+    public static event Action OnPauseMenuClosed;
+
 
     private void OnEnable() => playerInput.UI.Enable();
     //private void OnDisable() => playerInput.UI.Disable();
@@ -57,9 +59,11 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        OnPauseMenuClosed?.Invoke();
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1;
         gameIsPaused = false;
+        Debug.Log("Resumed");
     }
 
     public void Pause()

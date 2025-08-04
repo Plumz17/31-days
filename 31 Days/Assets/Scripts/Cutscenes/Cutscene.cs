@@ -7,8 +7,12 @@ public class Cutscene : MonoBehaviour
     private Transform targetTransform;
     private DialogueTrigger dialogueTrigger; // Optional: triggers dialogue
     public GameObject[] npcToActivate; // NPC that only appears during cutscene
-    public ItemPickUp itemToOpen;
     public float stopDistance = 0.1f; //If Stop distance is 0, don't
+
+    [Header("Optional")]
+    public ItemPickUp itemToOpen;
+    public Transform GameObjectToGoTo;
+    public bool haveDialogue; //Have Opening Dialogue
 
     public void PlayCutscene(string cutsceneID)
     {
@@ -21,7 +25,7 @@ public class Cutscene : MonoBehaviour
             }
         }
 
-        if (npcToActivate != null)
+        if (npcToActivate.Length != 0)
         {
             GameObject mainNPC = npcToActivate[0];
             foreach (GameObject npc in npcToActivate)
@@ -35,6 +39,10 @@ public class Cutscene : MonoBehaviour
             if (dialogueTrigger == null)
                 dialogueTrigger = mainNPC.GetComponentInChildren<DialogueTrigger>();
         }
+        else if (GameObjectToGoTo != null)
+        {
+            targetTransform = GameObjectToGoTo;
+        }
 
         StoryManager.instance.MarkCutscenePlayed(cutsceneID);
         StartCoroutine(StartCutscene());
@@ -42,12 +50,28 @@ public class Cutscene : MonoBehaviour
 
     private IEnumerator StartCutscene()
     {
-        if (targetTransform != null && stopDistance > 0f)
+        StoryManager.instance.SetCutsceneState(true);
+        if (haveDialogue)
+        {
+            dialogueTrigger = GetComponent<DialogueTrigger>();
+            if (dialogueTrigger != null)
+            {
+                dialogueTrigger.TriggerDialogue(true);
+
+                // Wait until dialogue is finished
+                while (DialogueManager.instance != null && DialogueManager.instance.IsActive)
+                {
+                    yield return null;
+                }
+            }
+        }
+
+        if (targetTransform != null && stopDistance != 0f)
         {
             player.WalkToPosition(targetTransform.position, stopDistance);
         }
 
-        if (stopDistance > 0f)
+        if (stopDistance != 0f)
         {
             float stepDelay = player.stepDelay; // Access step delay from PlayerMovement
             float stepTimer = 0f;
@@ -66,7 +90,7 @@ public class Cutscene : MonoBehaviour
             }
         }
 
-        if (dialogueTrigger != null)
+        if (dialogueTrigger != null && !haveDialogue)
         {
             yield return new WaitForSeconds(stopDistance != 0 ? 0.2f : 1f);
             dialogueTrigger.TriggerDialogue(true);
@@ -76,5 +100,7 @@ public class Cutscene : MonoBehaviour
         {
             itemToOpen.ForceOpenItem();
         }
+
+        StoryManager.instance.SetCutsceneState(false);
     }
 }

@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[RequireComponent(typeof(Collider2D))]
 public class DialogueTrigger : MonoBehaviour
 {
     [Header("Dialogue")]

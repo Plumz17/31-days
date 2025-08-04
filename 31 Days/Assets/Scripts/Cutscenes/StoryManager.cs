@@ -7,6 +7,13 @@ public class StoryManager : MonoBehaviour
 
     public HashSet<string> completedCutscenes = new HashSet<string>();
 
+    public bool IsCutscenePlaying { get; private set; }
+
+    public void SetCutsceneState(bool isPlaying)
+    {
+        IsCutscenePlaying = isPlaying;
+    }
+
     void Awake()
     {
         if (instance != null && instance != this)

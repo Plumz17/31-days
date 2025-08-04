@@ -12,17 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  characterName: Bagas
+  characterName: 
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - ...
-  nextNode: {fileID: 11400000, guid: 349b1f8778068fe48815a8bcd65a784f, type: 2}
+  - You gelt an ominous presence coming from the room to your right.
+  nextNode: {fileID: 0}

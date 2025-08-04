@@ -146,19 +146,30 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = false; // Disable player input
 
-        while (Vector2.Distance(transform.position, targetPosition) > stopDistance)
+        Vector2 finalTarget = targetPosition;
+
+        if (stopDistance < 0)
         {
             float direction = Mathf.Sign(targetPosition.x - transform.position.x);
-            movement = direction;
+            finalTarget.x += -stopDistance * direction; // Go past the target by abs(stopDistance)
+            stopDistance = 0.05f; // Use a small threshold so loop eventually ends
+        }
+
+        while (Mathf.Abs(transform.position.x - finalTarget.x) > stopDistance)
+        {
+            float moveDir = Mathf.Sign(finalTarget.x - transform.position.x);
+            movement = moveDir;
             anim.SetBool("isMoving", true);
 
-            if ((direction > 0 && !isFacingRight) || (direction < 0 && isFacingRight))
+            if ((moveDir > 0 && !isFacingRight) || (moveDir < 0 && isFacingRight))
                 Flip();
 
             yield return null;
         }
 
         movement = 0;
+        rb.linearVelocity = Vector2.zero;
+        transform.position = new Vector2(targetPosition.x, transform.position.y);
         anim.SetBool("isMoving", false);
         canMove = true; // Re-enable player input
     }

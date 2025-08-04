@@ -38,11 +38,33 @@ public class TransitionTrigger : MonoBehaviour
 
     void Update()
     {
-        if (playerInTrigger && (playerInput.UI.Submit.triggered || isScreenChange))
+        if (!playerInTrigger) return;
+
+        // Case 1: Submit pressed manually
+        if (playerInput.UI.Submit.triggered)
         {
-            if (AdvanceTimeFlag != 0)
-                CalenderAndObjectiveManager.instance.AdvanceTimeBlock(AdvanceTimeFlag);
-            LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
+            // Block manual transitions during dialogue
+            if ((DialogueManager.instance != null && DialogueManager.instance.IsActive) ||
+                StoryManager.instance.IsCutscenePlaying)
+                return;
+
+            PerformTransition();
+        }
+
+        // Case 2: Auto screen change (unblocked)
+        if (isScreenChange)
+        {
+            PerformTransition();
         }
     }
+
+    private void PerformTransition()
+    {
+        if (AdvanceTimeFlag != 0)
+            CalenderAndObjectiveManager.instance.AdvanceTimeBlock(AdvanceTimeFlag);
+
+        LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
+        StoryManager.instance.SetCutsceneState(false);
+    }
+
 }

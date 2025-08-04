@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TimeDependantActivator : MonoBehaviour
 {
-    public CalenderManager.timeOfDay activateAt = CalenderManager.timeOfDay.Night;
+    public CalenderAndObjectiveManager.timeOfDay activateAt = CalenderAndObjectiveManager.timeOfDay.Night;
 
     void Start()
     {
@@ -11,9 +11,9 @@ public class TimeDependantActivator : MonoBehaviour
 
     void UpdateActiveState()
     {
-        if (CalenderManager.instance != null)
+        if (CalenderAndObjectiveManager.instance != null)
         {
-            gameObject.SetActive(CalenderManager.instance.currentTimeOfDay == activateAt);
+            gameObject.SetActive(CalenderAndObjectiveManager.instance.currentTimeOfDay == activateAt);
         }
     }
 

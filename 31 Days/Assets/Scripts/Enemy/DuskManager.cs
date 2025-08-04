@@ -34,6 +34,7 @@ public class DuskManager : MonoBehaviour
         if (!duskSceneNames.Contains(scene.name))
         {
             PauseMenu.instance.SetCanSave(true);
+            CalenderAndObjectiveManager.instance.UpdateCalenderUI();
             defeatedEnemies.Clear();
             Destroy(gameObject);
         }
@@ -45,6 +46,7 @@ public class DuskManager : MonoBehaviour
                 partyData.Add(Instantiate(charData));
             }
             PauseMenu.instance.SetCanSave(false);
+            CalenderAndObjectiveManager.instance.timeOfDayText.text = "Dusk";
         }
     }
     

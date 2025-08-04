@@ -83,7 +83,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OnDebugButtonClick()
     {
-        StoryManager.instance.PrintCompletedCutscenes();
+        Debug.Log(PlayerDataManager.instance.currentData.objective);
     }
 
     public void OnResumeButtonClick()
@@ -117,7 +117,7 @@ public class PauseMenu : MonoBehaviour
 
     public void OnAdvanceButtonClick()
     {
-        CalenderManager.instance.AdvanceTimeBlock();
+        CalenderAndObjectiveManager.instance.AdvanceTimeBlock();
     }
 
     public void SetCanSave(bool set)

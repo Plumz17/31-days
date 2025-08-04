@@ -1,22 +1,25 @@
 using TMPro;
 using UnityEngine;
 
-public class CalenderManager : MonoBehaviour
+public class CalenderAndObjectiveManager : MonoBehaviour
 {
-    public static CalenderManager instance;
+    public static CalenderAndObjectiveManager instance;
 
     [Header("References")]
-    public TMP_Text dateText;
-    public TMP_Text dayText;
+    [SerializeField] private TMP_Text dateText;
+    [SerializeField] private TMP_Text dayText;
     public TMP_Text timeOfDayText;
-    public GameObject calendarUIPanel;
+    [SerializeField] private GameObject UIPanel;
+    [SerializeField] private TMP_Text objectiveText;
 
     public int currentMonth = 8;
     public int currentDay = 4;
-    public enum timeOfDay { Morn = 0, Noon = 1, Even = 2, Night = 3, Dusk = -1 }
+    public enum timeOfDay { Morn = 0, Noon = 1, Even = 2, Night = 3}
     public timeOfDay currentTimeOfDay = timeOfDay.Morn;
-    public int totalDaysPassed = 0;
-    public bool calIsActive = true;
+    private int totalDaysPassed = 0;
+    private bool calIsActive = true;
+
+    public string currentObjective;
 
     private int daysInMonth = 31;
     private string[] dayNames = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
@@ -79,12 +82,18 @@ public class CalenderManager : MonoBehaviour
         timeOfDayText.text = currentTimeOfDay.ToString();         // e.g. Morning
     }
 
+    public void UpdateObjectiveUI()
+    {
+        objectiveText.text = currentObjective;
+    }
+
     public void SaveToPlayerData(PlayerData data)
     {
         data.day = currentDay;
         data.month = currentMonth;
         data.time = (int)currentTimeOfDay;
         data.totalDaysPassed = totalDaysPassed;
+        data.objective = currentObjective;
     }
 
     public void LoadFromPlayerData(PlayerData data)
@@ -93,14 +102,15 @@ public class CalenderManager : MonoBehaviour
         currentMonth = data.month;
         currentTimeOfDay = (timeOfDay)data.time;
         totalDaysPassed = data.totalDaysPassed;
+        currentObjective = data.objective;
     }
     
     public void SetCalendarUI()
     {
-        if (calendarUIPanel != null)
+        if (UIPanel != null)
         {
             calIsActive = !calIsActive;
-            calendarUIPanel.SetActive(calIsActive);
+            UIPanel.SetActive(calIsActive);
         }
     }
 }

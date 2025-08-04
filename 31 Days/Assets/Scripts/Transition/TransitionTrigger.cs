@@ -41,7 +41,7 @@ public class TransitionTrigger : MonoBehaviour
         if (playerInTrigger && (playerInput.UI.Submit.triggered || isScreenChange))
         {
             if (AdvanceTimeFlag != 0)
-                CalenderManager.instance.AdvanceTimeBlock(AdvanceTimeFlag);
+                CalenderAndObjectiveManager.instance.AdvanceTimeBlock(AdvanceTimeFlag);
             LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
         }
     }

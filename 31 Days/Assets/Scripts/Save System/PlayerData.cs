@@ -10,6 +10,7 @@ public class PlayerData
     public int month = 8;
     public int time = 0;
     public int totalDaysPassed = 0;
+    public string objective = "Go to school";
 
     public int hp = 100;
     public int will = 50;

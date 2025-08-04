@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isFacingRight = true;
     private bool canMove = true;
     private SpriteRenderer spriteRenderer;
-    private CalenderManager calendar;
+    private CalenderAndObjectiveManager calendar;
 
     [Header("Footstep Settings")]
     public AudioSource audioSource;
@@ -39,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        calendar = CalenderManager.instance;
+        calendar = CalenderAndObjectiveManager.instance;
     }
 
     private void Update()

@@ -29,7 +29,7 @@ public class PlayerDataManager : MonoBehaviour
         AddPartyMember(protagCharacterData);
 
         //Reset calendar to day 1
-        CalenderManager.instance.LoadFromPlayerData(PlayerDataManager.instance.currentData);
+        CalenderAndObjectiveManager.instance.LoadFromPlayerData(PlayerDataManager.instance.currentData);
     }
 
     public void IncreaseConnection(string name)

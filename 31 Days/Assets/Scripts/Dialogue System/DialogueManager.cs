@@ -94,7 +94,7 @@ public class DialogueManager : MonoBehaviour
             PlayerDataManager.instance.IncreaseConnection(node.characterName);
 
         if (node.advanceTimeFlag != 0)
-            CalenderManager.instance.AdvanceTimeBlock(node.advanceTimeFlag);
+            CalenderAndObjectiveManager.instance.AdvanceTimeBlock(node.advanceTimeFlag);
 
         if (node.saveDataFlag)
             SaveData.Save();
@@ -104,6 +104,13 @@ public class DialogueManager : MonoBehaviour
 
         if (node.turnFlag)
             OnNodeStarted?.Invoke(node);
+
+        if (!string.IsNullOrEmpty(node.objecttiveFlag))
+        {
+            CalenderAndObjectiveManager.instance.currentObjective = node.objecttiveFlag;
+            CalenderAndObjectiveManager.instance.UpdateObjectiveUI();
+        }
+            
     }
 
     public void HandleSubmit()

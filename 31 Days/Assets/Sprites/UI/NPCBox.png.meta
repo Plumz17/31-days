@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: f1a948bb6c7fb2f459447ee47b0a46ef
+guid: 15192adc65c706e4184f06cc798a1629
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8681143794451434230
-    second: TextBox 1_0
+      213: 1736105643316062247
+    second: NPCBox_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: TextBox 1_0
+      name: NPCBox_0
       rect:
         serializedVersion: 2
         x: 47
         y: 621
         width: 1826
-        height: 395
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 435
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6fa4d50594e997870800000000000000
-      internalID: 8681143794451434230
+      spriteID: 728a76262e2e71810800000000000000
+      internalID: 1736105643316062247
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: c95a0e85e2bb46c4bb613b5dd4ae7e96
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      TextBox 1_0: 8681143794451434230
+      NPCBox_0: 1736105643316062247
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

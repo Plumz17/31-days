@@ -9,7 +9,6 @@ public class DialogueUIManager : MonoBehaviour
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TMP_Text dialogueText;
     [SerializeField] private TMP_Text characterNameText;
-    [SerializeField] private Image dialogueCircle;
     [SerializeField] private Image characterPortrait;
     [SerializeField] private Image dialogueImageUI;
     [SerializeField] private Sprite dialogueImage;
@@ -43,7 +42,6 @@ public class DialogueUIManager : MonoBehaviour
 
         characterNameText.gameObject.SetActive(hasCharacterName);
         characterPortrait.gameObject.SetActive(hasCharacterPortrait);
-        dialogueCircle.gameObject.SetActive(hasCharacterPortrait);
 
         if (hasCharacterPortrait) //First Possibility: Has Char Portrait and Char Name
         {
@@ -55,10 +53,6 @@ public class DialogueUIManager : MonoBehaviour
 
             // Use dialogue image if character exists
             dialogueImageUI.sprite = dialogueImage;
-            dialogueImageUI.SetNativeSize();
-            Vector2 anchoredPos = dialogueImageUI.rectTransform.anchoredPosition;
-            anchoredPos.y = 250f;
-            dialogueImageUI.rectTransform.anchoredPosition = anchoredPos;
         }
         else if (hasCharacterName) //Second Possibility: Has Char Name
         {
@@ -67,20 +61,10 @@ public class DialogueUIManager : MonoBehaviour
 
             // Use dialogue image if character exists
             dialogueImageUI.sprite = portraitlessDialogueImage;
-            dialogueImageUI.SetNativeSize();
-
-            Vector2 anchoredPos = dialogueImageUI.rectTransform.anchoredPosition;
-            anchoredPos.y = 228f;
-            dialogueImageUI.rectTransform.anchoredPosition = anchoredPos;
         }
         else //Third Possibility: Has none, a.k.a item
         {
             dialogueImageUI.sprite = itemImage;
-            dialogueImageUI.SetNativeSize();
-
-            Vector2 anchoredPos = dialogueImageUI.rectTransform.anchoredPosition;
-            anchoredPos.y = 250f;
-            dialogueImageUI.rectTransform.anchoredPosition = anchoredPos;
         }
     }
 

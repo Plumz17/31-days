@@ -17,15 +17,14 @@ public class Cutscene : MonoBehaviour
 
     public void PlayCutscene(string cutsceneID)
     {
-        if (player == null)
-        {
-            GameObject playerObj = GameObject.FindWithTag("Player");
-            if (playerObj != null)
-            {
-                player = playerObj.GetComponent<PlayerMovement>();
-            }
-        }
+        InitializePlayer();
+        SetupNPCsAndTarget();
+        StoryManager.instance.MarkCutscenePlayed(cutsceneID);
+        StartCoroutine(StartCutscene());
+    }
 
+    private void SetupNPCsAndTarget()
+    {
         if (npcToActivate.Length != 0)
         {
             GameObject mainNPC = npcToActivate[0];
@@ -44,58 +43,30 @@ public class Cutscene : MonoBehaviour
         {
             targetTransform = GameObjectToGoTo;
         }
+    }
 
-        StoryManager.instance.MarkCutscenePlayed(cutsceneID);
-        StartCoroutine(StartCutscene());
+    private void InitializePlayer()
+    {
+        if (player == null)
+        {
+            GameObject playerObj = GameObject.FindWithTag("Player");
+            if (playerObj != null)
+            {
+                player = playerObj.GetComponent<PlayerMovement>();
+            }
+        }
     }
 
     private IEnumerator StartCutscene()
     {
         StoryManager.instance.SetCutsceneState(true);
         if (haveOpeningDialogue)
-        {
-            dialogueTrigger = GetComponent<DialogueTrigger>();
-            player.SetCanMove(false);
+            yield return RunOpeningDialogue();
 
-            if (dialogueTrigger != null)
-            {
-                if (cutsceneDelay > 0f)
-                    yield return new WaitForSeconds(cutsceneDelay);
-
-                dialogueTrigger.TriggerDialogue(true);
-
-                // Wait until dialogue is finished
-                while (DialogueManager.instance != null && DialogueManager.instance.IsActive)
-                {
-                    yield return null;
-                }
-            }
-        }
-
-        if (targetTransform != null && stopDistance != 0f)
+        if (player != null && targetTransform != null && stopDistance != 0f)
         {
             player.WalkToPosition(targetTransform.position, stopDistance);
-        }
-
-        if (stopDistance != 0f)
-        {
-            float stepDelay = player.stepDelay; // Access step delay from PlayerMovement
-            float stepTimer = 0f;
-
-            // Wait until player reaches destination
-            while (Mathf.Abs(player.transform.position.x - targetTransform.position.x) > stopDistance)
-            {
-                stepTimer -= Time.deltaTime;
-                if (stepTimer <= 0f)
-                {
-                    player.PlayFootstep();
-                    stepTimer = stepDelay;
-                }
-                Debug.Log(Mathf.Abs(transform.position.x - targetTransform.position.x));
-                Debug.Log(stopDistance);
-
-                yield return null;
-            }
+            yield return HandleFootstepSFX();
         }
 
         if (dialogueTrigger != null && !haveOpeningDialogue)
@@ -105,10 +76,47 @@ public class Cutscene : MonoBehaviour
         }
 
         if (itemToOpen != null)
-        {
             itemToOpen.ForceOpenItem();
-        }
 
         StoryManager.instance.SetCutsceneState(false);
+    }
+
+    private IEnumerator HandleFootstepSFX()
+    {
+        float stepDelay = player.stepDelay; // Access step delay from PlayerMovement
+        float stepTimer = 0f;
+
+        // Wait until player reaches destination
+        while (Mathf.Abs(player.transform.position.x - targetTransform.position.x) > stopDistance)
+        {
+            stepTimer -= Time.deltaTime;
+            if (stepTimer <= 0f)
+            {
+                player.PlayFootstep();
+                stepTimer = stepDelay;
+            }
+
+            yield return null;
+        }
+    }
+
+    private IEnumerator RunOpeningDialogue()
+    {
+        dialogueTrigger = GetComponent<DialogueTrigger>();
+        player.SetCanMove(false);
+
+        if (dialogueTrigger != null)
+        {
+            if (cutsceneDelay > 0f)
+                yield return new WaitForSeconds(cutsceneDelay);
+
+            dialogueTrigger.TriggerDialogue(true);
+
+            // Wait until dialogue is finished
+            while (DialogueManager.instance != null && DialogueManager.instance.IsActive)
+            {
+                yield return null;
+            }
+        }
     }
 }

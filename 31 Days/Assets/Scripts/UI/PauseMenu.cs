@@ -97,9 +97,12 @@ public class PauseMenu : MonoBehaviour
 
     public void OnMenuButtonClick()
     {
+        OnPauseMenuClosed?.Invoke();
+        pauseMenuUI.SetActive(false);
         PlayClickSFX();
         Time.timeScale = 1;
         SceneManager.LoadScene(11);
+        gameIsPaused = false;
     }
 
     public void OnControlsButtonClick()

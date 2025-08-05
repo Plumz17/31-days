@@ -18,11 +18,12 @@ MonoBehaviour:
   advanceTimeFlag: 1
   saveDataFlag: 0
   turnFlag: 0
+  objectiveFlag: Go To School
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 7
     position: {x: -15, y: 2.125}
   onlyPlayedOnce: 1
   dialogueLines:
-  - Time Advanced!
+  - (You went to bed)
   nextNode: {fileID: 0}

@@ -61,9 +61,13 @@ public class Cutscene : MonoBehaviour
     {   
         StoryManager.instance.SetCutsceneState(true);
 
+        player.SetCanMove(false);
+
         if (haveOpeningDialogue)
             yield return RunOpeningDialogue();
-            
+        else
+            if (cutsceneDelay > 0f)
+            yield return new WaitForSeconds(cutsceneDelay);    
 
         if (player != null && targetTransform != null && stopDistance != 0f)
         {

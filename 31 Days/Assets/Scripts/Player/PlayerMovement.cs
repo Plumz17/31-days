@@ -144,8 +144,6 @@ public class PlayerMovement : MonoBehaviour
 
     private IEnumerator WalkCoroutine(Vector2 targetPosition, float stopDistance)
     {
-        canMove = false; // Disable player input
-
         Vector2 finalTarget = targetPosition;
 
         if (stopDistance < 0)

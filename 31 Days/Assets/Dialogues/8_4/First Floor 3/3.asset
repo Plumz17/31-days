@@ -9,22 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
+  m_Name: 3
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Bagas
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Explore your Surroundings
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
-  dialogueLines:
-  - ...
-  - ...Where Am I...?
-  nextNode: {fileID: 0}
+  options:
+  - optionText: Saw what?
+    nextNode: {fileID: 11400000, guid: 5b432b7dd803f32408bcd89f4ab5c7c3, type: 2}
+  - optionText: Yeah, what was that
+    nextNode: {fileID: 11400000, guid: 5461ffaa51381c5419b549d67fb0827b, type: 2}
+  - optionText: ...Who are you?
+    nextNode: {fileID: 11400000, guid: 5a1b7b504a5d57a4f83a5d2d0a9f65c7, type: 2}

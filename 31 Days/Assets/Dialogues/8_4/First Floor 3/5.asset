@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Name: 5
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Bagas
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Explore your Surroundings
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - ...
-  - ...Where Am I...?
-  nextNode: {fileID: 0}
+  - "...I-I d-don\u2019t know\u2026\r\n"
+  nextNode: {fileID: 11400000, guid: ed451e625fcf4dc43a0a1e5c4a303efb, type: 2}

@@ -28,11 +28,14 @@ public class ButtonsGroup : MonoBehaviour
     {
         if (rpgManager.isBusy) return;
 
+        int will = 10;
+        rpgManager.currentUnit.RestoreWILL(will);
+
         rpgManager.currentUnit.Defend();
         rpgManager.isBusy = true;
 
         rpgManager.PlaySFX(rpgManager.defendSFX);
-        textBox.text = rpgManager.currentUnit.Name + " Defended!";
+        textBox.text = rpgManager.currentUnit.Name + " Defended! and gained + " + will + " WILL";;
 
         StartCoroutine(EndTurnAfterDelay());
     }
@@ -93,9 +96,8 @@ public class ButtonsGroup : MonoBehaviour
     {
         if (rpgManager.isBusy) return;
 
-        int will = 30;
-
         rpgManager.isBusy = true;
+        int will = 30;
         rpgManager.currentUnit.RestoreWILL(will);
         rpgManager.playerGroup.UpdatePartyUI(rpgManager.playerUnits);
 

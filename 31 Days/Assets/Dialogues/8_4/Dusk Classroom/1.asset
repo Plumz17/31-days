@@ -18,12 +18,13 @@ MonoBehaviour:
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Investigate the Orb
+  objectiveFlag: Investigate your Surroundings
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
-  onlyPlayedOnce: 0
+  onlyPlayedOnce: 1
   dialogueLines:
-  - Touch the Orb?
-  nextNode: {fileID: 11400000, guid: 7ee96bcd628bd704dbca2d3352f2d2f4, type: 2}
+  - ...
+  - ...Where Am I...?
+  nextNode: {fileID: 0}

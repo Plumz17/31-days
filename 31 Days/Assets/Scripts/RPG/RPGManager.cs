@@ -258,6 +258,9 @@ public class RPGManager : MonoBehaviour
     {
         DuskManager.instance.SavePartyData(playerUnits);
 
+        if (DuskManager.instance.currentEncounter.encounterName == "First Encounter")
+            LevelLoader.Instance.LoadNextLevel(14, DuskManager.instance.currentLocation);
+
         if (didPlayerFlee)
         {
             textBox.text = "You ran!";

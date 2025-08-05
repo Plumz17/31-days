@@ -45,7 +45,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Dusk Zone.unity
     guid: 7078922f857a060488abdd9be8eaff9d
   - enabled: 1
-    path: Assets/Scenes/Rooms/Dusk Rooms/Dusk Classroom.unity
+    path: Assets/Scenes/Dusk Classroom.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/Scenes/Rooms/Empty Classroom.unity

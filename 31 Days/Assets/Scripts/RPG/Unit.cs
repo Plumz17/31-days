@@ -94,13 +94,11 @@ public class Unit : MonoBehaviour
     public IEnumerator FlickerAlpha(int flickerCount = 3, float flickerSpeed = 0.1f)
     {
         Image image = transform.Find("Enemy")?.GetComponent<Image>();
-        Debug.Log(image.gameObject.name);
 
         Color originalColor = image.color;
 
         for (int i = 0; i < flickerCount; i++)
         {
-            Debug.Log(flickerCount);
             // Set alpha to 0 (invisible)
             image.color = new Color(originalColor.r, originalColor.g, originalColor.b, 0f);
             yield return new WaitForSeconds(flickerSpeed);

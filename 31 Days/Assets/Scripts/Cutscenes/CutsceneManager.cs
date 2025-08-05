@@ -39,7 +39,6 @@ public class CutsceneManager : MonoBehaviour
 
             if (cutscene.playOnStart)
             {
-                Debug.Log($"Playing cutscene on start: {cutscene.cutsceneID}");
                 PlayCutscene(cutscene.rootObject.GetComponent<Cutscene>(), cutscene.cutsceneID);
             }
 

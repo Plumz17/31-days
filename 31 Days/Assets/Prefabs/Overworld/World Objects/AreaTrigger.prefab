@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 6612512631810185339}
   - component: {fileID: 7680530181905035141}
   - component: {fileID: 7188108431845876811}
-  - component: {fileID: 624898217703371401}
   m_Layer: 0
   m_Name: AreaTrigger
   m_TagString: Untagged
@@ -97,6 +96,7 @@ MonoBehaviour:
   sceneIndex: 2
   isScreenChange: 0
   spawnPosition: {x: 39.625, y: 1.25, z: 0}
+  AdvanceTimeFlag: 0
 --- !u!212 &7680530181905035141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -174,16 +174,3 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &624898217703371401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2272789505462892155}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dae28d93d71d2fb46afb8c2097103a7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  floatStrength: 0.2

@@ -13,6 +13,7 @@ public class CutsceneManager : MonoBehaviour
 
         [Header("Optional Prerequisite")]
         public string requiredCutsceneID;
+        public int requiredDay;
     }
 
     public CutsceneData[] cutscenes;
@@ -33,6 +34,9 @@ public class CutsceneManager : MonoBehaviour
             // Check prerequisite if set
             if (!string.IsNullOrEmpty(cutscene.requiredCutsceneID) &&
                 !StoryManager.instance.HasCutscenePlayed(cutscene.requiredCutsceneID))
+                continue;
+
+            if (cutscene.requiredDay != 0 && CalenderAndObjectiveManager.instance.currentDay != cutscene.requiredDay)
                 continue;
 
             cutscene.rootObject.SetActive(true);

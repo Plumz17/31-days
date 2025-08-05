@@ -459,8 +459,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcToActivate:
   - {fileID: 89728061}
-  itemToOpen: {fileID: 0}
   stopDistance: 0
+  itemToOpen: {fileID: 0}
+  GameObjectToGoTo: {fileID: 0}
+  haveOpeningDialogue: 0
+  cutsceneDelay: 0
 --- !u!1001 &332659982
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -530,6 +533,10 @@ PrefabInstance:
       value: Cutscenes
       objectReference: {fileID: 0}
     - target: {fileID: 6512676630263465531, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7601193330531060392, guid: 11dcbc89bb635e1409a2a579e62f9eda, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -1414,8 +1421,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcToActivate:
   - {fileID: 1697724153}
-  itemToOpen: {fileID: 0}
   stopDistance: 0
+  itemToOpen: {fileID: 0}
+  GameObjectToGoTo: {fileID: 0}
+  haveOpeningDialogue: 0
+  cutsceneDelay: 0
 --- !u!1 &1162171213
 GameObject:
   m_ObjectHideFlags: 0
@@ -1443,7 +1453,7 @@ Transform:
   m_GameObject: {fileID: 1162171213}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9810237, y: 0, z: 0}
+  m_LocalPosition: {x: -2.1090019, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1817,8 +1827,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcToActivate:
   - {fileID: 718455326}
-  itemToOpen: {fileID: 0}
   stopDistance: 4
+  itemToOpen: {fileID: 0}
+  GameObjectToGoTo: {fileID: 0}
+  haveOpeningDialogue: 0
+  cutsceneDelay: 0
 --- !u!1 &1697724153 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5574713003714194038, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
@@ -1988,7 +2001,7 @@ Transform:
   m_GameObject: {fileID: 2047215672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.327008, y: 3.5, z: 0}
+  m_LocalPosition: {x: -0.36966744, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2308,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.4374914
+      value: -4.8640857
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2328,19 +2341,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 5.625
+      value: 5.640625
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0
+      value: 0.16510418
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 1
+      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 1
+      value: 0.33425924
       objectReference: {fileID: 0}
     - target: {fileID: 5425169048719876304, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x

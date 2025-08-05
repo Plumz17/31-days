@@ -83,7 +83,7 @@ public class Cutscene : MonoBehaviour
             float stepTimer = 0f;
 
             // Wait until player reaches destination
-            while (Vector2.Distance(player.transform.position, targetTransform.position) > stopDistance)
+            while (Mathf.Abs(player.transform.position.x - targetTransform.position.x) > stopDistance)
             {
                 stepTimer -= Time.deltaTime;
                 if (stepTimer <= 0f)
@@ -91,6 +91,8 @@ public class Cutscene : MonoBehaviour
                     player.PlayFootstep();
                     stepTimer = stepDelay;
                 }
+                Debug.Log(Mathf.Abs(transform.position.x - targetTransform.position.x));
+                Debug.Log(stopDistance);
 
                 yield return null;
             }

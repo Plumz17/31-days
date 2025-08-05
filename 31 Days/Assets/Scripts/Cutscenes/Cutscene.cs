@@ -58,10 +58,12 @@ public class Cutscene : MonoBehaviour
     }
 
     private IEnumerator StartCutscene()
-    {
+    {   
         StoryManager.instance.SetCutsceneState(true);
+
         if (haveOpeningDialogue)
             yield return RunOpeningDialogue();
+            
 
         if (player != null && targetTransform != null && stopDistance != 0f)
         {

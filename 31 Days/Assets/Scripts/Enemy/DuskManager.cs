@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class DuskManager : MonoBehaviour
 {
-    [SerializeField] private List<string> duskSceneNames = new List<string> {"Dusk Zone", "RPG"};
+    [SerializeField] private List<string> duskSceneNames = new List<string> {"Dusk Zone", "RPG", "Dusk Classroom"};
     [SerializeField] private List<CharacterData> partyData = new List<CharacterData>();
     public static DuskManager instance;
 

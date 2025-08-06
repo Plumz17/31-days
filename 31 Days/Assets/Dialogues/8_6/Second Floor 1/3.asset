@@ -30,8 +30,4 @@ MonoBehaviour:
   - 'Right?
 
 '
-  - 'Must be nice having all that time to study while everyone else is actually living
-    their lives like the rest of us.
-
-'
   nextNode: {fileID: 11400000, guid: 6e123b9b0f718d447af8a8b811dead56, type: 2}

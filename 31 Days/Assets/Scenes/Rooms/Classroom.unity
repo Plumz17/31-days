@@ -405,6 +405,14 @@ PrefabInstance:
       propertyPath: objectToAppearAtTheEnd
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4109282030215771335, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1770511400, guid: 3be79fcb27a1a35469f1aec72ac746cf, type: 3}
+    - target: {fileID: 4109282030215771335, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5574713003714194038, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
       propertyPath: m_Name
       value: Diah 8/4
@@ -1719,6 +1727,14 @@ PrefabInstance:
       propertyPath: objectToAppearAtTheEnd
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 4109282030215771335, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1770511400, guid: 3be79fcb27a1a35469f1aec72ac746cf, type: 3}
+    - target: {fileID: 4109282030215771335, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5574713003714194038, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
       propertyPath: m_Name
       value: Diah 8/5
@@ -2654,6 +2670,14 @@ PrefabInstance:
       propertyPath: startingNode
       value: 
       objectReference: {fileID: 11400000, guid: d40bf1df87f414e44842b7d7400b0a36, type: 2}
+    - target: {fileID: 4109282030215771335, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1770511400, guid: 3be79fcb27a1a35469f1aec72ac746cf, type: 3}
+    - target: {fileID: 4109282030215771335, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5574713003714194038, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
       propertyPath: m_Name
       value: Diah Variant
@@ -2895,7 +2919,7 @@ Transform:
   m_GameObject: {fileID: 1162171213}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.674776, y: 0, z: 0}
+  m_LocalPosition: {x: -1.9810234, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4313,7 +4337,7 @@ Transform:
   m_GameObject: {fileID: 2047215672}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5582589, y: 3.5, z: 0}
+  m_LocalPosition: {x: -0.32700804, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4633,11 +4657,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.75
+      value: -4.4374914
       objectReference: {fileID: 0}
     - target: {fileID: 671794908851784102, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0999999
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 914689965977792638, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: Lens.OrthographicSize
@@ -4653,19 +4677,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 5.6
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_NormalizedViewPortRect.x
-      value: 0.03697917
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.33333334
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.8296296
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5425169048719876304, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
@@ -4784,6 +4808,14 @@ PrefabInstance:
       propertyPath: objectToAppearAtTheEnd
       value: 
       objectReference: {fileID: 782960068}
+    - target: {fileID: 4109282030215771335, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1770511400, guid: 3be79fcb27a1a35469f1aec72ac746cf, type: 3}
+    - target: {fileID: 4109282030215771335, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5574713003714194038, guid: 890b52aae5de67d45abb3ee3f8db9b5f, type: 3}
       propertyPath: m_Name
       value: Diah 8/4

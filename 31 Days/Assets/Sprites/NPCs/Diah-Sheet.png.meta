@@ -1,58 +1,58 @@
 fileFormatVersion: 2
-guid: 58909e187c1a3874b847d0fed9e2497e
+guid: 3be79fcb27a1a35469f1aec72ac746cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4003365615689827876
-    second: koperasi-Sheet_0
+      213: 497567312843933324
+    second: Diah-Sheet 1_0
   - first:
-      213: -677810655470336291
-    second: koperasi-Sheet_1
+      213: 8246582095564017009
+    second: Diah-Sheet 1_1
   - first:
-      213: -5853753519204324529
-    second: koperasi-Sheet_2
+      213: -6365857543750258576
+    second: Diah-Sheet 1_2
   - first:
-      213: 1236984591897039514
-    second: koperasi-Sheet_3
+      213: 4630141171902720780
+    second: Diah-Sheet 1_3
   - first:
-      213: 8929878540374743555
-    second: koperasi-Sheet_4
+      213: 2417211852122928687
+    second: Diah-Sheet 1_4
   - first:
-      213: -2498350216402175131
-    second: koperasi-Sheet_5
+      213: -8496202727710049543
+    second: Diah-Sheet 1_5
   - first:
-      213: 2245760461397917445
-    second: koperasi-Sheet_6
+      213: 5227456686642341308
+    second: Diah-Sheet 1_6
   - first:
-      213: -6198195704662712072
-    second: koperasi-Sheet_7
+      213: -7678933525772232788
+    second: Diah-Sheet 1_7
   - first:
-      213: -39085051001533571
-    second: koperasi-Sheet_8
+      213: -5965151422071075751
+    second: Diah-Sheet 1_8
   - first:
-      213: 4342308517059437625
-    second: koperasi-Sheet_9
+      213: -7455078143741336409
+    second: Diah-Sheet 1_9
   - first:
-      213: 8497281765866322190
-    second: koperasi-Sheet_10
+      213: 1576517876810205501
+    second: Diah-Sheet 1_10
   - first:
-      213: -1702123357586422763
-    second: koperasi-Sheet_11
+      213: 5354308852795867039
+    second: Diah-Sheet 1_11
   - first:
-      213: -4992658505117974365
-    second: koperasi-Sheet_12
+      213: 3458586535511559610
+    second: Diah-Sheet 1_12
   - first:
-      213: 6883674231321777856
-    second: koperasi-Sheet_13
+      213: 2138937456721277751
+    second: Diah-Sheet 1_13
   - first:
-      213: -6192666919352289849
-    second: koperasi-Sheet_14
+      213: 3410341683263941099
+    second: Diah-Sheet 1_14
   - first:
-      213: 7706125684055904755
-    second: koperasi-Sheet_15
+      213: 6145073132252914300
+    second: Diah-Sheet 1_15
   - first:
-      213: 6892997682649399690
-    second: koperasi-Sheet_16
+      213: 8621801262767941916
+    second: Diah-Sheet 1_16
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -148,7 +148,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: koperasi-Sheet_0
+      name: Diah-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -161,16 +161,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cd97bcaee203178c0800000000000000
-      internalID: -4003365615689827876
+      spriteID: 9c2e01641e5b8d64fbbd362f7edac0af
+      internalID: -1770511400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_1
+      name: Diah-Sheet_1
       rect:
         serializedVersion: 2
         x: 110
@@ -183,16 +183,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dd647bfcccee796f0800000000000000
-      internalID: -677810655470336291
+      spriteID: 29835725e39e8d5489bea262dcd8c0a8
+      internalID: 587821793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_2
+      name: Diah-Sheet_2
       rect:
         serializedVersion: 2
         x: 220
@@ -205,16 +205,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f4b2225503a43cea0800000000000000
-      internalID: -5853753519204324529
+      spriteID: f8e6daec1713c424e8e5e80ef8212852
+      internalID: -1060491717
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_3
+      name: Diah-Sheet_3
       rect:
         serializedVersion: 2
         x: 330
@@ -227,16 +227,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a9297a8bee6aa2110800000000000000
-      internalID: 1236984591897039514
+      spriteID: 161143ff572e43d4c92638161bebf2d3
+      internalID: 1036050661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_4
+      name: Diah-Sheet_4
       rect:
         serializedVersion: 2
         x: 440
@@ -249,16 +249,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 30a9b6e483d4deb70800000000000000
-      internalID: 8929878540374743555
+      spriteID: bab5e354d0d928e4796ca33a93ffd8fb
+      internalID: 1304392688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_5
+      name: Diah-Sheet_5
       rect:
         serializedVersion: 2
         x: 550
@@ -271,16 +271,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 56bf3da07b3145dd0800000000000000
-      internalID: -2498350216402175131
+      spriteID: e8eac61da6e5d1240b7d14670c92dcef
+      internalID: 1095060908
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_6
+      name: Diah-Sheet_6
       rect:
         serializedVersion: 2
         x: 660
@@ -293,16 +293,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 50f7d38bd3b8a2f10800000000000000
-      internalID: 2245760461397917445
+      spriteID: 92261f04ec6e9434e91512b989bdf406
+      internalID: 1422401173
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_7
+      name: Diah-Sheet_7
       rect:
         serializedVersion: 2
         x: 770
@@ -315,16 +315,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8f02a3798d59bf9a0800000000000000
-      internalID: -6198195704662712072
+      spriteID: fbf005dc3b226ca4e8554aedaf98c859
+      internalID: -1395105204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_8
+      name: Diah-Sheet_8
       rect:
         serializedVersion: 2
         x: 880
@@ -337,16 +337,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d7b860b6a54257ff0800000000000000
-      internalID: -39085051001533571
+      spriteID: 10a23e32eebc8b349b5c4d1a9864c464
+      internalID: -1198067025
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_9
+      name: Diah-Sheet_9
       rect:
         serializedVersion: 2
         x: 990
@@ -359,16 +359,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9342b78f69af24c30800000000000000
-      internalID: 4342308517059437625
+      spriteID: b08f6d7325f4fd04da8a5f3ec865fec5
+      internalID: -794045176
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_10
+      name: Diah-Sheet_10
       rect:
         serializedVersion: 2
         x: 1100
@@ -381,16 +381,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e09bddadeb86ce570800000000000000
-      internalID: 8497281765866322190
+      spriteID: 883c7ef6a954a1b4698f86998fa43263
+      internalID: 689801300
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_11
+      name: Diah-Sheet_11
       rect:
         serializedVersion: 2
         x: 1210
@@ -403,16 +403,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5148a2313d7d068e0800000000000000
-      internalID: -1702123357586422763
+      spriteID: bd3d240e76ec941488f2f12a0d963f07
+      internalID: -1668096512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_12
+      name: Diah-Sheet_12
       rect:
         serializedVersion: 2
         x: 1320
@@ -425,16 +425,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3a04c95ba8386bab0800000000000000
-      internalID: -4992658505117974365
+      spriteID: 43e51fd458ac5474482c3546d6466411
+      internalID: -1729225864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_13
+      name: Diah-Sheet_13
       rect:
         serializedVersion: 2
         x: 1430
@@ -447,16 +447,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0c6d17bfd39b78f50800000000000000
-      internalID: 6883674231321777856
+      spriteID: e8df0744b10286d48acbe9e5934ebee6
+      internalID: -251650988
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_14
+      name: Diah-Sheet_14
       rect:
         serializedVersion: 2
         x: 1540
@@ -469,16 +469,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7c5b1bb3f3a3f0aa0800000000000000
-      internalID: -6192666919352289849
+      spriteID: a27d248bb0db21f42944b0d79b48812b
+      internalID: -300448158
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_15
+      name: Diah-Sheet_15
       rect:
         serializedVersion: 2
         x: 1650
@@ -491,16 +491,16 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3f19aa81b78a1fa60800000000000000
-      internalID: 7706125684055904755
+      spriteID: e0c386febb22548418d5ab6f52d69138
+      internalID: 1706221485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: koperasi-Sheet_16
+      name: Diah-Sheet_16
       rect:
         serializedVersion: 2
         x: 1760
@@ -513,10 +513,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a8188e72fd8d8af50800000000000000
-      internalID: 6892997682649399690
+      spriteID: 5bc46329ac73e5744a2a8669b392b3f3
+      internalID: 298692068
       vertices: []
       indices: 
       edges: []
@@ -525,7 +525,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5bd1477e9f200aa47bf8a6b213a92515
+    spriteID: 643e5dd9ef2b5ad47aa01126115c5c65
     internalID: 0
     vertices: []
     indices: 
@@ -534,26 +534,28 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries:
+      - key: SpriteEditor.SliceOnImport
+        value: False
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":110.0,"y":110.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      koperasi-Sheet_0: -4003365615689827876
-      koperasi-Sheet_1: -677810655470336291
-      koperasi-Sheet_10: 8497281765866322190
-      koperasi-Sheet_11: -1702123357586422763
-      koperasi-Sheet_12: -4992658505117974365
-      koperasi-Sheet_13: 6883674231321777856
-      koperasi-Sheet_14: -6192666919352289849
-      koperasi-Sheet_15: 7706125684055904755
-      koperasi-Sheet_16: 6892997682649399690
-      koperasi-Sheet_2: -5853753519204324529
-      koperasi-Sheet_3: 1236984591897039514
-      koperasi-Sheet_4: 8929878540374743555
-      koperasi-Sheet_5: -2498350216402175131
-      koperasi-Sheet_6: 2245760461397917445
-      koperasi-Sheet_7: -6198195704662712072
-      koperasi-Sheet_8: -39085051001533571
-      koperasi-Sheet_9: 4342308517059437625
+      Diah-Sheet_0: -1770511400
+      Diah-Sheet_1: 587821793
+      Diah-Sheet_10: 689801300
+      Diah-Sheet_11: -1668096512
+      Diah-Sheet_12: -1729225864
+      Diah-Sheet_13: -251650988
+      Diah-Sheet_14: -300448158
+      Diah-Sheet_15: 1706221485
+      Diah-Sheet_16: 298692068
+      Diah-Sheet_2: -1060491717
+      Diah-Sheet_3: 1036050661
+      Diah-Sheet_4: 1304392688
+      Diah-Sheet_5: 1095060908
+      Diah-Sheet_6: 1422401173
+      Diah-Sheet_7: -1395105204
+      Diah-Sheet_8: -1198067025
+      Diah-Sheet_9: -794045176
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

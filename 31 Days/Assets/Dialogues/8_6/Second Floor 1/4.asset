@@ -29,6 +29,5 @@ MonoBehaviour:
 
 '
   - "Didn\u2019t see you there.\r\n"
-  - "I mean, it\u2019s honestly inspiring how well you're doing.\r\n"
   - "Don\u2019t worry, Bagas and I were just having a friendly chat.\r\n"
   nextNode: {fileID: 11400000, guid: 07d936162158fff4fa14cf2a1fbf561a, type: 2}

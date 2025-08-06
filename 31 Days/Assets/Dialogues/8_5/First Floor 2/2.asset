@@ -9,24 +9,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 20
+  m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
+  m_Name: 2
   m_EditorClassIdentifier: 
-  characterName: Cass
+  characterName: Bagas
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
-  turnFlag: 1
+  turnFlag: 0
   objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
-  dialogueLines:
-  - 'THANKS!!!
-
-'
-  - "You\u2019re the Best\r\n"
-  nextNode: {fileID: 11400000, guid: 73ba3e747a6c21047b241c1cad1fbdd6, type: 2}
+  options:
+  - optionText: 'Hi, I''m Satria '
+    nextNode: {fileID: 11400000, guid: 5e4e838a7b4c24047bdf7696448fbfc0, type: 2}
+  - optionText: "Uh\u2026 hi "
+    nextNode: {fileID: 11400000, guid: c5867ba396c675c48b96e09a68cdcf27, type: 2}
+  - optionText: 'Cool Sweater. Mind if I walk with you? '
+    nextNode: {fileID: 11400000, guid: e3ec65041ac4e614cb98724a10722450, type: 2}

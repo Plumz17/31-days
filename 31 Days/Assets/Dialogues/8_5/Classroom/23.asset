@@ -9,24 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 20
+  m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
+  m_Name: 23
   m_EditorClassIdentifier: 
   characterName: Cass
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
-  turnFlag: 1
+  turnFlag: 0
   objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
-  dialogueLines:
-  - 'THANKS!!!
-
-'
-  - "You\u2019re the Best\r\n"
-  nextNode: {fileID: 11400000, guid: 73ba3e747a6c21047b241c1cad1fbdd6, type: 2}
+  options:
+  - optionText: 'Yeah I did '
+    nextNode: {fileID: 11400000, guid: c51c0afd31b4f6d46a4056579094974e, type: 2}
+  - optionText: 'What Thing? '
+    nextNode: {fileID: 11400000, guid: e763a81523b77ed4582dcab3d0a8ee77, type: 2}

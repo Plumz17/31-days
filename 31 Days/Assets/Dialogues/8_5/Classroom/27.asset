@@ -10,23 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 20
+  m_Name: 27
   m_EditorClassIdentifier: 
-  characterName: Cass
+  characterName: Diah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
-  turnFlag: 1
-  objectiveFlag: 
+  turnFlag: 0
+  objectiveFlag: Head Home
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'THANKS!!!
+  - "Okay, that\u2019s it for today.\r\n"
+  - 'Thanks for hanging in there, everyone.
 
 '
-  - "You\u2019re the Best\r\n"
-  nextNode: {fileID: 11400000, guid: 73ba3e747a6c21047b241c1cad1fbdd6, type: 2}
+  - "Get some rest. You\u2019ve earned it.\r\n"
+  nextNode: {fileID: 0}

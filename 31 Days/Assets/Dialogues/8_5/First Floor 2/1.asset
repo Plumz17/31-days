@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 20
+  m_Name: 1
   m_EditorClassIdentifier: 
-  characterName: Cass
+  characterName: Bagas
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
-  turnFlag: 1
+  turnFlag: 0
   objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
@@ -25,8 +25,5 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'THANKS!!!
-
-'
-  - "You\u2019re the Best\r\n"
-  nextNode: {fileID: 11400000, guid: 73ba3e747a6c21047b241c1cad1fbdd6, type: 2}
+  - "Oh\u2026 It\u2019s you again\u2026\r\n"
+  nextNode: {fileID: 11400000, guid: 2f224c230cdb8934686c1adf397236ee, type: 2}

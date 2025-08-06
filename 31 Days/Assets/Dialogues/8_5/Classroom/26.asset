@@ -10,23 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 20
+  m_Name: 26
   m_EditorClassIdentifier: 
   characterName: Cass
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
-  turnFlag: 1
-  objectiveFlag: 
+  turnFlag: 0
+  objectiveFlag: Attend Ms.Diah's Class
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'THANKS!!!
+  - 'THANK YOU SO MUCH!!!!!
 
 '
-  - "You\u2019re the Best\r\n"
-  nextNode: {fileID: 11400000, guid: 73ba3e747a6c21047b241c1cad1fbdd6, type: 2}
+  - "I need to prepare for this evening\u2019s meeting and like five other things
+    I probably forgot about. "
+  - "You\u2019re officially my favorite person today!\r\n\n"
+  - Good for you!
+  - 'Oh, look at the time. We should probably sit down. Class is about to start soon.
+
+'
+  nextNode: {fileID: 0}

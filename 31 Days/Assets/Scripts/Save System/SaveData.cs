@@ -30,6 +30,7 @@ public static class SaveData
 
         string json = File.ReadAllText(path);
         PlayerDataManager.instance.currentData = JsonUtility.FromJson<PlayerData>(json);
+        Debug.Log(path);
 
         StoryManager.instance.LoadCutscenesFromPlayerData();
 

@@ -33,9 +33,8 @@ MonoBehaviour:
 
 '
   - "Because of course it\u2019s Cass.\r\n"
-  - "Because of course it\u2019s Cass.\r\n"
   - 'Cass, be a dear and hand these out.
 
 '
   - "You\u2019re basically already doing half of my job anyways\u2026\r\n"
-  nextNode: {fileID: 11400000, guid: cf18271bd59e3464c867042cae437701, type: 2}
+  nextNode: {fileID: 11400000, guid: b2d572d861a8ff941993cd4b5907eba3, type: 2}

@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 10
+  m_Name: 4.5
   m_EditorClassIdentifier: 
   characterName: Cass
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
-  turnFlag: 1
+  turnFlag: 0
   objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
@@ -25,5 +25,5 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - "Oh, yes ma\u2019am, sorry ma\u2019am\r\n"
-  nextNode: {fileID: 11400000, guid: c49d385f2b6c5cc45a52923b6e0ca184, type: 2}
+  - "Yes ma\u2019am."
+  nextNode: {fileID: 11400000, guid: cf18271bd59e3464c867042cae437701, type: 2}

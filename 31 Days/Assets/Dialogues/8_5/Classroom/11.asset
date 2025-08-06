@@ -15,7 +15,7 @@ MonoBehaviour:
   characterName: Indah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
-  advanceTimeFlag: 0
+  advanceTimeFlag: 1
   saveDataFlag: 0
   turnFlag: 0
   objectiveFlag: 

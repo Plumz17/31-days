@@ -23,7 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
-  onlyPlayedOnce: 1
+  onlyPlayedOnce: 0
   options:
   - optionText: Yes
     nextNode: {fileID: 11400000, guid: 8031565f770f4b14792e7b6b0be97066, type: 2}

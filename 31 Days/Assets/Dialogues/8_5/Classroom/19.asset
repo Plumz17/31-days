@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Name: 19
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Cass
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
@@ -23,7 +23,9 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
-  onlyPlayedOnce: 0
+  onlyPlayedOnce: 1
   dialogueLines:
-  - Are you ready to begin? Starting Class will advance your time.
-  nextNode: {fileID: 11400000, guid: e99a118b49f75054f88b0ef0911cf06f, type: 2}
+  - "My eternal gratitude and, uh\u2026 moral superiority?\r\n"
+  - So...
+  - I gotta go..
+  nextNode: {fileID: 11400000, guid: 6f1f36830d8bfb7408703e4b81ffca52, type: 2}

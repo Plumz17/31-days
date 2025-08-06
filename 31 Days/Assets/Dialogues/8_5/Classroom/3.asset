@@ -23,7 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 10
     position: {x: -6.75, y: -1}
-  onlyPlayedOnce: 0
+  onlyPlayedOnce: 1
   dialogueLines:
   - (The School Bell Rings)
   nextNode: {fileID: 0}

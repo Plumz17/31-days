@@ -26,6 +26,6 @@ MonoBehaviour:
   onlyPlayedOnce: 1
   options:
   - optionText: "You say that like you\u2019re not paid to be here. "
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: 345c367ba8be54d43a7b65152e035c81, type: 2}
   - optionText: 'You good, Miss? '
-    nextNode: {fileID: 0}
+    nextNode: {fileID: 11400000, guid: 7c6570134a815d540a543a1f55a716c5, type: 2}

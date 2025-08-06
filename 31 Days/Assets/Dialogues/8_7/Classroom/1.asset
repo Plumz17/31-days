@@ -31,4 +31,4 @@ MonoBehaviour:
 
 '
   - "Let\u2019s just survive today, yeah? We have weekends in two days\r\n"
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 09fc139fdc372b449bb63a7b4ac520eb, type: 2}

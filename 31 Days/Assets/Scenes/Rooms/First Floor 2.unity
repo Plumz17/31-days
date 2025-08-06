@@ -480,7 +480,7 @@ PrefabInstance:
       objectReference: {fileID: 2133214048}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 5.875
+      value: 6.390625
       objectReference: {fileID: 0}
     - target: {fileID: 5425169048719876304, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
@@ -1058,10 +1058,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c7ca68bf2f3ed48be969b861adb73c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcToActivate: []
+  npcToActivate:
+  - {fileID: 1961435568}
   stopDistance: 3
   itemToOpen: {fileID: 0}
-  GameObjectToGoTo: {fileID: 509442720}
+  GameObjectToGoTo: {fileID: 0}
   haveOpeningDialogue: 0
   cutsceneDelay: 1
 --- !u!114 &898926794
@@ -1392,7 +1393,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6225161012708878283, guid: 096c957ed5f69e04b970b7c6cae0e6a5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8624251009464083594, guid: 096c957ed5f69e04b970b7c6cae0e6a5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1444,6 +1445,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8624251009464083594, guid: 096c957ed5f69e04b970b7c6cae0e6a5, type: 3}
   m_PrefabInstance: {fileID: 1961435566}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1961435568 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6225161012708878283, guid: 096c957ed5f69e04b970b7c6cae0e6a5, type: 3}
+  m_PrefabInstance: {fileID: 1961435566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1987899685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1471,7 +1477,7 @@ PrefabInstance:
     - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
       propertyPath: cutscenes.Array.data[1].rootObject
       value: 
-      objectReference: {fileID: 440470743}
+      objectReference: {fileID: 898926791}
     - target: {fileID: 3547725665319863344, guid: b12a7113603674f4c818dd2c276944ae, type: 3}
       propertyPath: cutscenes.Array.data[0].playOnStart
       value: 0

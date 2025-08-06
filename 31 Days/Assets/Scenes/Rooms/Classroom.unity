@@ -2780,7 +2780,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cutsceneScript: {fileID: 1388302932}
-  cutsceneID: 8/5_Classroom_3
+  cutsceneID: 8/5_Classroom_4
 --- !u!1 &1388302931
 GameObject:
   m_ObjectHideFlags: 0
@@ -2830,9 +2830,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1334071667}
   - {fileID: 1901300314}
   - {fileID: 264696897}
-  - {fileID: 1334071667}
   m_Father: {fileID: 332659983}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1439647786 stripped

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: 11
+  m_EditorClassIdentifier: 
+  characterName: Cass
+  characterPortrait: {fileID: 0}
+  levelUpFlag: 0
+  advanceTimeFlag: 0
+  saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  onlyPlayedOnce: 1
+  dialogueLines:
+  - "Well\u2026\r\n"
+  - "If I\u2019m being honest?\r\n"
+  - "With all the stuff I\u2019ve been juggling, I kinda forgot how to just talk
+    to people.\r\n"
+  - 'Like, really talk.
+
+'
+  - 'Not in a meeting.
+
+'
+  - 'Not in a group chat.
+
+'
+  - 'Not while planning an event or writing a report
+
+'
+  - "Just\u2026 talk. You know? Like, be real with someone.\r\n"
+  - "I\u2019m weird right\u2026\r\n"
+  - "The Student Council President\u2026 doesn\u2019t know how to properly talk to
+    people\u2026\r\n"
+  - "It\u2019s like... the more I try to be useful, the more I end up being everything
+    but myself.\r\n\r\n"
+  - People come to me when they need things done.
+  - 'Not when they want to hang out.
+
+'
+  - "I mean, it\u2019s not like I hate it.\r\n"
+  - "I like helping people, I really do\u2026\r\n"
+  - "But lately... I\u2019ve been wondering\u2026\r\n"
+  - 'If I disappeared for a day,
+
+'
+  - 'Would anyone even notice me missing?
+
+'
+  nextNode: {fileID: 11400000, guid: 918be68094d3abc45a0b418002b762c6, type: 2}

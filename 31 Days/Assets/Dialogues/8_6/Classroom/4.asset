@@ -10,29 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Name: 4
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Diah
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To Class
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'Morning.
-
-'
-  - "You\u2019re early. Again.\r\n"
-  - 'Three times in a row, not bad kid.
-
-'
-  - 'Anyway, go on.
-
-'
-  nextNode: {fileID: 0}
+  - "...And that\u2019s why mitochondria is the powerhouse of the cell.\r\n"
+  - "Oh, time\u2019s up guys, class dismissed.\r\n"
+  nextNode: {fileID: 11400000, guid: ca76ee230901ae44a859cd0cf4687e34, type: 2}

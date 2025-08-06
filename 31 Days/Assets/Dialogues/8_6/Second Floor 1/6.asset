@@ -10,29 +10,26 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Name: 6
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Tiara
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To Class
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'Morning.
+  - 'Ouch!
 
 '
-  - "You\u2019re early. Again.\r\n"
-  - 'Three times in a row, not bad kid.
+  - "Someone\u2019s quick to judge\u2026\r\n"
+  - 'I mean, whatever helps you sleep at night.
 
 '
-  - 'Anyway, go on.
-
-'
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 9a575e55b8e70a34e88ea49e8b559ce0, type: 2}

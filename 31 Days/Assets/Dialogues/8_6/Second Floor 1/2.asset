@@ -10,29 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Name: 2
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Bagas
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To Class
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'Morning.
-
-'
-  - "You\u2019re early. Again.\r\n"
-  - 'Three times in a row, not bad kid.
-
-'
-  - 'Anyway, go on.
-
-'
-  nextNode: {fileID: 0}
+  - "I-I just... w-wanted to\u2014\r\n"
+  nextNode: {fileID: 11400000, guid: 4497cb616e4565f4bb4d52d5c27d1438, type: 2}

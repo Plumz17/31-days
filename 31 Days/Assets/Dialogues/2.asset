@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
+  m_Name: 2
   m_EditorClassIdentifier: 
   characterName: 
   characterPortrait: {fileID: 0}
@@ -18,21 +18,14 @@ MonoBehaviour:
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To Class
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
-  onlyPlayedOnce: 1
-  dialogueLines:
-  - 'Morning.
-
-'
-  - "You\u2019re early. Again.\r\n"
-  - 'Three times in a row, not bad kid.
-
-'
-  - 'Anyway, go on.
-
-'
-  nextNode: {fileID: 0}
+  onlyPlayedOnce: 0
+  options:
+  - optionText: Yes
+    nextNode: {fileID: 11400000, guid: da0666291d2cb3a4584e14c38d679058, type: 2}
+  - optionText: No
+    nextNode: {fileID: 0}

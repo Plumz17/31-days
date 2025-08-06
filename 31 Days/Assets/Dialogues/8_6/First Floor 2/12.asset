@@ -10,29 +10,31 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Name: 12
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Dwi
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To Class
+  objectiveFlag: Head back to class
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'Morning.
+  - "She\u2019s a lot...\r\n"
+  - 'But she means well.
 
 '
-  - "You\u2019re early. Again.\r\n"
-  - 'Three times in a row, not bad kid.
+  - 'That girl runs herself ragged trying to help everyone.
 
 '
-  - 'Anyway, go on.
+  - 'Just... keep an eye on her, would you?
 
 '
+  - "I don\u2019t want her overworking herself\u2026\r\n"
+  - "Anyway, you should probably head back to class, break time\u2019s almost over.\r\n"
   nextNode: {fileID: 0}

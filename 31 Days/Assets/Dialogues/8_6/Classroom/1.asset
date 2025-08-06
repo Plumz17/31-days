@@ -18,21 +18,12 @@ MonoBehaviour:
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To Class
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'Morning.
-
-'
-  - "You\u2019re early. Again.\r\n"
-  - 'Three times in a row, not bad kid.
-
-'
-  - 'Anyway, go on.
-
-'
-  nextNode: {fileID: 0}
+  - "Alright people, breaktime\u2026\r\n"
+  nextNode: {fileID: 11400000, guid: b3a1ea2869a84ce4c9d345a1bfe42791, type: 2}

@@ -10,29 +10,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Name: 7
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Tiara
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To Class
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'Morning.
+  - 'Mess with him?
 
 '
-  - "You\u2019re early. Again.\r\n"
-  - 'Three times in a row, not bad kid.
-
-'
-  - 'Anyway, go on.
-
-'
-  nextNode: {fileID: 0}
+  - "Not my fault a certain someone can\u2019t take a compliment\u2026\r\n"
+  - "I mean, it\u2019s honestly inspiring how well you're doing.\r\n"
+  - "Don\u2019t worry, Bagas and I were just having a friendly chat.\r\n"
+  nextNode: {fileID: 11400000, guid: 9a575e55b8e70a34e88ea49e8b559ce0, type: 2}

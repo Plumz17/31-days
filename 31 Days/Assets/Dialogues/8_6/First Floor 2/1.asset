@@ -12,27 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Dwi
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To Class
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'Morning.
+  - 'Cass, if you spill one more tray of drinks, I swear-
 
 '
-  - "You\u2019re early. Again.\r\n"
-  - 'Three times in a row, not bad kid.
-
-'
-  - 'Anyway, go on.
-
-'
-  nextNode: {fileID: 0}
+  - "I don\u2019t care if you're the president of the universe, I'll ban you.\r\n"
+  nextNode: {fileID: 11400000, guid: 51bbb5f769b577d42bf50cd20b9d0573, type: 2}

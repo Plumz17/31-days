@@ -9,30 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 1
+  m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
+  m_Name: 9
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Dwi
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To Class
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
-  dialogueLines:
-  - 'Morning.
-
-'
-  - "You\u2019re early. Again.\r\n"
-  - 'Three times in a row, not bad kid.
-
-'
-  - 'Anyway, go on.
-
-'
-  nextNode: {fileID: 0}
+  options:
+  - optionText: 'Yeah. Cass has been helping me get around. '
+    nextNode: {fileID: 11400000, guid: 551b003f8a21608499daa4438231dc1c, type: 2}
+  - optionText: "Yeah. She\u2019s... intense. "
+    nextNode: {fileID: 11400000, guid: cd4619d3486c85346a7c0b24a8a67175, type: 2}

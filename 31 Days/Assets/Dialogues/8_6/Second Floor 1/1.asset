@@ -31,8 +31,6 @@ MonoBehaviour:
   - "You\u2019re so smart\u2026\r\n"
   - "I mean, it\u2019s honestly inspiring how well you're doing.\r\n"
   - "Especially considering\u2026 you know.\r\n"
-  - 'Must be nice having all that time to study while everyone else is actually living
-    their lives like the rest of us.
-
-'
+  - Must be nice having all that time to study while the rest of us is actually living
+    our lives
   nextNode: {fileID: 11400000, guid: c70a47c7e03fbc348ba54106bf1d0c20, type: 2}

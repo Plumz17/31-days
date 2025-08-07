@@ -29,4 +29,4 @@ MonoBehaviour:
 
 '
   - "There\u2019s no prize for being first through the gate.\r\n"
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: ae946bffcb2e6db4db10cfa4b949b483, type: 2}

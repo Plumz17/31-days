@@ -10,29 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 8
+  m_Name: 14
   m_EditorClassIdentifier: 
-  characterName: Bagas
+  characterName: Klara
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: 
+  objectiveFlag: Go back to class
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - 'H-help t-them..?
+  - 'Anyway, you should head back.
 
 '
-  - "Y-Yeah\u2026\r\n"
-  - "I-If they\u2019re t-trapped in there,\r\n"
-  - "J-just\u2026\r\n"
-  - "B-be c-careful\u2026\r\n"
-  - "Th-there are t-things in there\u2026\r\n"
-  - ...
-  - "I\u2019ll s-see you there\u2026\r\n"
-  nextNode: {fileID: 11400000, guid: 0db4aed545c5aa6458584ccc1a1b8dab, type: 2}
+  - 'Miss Prez asked me to help her find a room for the Independence Day event.
+
+'
+  - 'See ya, Rookie.
+
+'
+  nextNode: {fileID: 0}

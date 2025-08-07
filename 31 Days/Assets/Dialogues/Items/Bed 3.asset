@@ -18,7 +18,7 @@ MonoBehaviour:
   advanceTimeFlag: 1
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Go To School
+  objectiveFlag: Go to School
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 7

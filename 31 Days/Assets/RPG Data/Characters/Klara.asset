@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Klara
   m_EditorClassIdentifier: 
   unitName: Klara
-  maxHP: 120
+  maxHP: 100
   maxWILL: 100
-  damage: 20
+  damage: 10
   speed: 20
   isPlayer: 1
   icon: {fileID: -6271680148837993794, guid: becc8e677a6ea7347a8af5b2328cc14c, type: 3}
-  skill: {fileID: 11400000, guid: 031c03cd377f7a646956549d398cc6e4, type: 2}
-  savedHP: 120
+  skill: {fileID: 11400000, guid: e22d6d4158d2d4b47a7dce338349c86e, type: 2}
+  savedHP: 100
   savedWILL: 100

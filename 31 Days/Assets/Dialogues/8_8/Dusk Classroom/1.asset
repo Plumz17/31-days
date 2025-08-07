@@ -18,7 +18,7 @@ MonoBehaviour:
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Get to the Second Floor
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0

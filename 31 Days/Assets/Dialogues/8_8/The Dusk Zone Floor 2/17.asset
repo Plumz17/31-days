@@ -18,7 +18,7 @@ MonoBehaviour:
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: Get to the Third Floor
+  objectiveFlag: 
   newMemberFlag: {fileID: 11400000, guid: f679e3b2891ba7c4d872568c4ece4454, type: 2}
   transitionFlag:
     flagID: 0

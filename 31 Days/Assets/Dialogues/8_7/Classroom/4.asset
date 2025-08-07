@@ -26,4 +26,4 @@ MonoBehaviour:
   onlyPlayedOnce: 1
   dialogueLines:
   - "no.\r"
-  nextNode: {fileID: 11400000, guid: edcd1a197b1c99f4f94f9845847e73e5, type: 2}
+  nextNode: {fileID: 11400000, guid: 22eee9fb573243842b1476ef9aff854a, type: 2}

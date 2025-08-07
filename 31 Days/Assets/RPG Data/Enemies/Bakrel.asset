@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Bakrel
   m_EditorClassIdentifier: 
   unitName: Bakrel
-  maxHP: 60
+  maxHP: 50
   maxWILL: 100
-  damage: 20
-  speed: 5
+  damage: 40
+  speed: 0
   isPlayer: 0
-  rarity: 15
   enemySprite: {fileID: 5983182966278971822, guid: aa3548ff966c3b94f9b75eb0099d256a, type: 3}
   enemyInfoBox: {fileID: 5864262911644463130, guid: 3b2d3d15789b03b4da6023af9e4ce31d, type: 3}

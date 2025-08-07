@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3927ad7e7a9cc346961b249ae64af03, type: 3}
   m_Name: Boss
   m_EditorClassIdentifier: 
-  enemyPool:
+  encounterName: Boss
+  enemies:
   - {fileID: 11400000, guid: bb30551af42d47e4599758e7cdd6cb2b, type: 2}
-  enemyCount: 1
-  introText: The Mouth of Kyshtym attacks!
+  introText: 

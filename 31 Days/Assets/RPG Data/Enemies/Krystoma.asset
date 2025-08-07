@@ -13,11 +13,10 @@ MonoBehaviour:
   m_Name: Krystoma
   m_EditorClassIdentifier: 
   unitName: Krystoma
-  maxHP: 250
+  maxHP: 100
   maxWILL: 0
-  damage: 50
-  speed: 0
+  damage: 30
+  speed: 15
   isPlayer: 0
-  rarity: 10
   enemySprite: {fileID: -2424553518018739129, guid: f809f69b9ea80254b844d66ea6caaf21, type: 3}
   enemyInfoBox: {fileID: -3513031117694071547, guid: bceb6df1fc7fb464e88ecae449fb7765, type: 3}

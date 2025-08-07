@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: 11
+  m_EditorClassIdentifier: 
+  characterName: Cass
+  characterPortrait: {fileID: 0}
+  levelUpFlag: 0
+  advanceTimeFlag: 0
+  saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  onlyPlayedOnce: 1
+  dialogueLines:
+  - Oof...
+  - 'Okay, that stung a little.
+
+'
+  - 'Anyway, Klara and I were looking for a room for the Independence Day event.
+
+'
+  - 'Just when I thought I finally found the perfect one BAM
+
+'
+  - 'I blacked out and woke up in whatever this place is.
+
+'
+  - 'What is this place?
+
+'
+  nextNode: {fileID: 11400000, guid: c8b04f354e0f5f642b79e5d7cb2cced4, type: 2}

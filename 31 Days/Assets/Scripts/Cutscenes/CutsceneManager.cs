@@ -7,7 +7,6 @@ public class CutsceneManager : MonoBehaviour
     public class CutsceneData
     {
         public string cutsceneID;
-        public PlayableDirector timeline;
         public bool playOnStart;
         public GameObject rootObject;
 

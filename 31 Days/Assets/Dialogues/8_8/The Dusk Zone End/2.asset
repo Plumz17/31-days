@@ -26,4 +26,4 @@ MonoBehaviour:
   onlyPlayedOnce: 1
   dialogueLines:
   - "I see the exit behind it\u2026\r\n"
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: d82fa94ece29c6548bb79ebff438679f, type: 2}

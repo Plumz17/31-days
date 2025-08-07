@@ -26,4 +26,4 @@ MonoBehaviour:
   onlyPlayedOnce: 1
   dialogueLines:
   - "Yo, that one looks different\u2026\r\n"
-  nextNode: {fileID: 11400000, guid: 7dfb7eb5523c3ef4c857b3195f57dd73, type: 2}
+  nextNode: {fileID: 11400000, guid: df8590f2c51968446be2b1a814ed52c7, type: 2}

@@ -57,14 +57,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Cutscene.unity
     guid: ebf4cfebda47d1944b7d15ba7edf057a
   - enabled: 1
-    path: Assets/Scenes/Dusk Floors/Dusk Zone Floor 2.unity
-    guid: d56a998faa3d6724990a4738d1e8d62a
+    path: Assets/Scenes/Dusk Floors/Dusk Zone 2.unity
+    guid: 26a8a59c05c0dea4987e8c4c4565f73a
   - enabled: 1
-    path: Assets/Scenes/Dusk Floors/Dusk Zone Floor 3.unity
-    guid: 7a881ea8af54a0843b8d3cf8908ac014
+    path: Assets/Scenes/Dusk Floors/Dusk Zone 3.unity
+    guid: 00b7f01da23d17844b7f3452d6634d7f
   - enabled: 1
-    path: Assets/Scenes/Dusk Floors/Dusk Zone End.unity
-    guid: 325ddb86a5672c54f82262c193ae8a10
+    path: Assets/Scenes/Dusk Floors/Dusk Zone 4.unity
+    guid: 635a5ef6fddfeff4d84700cd4f3974af
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 4467a350dcf8a0b45a0988ddd5182ca7, type: 3}
   m_UseUCBPForAssetBundles: 0

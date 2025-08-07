@@ -31,4 +31,4 @@ MonoBehaviour:
   - 'Welp, ready when you are.
 
 '
-  nextNode: {fileID: 11400000, guid: df8590f2c51968446be2b1a814ed52c7, type: 2}
+  nextNode: {fileID: 0}

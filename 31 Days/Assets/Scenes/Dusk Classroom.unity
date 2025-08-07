@@ -1416,14 +1416,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6711193994917162543, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
-      propertyPath: duskSceneNames.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6711193994917162543, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
-      propertyPath: 'duskSceneNames.Array.data[2]'
-      value: Dusk Classroom
-      objectReference: {fileID: 0}
     - target: {fileID: 6991276181344711043, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
       propertyPath: m_Name
       value: DuskManager
@@ -1561,7 +1553,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1899678354058307840, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: orthographic size
-      value: 5.6
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 2968738928477230042, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: m_LocalPosition.x

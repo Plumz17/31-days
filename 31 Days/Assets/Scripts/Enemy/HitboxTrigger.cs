@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HitboxTrigger : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class HitboxTrigger : MonoBehaviour
             if (playerHiding != null && !playerHiding.IsHiding())
             {
                 DuskManager.instance.currentLocation = other.transform.position;
+                DuskManager.instance.currentScene = SceneManager.GetActiveScene().buildIndex;
                 other.GetComponent<PlayerMovement>().PlayEnemySFX();
                 duskborne.OnPlayerHit();
             }

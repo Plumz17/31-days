@@ -43,6 +43,9 @@ public class ButtonsGroup : MonoBehaviour
     public void OnRunButton()
     {
         float chance = Random.value;
+
+        chance = 0.01f; //Force run everytime
+
         if (chance <= (0.1f / rpgManager.playerUnits.Count))
         {
             textBox.text = "Successfully fled";

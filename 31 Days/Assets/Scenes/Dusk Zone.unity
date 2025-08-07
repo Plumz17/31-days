@@ -594,6 +594,217 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
+--- !u!1001 &991492956
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 197767823806240052, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 25173514}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: enemyID
+      value: Two
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: zoomCam
+      value: 
+      objectReference: {fileID: 6575896}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: encounterData
+      value: 
+      objectReference: {fileID: 11400000, guid: bade7eb8373b82e42a695d3dcd9f3b22, type: 2}
+    - target: {fileID: 4712384660661779292, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_Name
+      value: Duskborne (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 92.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+--- !u!1001 &1198756750
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 197767823806240052, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 25173514}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: enemyID
+      value: Three
+      objectReference: {fileID: 0}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: zoomCam
+      value: 
+      objectReference: {fileID: 6575896}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: encounterData
+      value: 
+      objectReference: {fileID: 11400000, guid: bade7eb8373b82e42a695d3dcd9f3b22, type: 2}
+    - target: {fileID: 4712384660661779292, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_Name
+      value: Duskborne (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 166
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+--- !u!1001 &1397548711
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6991276181344711043, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_Name
+      value: DuskManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1263.2611
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 815.6055
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8783486264766679410, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 041df27ed0bca5e4f8ad90d743a6bcc7, type: 3}
 --- !u!1001 &1407020701
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1013,6 +1224,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 197767823806240052, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
       propertyPath: player
       value: 
@@ -1021,17 +1236,17 @@ PrefabInstance:
       propertyPath: zoomCam
       value: 
       objectReference: {fileID: 6575896}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: encounterData
+      value: 
+      objectReference: {fileID: 11400000, guid: bade7eb8373b82e42a695d3dcd9f3b22, type: 2}
     - target: {fileID: 4712384660661779292, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
       propertyPath: m_Name
       value: Duskborne
       objectReference: {fileID: 0}
-    - target: {fileID: 4712384660661779292, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.77
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 5563379669934750274, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1150,12 +1365,16 @@ PrefabInstance:
       objectReference: {fileID: 4635426265685689621}
     - target: {fileID: 1899678354058307840, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: orthographic size
-      value: 5.6
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 3229085429713922562, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: Target.TrackingTarget
       value: 
       objectReference: {fileID: 25173514}
+    - target: {fileID: 5574469888267594609, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 21.76548
+      objectReference: {fileID: 0}
     - target: {fileID: 5868924430069490634, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: m_Name
       value: Cameras
@@ -1215,6 +1434,8 @@ SceneRoots:
   - {fileID: 1407020701}
   - {fileID: 7687170800462425125}
   - {fileID: 4635426265685689620}
+  - {fileID: 991492956}
+  - {fileID: 1198756750}
   - {fileID: 4130617757063075887}
   - {fileID: 650206161}
   - {fileID: 1581433314}
@@ -1222,3 +1443,4 @@ SceneRoots:
   - {fileID: 321498502}
   - {fileID: 2893577330085679089}
   - {fileID: 4797030338444742317}
+  - {fileID: 1397548711}

@@ -17,6 +17,13 @@ MonoBehaviour:
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  onlyPlayedOnce: 0
   dialogueLines:
   - Party Healed, do you want to save?
   nextNode: {fileID: 11400000, guid: 924ba307469a8f443be2c023c3614256, type: 2}

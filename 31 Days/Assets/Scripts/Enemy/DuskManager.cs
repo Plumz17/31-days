@@ -5,12 +5,13 @@ using Unity.VisualScripting;
 
 public class DuskManager : MonoBehaviour
 {
-    [SerializeField] private List<string> duskSceneNames = new List<string> {"Dusk Zone", "RPG", "Dusk Classroom"};
+    [SerializeField] private List<string> duskSceneNames = new List<string> {"RPG"};
     [SerializeField] private List<CharacterData> partyData = new List<CharacterData>();
     public static DuskManager instance;
 
     private HashSet<string> defeatedEnemies = new HashSet<string>();
     public Vector2 currentLocation = new Vector2();
+    public int currentScene = 14;
 
     public Encounter currentEncounter;
 
@@ -32,7 +33,7 @@ public class DuskManager : MonoBehaviour
     {
         if (this == null) return;
 
-        if (!duskSceneNames.Contains(scene.name))
+        if (!IsInDuskZone())
         {
             PauseMenu.instance.SetCanSave(true);
             CalenderAndObjectiveManager.instance.UpdateCalenderUI();
@@ -47,9 +48,12 @@ public class DuskManager : MonoBehaviour
                 Debug.Log(charData.name);
             }
 
-            foreach (var charData in PlayerDataManager.instance.currentData.partyMembers)
+            if (partyData.Count == 0)
             {
-                partyData.Add(Instantiate(charData));
+                foreach (var charData in PlayerDataManager.instance.currentData.partyMembers)
+                {
+                    partyData.Add(Instantiate(charData));
+                }
             }
             PauseMenu.instance.SetCanSave(false);
             CalenderAndObjectiveManager.instance.timeOfDayText.text = "Dusk";
@@ -58,7 +62,7 @@ public class DuskManager : MonoBehaviour
     
     public bool IsInDuskZone()
     {
-        return duskSceneNames.Contains(SceneManager.GetActiveScene().name);
+        return duskSceneNames.Contains(SceneManager.GetActiveScene().name) || SceneManager.GetActiveScene().name.Contains("Dusk");
     }
 
 
@@ -77,6 +81,7 @@ public class DuskManager : MonoBehaviour
             partyData.Add((CharacterData)newPartyUnits[i].data);
             partyData[i].savedHP = updatedHP;
             partyData[i].savedWILL = updatedWILL; // Note: currentHP in CharacterData and Unit are different
+            Debug.Log($"{partyData[i].unitName} now has {partyData[i].savedHP} out of {partyData[i].maxHP}");
         }
     }
 

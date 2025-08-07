@@ -214,7 +214,7 @@ public class RPGManager : MonoBehaviour
         yield return new WaitForSeconds(waitingTime);
         EndTurn();
     }
-        
+
 
     IEnumerator EnemyAttack(Unit enemy)
     {
@@ -230,7 +230,7 @@ public class RPGManager : MonoBehaviour
 
         if (target.IsDead())
         {
-            textBox.text = target.Name + " died"; 
+            textBox.text = target.Name + " died";
             playerUnits.Remove(target);
             turnOrder.Remove(target);
         }
@@ -277,7 +277,6 @@ public class RPGManager : MonoBehaviour
 
     public void EndBattle(bool didPlayerFlee = false)
     {
-        DuskManager.instance.SavePartyData(playerUnits);
 
         if (DuskManager.instance.currentEncounter.name == "First Encounter")
             LevelLoader.Instance.LoadNextLevel(14, DuskManager.instance.currentLocation);
@@ -298,6 +297,15 @@ public class RPGManager : MonoBehaviour
             Time.timeScale = 1;
             SceneManager.LoadScene(11);
         }
-        LevelLoader.Instance.LoadNextLevel(12, DuskManager.instance.currentLocation);
+        DuskManager.instance.SavePartyData(playerUnits);
+        StartCoroutine(WaitThreeSeconds());
+        LevelLoader.Instance.LoadNextLevel(DuskManager.instance.currentScene, DuskManager.instance.currentLocation);
     }    
+    
+    IEnumerator WaitThreeSeconds()
+    {
+        Debug.Log("Waiting starts...");
+        yield return new WaitForSeconds(3f);
+        Debug.Log("3 seconds passed!");
+    }
 }

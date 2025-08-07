@@ -355,8 +355,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingNode: {fileID: 11400000, guid: 6d0c4daef75e0c84db0ce528190af4c8, type: 2}
-  facePlayerOnTalk: 1
+  npcToFlip: {fileID: 0}
+  facePlayerOnTalk: 0
   exclamationMark: {fileID: 0}
+  objectToAppearAtTheEnd: {fileID: 0}
 --- !u!1 &5963721396266737376
 GameObject:
   m_ObjectHideFlags: 0

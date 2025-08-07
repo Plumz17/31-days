@@ -47,6 +47,7 @@ MonoBehaviour:
   duskSceneNames:
   - RPG
   - Dusk Zone
+  - Dusk Classroom
   partyData: []
   currentLocation: {x: 0, y: 0}
   currentEncounter: {fileID: 0}

@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: 9
+  m_EditorClassIdentifier: 
+  characterName: Klara
+  characterPortrait: {fileID: 0}
+  levelUpFlag: 0
+  advanceTimeFlag: 0
+  saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  onlyPlayedOnce: 1
+  dialogueLines:
+  - 'Yeah, THAT Faris.
+
+'
+  - 'We were best friends back then.
+
+'
+  - 'Played until the sun went down.
+
+'
+  - "Didn\u2019t matter who scored, who won, just mattered that we played.\r\n"
+  - 'But then we got older.
+
+'
+  - 'He got picked for the main team.
+
+'
+  - "Started hanging out with the \u201Creal athletes.\u201D\r\n"
+  - "And suddenly, I wasn\u2019t \u201Cteam material\u201D anymore.\r\n"
+  - 'Started getting benched. Ignored.
+
+'
+  - "Then he started saying these things\u2026\r\n"
+  - "\"You\u2019re better off on the sidelines.\"\r\n"
+  - "Or \u201CIt\u2019s just different with girls, you understand, right?\u201D\r\n"
+  - "Guess I wasn\u2019t part of the picture anymore.\r\n"
+  nextNode: {fileID: 11400000, guid: 938137a9f747a22418075821b16d4158, type: 2}

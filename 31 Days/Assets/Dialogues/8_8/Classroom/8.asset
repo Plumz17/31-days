@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: 8
+  m_EditorClassIdentifier: 
+  characterName: Diah
+  characterPortrait: {fileID: 0}
+  levelUpFlag: 0
+  advanceTimeFlag: 0
+  saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  onlyPlayedOnce: 1
+  dialogueLines:
+  - 'Right. Cass did mention something about the Independence Day prep.
+
+'
+  - 'Said she was gonna check one of the old classrooms.
+
+'
+  - 'Probably the abandoned one downstairs...
+
+'
+  - ...
+  - "Satria\u2026"
+  - 'Would you mind checking downstairs for me?
+
+'
+  - 'Just in case.
+
+'
+  - "It\u2019s probably nothing.\r\n"
+  - 'But that room has been giving me the creeps for a while
+
+'
+  nextNode: {fileID: 11400000, guid: 6f964923920a2da409b9ecbcbadf0232, type: 2}

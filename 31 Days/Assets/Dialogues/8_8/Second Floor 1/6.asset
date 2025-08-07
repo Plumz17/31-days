@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: 6
+  m_EditorClassIdentifier: 
+  characterName: Bagas
+  characterPortrait: {fileID: 0}
+  levelUpFlag: 0
+  advanceTimeFlag: 0
+  saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  onlyPlayedOnce: 1
+  dialogueLines:
+  - "I-I don\u2019t really know\u2026\r\n"
+  - 'I found it by accident... a few weeks ago.
+
+'
+  - 'Not everyone can see it.
+
+'
+  - "But\u2026 I couldn\u2019t stop thinking about it.\r\n"
+  - 'So I started searching online.
+
+'
+  - 'I-I found nothing...
+
+'
+  - Until...
+  - 'I hacked the school''s records...
+
+'
+  - "And... I come across this old article. l-like, really old\u2026\r\n"
+  - 'From thirty one y-years ago.
+
+'
+  - "Turns out, this school\u2026\r\n"
+  - 'was built on top of an old research facility.
+
+'
+  - 'U-Underground...
+
+'
+  - 'T-They were running experiments down there.
+
+'
+  - "S-something about\u2026 Time Dilation\r\n"
+  - "One of their main projects was called\u2026\r\n"
+  - "\u201CProject Dusk Zone.\u201D"
+  - "A-Apparently... They\u2026 made a rift.\r\n"
+  - A space between time...
+  - 'Forever stuck in Dusk...
+
+'
+  - "But\u2026 something went wrong.\r\n"
+  - 'They abandoned everything.
+
+'
+  - "And then\u2026 they built the school right on top of it...\r\n"
+  nextNode: {fileID: 11400000, guid: 15afaf010baeb5341844f4bfa5d87655, type: 2}

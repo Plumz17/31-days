@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3927ad7e7a9cc346961b249ae64af03, type: 3}
-  m_Name: Boss
+  m_Script: {fileID: 11500000, guid: 059359a9d3130554793fe27925714b12, type: 3}
+  m_Name: One Punch Girl
   m_EditorClassIdentifier: 
-  enemyPool:
-  - {fileID: 11400000, guid: bb30551af42d47e4599758e7cdd6cb2b, type: 2}
-  enemyCount: 1
-  introText: The Mouth of Kyshtym attacks!
+  skillName: One Punch Girl
+  skillAmount: 80
+  willCost: 70
+  skillType: attack

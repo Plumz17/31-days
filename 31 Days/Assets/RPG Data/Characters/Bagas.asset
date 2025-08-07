@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Bagas
   m_EditorClassIdentifier: 
   unitName: Bagas
-  maxHP: 100
+  maxHP: 80
   maxWILL: 100
-  damage: 10
+  damage: 25
   speed: 5
   isPlayer: 1
   icon: {fileID: -5384022194519253384, guid: ed6d9c4ee40dca14f8dd3ea88bb143b4, type: 3}
-  skill: {fileID: 11400000, guid: 624fa7ed7a8ba084f904f55f6ec18823, type: 2}
-  savedHP: 100
+  skill: {fileID: 11400000, guid: 7128b71938f34e34d88ad6084a8f6256, type: 2}
+  savedHP: 80
   savedWILL: 100

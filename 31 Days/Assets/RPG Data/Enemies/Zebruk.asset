@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: Zebruk
   m_EditorClassIdentifier: 
   unitName: Zebruk
-  maxHP: 50
+  maxHP: 80
   maxWILL: 100
-  damage: 10
+  damage: 25
   speed: 5
   isPlayer: 0
+  rarity: 20
   enemySprite: {fileID: -2635220530030887118, guid: 2dbe6c4261d7dbf46be868bf7ce65252, type: 3}
   enemyInfoBox: {fileID: -1157384598128471400, guid: 01f577e6a74531d408ec02634130bfbe, type: 3}

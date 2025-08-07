@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3927ad7e7a9cc346961b249ae64af03, type: 3}
   m_Name: First Encounter
   m_EditorClassIdentifier: 
-  encounterName: First Encounter
-  enemies:
+  enemyPool:
   - {fileID: 11400000, guid: fc9dcb25e695bf246b392e71336982c0, type: 2}
-  introText: ???? Attacked
+  enemyCount: 1
+  introText: ??? attacks!

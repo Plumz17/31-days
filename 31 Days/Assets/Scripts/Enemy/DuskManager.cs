@@ -109,7 +109,31 @@ public class DuskManager : MonoBehaviour
 
     public List<EnemyData> GetEnemyData()
     {
-        return currentEncounter != null ? currentEncounter.enemies : new List<EnemyData>();
+        if (currentEncounter == null || currentEncounter.enemyPool.Count == 0)
+            return new List<EnemyData>();
+
+        List<EnemyData> selectedEnemies = new List<EnemyData>();
+        List<EnemyData> pool = currentEncounter.enemyPool;
+        int count = currentEncounter.enemyCount;
+
+        List<EnemyData> weightedPool = new List<EnemyData>();
+        foreach (var enemy in pool)
+        {
+            int weight = enemy.rarity;
+            for (int i = 0; i < weight; i++)
+            {
+                weightedPool.Add(enemy);
+            }
+        }
+
+        for (int i = 0; i < count; i++)
+        {
+            if (weightedPool.Count == 0) break;
+            EnemyData chosen = weightedPool[Random.Range(0, weightedPool.Count)];
+            selectedEnemies.Add(chosen);
+        }
+
+        return selectedEnemies;
     }
 }
 

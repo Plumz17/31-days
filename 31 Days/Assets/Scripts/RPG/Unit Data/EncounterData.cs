@@ -4,8 +4,8 @@ using System.Collections.Generic;
 [CreateAssetMenu(fileName = "New Encounter", menuName = "RPG/Encounter")]
 public class Encounter : ScriptableObject
 {
-    public string encounterName;
-    public List<EnemyData> enemies;
+    public List<EnemyData> enemyPool;
+    public int enemyCount;
 
     //public bool isRepeatable = true;
     //public bool isStoryEncounter = false;

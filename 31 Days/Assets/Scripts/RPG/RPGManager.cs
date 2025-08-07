@@ -188,6 +188,27 @@ public class RPGManager : MonoBehaviour
                 }
                 playerGroup.UpdatePartyUI(playerUnits);
             }
+            else if (attacker.skill.skillType == "spread")
+            {
+                PlaySFX(attackSFX);
+                int damage = attacker.skill.skillAmount;
+                textBox.text = $"{attacker.Name} used {attacker.skill.skillName}!";
+
+                yield return new WaitForSeconds(waitingTime);
+
+                foreach (var enemy in enemyUnits.ToArray()) // Copy list to avoid modification during iteration
+                {
+                    if (!enemy.IsDead())
+                    {
+                        StartCoroutine(enemy.FlickerAlpha());
+                        yield return new WaitForSeconds(0.1f);
+                        enemy.TakeDamage(damage);
+                        textBox.text = $"{enemy.Name} took {damage} damage.";
+                        HandleEnemyDeath(enemy);
+                        yield return new WaitForSeconds(0.1f);
+                    }
+                }
+            }
         }
 
         yield return new WaitForSeconds(waitingTime);
@@ -258,7 +279,7 @@ public class RPGManager : MonoBehaviour
     {
         DuskManager.instance.SavePartyData(playerUnits);
 
-        if (DuskManager.instance.currentEncounter.encounterName == "First Encounter")
+        if (DuskManager.instance.currentEncounter.name == "First Encounter")
             LevelLoader.Instance.LoadNextLevel(14, DuskManager.instance.currentLocation);
 
         if (didPlayerFlee)

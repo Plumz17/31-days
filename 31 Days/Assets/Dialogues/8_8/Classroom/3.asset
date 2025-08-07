@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  characterName: 
+  characterPortrait: {fileID: 0}
+  levelUpFlag: 0
+  advanceTimeFlag: 1
+  saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 10
+    position: {x: -6.75, y: -1}
+  onlyPlayedOnce: 1
+  dialogueLines:
+  - "One more day till the weekend\u2026\r\n"
+  - 'I got this.
+
+'
+  - "Alright kids, there\u2019s a quiz next week\u2026\r\n"
+  - "Yes, I\u2019m warning you. No, I won\u2019t remind you again.\r\n"
+  - "And before you ask, yes, the quiz will include everything I said this week.
+    \r\n"
+  - "Even the stuff you weren\u2019t listening to.\r\n"
+  - "Now, where were we\u2026\r\n"
+  nextNode: {fileID: 0}

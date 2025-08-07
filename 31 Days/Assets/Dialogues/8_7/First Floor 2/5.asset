@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 15
+  m_Name: 5
   m_EditorClassIdentifier: 
-  characterName: Cass
+  characterName: Bagas
   characterPortrait: {fileID: 0}
-  levelUpFlag: 1
+  levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
@@ -25,5 +25,24 @@ MonoBehaviour:
     position: {x: 0, y: 0}
   onlyPlayedOnce: 1
   dialogueLines:
-  - (Your Connection with Cassandra has increased to 1)
-  nextNode: {fileID: 11400000, guid: b25961572a4c63145a64af202764fe9e, type: 2}
+  - '...Maybe.
+
+'
+  - 'But when it keeps happening...
+
+'
+  - 'You start believing what they say.
+
+'
+  - 'I dunno.
+
+'
+  - "\u2026\r\n"
+  - "\u2026"
+  - "But\u2026\r\n"
+  - "When you said something yesterday\u2026\r\n"
+  - "I\u2019m not completely powerless\u2026?\r\n"
+  - "So\u2026 \r\n"
+  - "T-thanks\u2026\r\n"
+  - "Really\u2026\r\n"
+  nextNode: {fileID: 11400000, guid: d5dbd417e70621d4190480b9c8eed04e, type: 2}

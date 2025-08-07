@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 15
+  m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
+  m_Name: Chair 2
   m_EditorClassIdentifier: 
-  characterName: Cass
+  characterName: 
   characterPortrait: {fileID: 0}
-  levelUpFlag: 1
+  levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
@@ -23,7 +23,9 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
-  onlyPlayedOnce: 1
-  dialogueLines:
-  - (Your Connection with Cassandra has increased to 1)
-  nextNode: {fileID: 11400000, guid: b25961572a4c63145a64af202764fe9e, type: 2}
+  onlyPlayedOnce: 0
+  options:
+  - optionText: Yes
+    nextNode: {fileID: 11400000, guid: da0666291d2cb3a4584e14c38d679058, type: 2}
+  - optionText: No
+    nextNode: {fileID: 0}

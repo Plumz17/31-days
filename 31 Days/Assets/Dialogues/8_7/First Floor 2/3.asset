@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
+  m_Name: 3
+  m_EditorClassIdentifier: 
+  characterName: Bagas
+  characterPortrait: {fileID: 0}
+  levelUpFlag: 0
+  advanceTimeFlag: 0
+  saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  onlyPlayedOnce: 1
+  dialogueLines:
+  - "Y-yeah\u2026.\r\n"
+  - "\u2026\r\n"
+  - "M-maybe\u2026\r\n"
+  - 'I dunno.
+
+'
+  - "It\u2019s just... it\u2019s b-been like that for a while now.\r\n"
+  - "So when s-someone\u2026 stands up like that\u2026\r\n"
+  - "It\u2019s\u2026 n-new.\r\n"
+  - "I\u2019m not g-good with people\u2026\r\n"
+  - 'And s-sometimes I wonder if maybe...
+
+'
+  - "If m-maybe \r\n"
+  - 'I deserve it...?
+
+'
+  - 'F-for being weird. For stuttering. For not knowing what to say.
+
+'
+  - '...
+
+'
+  - "It\u2019s... stupid, I know...\r\n"
+  nextNode: {fileID: 11400000, guid: 53df8c091eff9f94b9f228f9f3957e41, type: 2}

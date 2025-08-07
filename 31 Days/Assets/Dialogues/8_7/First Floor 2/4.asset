@@ -9,21 +9,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 3
+  m_Script: {fileID: 11500000, guid: 544f08634e8966a439fb536171898f9c, type: 3}
+  m_Name: 4
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Bagas
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
-  advanceTimeFlag: 1
+  advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
   objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
-    flagID: 10
-    position: {x: -6.75, y: -1}
+    flagID: 0
+    position: {x: 0, y: 0}
   onlyPlayedOnce: 1
-  dialogueLines:
-  - (The School Bell Rings)
-  nextNode: {fileID: 0}
+  options:
+  - optionText: "You don\u2019t deserve any of it."
+    nextNode: {fileID: 11400000, guid: 05d358b668798174480593ce5b532368, type: 2}
+  - optionText: 'They''re just bullies.. '
+    nextNode: {fileID: 11400000, guid: 05d358b668798174480593ce5b532368, type: 2}

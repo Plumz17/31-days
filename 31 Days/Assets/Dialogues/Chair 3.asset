@@ -10,20 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 15
+  m_Name: Chair 3
   m_EditorClassIdentifier: 
-  characterName: Cass
+  characterName: 
   characterPortrait: {fileID: 0}
-  levelUpFlag: 1
-  advanceTimeFlag: 0
+  levelUpFlag: 0
+  advanceTimeFlag: 1
   saveDataFlag: 0
   turnFlag: 0
   objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
-    flagID: 0
-    position: {x: 0, y: 0}
+    flagID: 10
+    position: {x: -6.75, y: -1}
   onlyPlayedOnce: 1
   dialogueLines:
-  - (Your Connection with Cassandra has increased to 1)
-  nextNode: {fileID: 11400000, guid: b25961572a4c63145a64af202764fe9e, type: 2}
+  - (The School Bell Rings)
+  nextNode: {fileID: 0}

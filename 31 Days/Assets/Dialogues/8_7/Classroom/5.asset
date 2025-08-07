@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 15
+  m_Name: 5
   m_EditorClassIdentifier: 
-  characterName: Cass
+  characterName: 
   characterPortrait: {fileID: 0}
-  levelUpFlag: 1
+  levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
@@ -23,7 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
-  onlyPlayedOnce: 1
+  onlyPlayedOnce: 0
   dialogueLines:
-  - (Your Connection with Cassandra has increased to 1)
-  nextNode: {fileID: 11400000, guid: b25961572a4c63145a64af202764fe9e, type: 2}
+  - Are you ready to begin? Starting Class will advance your time.
+  nextNode: {fileID: 11400000, guid: 3ff52d229361654409757482e2521aff, type: 2}

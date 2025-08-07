@@ -862,7 +862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2624211522293212889, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 62.1875
+      value: 182
       objectReference: {fileID: 0}
     - target: {fileID: 2624211522293212889, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: m_LocalPosition.y
@@ -902,7 +902,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: sceneIndex
-      value: 20
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 6612512631810185339, guid: 4a313015bcce7de4e8a5c6309eea6afe, type: 3}
       propertyPath: isScreenChange
@@ -1422,7 +1422,7 @@ PrefabInstance:
       objectReference: {fileID: 4635426265685689621}
     - target: {fileID: 1899678354058307840, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: orthographic size
-      value: 5.625
+      value: 5.6
       objectReference: {fileID: 0}
     - target: {fileID: 2968738928477230042, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: m_LocalPosition.x

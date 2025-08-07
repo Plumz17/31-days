@@ -65,9 +65,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Dusk Floors/Dusk Zone 4.unity
     guid: 635a5ef6fddfeff4d84700cd4f3974af
-  - enabled: 1
-    path: Assets/Scenes/End Cutscene.unity
-    guid: 165b7aee82079bd41a4cee8b11cae7a4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 4467a350dcf8a0b45a0988ddd5182ca7, type: 3}
   m_UseUCBPForAssetBundles: 0

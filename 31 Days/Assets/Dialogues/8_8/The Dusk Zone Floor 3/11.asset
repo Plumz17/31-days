@@ -28,4 +28,4 @@ MonoBehaviour:
   - '(Klara joined the team)
 
 '
-  nextNode: {fileID: 0}
+  nextNode: {fileID: 11400000, guid: 7dfb7eb5523c3ef4c857b3195f57dd73, type: 2}

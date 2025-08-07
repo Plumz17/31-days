@@ -9,7 +9,7 @@ public class Duskborne : MonoBehaviour
     [SerializeField] private Encounter encounterData;
     [SerializeField] private duskState currentState = duskState.Wander;
     [SerializeField] private Transform player;
-    [SerializeField] float duskSpeed = 10f; 
+    [SerializeField] float duskSpeed = 10f;
     [SerializeField] private float wanderSpeed = 2f;
     [SerializeField] private float wanderChangeInterval = 2f;
     [SerializeField] private CinemachineCamera zoomCam;
@@ -17,12 +17,15 @@ public class Duskborne : MonoBehaviour
     [SerializeField] private bool isStatic = false;
 
     private float wanderTimer;
-    private float wanderDirection = 0; // -1 = left, 1 = right, 0 = idle
+    public float wanderDirection = 0; // -1 = left, 1 = right, 0 = idle
     private Rigidbody2D rb;
     private PlayerHiding playerHiding;
+    private SpriteRenderer sr;
+
 
     void Awake()
     {
+        sr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         playerHiding = player.GetComponent<PlayerHiding>();
     }
@@ -37,9 +40,12 @@ public class Duskborne : MonoBehaviour
 
     void FollowPlayer()
     {
-        Vector2 playerPos = new Vector2(player.position.x, rb.position.y); 
+        Vector2 playerPos = new Vector2(player.position.x, rb.position.y);
         Vector2 newPos = Vector2.MoveTowards(rb.position, playerPos, duskSpeed * Time.fixedDeltaTime);
-        rb.MovePosition(newPos);  
+        rb.MovePosition(newPos);
+
+        float dir = player.position.x - transform.position.x;
+        FlipSprite(dir);
     }
 
     public void SetFollowState()
@@ -85,13 +91,15 @@ public class Duskborne : MonoBehaviour
 
         Vector2 move = new Vector2(wanderDirection * wanderSpeed * Time.fixedDeltaTime, 0);
         rb.MovePosition(rb.position + move);
+
+        FlipSprite(wanderDirection);
     }
 
 
     void FixedUpdate()
     {
         if (player == null || isStatic) return;
-              
+
         switch (currentState)
         {
             case duskState.Follow:
@@ -109,5 +117,25 @@ public class Duskborne : MonoBehaviour
                 Wander();
                 break;
         }
+    }
+
+    private void FlipSprite(float direction)
+    {
+        if (sr != null && Mathf.Abs(direction) > 0.01f)
+        {
+            sr.flipX = direction < 0;
+        }
+    }
+
+    public void AvoidSafeRoom(Vector2 avoidPosition)
+    {
+        float direction = Mathf.Sign(transform.position.x - avoidPosition.x);
+        wanderDirection = direction;
+
+        wanderTimer = wanderChangeInterval;
+
+        currentState = duskState.Wander;
+        
+        FlipSprite(wanderDirection);
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class DuskManager : MonoBehaviour
 {
@@ -41,6 +42,11 @@ public class DuskManager : MonoBehaviour
         else
         {
             partyData.Clear();
+            foreach (var charData in PlayerDataManager.instance.currentData.partyMembers)
+            {
+                Debug.Log(charData.name);
+            }
+
             foreach (var charData in PlayerDataManager.instance.currentData.partyMembers)
             {
                 partyData.Add(Instantiate(charData));

@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - PauseMenuUI
   - Time Dependant
+  - Duskborne
   layers:
   - Default
   - TransparentFX

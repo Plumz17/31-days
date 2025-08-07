@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.ComponentModel;
 
 public class Cutscene : MonoBehaviour
 {
@@ -36,8 +37,10 @@ public class Cutscene : MonoBehaviour
             if (targetTransform == null)
                 targetTransform = mainNPC.transform;
 
+
             if (dialogueTrigger == null)
                 dialogueTrigger = mainNPC.GetComponentInChildren<DialogueTrigger>();
+            
         }
         else if (GameObjectToGoTo != null)
         {

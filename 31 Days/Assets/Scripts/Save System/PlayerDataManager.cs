@@ -24,7 +24,9 @@ public class PlayerDataManager : MonoBehaviour
     {
         currentData = new PlayerData();
 
-        currentData.playerConnections.Add(new ConnectionSaveData("Adachi", 0)); // Add all characters
+        currentData.playerConnections.Add(new ConnectionSaveData("Bagas", 0));
+        currentData.playerConnections.Add(new ConnectionSaveData("Cass", 0));
+        currentData.playerConnections.Add(new ConnectionSaveData("Klara", 0));
 
         AddPartyMember(protagCharacterData);
 

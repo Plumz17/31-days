@@ -429,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 886796749384602184, guid: 41bef711d12ca444698a662e0b818079, type: 3}
       propertyPath: encounterData
       value: 
-      objectReference: {fileID: 11400000, guid: bade7eb8373b82e42a695d3dcd9f3b22, type: 2}
+      objectReference: {fileID: 11400000, guid: 0967cc4f85175ad4fb8417b9ee59e4e6, type: 2}
     - target: {fileID: 1049652093892071149, guid: 41bef711d12ca444698a662e0b818079, type: 3}
       propertyPath: m_Name
       value: Duskboss Variant

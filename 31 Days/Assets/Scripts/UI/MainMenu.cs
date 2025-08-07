@@ -7,18 +7,20 @@ public class MainMenu : MonoBehaviour
 {   
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clickSound;
-    
+
     public void OnNewGameButtonClick()
     {
         PlayClickSFX();
         SaveData.ResetToDefault();
         SaveData.Load();
+        CalenderAndObjectiveManager.instance.SetCalendarUI();
     }
 
     public void OnContinueButtonClick()
     {
         PlayClickSFX();
         SaveData.Load();
+        CalenderAndObjectiveManager.instance.SetCalendarUI();
     }
 
     public void OnExitButtonClick()

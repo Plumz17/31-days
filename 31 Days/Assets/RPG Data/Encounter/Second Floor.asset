@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3927ad7e7a9cc346961b249ae64af03, type: 3}
-  m_Name: Default Encounter
+  m_Name: Second Floor
   m_EditorClassIdentifier: 
-  encounterName: Default Enemy
-  enemies:
-  - {fileID: 11400000, guid: fc9dcb25e695bf246b392e71336982c0, type: 2}
-  - {fileID: 11400000, guid: 8759bcdfe0980414498dd46c910ccdd2, type: 2}
+  enemyPool:
   - {fileID: 11400000, guid: bd2650a5d4ba5964e94c035c9c68ddd3, type: 2}
-  introText: 
+  - {fileID: 11400000, guid: 625831e0c24d24443bed679aee087c80, type: 2}
+  - {fileID: 11400000, guid: 8759bcdfe0980414498dd46c910ccdd2, type: 2}
+  enemyCount: 3
+  introText: Duskborne attacks!

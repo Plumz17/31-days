@@ -15,8 +15,9 @@ MonoBehaviour:
   unitName: Ashru
   maxHP: 100
   maxWILL: 0
-  damage: 10
+  damage: 25
   speed: 0
   isPlayer: 0
+  rarity: 15
   enemySprite: {fileID: -7605192924567851618, guid: d1771fba96361c045843707d8eeb9b26, type: 3}
   enemyInfoBox: {fileID: -7427395966196215969, guid: 12e35f10f863f684396dbfaf19bc3fce, type: 3}

@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c3927ad7e7a9cc346961b249ae64af03, type: 3}
-  m_Name: Boss
+  m_Name: First Floor
   m_EditorClassIdentifier: 
   enemyPool:
-  - {fileID: 11400000, guid: bb30551af42d47e4599758e7cdd6cb2b, type: 2}
-  enemyCount: 1
-  introText: The Mouth of Kyshtym attacks!
+  - {fileID: 11400000, guid: fc9dcb25e695bf246b392e71336982c0, type: 2}
+  - {fileID: 11400000, guid: bd2650a5d4ba5964e94c035c9c68ddd3, type: 2}
+  enemyCount: 2
+  introText: Duskborne attacks!

@@ -20,5 +20,5 @@ MonoBehaviour:
   isPlayer: 1
   icon: {fileID: 7975594737678354346, guid: 1ad0a25241cc24e499a18454eb63bf38, type: 3}
   skill: {fileID: 11400000, guid: cb084667100be4843bc897387cf0ff11, type: 2}
-  savedHP: 100
+  savedHP: 120
   savedWILL: 100

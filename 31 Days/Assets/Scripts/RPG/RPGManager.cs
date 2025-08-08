@@ -74,23 +74,6 @@ public class RPGManager : MonoBehaviour
     {
         tutorialCanvas.gameObject.SetActive(false);
     }
-    
-    private IEnumerator WaitForTutorialDismiss()
-    {
-        textBox.text = "Press any key to continue...";
-
-        // Wait until any key is pressed or screen is clicked
-        while (!Input.anyKeyDown && !Input.GetMouseButtonDown(0))
-        {
-            yield return null;
-        }
-
-        tutorialCanvas.gameObject.SetActive(false);
-
-        currentState = BattleState.START;
-        SetupBattle();
-    }
-
 
     public void PlaySFX(AudioClip sfx)
     {
@@ -108,6 +91,7 @@ public class RPGManager : MonoBehaviour
         turnOrder.AddRange(playerUnits);
         turnOrder.AddRange(enemyUnits);
         turnOrder.Sort((a, b) => b.speed.CompareTo(a.speed));
+        turnIndex = 0;
 
         StartCoroutine(NextTurn());
     }
@@ -126,11 +110,11 @@ public class RPGManager : MonoBehaviour
         currentUnit = turnOrder[turnIndex];
         currentUnit.ResetDefend();
 
-        // if (currentUnit.IsDead())
-        // {
-        //     EndTurn();
-        //     yield break;
-        // }
+        if (currentUnit.IsDead())
+        {
+            EndTurn();
+            yield break;
+        }
 
         if (currentUnit.isPlayer)
         {
@@ -348,5 +332,10 @@ public class RPGManager : MonoBehaviour
         DuskManager.instance.SavePartyData(playerUnits);
         LevelLoader.Instance.LoadNextLevel(DuskManager.instance.currentScene, DuskManager.instance.currentLocation);
     }    
-
+    
+    private void OnDestroy()
+    {
+        if (DuskManager.instance.currentEncounter.name == "First Encounter")
+            playerInput.UI.Esc.performed -= CancelTutorial;
+    }
 }

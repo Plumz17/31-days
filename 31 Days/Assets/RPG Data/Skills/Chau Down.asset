@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Chau Down
   m_EditorClassIdentifier: 
   skillName: Chau Down
-  skillAmount: 60
-  willCost: 25
+  skillAmount: 25
+  willCost: 60
   skillType: spread

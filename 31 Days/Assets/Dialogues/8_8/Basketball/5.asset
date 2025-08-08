@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   characterName: Klara
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: -7537001363322997300, guid: c26ac0b359de9d5418c3b69d8c3bbb39, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
@@ -23,6 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
   - "But hey, welcome anyway. \r\n"

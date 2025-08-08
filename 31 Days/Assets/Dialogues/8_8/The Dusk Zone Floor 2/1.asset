@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   characterName: Cass
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: -2346250448562650863, guid: d110402b05f7e2f439b595f8e57eea61, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
@@ -23,6 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
   - 'H-HELLO!?

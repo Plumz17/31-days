@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: 10
   m_EditorClassIdentifier: 
   characterName: Indah
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: -8651978258492159065, guid: 8901163d9a4bff1419c983e6e42def30, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   options:
   - optionText: I'll do it.

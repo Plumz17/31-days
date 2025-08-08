@@ -27,12 +27,12 @@ public class ButtonsGroup : MonoBehaviour
     public void OnDefendButton()
     {
         if (rpgManager.isBusy) return;
+        rpgManager.isBusy = true;
 
         int will = 10;
         rpgManager.currentUnit.RestoreWILL(will);
 
         rpgManager.currentUnit.Defend();
-        rpgManager.isBusy = true;
 
         rpgManager.PlaySFX(rpgManager.defendSFX);
         textBox.text = rpgManager.currentUnit.Name + " Defended! and gained + " + will + " WILL";;
@@ -42,8 +42,10 @@ public class ButtonsGroup : MonoBehaviour
 
     public void OnRunButton()
     {
+        if (rpgManager.isBusy) return;
+        rpgManager.isBusy = true;
         float chance = Random.value;
-        
+
         if (chance <= (0.1f / rpgManager.playerUnits.Count))
         {
             textBox.text = "Successfully fled";

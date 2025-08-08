@@ -44,14 +44,19 @@ public class DuskManager : MonoBehaviour
         {
             if (partyData.Count == 0)
             {
-                partyData.Clear();
-                foreach (var charData in PlayerDataManager.instance.currentData.partyMembers)
-                {
-                    partyData.Add(Instantiate(charData));
-                }
+                UpdateParty();
             }
             PauseMenu.instance.SetCanSave(false);
             CalenderAndObjectiveManager.instance.timeOfDayText.text = "Dusk";
+        }
+    }
+
+    public void UpdateParty()
+    {
+        partyData.Clear();
+        foreach (var charData in PlayerDataManager.instance.currentData.partyMembers)
+        {
+            partyData.Add(Instantiate(charData));
         }
     }
     

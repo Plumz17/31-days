@@ -100,7 +100,10 @@ public class DialogueManager : MonoBehaviour
             SaveData.Save();
 
         if (node.newMemberFlag != null)
+        {
             PlayerDataManager.instance.AddPartyMember(node.newMemberFlag);
+            DuskManager.instance?.UpdateParty();
+        }
 
         if (node.turnFlag)
             OnNodeStarted?.Invoke(node);

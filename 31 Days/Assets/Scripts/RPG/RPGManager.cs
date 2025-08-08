@@ -80,11 +80,11 @@ public class RPGManager : MonoBehaviour
         currentUnit = turnOrder[turnIndex];
         currentUnit.ResetDefend();
 
-        if (currentUnit.IsDead())
-        {
-            EndTurn();
-            yield break;
-        }
+        // if (currentUnit.IsDead())
+        // {
+        //     EndTurn();
+        //     yield break;
+        // }
 
         if (currentUnit.isPlayer)
         {

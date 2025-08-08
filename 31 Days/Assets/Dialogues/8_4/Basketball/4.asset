@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   characterName: Faris
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: -4057743781309898161, guid: f171ef450512cd74eb900a8b16a451e7, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
   - "Keep talking. You\u2019ll be in the stands while we win regionals.\r\n"

@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
-  m_Name: 12
+  m_Name: 4 1
   m_EditorClassIdentifier: 
-  characterName: Klara
-  characterPortrait: {fileID: -7537001363322997300, guid: c26ac0b359de9d5418c3b69d8c3bbb39, type: 3}
+  characterName: Indah
+  characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
-  objectiveFlag: 
+  objectiveFlag: Attend Ms.Indah's Class
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
-  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
-  - Heh. Comes with practice.
-  nextNode: {fileID: 11400000, guid: 7d9f00fb18aceb149a70189f76aaf794, type: 2}
+  - Cool. Grab a seat. Behave.
+  nextNode: {fileID: 0}

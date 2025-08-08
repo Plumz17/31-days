@@ -15,8 +15,8 @@ public class CalenderAndObjectiveManager : MonoBehaviour
 
     public int currentMonth = 8;
     public int currentDay = 4;
-    public enum timeOfDay { Mor = 0, Day = 1, Even = 2, Night = 3}
-    public timeOfDay currentTimeOfDay = timeOfDay.Mor;
+    public enum timeOfDay { Morning = 0, Day = 1, Evening = 2, Night = 3}
+    public timeOfDay currentTimeOfDay = timeOfDay.Morning;
     private int totalDaysPassed = 0;
     private bool calIsActive = false;
 

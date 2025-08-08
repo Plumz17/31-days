@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Ashru
   m_EditorClassIdentifier: 
   unitName: Ashru
-  maxHP: 100
+  maxHP: 80
   maxWILL: 0
   damage: 25
   speed: 0

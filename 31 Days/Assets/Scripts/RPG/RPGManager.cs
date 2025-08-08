@@ -36,6 +36,7 @@ public class RPGManager : MonoBehaviour
     public AudioClip backSFX;
     public float defaultVolume = 1;
 
+
     public bool isChoosingTarget = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -296,17 +297,10 @@ public class RPGManager : MonoBehaviour
         {
             textBox.text = "You Lost :(";
             Time.timeScale = 1;
-            SceneManager.LoadScene(11);
+            LevelLoader.Instance.LoadNextLevel(DuskManager.instance.currentScene, DuskManager.instance.defaultLocation);
         }
         DuskManager.instance.SavePartyData(playerUnits);
-        StartCoroutine(WaitThreeSeconds());
         LevelLoader.Instance.LoadNextLevel(DuskManager.instance.currentScene, DuskManager.instance.currentLocation);
     }    
-    
-    IEnumerator WaitThreeSeconds()
-    {
-        Debug.Log("Waiting starts...");
-        yield return new WaitForSeconds(3f);
-        Debug.Log("3 seconds passed!");
-    }
+
 }

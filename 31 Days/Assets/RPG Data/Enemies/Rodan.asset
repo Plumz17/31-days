@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rodan
   m_EditorClassIdentifier: 
   unitName: Rodan
-  maxHP: 80
+  maxHP: 60
   maxWILL: 0
   damage: 15
   speed: 30

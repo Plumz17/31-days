@@ -53,7 +53,7 @@ public class DialogueUIManager : MonoBehaviour
 
             // Use dialogue image if character exists
             dialogueImageUI.sprite = dialogueImage;
-            dialogueImageUI.SetNativeSize();
+            characterPortrait.SetNativeSize();
         }
         else if (hasCharacterName) //Second Possibility: Has Char Name
         {

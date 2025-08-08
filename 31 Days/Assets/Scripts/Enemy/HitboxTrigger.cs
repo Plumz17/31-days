@@ -14,6 +14,7 @@ public class HitboxTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log("Trigger Entered!");
             PlayerHiding playerHiding = other.GetComponent<PlayerHiding>();
 
             if (playerHiding != null && !playerHiding.IsHiding())

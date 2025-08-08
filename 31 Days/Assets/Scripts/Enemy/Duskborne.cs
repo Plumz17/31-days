@@ -66,7 +66,7 @@ public class Duskborne : MonoBehaviour
         StartCoroutine(ZoomThenStartBattle());
     }
 
-    private IEnumerator ZoomThenStartBattle()
+    public IEnumerator ZoomThenStartBattle()
     {
         zoomCam.Priority = 2;
         yield return new WaitForSeconds(zoomDuration);

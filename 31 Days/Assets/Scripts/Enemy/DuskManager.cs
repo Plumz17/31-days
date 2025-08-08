@@ -13,6 +13,8 @@ public class DuskManager : MonoBehaviour
     public Vector2 currentLocation = new Vector2();
     public int currentScene = 14;
 
+    public Vector3 defaultLocation = new Vector3(22.5f, 1.875f, 0f);
+
     public Encounter currentEncounter;
 
     private void Awake()

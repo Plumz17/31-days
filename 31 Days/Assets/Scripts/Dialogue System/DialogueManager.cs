@@ -105,6 +105,9 @@ public class DialogueManager : MonoBehaviour
         if (node.turnFlag)
             OnNodeStarted?.Invoke(node);
 
+        if (node.healFlag)
+            DuskManager.instance?.HealParty();
+
         if (!string.IsNullOrEmpty(node.objectiveFlag))
         {
             CalenderAndObjectiveManager.instance.currentObjective = node.objectiveFlag;

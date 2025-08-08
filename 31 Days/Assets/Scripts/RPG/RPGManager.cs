@@ -95,6 +95,7 @@ public class RPGManager : MonoBehaviour
 
         else
         {
+            buttonsGroup.ShowBackButton(true);
             currentState = BattleState.ENEMYTURN;
             yield return StartCoroutine(EnemyAttack(currentUnit));
             EndTurn();

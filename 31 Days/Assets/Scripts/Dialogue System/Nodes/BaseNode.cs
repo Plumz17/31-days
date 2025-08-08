@@ -12,5 +12,6 @@ public abstract class BaseNode : ScriptableObject
     public string objectiveFlag;
     public CharacterData newMemberFlag;
     public TransitionData transitionFlag;
+    public bool healFlag = false;
     public bool onlyPlayedOnce = true;
 }

@@ -42,14 +42,9 @@ public class DuskManager : MonoBehaviour
         }
         else
         {
-            partyData.Clear();
-            foreach (var charData in PlayerDataManager.instance.currentData.partyMembers)
-            {
-                Debug.Log(charData.name);
-            }
-
             if (partyData.Count == 0)
             {
+                partyData.Clear();
                 foreach (var charData in PlayerDataManager.instance.currentData.partyMembers)
                 {
                     partyData.Add(Instantiate(charData));

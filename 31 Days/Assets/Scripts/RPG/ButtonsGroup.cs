@@ -76,6 +76,14 @@ public class ButtonsGroup : MonoBehaviour
             rpgManager.currentAction = "skill";
             ShowBackButton(true);
         }
+
+        else if (rpgManager.currentUnit.skill.skillType == "spread")
+        {
+            rpgManager.currentAction = "spread";
+            rpgManager.isBusy = true;
+            StartCoroutine(rpgManager.PlayerAttack(rpgManager.currentUnit, null, "skill"));
+        }
+
         else if (rpgManager.currentUnit.skill.skillType == "heal")
         {
             rpgManager.currentAction = "skill";

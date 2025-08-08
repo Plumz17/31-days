@@ -23,6 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 1
   onlyPlayedOnce: 0
   dialogueLines:
   - Party Healed, do you want to save?

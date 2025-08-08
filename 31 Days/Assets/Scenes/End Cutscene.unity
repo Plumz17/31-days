@@ -953,7 +953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textUI: {fileID: 1435829034}
-  fullText: 'Prologue:
+  fullText: 'Prologue Complete!:
 
     The Wings of Rebirth'
   characterDelay: 0.1

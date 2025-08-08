@@ -43,6 +43,7 @@ public class PauseMenu : MonoBehaviour
     {
         if (!canPause) return;
         if (SceneManager.GetActiveScene().name == "Main Menu" || SceneManager.GetActiveScene().name.Contains("Cutscene")) return;
+        if (SceneManager.GetActiveScene().name.Contains("RPG")) return;
         if (playerInput.UI.Esc.triggered && !isControlUp)
         {
             if (gameIsPaused)

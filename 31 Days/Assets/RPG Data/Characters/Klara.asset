@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Klara
   m_EditorClassIdentifier: 
   unitName: Klara
-  maxHP: 120
+  maxHP: 140
   maxWILL: 100
   damage: 20
   speed: 20

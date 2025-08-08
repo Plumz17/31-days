@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Satria
   m_EditorClassIdentifier: 
   unitName: Satria
-  maxHP: 100
+  maxHP: 120
   maxWILL: 100
   damage: 15
   speed: 10

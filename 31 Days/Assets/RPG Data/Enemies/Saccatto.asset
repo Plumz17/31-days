@@ -16,7 +16,7 @@ MonoBehaviour:
   maxHP: 40
   maxWILL: 0
   damage: 10
-  speed: 10
+  speed: 9
   isPlayer: 0
   rarity: 10
   enemySprite: {fileID: 407907198125173640, guid: d0e38bb347daa644dbf30f617b145a60, type: 3}

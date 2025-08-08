@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bagas
   m_EditorClassIdentifier: 
   unitName: Bagas
-  maxHP: 80
+  maxHP: 100
   maxWILL: 100
   damage: 25
   speed: 5

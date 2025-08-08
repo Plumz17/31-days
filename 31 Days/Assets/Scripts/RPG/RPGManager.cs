@@ -5,6 +5,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.InputSystem.LowLevel;
 
 
 public enum BattleState {START, ENEMYTURN, PLAYERTURN, WIN, LOSS}
@@ -18,6 +19,7 @@ public class RPGManager : MonoBehaviour
     public List<Unit> turnOrder = new List<Unit>();
     public int turnIndex = 0;
     public string currentAction = "";
+    public Canvas tutorialCanvas;
 
     public Unit currentUnit;
     public PlayerBoxesGroup playerGroup;
@@ -35,16 +37,60 @@ public class RPGManager : MonoBehaviour
     public AudioClip fleeSFX;
     public AudioClip backSFX;
     public float defaultVolume = 1;
+    InputActions playerInput;
 
 
     public bool isChoosingTarget = false;
 
+    private void Awake()
+    {
+
+        playerInput = new InputActions();
+        playerInput.UI.Enable();
+
+        if (DuskManager.instance.currentEncounter.name == "First Encounter")
+        {
+            playerInput.UI.Esc.performed += CancelTutorial;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        if (DuskManager.instance.currentEncounter.name == "First Encounter")
+        {
+            SetupTutorialGuide();
+        }
         currentState = BattleState.START;
         SetupBattle();
     }
+
+    private void SetupTutorialGuide()
+    {
+        tutorialCanvas.gameObject.SetActive(true);
+    }
+
+    private void CancelTutorial(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        tutorialCanvas.gameObject.SetActive(false);
+    }
+    
+    private IEnumerator WaitForTutorialDismiss()
+    {
+        textBox.text = "Press any key to continue...";
+
+        // Wait until any key is pressed or screen is clicked
+        while (!Input.anyKeyDown && !Input.GetMouseButtonDown(0))
+        {
+            yield return null;
+        }
+
+        tutorialCanvas.gameObject.SetActive(false);
+
+        currentState = BattleState.START;
+        SetupBattle();
+    }
+
 
     public void PlaySFX(AudioClip sfx)
     {

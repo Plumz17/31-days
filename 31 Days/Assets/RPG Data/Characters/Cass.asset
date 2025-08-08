@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Cass
   m_EditorClassIdentifier: 
   unitName: Cass
-  maxHP: 100
+  maxHP: 120
   maxWILL: 100
   damage: 10
   speed: 15

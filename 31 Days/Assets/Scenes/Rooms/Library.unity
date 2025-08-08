@@ -346,6 +346,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5820434978452371800, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: c47afef1999b5fe42882fcf335c6e0af, type: 3}
     - target: {fileID: 6110884668994669100, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
       propertyPath: m_Name
       value: Music
@@ -421,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 2133214048}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 6.390625
+      value: 4.6979165
       objectReference: {fileID: 0}
     - target: {fileID: 5425169048719876304, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x

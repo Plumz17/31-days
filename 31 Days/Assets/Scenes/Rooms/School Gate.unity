@@ -683,6 +683,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5820434978452371800, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: c47afef1999b5fe42882fcf335c6e0af, type: 3}
     - target: {fileID: 6110884668994669100, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
       propertyPath: m_Name
       value: Music
@@ -1954,31 +1958,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutscenes:
   - cutsceneID: 8/4_Gate_1
-    timeline: {fileID: 0}
     playOnStart: 1
     rootObject: {fileID: 4205121345659028672}
     requiredCutsceneID: 
     requiredDay: 4
   - cutsceneID: 8/5_Gate_1
-    timeline: {fileID: 0}
     playOnStart: 1
     rootObject: {fileID: 484132809}
     requiredCutsceneID: 
     requiredDay: 5
   - cutsceneID: 8/6_Gate_1
-    timeline: {fileID: 0}
     playOnStart: 1
     rootObject: {fileID: 1381293091}
     requiredCutsceneID: 
     requiredDay: 6
   - cutsceneID: 8/7_Gate_1
-    timeline: {fileID: 0}
     playOnStart: 1
     rootObject: {fileID: 462662863}
     requiredCutsceneID: 
     requiredDay: 7
   - cutsceneID: 8/8_Gate_1
-    timeline: {fileID: 0}
     playOnStart: 1
     rootObject: {fileID: 2043717998}
     requiredCutsceneID: 

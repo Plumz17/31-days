@@ -3662,6 +3662,7 @@ MonoBehaviour:
   defendSFX: {fileID: 8300000, guid: 4aad86ddb6a9cfd45991b77bf56ec95f, type: 3}
   fleeSFX: {fileID: 8300000, guid: 8dcbaee9047e7784c9c0a148fd5e781c, type: 3}
   backSFX: {fileID: 8300000, guid: f7fe6357bdcc0a148ac53dfa033eaa4f, type: 3}
+  defaultVolume: 1
   isChoosingTarget: 0
 --- !u!4 &1102836676
 Transform:
@@ -5027,7 +5028,7 @@ PrefabInstance:
     - target: {fileID: 5820434978452371800, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
       propertyPath: sceneMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 0958f938de4a9d14d8f5e09ea3995bf0, type: 3}
+      objectReference: {fileID: 8300000, guid: d136c89233548944f8b84d743f386930, type: 3}
     - target: {fileID: 6110884668994669100, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
       propertyPath: m_Name
       value: Music

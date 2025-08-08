@@ -250,6 +250,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5820434978452371800, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
+      propertyPath: sceneMusic
+      value: 
+      objectReference: {fileID: 8300000, guid: c47afef1999b5fe42882fcf335c6e0af, type: 3}
     - target: {fileID: 6110884668994669100, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
       propertyPath: m_Name
       value: Music
@@ -1203,10 +1207,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cutscenes:
   - cutsceneID: 8/4_Room_1
-    timeline: {fileID: 0}
     playOnStart: 1
     rootObject: {fileID: 1833044450587097811}
     requiredCutsceneID: 
+    requiredDay: 0
 --- !u!1001 &7924537736152726930
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1321,8 +1325,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcToActivate:
   - {fileID: 1660470365}
-  itemToOpen: {fileID: 1660470364}
   stopDistance: 0.1
+  itemToOpen: {fileID: 1660470364}
+  GameObjectToGoTo: {fileID: 0}
+  haveOpeningDialogue: 0
+  cutsceneDelay: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

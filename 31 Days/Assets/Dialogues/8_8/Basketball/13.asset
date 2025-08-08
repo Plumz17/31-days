@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
   m_Name: 13
   m_EditorClassIdentifier: 
-  characterName: Klara
+  characterName: 
   characterPortrait: {fileID: 0}
   levelUpFlag: 1
   advanceTimeFlag: 0
@@ -23,6 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
   - '(Your Connection with Klara has increased to 1)

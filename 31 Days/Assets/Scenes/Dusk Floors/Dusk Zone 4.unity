@@ -517,6 +517,10 @@ PrefabInstance:
       value: Nein
       objectReference: {fileID: 0}
     - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
+      propertyPath: zoomCam
+      value: 
+      objectReference: {fileID: 7687170800462425126}
+    - target: {fileID: 2429390650802374322, guid: a88e0345d0ad1194e9ef28083dbda8aa, type: 3}
       propertyPath: isStatic
       value: 1
       objectReference: {fileID: 0}
@@ -1562,6 +1566,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
+--- !u!114 &7687170800462425126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1723274015926642191, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
+  m_PrefabInstance: {fileID: 7687170800462425125}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9dfa5b682dcd46bda6128250e975f58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

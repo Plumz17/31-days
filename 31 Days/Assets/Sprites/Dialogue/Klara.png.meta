@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: d110402b05f7e2f439b595f8e57eea61
+guid: c26ac0b359de9d5418c3b69d8c3bbb39
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2346250448562650863
-    second: Cass_0
-  - first:
-      213: -1957481901739568878
-    second: Cass_1
+      213: -7537001363322997300
+    second: Klara 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -55,8 +52,8 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 200
-  spriteBorder: {x: 234, y: 0, z: 362, w: 177}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cass_0
+      name: Klara 1_0
       rect:
         serializedVersion: 2
-        x: 242
+        x: 168
         y: 0
-        width: 428
-        height: 623
+        width: 589
+        height: 653
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1118253e5a1707fd0800000000000000
-      internalID: -2346250448562650863
+      spriteID: cc57f7b5131376790800000000000000
+      internalID: -7537001363322997300
       vertices: []
       indices: 
       edges: []
@@ -128,8 +125,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6016695a46a44384cb0f5516aace6546
-    internalID: 685302444
+    spriteID: bbd4563ef5f82b74a83dd989edf3d35a
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -138,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cass_0: -2346250448562650863
-      Cass_1: -1957481901739568878
+      Klara 1_0: -7537001363322997300
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

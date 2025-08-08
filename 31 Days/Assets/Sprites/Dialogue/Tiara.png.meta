@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: d110402b05f7e2f439b595f8e57eea61
+guid: 297ec5b774a11b54c9198e1fa55f46cd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2346250448562650863
-    second: Cass_0
+      213: 2794564505230761807
+    second: Tiara_0
   - first:
-      213: -1957481901739568878
-    second: Cass_1
+      213: 7402646487301885358
+    second: Tiara_1
+  - first:
+      213: -7462553664783314814
+    second: Tiara_2
+  - first:
+      213: 7817815226863978509
+    second: Tiara_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,9 +60,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
-  spriteBorder: {x: 234, y: 0, z: 362, w: 177}
-  spriteGenerateFallbackPhysicsShape: 0
+  spritePixelsToUnits: 600
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -103,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cass_0
+      name: Tiara_2
       rect:
         serializedVersion: 2
-        x: 242
-        y: 0
-        width: 428
-        height: 623
+        x: 602
+        y: 535
+        width: 1775
+        height: 2000
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +124,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1118253e5a1707fd0800000000000000
-      internalID: -2346250448562650863
+      spriteID: 2801d4deafeaf6890800000000000000
+      internalID: -7462553664783314814
       vertices: []
       indices: 
       edges: []
@@ -128,8 +134,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6016695a46a44384cb0f5516aace6546
-    internalID: 685302444
+    spriteID: b15797fa354c39343963e39f3340ad1c
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -138,8 +144,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cass_0: -2346250448562650863
-      Cass_1: -1957481901739568878
+      Tiara_0: 2794564505230761807
+      Tiara_1: 7402646487301885358
+      Tiara_2: -7462553664783314814
+      Tiara_3: 7817815226863978509
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

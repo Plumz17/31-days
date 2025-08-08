@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: d110402b05f7e2f439b595f8e57eea61
+guid: 8901163d9a4bff1419c983e6e42def30
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2346250448562650863
-    second: Cass_0
+      213: -1311011034246225827
+    second: Indah_0
   - first:
-      213: -1957481901739568878
-    second: Cass_1
+      213: -8651978258492159065
+    second: Indah_1
+  - first:
+      213: -764284556381354750
+    second: Indah_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -54,9 +57,9 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
-  spriteBorder: {x: 234, y: 0, z: 362, w: 177}
-  spriteGenerateFallbackPhysicsShape: 0
+  spritePixelsToUnits: 250
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -103,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Cass_0
+      name: Indah_1
       rect:
         serializedVersion: 2
-        x: 242
-        y: 0
-        width: 428
-        height: 623
+        x: 945
+        y: 365
+        width: 727
+        height: 791
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1118253e5a1707fd0800000000000000
-      internalID: -2346250448562650863
+      spriteID: 7ab0c223d9ffde780800000000000000
+      internalID: -8651978258492159065
       vertices: []
       indices: 
       edges: []
@@ -128,8 +131,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 6016695a46a44384cb0f5516aace6546
-    internalID: 685302444
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -138,8 +141,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Cass_0: -2346250448562650863
-      Cass_1: -1957481901739568878
+      Indah_0: -1311011034246225827
+      Indah_1: -8651978258492159065
+      Indah_2: -764284556381354750
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

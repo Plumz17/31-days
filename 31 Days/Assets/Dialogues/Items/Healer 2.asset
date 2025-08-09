@@ -23,7 +23,8 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 0
   dialogueLines:
-  - Party Saved
+  - (Game Saved)
   nextNode: {fileID: 0}

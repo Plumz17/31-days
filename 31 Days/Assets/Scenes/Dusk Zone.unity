@@ -891,7 +891,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8723469781348195386, guid: 00334bd7747f76945b5f7b6eda4de021, type: 3}
       propertyPath: cutsceneDelay
-      value: 2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 8952346343645759980, guid: 00334bd7747f76945b5f7b6eda4de021, type: 3}
       propertyPath: m_IsActive
@@ -1627,7 +1627,7 @@ PrefabInstance:
       objectReference: {fileID: 4635426265685689621}
     - target: {fileID: 1899678354058307840, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: orthographic size
-      value: 4.8125
+      value: 5.2395835
       objectReference: {fileID: 0}
     - target: {fileID: 3229085429713922562, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: Target.TrackingTarget

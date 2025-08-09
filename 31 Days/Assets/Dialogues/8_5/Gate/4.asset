@@ -38,5 +38,5 @@ MonoBehaviour:
   - 'Every Second.
 
 '
-  - "Don\u2019t want anything funny happening here, now do we.\r\n"
+  - "Don\u2019t want anything funny happening here, now do we?"
   nextNode: {fileID: 11400000, guid: 0c223d9b009bcaf4b8b1b87998fbc4fe, type: 2}

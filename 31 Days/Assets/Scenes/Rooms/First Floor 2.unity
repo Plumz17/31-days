@@ -1055,7 +1055,7 @@ PrefabInstance:
       objectReference: {fileID: 2133214048}
     - target: {fileID: 4196412431387358076, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: orthographic size
-      value: 6.328125
+      value: 4.9895835
       objectReference: {fileID: 0}
     - target: {fileID: 5425169048719876304, guid: ef9d1d2b5c702ff43a925ecef03b2681, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
@@ -1421,7 +1421,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 534692890056312204, guid: 5cdf44d6ea290b34187b0648c1a39849, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.81
+      value: -0.69
       objectReference: {fileID: 0}
     - target: {fileID: 534692890056312204, guid: 5cdf44d6ea290b34187b0648c1a39849, type: 3}
       propertyPath: m_LocalPosition.y

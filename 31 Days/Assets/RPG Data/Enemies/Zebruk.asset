@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Zebruk
   m_EditorClassIdentifier: 
   unitName: Zebruk
-  maxHP: 80
+  maxHP: 60
   maxWILL: 100
   damage: 25
   speed: 5

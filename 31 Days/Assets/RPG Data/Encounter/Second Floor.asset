@@ -16,5 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bd2650a5d4ba5964e94c035c9c68ddd3, type: 2}
   - {fileID: 11400000, guid: 625831e0c24d24443bed679aee087c80, type: 2}
   - {fileID: 11400000, guid: 8759bcdfe0980414498dd46c910ccdd2, type: 2}
-  enemyCount: 3
+  enemyCount: 2
   introText: Duskborne attacks!

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Krystoma
   m_EditorClassIdentifier: 
   unitName: Krystoma
-  maxHP: 250
+  maxHP: 300
   maxWILL: 0
   damage: 50
   speed: 0

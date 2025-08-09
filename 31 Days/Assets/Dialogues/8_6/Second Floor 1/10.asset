@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
   m_Name: 10
   m_EditorClassIdentifier: 
-  characterName: Bagas
-  characterPortrait: {fileID: 6831464311212280188, guid: 871528e6cae16784ba7b2120e24392cb, type: 3}
+  characterName: 
+  characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0

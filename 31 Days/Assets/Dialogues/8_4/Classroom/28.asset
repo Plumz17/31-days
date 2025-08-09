@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 28
   m_EditorClassIdentifier: 
   characterName: Diah
-  characterPortrait: {fileID: 1975897524669116377, guid: b6c49a006e81dd547aa24a46c3240b31, type: 3}
+  characterPortrait: {fileID: 3803198068906211744, guid: b6c49a006e81dd547aa24a46c3240b31, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0

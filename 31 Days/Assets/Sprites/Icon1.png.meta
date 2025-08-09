@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: b6c49a006e81dd547aa24a46c3240b31
+guid: 17a65efcc6a8ddc41bb5ae45dacf2737
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1975897524669116377
-    second: Diah_0
-  - first:
-      213: 3803198068906211744
-    second: Diah_1
-  - first:
-      213: 8498932193419125438
-    second: Diah_2
-  - first:
-      213: -8795941018789526584
-    second: Diah_3
-  - first:
-      213: -2901446726334138620
-    second: Diah_4
-  - first:
-      213: -236638794376788029
-    second: Diah_5
+      213: 1009049853055315898
+    second: Icon1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -52,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -66,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 670
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -90,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -115,89 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Diah_0
+      name: Icon1_0
       rect:
         serializedVersion: 2
-        x: 1030
-        y: 619
-        width: 1347
-        height: 2367
+        x: 0
+        y: 0
+        width: 25
+        height: 25
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0a93b935e7ca7c430800000000000000
-      internalID: 3803198068906211744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Diah_3
-      rect:
-        serializedVersion: 2
-        x: 516
-        y: 1876
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c343cd0f3a8ee580800000000000000
-      internalID: -8795941018789526584
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Diah_4
-      rect:
-        serializedVersion: 2
-        x: 3633
-        y: 924
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 407322e239dfbb7d0800000000000000
-      internalID: -2901446726334138620
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Diah_5
-      rect:
-        serializedVersion: 2
-        x: 2260
-        y: 128
-        width: 13
-        height: 89
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3c74811354a47bcf0800000000000000
-      internalID: -236638794376788029
+      spriteID: abfa504ce7dd00e00800000000000000
+      internalID: 1009049853055315898
       vertices: []
       indices: 
       edges: []
@@ -206,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: a55e5c7c7a57c9740aa65df76edbbb4d
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -216,11 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Diah_0: 3803198068906211744
-      Diah_2: 8498932193419125438
-      Diah_3: -8795941018789526584
-      Diah_4: -2901446726334138620
-      Diah_5: -236638794376788029
+      Icon1_0: 1009049853055315898
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

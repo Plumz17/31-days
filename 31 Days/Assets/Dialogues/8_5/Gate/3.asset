@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 3
   m_EditorClassIdentifier: 
   characterName: 
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: 7432838796465440613, guid: 7370dd9ed700ffe44aadb0325da12471, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
@@ -23,6 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
   - Good.

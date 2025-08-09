@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 10
   m_EditorClassIdentifier: 
   characterName: Dwi
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: -1140490052301981557, guid: 2aa1471b6a4409a408f88c75b6e1b403, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
@@ -23,6 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
   - 'Figures.

@@ -13,15 +13,17 @@ MonoBehaviour:
   m_Name: 30
   m_EditorClassIdentifier: 
   characterName: Diah
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: 1975897524669116377, guid: b6c49a006e81dd547aa24a46c3240b31, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
   turnFlag: 0
+  objectiveFlag: 
   newMemberFlag: {fileID: 0}
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
   - "Alright, that\u2019s enough science for one day."

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 6
   m_EditorClassIdentifier: 
   characterName: Bagas
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: 6831464311212280188, guid: 871528e6cae16784ba7b2120e24392cb, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
@@ -23,6 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
   - "I\u2014I... I gotta go.\r\n"

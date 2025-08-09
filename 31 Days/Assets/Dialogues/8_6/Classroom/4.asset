@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 4
   m_EditorClassIdentifier: 
   characterName: Diah
-  characterPortrait: {fileID: 0}
+  characterPortrait: {fileID: 1975897524669116377, guid: b6c49a006e81dd547aa24a46c3240b31, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0
   saveDataFlag: 0
@@ -23,6 +23,7 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
+  healFlag: 0
   onlyPlayedOnce: 1
   dialogueLines:
   - "...And that\u2019s why mitochondria is the powerhouse of the cell.\r\n"

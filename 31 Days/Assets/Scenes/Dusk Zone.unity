@@ -433,7 +433,7 @@ PrefabInstance:
     - target: {fileID: 5820434978452371800, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
       propertyPath: sceneMusic
       value: 
-      objectReference: {fileID: 8300000, guid: 953c27d10635328449098d6929a6a36f, type: 3}
+      objectReference: {fileID: 8300000, guid: 273bf1e824d52df4da28c9d05c2c56a8, type: 3}
     - target: {fileID: 6110884668994669100, guid: cd8f4e32f560b8749a145051176ede80, type: 3}
       propertyPath: m_Name
       value: Music
@@ -1627,7 +1627,7 @@ PrefabInstance:
       objectReference: {fileID: 4635426265685689621}
     - target: {fileID: 1899678354058307840, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: orthographic size
-      value: 5.2395835
+      value: 5.625
       objectReference: {fileID: 0}
     - target: {fileID: 3229085429713922562, guid: 9a1b71b7a1957434f97209057d51f602, type: 3}
       propertyPath: Target.TrackingTarget

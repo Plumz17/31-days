@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74db6afab38fa0a458bb4ae63e5cc16c, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
-  characterName: 
+  characterName: Sugeng
   characterPortrait: {fileID: 7432838796465440613, guid: 7370dd9ed700ffe44aadb0325da12471, type: 3}
   levelUpFlag: 0
   advanceTimeFlag: 0

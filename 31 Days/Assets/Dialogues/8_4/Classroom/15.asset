@@ -23,7 +23,8 @@ MonoBehaviour:
   transitionFlag:
     flagID: 0
     position: {x: 0, y: 0}
-  onlyPlayedOnce: 1
+  healFlag: 0
+  onlyPlayedOnce: 0
   dialogueLines:
   - Are you ready to begin? Starting Class will advance your time.
   nextNode: {fileID: 11400000, guid: 687e53b7043306c43bbee8118884aac9, type: 2}

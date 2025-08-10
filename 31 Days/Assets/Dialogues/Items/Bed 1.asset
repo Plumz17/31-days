@@ -16,6 +16,15 @@ MonoBehaviour:
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
+  saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  healFlag: 0
+  onlyPlayedOnce: 0
   dialogueLines:
   - Sleeping will advance your time
   nextNode: {fileID: 11400000, guid: 451d306aea2d6d34298dad28d597b9ea, type: 2}

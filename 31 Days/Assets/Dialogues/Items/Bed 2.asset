@@ -16,6 +16,15 @@ MonoBehaviour:
   characterPortrait: {fileID: 0}
   levelUpFlag: 0
   advanceTimeFlag: 0
+  saveDataFlag: 0
+  turnFlag: 0
+  objectiveFlag: 
+  newMemberFlag: {fileID: 0}
+  transitionFlag:
+    flagID: 0
+    position: {x: 0, y: 0}
+  healFlag: 0
+  onlyPlayedOnce: 0
   options:
   - optionText: Yes
     nextNode: {fileID: 11400000, guid: 06f259b9c1c18534db9b3154671a06ad, type: 2}

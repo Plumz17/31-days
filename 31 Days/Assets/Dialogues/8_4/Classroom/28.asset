@@ -24,7 +24,7 @@ MonoBehaviour:
     flagID: 0
     position: {x: 0, y: 0}
   healFlag: 0
-  onlyPlayedOnce: 1
+  onlyPlayedOnce: 0
   options:
   - optionText: Yes
     nextNode: {fileID: 11400000, guid: 891c3a1d0d0134f4c90924d1ee22e7ee, type: 2}

@@ -1,30 +1,62 @@
 using System;
+using Unity.VisualScripting;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PauseMenu : MonoBehaviour
 {
-    public static PauseMenu instance;
+    public static PauseMenu instance {get; private set;}
 
-    public InputActions playerInput;
-    public bool canPause = true;
-    public static bool gameIsPaused = false;
-    public GameObject pauseMenuUI;
-    public Button saveButton;
-    public GameObject controlsGuide;
-    public GameObject buttonContainer;
-    private bool isControlUp = false;
+    private InputActions playerInput;
+    private bool canPause = true;
+    private bool gameIsPaused = false;
+
+    [Header("References")]
+    [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private Button saveButton;
+    [SerializeField] private GameObject controlsGuide;
+
+    [Header("Audio Clips")]
     [SerializeField] private AudioClip cancelSound;
     [SerializeField] private AudioClip clickSound;
-    [SerializeField] private AudioSource audioSource;
+
+    [Header("Unpausable Scene Keywords")]
+    [SerializeField] private List<string> blockedScenes = new List<string> {"Main Menu", "Cutscene", "RPG", "End Cutscene"};
+
+    private AudioSource audioSource;
+    private bool isControlActive = false;
     public static event Action OnPauseMenuClosed;
-
-
-    private void OnEnable() => playerInput.UI.Enable();
-    //private void OnDisable() => playerInput.UI.Disable();
+    private string sceneName;
 
     private void Awake()
+    {
+        HandleSingeton();
+        playerInput = new InputActions();
+        audioSource = GetComponent<AudioSource>();
+    }
+
+    private void OnEnable()
+    {
+        playerInput.UI.Enable();
+        SceneManager.activeSceneChanged += OnSceneChanged;
+    }
+
+    private void OnDisable()
+    {
+        playerInput.UI.Disable();
+        SceneManager.activeSceneChanged -= OnSceneChanged;
+    }
+
+    private void OnSceneChanged(Scene current, Scene next)
+    {
+        sceneName = next.name;
+        Debug.Log("Scene changed to: " + sceneName);
+        Debug.Log("Blocked: " + blockedScenes.Contains(sceneName));
+    }
+
+    void HandleSingeton()
     {
         if (instance != null && instance != this)
         {
@@ -33,16 +65,17 @@ public class PauseMenu : MonoBehaviour
         }
 
         instance = this;
-        playerInput = new InputActions();
         DontDestroyOnLoad(gameObject);
     }
 
     void Update()
     {
         if (!canPause) return;
-        if (SceneManager.GetActiveScene().name == "Main Menu" || SceneManager.GetActiveScene().name.Contains("Cutscene")) return;
-        if (SceneManager.GetActiveScene().name.Contains("RPG")) return;
-        if (playerInput.UI.Esc.triggered && !isControlUp)
+
+        // Exact matches
+        if (blockedScenes.Contains(sceneName)) return;
+
+        if (playerInput.UI.Esc.triggered && !isControlActive)
         {
             if (gameIsPaused)
             {
@@ -106,18 +139,18 @@ public class PauseMenu : MonoBehaviour
 
     public void OnControlsButtonClick()
     {
-        if (!isControlUp)
+        if (!isControlActive)
         {
             PlayClickSFX();
             controlsGuide.SetActive(true);
-            isControlUp = true;
+            isControlActive = true;
         }
     }
 
     public void CloseControlsGuide()
     {
         controlsGuide.SetActive(false);
-        isControlUp = false;
+        isControlActive = false;
     }
 
     public void OnAdvanceButtonClick()

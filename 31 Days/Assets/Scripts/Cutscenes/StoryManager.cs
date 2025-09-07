@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class StoryManager : MonoBehaviour
 {
-    public static StoryManager instance;
+    public static StoryManager instance { get; private set; }
 
     public HashSet<string> completedCutscenes = new HashSet<string>();
 

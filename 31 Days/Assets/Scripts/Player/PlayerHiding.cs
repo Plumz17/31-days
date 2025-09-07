@@ -1,11 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+[RequireComponent(typeof(PlayerMovement))]
 public class PlayerHiding : MonoBehaviour
 {
     [SerializeField] private GameObject playerSprite;
-    private PlayerMovement playerMovement;
 
+    private PlayerMovement playerMovement;
     private InputActions inputActions;
     private bool isNearLocker = false;
     private bool isHiding = false;
@@ -31,9 +32,8 @@ public class PlayerHiding : MonoBehaviour
 
     private void HandleInteract(InputAction.CallbackContext context)
     {
-        if (!isNearLocker) return;
-
-        ToggleHide();
+        if (isNearLocker)
+            ToggleHide();
     }
 
     public void SetNearLocker(bool value)

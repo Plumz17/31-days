@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    public static LevelLoader Instance; // Singleton reference
+    public static LevelLoader instance { get; private set; } // Singleton reference
 
     [SerializeField] private Animator anim;
     [SerializeField] private float transitionTime = 1;
@@ -17,12 +17,12 @@ public class LevelLoader : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null || Instance != this)
+        if (instance == null || instance != this)
         {
-            Instance = this;
+            instance = this;
         }
 
-        else if (Instance != this)
+        else if (instance != this)
         {
             Destroy(gameObject);
             return;

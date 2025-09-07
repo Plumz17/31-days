@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
+    public static AudioManager instance { get; private set; }
     private AudioSource audioSource;
 
     [SerializeField] public float fadeTime = 0.4f;

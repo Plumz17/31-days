@@ -7,7 +7,7 @@ public class DuskManager : MonoBehaviour
 {
     [SerializeField] private List<string> duskSceneNames = new List<string> {"RPG"};
     [SerializeField] private List<CharacterData> partyData = new List<CharacterData>();
-    public static DuskManager instance;
+    public static DuskManager instance { get; private set; }
 
     private HashSet<string> defeatedEnemies = new HashSet<string>();
     public Vector2 currentLocation = new Vector2();
@@ -111,7 +111,7 @@ public class DuskManager : MonoBehaviour
         MarkEnemyAsDefeated(id);
         currentEncounter = encounter;
         Time.timeScale = 1f;
-        LevelLoader.Instance.LoadNextLevel(15, Vector3.zero);
+        LevelLoader.instance.LoadNextLevel(15, Vector3.zero);
     }
 
     public List<EnemyData> GetEnemyData()

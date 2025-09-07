@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerDataManager : MonoBehaviour
 {
-    public static PlayerDataManager instance;
+    public static PlayerDataManager instance { get; private set; }
     public PlayerData currentData;
     public bool loadedFromSave = false;
     public CharacterData protagCharacterData;

@@ -5766,14 +5766,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c7b4ab5feea7f945a6d638642fda493, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canPause: 1
   pauseMenuUI: {fileID: 444636453}
   saveButton: {fileID: 1156046959}
   controlsGuide: {fileID: 1696006354}
-  buttonContainer: {fileID: 592313183}
   cancelSound: {fileID: 8300000, guid: f7fe6357bdcc0a148ac53dfa033eaa4f, type: 3}
   clickSound: {fileID: 8300000, guid: 68fe71cf35c65bf438a4667308949244, type: 3}
-  audioSource: {fileID: 7175926324004182457}
+  blockedScenes:
+  - Main Menu
+  - Cutscene
+  - RPG
+  - End Cutscene
 --- !u!82 &7175926324004182457
 AudioSource:
   m_ObjectHideFlags: 0

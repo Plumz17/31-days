@@ -179,13 +179,18 @@ public class DialogueManager : MonoBehaviour
     private IEnumerator TypeLine(string line)
     {
         uiManager.IsTyping = true;
-        uiManager.SetDialogueText("");
+        uiManager.SetDialogueText(line); // full line at once
+
+        TMP_Text textComponent = uiManager.dialogueText; // <-- make sure you expose DialogueText in your UI manager
+        textComponent.maxVisibleCharacters = 0;
+
         charsSinceLastSFX = 0;
 
-        foreach (char c in line)
+        for (int i = 0; i < line.Length; i++)
         {
-            uiManager.AppendDialogueChar(c);
+            textComponent.maxVisibleCharacters = i + 1;
 
+            char c = line[i];
             if (!char.IsWhiteSpace(c))
             {
                 charsSinceLastSFX++;
@@ -195,6 +200,7 @@ public class DialogueManager : MonoBehaviour
                     charsSinceLastSFX = 0;
                 }
             }
+
             yield return new WaitForSeconds(uiManager.WordSpeed);
         }
 
@@ -219,11 +225,12 @@ public class DialogueManager : MonoBehaviour
             typingCoroutine = null;
         }
 
-        if (currentSingleNode != null)
-            uiManager.SetDialogueText(currentSingleNode.dialogueLines[currentLineIndex]);
+        if (uiManager.dialogueText != null)
+            uiManager.dialogueText.maxVisibleCharacters = int.MaxValue; // reveal all instantly
 
         uiManager.IsTyping = false;
     }
+
 
     public void EndDialogue()
     {
@@ -242,7 +249,7 @@ public class DialogueManager : MonoBehaviour
 
         if (LastPlayedNode != null && LastPlayedNode.transitionFlag != null && LastPlayedNode.transitionFlag.flagID != 0)
         {
-            LevelLoader.Instance.LoadNextLevel(LastPlayedNode.transitionFlag.flagID, LastPlayedNode.transitionFlag.position);
+            LevelLoader.instance.LoadNextLevel(LastPlayedNode.transitionFlag.flagID, LastPlayedNode.transitionFlag.position);
         }
     }
 }

@@ -311,7 +311,7 @@ public class RPGManager : MonoBehaviour
     {
 
         if (DuskManager.instance.currentEncounter.name == "First Encounter")
-            LevelLoader.Instance.LoadNextLevel(14, DuskManager.instance.currentLocation);
+            LevelLoader.instance.LoadNextLevel(14, DuskManager.instance.currentLocation);
 
         if (didPlayerFlee)
         {
@@ -327,10 +327,10 @@ public class RPGManager : MonoBehaviour
         {
             textBox.text = "You Lost :(";
             Time.timeScale = 1;
-            LevelLoader.Instance.LoadNextLevel(DuskManager.instance.currentScene, DuskManager.instance.defaultLocation);
+            LevelLoader.instance.LoadNextLevel(DuskManager.instance.currentScene, DuskManager.instance.defaultLocation);
         }
         DuskManager.instance.SavePartyData(playerUnits);
-        LevelLoader.Instance.LoadNextLevel(DuskManager.instance.currentScene, DuskManager.instance.currentLocation);
+        LevelLoader.instance.LoadNextLevel(DuskManager.instance.currentScene, DuskManager.instance.currentLocation);
     }    
     
     private void OnDestroy()

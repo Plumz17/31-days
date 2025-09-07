@@ -8,21 +8,23 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Movement Settings")]
     [SerializeField] private float moveSpeed = 5f;
-    InputActions playerInput;
 
+    private InputActions playerInput;
     private Rigidbody2D rb;
     private Animator anim;
-    private float movement;
-    public bool isFacingRight = true;
-    private bool canMove = true;
     private SpriteRenderer spriteRenderer;
     private CalenderAndObjectiveManager calendar;
 
+    private float movementInput;
+    private bool isFacingRight = true;
+    private bool isMovable = true;
+
     [Header("Footstep Settings")]
-    public AudioSource audioSource;
-    public AudioClip footstepClip;
-    public AudioClip enemyClip;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip footstepClip;
+    [SerializeField] private AudioClip enemyClip;
     public float stepDelay = 0.4f; // Delay between steps
+
     private float stepTimer;
 
     private void Awake()
@@ -33,7 +35,6 @@ public class PlayerMovement : MonoBehaviour
 
         playerInput = new InputActions();
         playerInput.Player.Enable();
-
         playerInput.Player.Show.performed += OnShowCalendar;
     }
 
@@ -44,26 +45,43 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!canMove)
+        if (!isMovable)
         {
-            movement = 0;
-            anim.SetBool("isMoving", false);
+            StopMovement();
             return;
         }
 
-        movement = playerInput.Player.Move.ReadValue<float>();
-        anim.SetBool("isMoving", movement != 0);
-
-        if ((movement > 0 && !isFacingRight) || (movement < 0 && isFacingRight))
-        {
-            Flip();
-        }
+        HandleInput();
+        HandleAnimation();
+        HandleFacing();
         HandleFootsteps();
+    }
+
+    private void HandleFacing()
+    {
+        if ((movementInput > 0 && !isFacingRight) || (movementInput < 0 && isFacingRight))
+            Flip();
+    }
+
+    private void HandleAnimation()
+    {
+        anim.SetBool("isMoving", movementInput != 0);
+    }
+
+    private void HandleInput()
+    {
+        movementInput = playerInput.Player.Move.ReadValue<float>();
+    }
+
+    private void StopMovement()
+    {
+        movementInput = 0;
+        anim.SetBool("isMoving", false);
     }
 
     private void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(movement * moveSpeed, rb.linearVelocityY);
+        rb.linearVelocity = new Vector2(movementInput * moveSpeed, rb.linearVelocityY);
     }
 
     private void Flip()
@@ -74,7 +92,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void SetCanMove(bool value)
     {
-        canMove = value;
+        isMovable = value;
     }
 
     public bool GetFacingDirection()
@@ -95,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleFootsteps()
     {
-        if (Mathf.Abs(movement) > 0.1f) //if is Moving
+        if (Mathf.Abs(movementInput) > 0.1f) //if is Moving
         {
             stepTimer -= Time.deltaTime;
 
@@ -111,23 +129,15 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void PlayFootstep()
+    private void PlaySFX(AudioClip clip)
     {
-        if (footstepClip != null && audioSource != null)
-        {
-            audioSource.pitch = Random.Range(0.9f, 1.1f);
-            audioSource.PlayOneShot(footstepClip);
-        }
+        if (audioSource == null) return;
+        audioSource.pitch = Random.Range(0.9f, 1.1f);
+        audioSource.PlayOneShot(clip);
     }
 
-    public void PlayEnemySFX()
-    {
-        if (enemyClip != null && audioSource != null)
-        {
-            audioSource.pitch = Random.Range(0.9f, 1.1f);
-            audioSource.PlayOneShot(enemyClip);
-        }
-    }
+    public void PlayFootstep() => PlaySFX(footstepClip);
+    public void PlayEnemyEncounterSFX() => PlaySFX(enemyClip);
 
     private void OnShowCalendar(InputAction.CallbackContext context)
     {
@@ -149,25 +159,25 @@ public class PlayerMovement : MonoBehaviour
         if (stopDistance < 0)
         {
             float direction = Mathf.Sign(targetPosition.x - transform.position.x);
-            finalTarget.x += -stopDistance * direction; // Go past the target by abs(stopDistance)
-            stopDistance = 0.05f; // Use a small threshold so loop eventually ends
+            finalTarget.x += -stopDistance * direction;
+            stopDistance = 0.05f; // safety threshold
         }
+
+        isMovable = false;
 
         while (Mathf.Abs(transform.position.x - finalTarget.x) > stopDistance)
         {
             float moveDir = Mathf.Sign(finalTarget.x - transform.position.x);
-            movement = moveDir;
-            anim.SetBool("isMoving", true);
+            movementInput = moveDir;
 
-            if ((moveDir > 0 && !isFacingRight) || (moveDir < 0 && isFacingRight))
-                Flip();
+            HandleAnimation();
+            HandleFacing();
 
             yield return null;
         }
 
-        movement = 0;
+        StopMovement();
         rb.linearVelocity = Vector2.zero;
-        anim.SetBool("isMoving", false);
-        canMove = true; // Re-enable player input
+        isMovable = true;
     }
 }

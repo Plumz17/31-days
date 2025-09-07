@@ -63,7 +63,7 @@ public class TransitionTrigger : MonoBehaviour
         if (AdvanceTimeFlag != 0)
             CalenderAndObjectiveManager.instance.AdvanceTimeBlock(AdvanceTimeFlag);
 
-        LevelLoader.Instance.LoadNextLevel(sceneIndex, spawnPosition);
+        LevelLoader.instance.LoadNextLevel(sceneIndex, spawnPosition);
         StoryManager.instance.SetCutsceneState(false);
     }
 

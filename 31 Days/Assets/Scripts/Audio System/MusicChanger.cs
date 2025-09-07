@@ -5,7 +5,6 @@ public class MusicChanger : MonoBehaviour
     public AudioClip sceneMusic;
     private AudioClip prevMusic;
     private float prevTime;
-    //private bool didChangeMusic = false;
 
     void Start()
     {
@@ -25,17 +24,7 @@ public class MusicChanger : MonoBehaviour
             if (sceneMusic != null && sceneMusic != prevMusic)
             {
                 AudioManager.instance.CrossfadeMusic(sceneMusic, prevTime, false);
-                //didChangeMusic = true;
             }
         }
     }
-
-    // void OnDestroy()
-    // {
-    //     if (AudioManager.instance != null && didChangeMusic)
-    //     {
-    //         Debug.Log("Reverting to " + prevMusic?.name);
-    //         AudioManager.instance.CrossfadeMusic(prevMusic, prevTime, true);
-    //     }
-    // }
 }

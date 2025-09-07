@@ -21,7 +21,7 @@ public class HitboxTrigger : MonoBehaviour
             {
                 DuskManager.instance.currentLocation = other.transform.position;
                 DuskManager.instance.currentScene = SceneManager.GetActiveScene().buildIndex;
-                other.GetComponent<PlayerMovement>().PlayEnemySFX();
+                other.GetComponent<PlayerMovement>().PlayEnemyEncounterSFX();
                 duskborne.OnPlayerHit();
             }
         }

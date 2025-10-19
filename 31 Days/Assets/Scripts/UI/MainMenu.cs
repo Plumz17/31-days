@@ -13,14 +13,12 @@ public class MainMenu : MonoBehaviour
         PlayClickSFX();
         SaveData.ResetToDefault();
         SaveData.Load();
-        CalenderAndObjectiveManager.instance.SetCalendarUI();
     }
 
     public void OnContinueButtonClick()
     {
         PlayClickSFX();
         SaveData.Load();
-        CalenderAndObjectiveManager.instance.SetCalendarUI();
     }
 
     public void OnExitButtonClick()

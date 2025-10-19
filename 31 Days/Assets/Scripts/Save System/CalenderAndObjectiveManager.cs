@@ -1,5 +1,7 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 public class CalenderAndObjectiveManager : MonoBehaviour
 {
@@ -25,6 +27,9 @@ public class CalenderAndObjectiveManager : MonoBehaviour
     private int daysInMonth = 31;
     private string[] dayNames = { "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" };
 
+    [Header("Unpausable Scene Keywords")]
+    [SerializeField] private List<string> blockedScenes = new List<string> {"Main Menu", "Cutscene", "RPG", "End Cutscene"};
+
     void Awake()
     {
         if (instance != null && instance != this)
@@ -35,6 +40,27 @@ public class CalenderAndObjectiveManager : MonoBehaviour
 
         instance = this;
         DontDestroyOnLoad(gameObject);
+    }
+
+    void OnEnable()
+    {
+        SceneManager.activeSceneChanged += OnSceneChanged;
+    }
+
+    void OnDisable()
+    {
+        SceneManager.activeSceneChanged -= OnSceneChanged;
+    }
+
+    private void OnSceneChanged(Scene previousScene, Scene newScene)
+    {
+        bool isBlocked = blockedScenes.Contains(newScene.name);
+
+        // Only toggle if necessary (blocked/unblocked transition)
+        if (calIsActive == isBlocked)
+        {
+            SetCalendarUI();
+        }
     }
 
     public void AdvanceTimeBlock(int blockAdvanced = 1) // To Move Morning to Afternoon, etc (block = Morning, afternoon, etc.)
@@ -115,6 +141,6 @@ public class CalenderAndObjectiveManager : MonoBehaviour
         calIsActive = !calIsActive;
         calendarCanvasGroup.alpha = calIsActive ? 1 : 0;
         calendarCanvasGroup.interactable = calIsActive;
-        calendarCanvasGroup.blocksRaycasts = calIsActive;
+        //calendarCanvasGroup.blocksRaycasts = calIsActive;
     }
 }

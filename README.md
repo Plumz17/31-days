@@ -1,4 +1,4 @@
-![31 Days Logo]([31%20days/assets/sprites/ui/logo.png](https://github.com/Plumz17/31-days/blob/3b74d412e697d9d38a42aae7424cf252138c24ca/31%20Days/Assets/Sprites/UI/logo.png)
+![31 Days Logo]([https://github.com/Plumz17/31-days/blob/3b74d412e697d9d38a42aae7424cf252138c24ca/31%20Days/Assets/Sprites/UI/logo.png])
 A repository for our submission for the Game Development division of GEMASTIK XVIII, an IT Competition orginized by Telkom University and the Ministry of Education, Culture, Research, and Technology of Indonesia. This game is made in Unity and is still in it's early prototype build.
 Our team consist of:
 Anders Emmanuel Tan (Programmer, Writer, Artist)
